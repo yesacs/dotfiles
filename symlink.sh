@@ -12,8 +12,8 @@ rm ~/.vimrc.local;ln -s "$PWD"/vimrc.local ~/.vimrc.local
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-#echo "Making symlinks for profile settings"
-#rm ~/.profile; ln -sf "$PWD"/profile ~/.profile
+echo "Making symlinks for profile settings"
+rm ~/.profile; ln -sf "$PWD"/profile ~/.profile
 source ~/.profile
 
 echo "Making symlinks for git template"
