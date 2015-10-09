@@ -1,0 +1,25 @@
+let g:airline_theme = 'airlineish'
+let g:airline_powerline_fonts = 1
+
+set laststatus=2
+
+set background=dark
+let g:rehash256 = 1
+let g:molokai_original = 1
+
+set guifont=Inconsolata\ for\ Powerline\:h14
+set guioptions-=r
+
+let g:gitgutter_realtime = 1
+let g:gitgutter_eager = 1
+
+colorscheme monokai
+
+"256 colors
+let &t_Co=256
+
+set textwidth=72
+set colorcolumn=-2
+
+"let g:syntastic_javascript_checkers = ['eslint']
+
