@@ -7,7 +7,7 @@ set background=dark
 let g:rehash256 = 1
 let g:molokai_original = 1
 
-set guifont=Inconsolata\ for\ Powerline\:h14
+set guifont=Inconsolata\ for\ Powerline\:h16
 set guioptions-=r
 
 let g:gitgutter_realtime = 1
@@ -17,9 +17,6 @@ colorscheme monokai
 
 "256 colors
 let &t_Co=256
-
-set textwidth=72
-set colorcolumn=-2
 
 "let g:syntastic_javascript_checkers = ['eslint']
 
