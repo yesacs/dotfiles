@@ -1,5 +1,6 @@
-let g:airline_theme = 'airlineish'
+let g:airline_theme = 'badwolf'
 let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#enabled = 1
 
 set laststatus=2
 
@@ -7,16 +8,35 @@ set background=dark
 let g:rehash256 = 1
 let g:molokai_original = 1
 
-set guifont=Inconsolata\ for\ Powerline\:h16
+set guifont=Inconsolata\ for\ Powerline\:h14
 set guioptions-=r
+"set guicolors
+"set cursorline
 
 let g:gitgutter_realtime = 1
 let g:gitgutter_eager = 1
 
-colorscheme monokai
+let moria_style = 'light'
+let g:badwolf_darkgutter = 1
 
-"256 colors
-let &t_Co=256
+"colo moria
+"colo github
+"colo monokai
+colo molokai
+"colo onedark
+"colo hybrid_material
+"colo hybrid_reverse
+"colo badwolf
 
-"let g:syntastic_javascript_checkers = ['eslint']
 
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_html_tidy_exec = 'tidy5'
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

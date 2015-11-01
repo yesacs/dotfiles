@@ -272,7 +272,7 @@ else
 endif
 
 if version >= 700
-  call s:X("CursorLine","","1c1c1c","","",s:termBlack)
+  call s:X("CursorLine","","1E222A","","",s:termBlack)
   call s:X("CursorColumn","","1c1c1c","","",s:termBlack)
   call s:X("MatchParen","ffffff","556779","bold","","DarkCyan")
 
@@ -302,7 +302,7 @@ call s:X("WildMenu","f0a0c0","302028","","Magenta","")
 call s:X("Folded","a0a8b0","384048","italic",s:termBlack,"")
 call s:X("FoldColumn","535D66","1f1f1f","","",s:termBlack)
 call s:X("SignColumn","777777","333333","","",s:termBlack)
-call s:X("ColorColumn","","5f6b85","","",s:termBlack)
+call s:X("ColorColumn","","1E222A","","",s:termBlack)
 
 call s:X("Title","70b950","","bold","Green","")
 
@@ -330,7 +330,7 @@ call s:X("NonText","606060",g:onedark_background_color,"",s:termBlack,"")
 
 call s:X("SpecialKey","444444",g:onedark_background_color,"",s:termBlack,"")
 
-call s:X("Search","","302028","underline","Magenta","")
+call s:X("Search","","63535B","underline","Magenta","")
 
 call s:X("Directory","dad085","","","Yellow","")
 call s:X("ErrorMsg","","902020","","","DarkRed")

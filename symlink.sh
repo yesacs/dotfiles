@@ -28,4 +28,8 @@ git config --global commit.template ~/.git_commit_message
 
 
 
+echo "Making symlinks for hinters and linters"
+rm ~/.eslintrc; ln -s "$PWD"/eslintrc ~/.eslintrc
+
+
 echo "All Done!"
