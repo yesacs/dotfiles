@@ -21,7 +21,7 @@ CYANBOLD="\[\033[1;36m\]"
 WHITE="\[\033[0;37m\]"
 WHITEBOLD="\[\033[1;37m\]"
 
-PS1="$PURPLE\d \t\n🍔  $CYANBOLD[ $CYAN\h $CYANBOLD \w$YELLOW \$(parse_git_branch)$CYANBOLD] $GREEN"
+PS1="$PURPLE\d \t\n$CYANBOLD[ $CYAN\h $CYANBOLD \w$YELLOW \$(parse_git_branch)$CYANBOLD] $GREEN"
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
