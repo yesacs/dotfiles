@@ -1,6 +1,6 @@
 function parse_git_branch {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-    echo "("${ref#refs/heads/}")"
+    echo "("${ref#refs/heads/}") "
 }
 
 YELLOW="\[\033[0;33m\]"
