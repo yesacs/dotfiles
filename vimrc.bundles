@@ -53,6 +53,7 @@ Plug 'bling/vim-airline'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-surround'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'junegunn/vim-easy-align'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
