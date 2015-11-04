@@ -28,5 +28,18 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 CVSROOT=:pserver:ddccaseys@cvs.dealer.com:/projects/nexus
 export CVSROOT
 
-alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
-alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
+
+case `uname` in
+'Darwin')
+# Mac specific settings
+  alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+  alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
+# End Mac specific settings
+;;
+'Linux')
+# Linux specific settings
+
+# End Linux specific settings
+;;
+esac
+
