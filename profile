@@ -28,6 +28,9 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 CVSROOT=:pserver:ddccaseys@cvs.dealer.com:/projects/nexus
 export CVSROOT
 
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 case `uname` in
 'Darwin')
 # Mac specific settings
