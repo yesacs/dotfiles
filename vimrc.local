@@ -20,15 +20,10 @@ let g:gitgutter_eager = 1
 
 let moria_style = 'light'
 let g:badwolf_darkgutter = 1
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
 
-"colo moria
-"colo github
-"colo monokai
-colo molokai
-"colo onedark
-"colo hybrid_material
-"colo hybrid_reverse
-"colo badwolf
+colorscheme molokai
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)

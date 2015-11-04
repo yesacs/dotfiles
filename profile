@@ -28,7 +28,6 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 CVSROOT=:pserver:ddccaseys@cvs.dealer.com:/projects/nexus
 export CVSROOT
 
-
 case `uname` in
 'Darwin')
 # Mac specific settings
@@ -38,7 +37,7 @@ case `uname` in
 ;;
 'Linux')
 # Linux specific settings
-
+  export TERM=xterm-256color
 # End Linux specific settings
 ;;
 esac
