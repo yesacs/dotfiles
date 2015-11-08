@@ -1,7 +1,5 @@
 #!/bin/bash
-
 PWD=$(pwd)
-
 
 
 echo "Making vim symlinks for vim settings"
@@ -15,18 +13,15 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
-
 echo "Making symlinks for profile settings"
 rm ~/.profile; ln -sf "$PWD"/profile ~/.profile
 rm ~/.bashrc; ln -sf "$PWD"/profile ~/.bashrc
 source ~/.profile
 
 
-
-echo "Making symlinks for git template"
+echo "Making symlinks for git configs"
 rm ~/.git_commit_message; ln -s "$PWD"/git_commit_message ~/.git_commit_message
-git config --global commit.template ~/.git_commit_message
-
+rm ~/.gitconfig; ln -s "$PWD"/gitconfig ~/.gitconfig
 
 
 echo "Making symlinks for hinters and linters"

@@ -44,4 +44,3 @@ case `uname` in
 # End Linux specific settings
 ;;
 esac
-
