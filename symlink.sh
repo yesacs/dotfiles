@@ -15,8 +15,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 echo "Making symlinks for profile settings"
 rm ~/.profile; ln -sf "$PWD"/profile ~/.profile
-rm ~/.bashrc; ln -sf "$PWD"/profile ~/.bashrc
-source ~/.profile
+rm ~/.bash_profile; ln -sf "$PWD"/profile ~/.profile
+source ~/.bash_profile
 
 
 echo "Making symlinks for git configs"

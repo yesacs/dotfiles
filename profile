@@ -31,6 +31,10 @@ export CVSROOT
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+
+export PATH=$PATH:/usr/local/bin
+
+
 case `uname` in
 'Darwin')
 # Mac specific settings
