@@ -31,9 +31,9 @@ export CVSROOT
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+alias resource='source ~/.bash_profile'
 
 export PATH=$PATH:/usr/local/bin
-
 
 case `uname` in
 'Darwin')
@@ -48,3 +48,14 @@ case `uname` in
 # End Linux specific settings
 ;;
 esac
+
+source ~/.git-completion.bash
+
+# ~/.bash_profile
+if [ -f ~/.bashrc ]; then
+  source ~/.bashrc
+fi
+
+echo "Increasing ulimit to 4096"
+ulimit -n 4096
+echo ".bash_profile loaded"

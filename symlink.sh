@@ -14,14 +14,14 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 
 echo "Making symlinks for profile settings"
-rm ~/.profile; ln -sf "$PWD"/profile ~/.profile
-rm ~/.bash_profile; ln -sf "$PWD"/profile ~/.profile
-source ~/.bash_profile
+ln -sf "$PWD"/profile ~/.bash_profile
+#source ~/.bash_profile
 
 
 echo "Making symlinks for git configs"
 rm ~/.git_commit_message; ln -s "$PWD"/git_commit_message ~/.git_commit_message
 rm ~/.gitconfig; ln -s "$PWD"/gitconfig ~/.gitconfig
+rm ~/.git-completion.bash; ln -s "$PWD"/git-completion.bash ~/.git-completion.bash
 
 
 echo "Making symlinks for hinters and linters"
