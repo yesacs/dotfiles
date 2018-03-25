@@ -1,6 +1,8 @@
 # dotfiles
-Clone the repo and run the symlink.sh script to setup all the symlinks
+Clone the repo and run the symlink.sh script to setup all the symlinks, then in vim do ':PlugInstall' to finish
 
 the vimrc is based on the one found here https://github.com/thoughtbot/dotfiles
 the gitconfig is based on the one found here
 https://github.com/durdn/cfg/blob/master/.gitconfig
+
+
