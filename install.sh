@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# the iTerm theme you like MonokaiSoda
+
 PWD=$(pwd)
 BREW=$(command -v brew)
 
@@ -27,6 +29,9 @@ brew install neovim
 #FZF
 brew install fzf
 
+#bat
+brew install bat
+
 #FiraCode
 brew tap caskroom/fonts
 brew cask install font-fira-code
@@ -42,8 +47,12 @@ ln -sf ~/.tmux/.tmux.conf ~/.tmux.conf
 echo "Setting up config symlinks..."
 
 ln -sf "$PWD"/init.vim ~/.vimrc
-mkdir ~/.config/nvim; ln -sf "$PWD"/init.vim ~/.config/nvim/init.vim
-mkdir ~/.config/karabiner; ln -sf "$PWD"/karabiner.json ~/.config/karabiner/karabiner.json
+
+mkdir ~/.config/nvim
+ln -sf "$PWD"/init.vim ~/.config/nvim/init.vim
+
+mkdir ~/.config/karabiner
+ln -sf "$PWD"/karabiner.json ~/.config/karabiner/karabiner.json
 
 ln -sf "$PWD"/git_commit_message ~/.git_commit_message
 ln -sf "$PWD"/gitconfig ~/.gitconfig
@@ -57,4 +66,4 @@ ln -sf "$PWD"/zshrc ~/.zshrc
 #ohMyZsh for last
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-
+tic "$PWD"/iTerm-italics-fix

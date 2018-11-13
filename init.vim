@@ -29,6 +29,10 @@ call dein#begin('~/.config/nvim/')
 " Required:
 call dein#add('Shougo/dein.vim')
 
+"vim compat
+call dein#add('roxma/nvim-yarp')
+call dein#add('roxma/vim-hug-neovim-rpc')
+
 " Look'n'feel
 call dein#add('scrooloose/nerdtree')
 call dein#add('airblade/vim-gitgutter')
@@ -55,12 +59,10 @@ call dein#add('joshdick/onedark.vim')
 call dein#add('kaicataldo/material.vim')
 call dein#add('rakr/vim-one')
 call dein#add('drewtempelmeyer/palenight.vim')
+call dein#add('dracula/vim.git')
 
 " Deoplete (autocomplete) & other shitty IDE-like behaviour
-"if (has("nvim"))
- call dein#add('Shougo/deoplete.nvim')
-"endif
-
+call dein#add('Shougo/deoplete.nvim')
 call dein#add('Shougo/neoinclude.vim')
 call dein#add('Shougo/context_filetype.vim')
 call dein#add('carlitux/deoplete-ternjs')
@@ -145,9 +147,11 @@ let g:ale_fixers = ['prettier', 'eslint']
 
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
-set textwidth=80
-set colorcolumn=+1        " highlight column after 'textwidth'
+if (has("nvim"))
+  set colorcolumn=+1        " highlight column after 'textwidth'
+endif
 set noshowmode
+set textwidth=80
 
 "buffers --------------------
 set hidden
@@ -201,7 +205,6 @@ vnoremap <leader>y "+y
 
 " Clean up all whitespace at the end of lines for the whole file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
-
 
 " vim specific stuff
 set laststatus=2
