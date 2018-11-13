@@ -8,19 +8,19 @@ echo "Installing shit..."
 #Homebrew
 if command -v brew
 then 
-echo "  Brew installed already, skipping"
+echo "!!!!  Brew installed already, skipping"
 else
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
-
-#ohMyZsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 #Dein
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 sh ./installer.sh ~/.cache/dein
 rm ./installer.sh
 
+
+if command -v brew
+then
 #Nvim
 brew install neovim
 
@@ -30,22 +30,31 @@ brew install fzf
 #FiraCode
 brew tap caskroom/fonts
 brew cask install font-fira-code
+else
+  echo "!!!!  Homebrew not found skipping brew setup, you may have to install
+  manually"
+fi
 
 #OhMyTmux
-git clone https://github.com/gpakosz/.tmux.git ~
-ln -s -f ~/.tmux/.tmux.conf
+git clone https://github.com/gpakosz/.tmux.git ~/.tmux
+ln -sf ~/.tmux/.tmux.conf ~/.tmux.conf
 
-echo "Setting up symlinks..."
+echo "Setting up config symlinks..."
 
-rm ~/.vimrc; ln -s "$PWD"/init.vim ~/.vimrc
-rm ~/.config/nvim/init.vim; ln -s "$PWD"/init.vim ~/.config/nvim/init.vim
-rm ~/.config/karabiner/karabiner.json; ln -s "$PWD"/karabiner.json ~/.config/karabiner/karabiner.json
+ln -sf "$PWD"/init.vim ~/.vimrc
+mkdir ~/.config/nvim; ln -sf "$PWD"/init.vim ~/.config/nvim/init.vim
+mkdir ~/.config/karabiner; ln -sf "$PWD"/karabiner.json ~/.config/karabiner/karabiner.json
 
-rm ~/.git_commit_message; ln -s "$PWD"/git_commit_message ~/.git_commit_message
-rm ~/.gitconfig; ln -s "$PWD"/gitconfig ~/.gitconfig
-rm ~/.git-completion.bash; ln -s "$PWD"/git-completion.bash ~/.git-completion.bash
+ln -sf "$PWD"/git_commit_message ~/.git_commit_message
+ln -sf "$PWD"/gitconfig ~/.gitconfig
+ln -sf "$PWD"/git-completion.bash ~/.git-completion.bash
 
-rm ~/.eslintrc; ln -s "$PWD"/eslintrc ~/.eslintrc
+ln -sf "$PWD"/eslintrc ~/.eslintrc
 
-rm ~/.tmux.conf.local; ln -s "$PWD"/tmux.conf.local ~/.tmux.conf.local
-rm ~/.zshrc; ln -s "$PWD"/zshrc ~/.zshrc
+ln -sf "$PWD"/tmux.conf.local ~/.tmux.conf.local
+ln -sf "$PWD"/zshrc ~/.zshrc
+
+#ohMyZsh for last
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+

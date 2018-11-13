@@ -20,10 +20,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/caseysullivan/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin('/Users/caseysullivan/.config/nvim/')
+call dein#begin('~/.config/nvim/')
 
 " Let dein manage dein
 " Required:
@@ -57,7 +57,10 @@ call dein#add('rakr/vim-one')
 call dein#add('drewtempelmeyer/palenight.vim')
 
 " Deoplete (autocomplete) & other shitty IDE-like behaviour
-call dein#add('Shougo/deoplete.nvim')
+"if (has("nvim"))
+ call dein#add('Shougo/deoplete.nvim')
+"endif
+
 call dein#add('Shougo/neoinclude.vim')
 call dein#add('Shougo/context_filetype.vim')
 call dein#add('carlitux/deoplete-ternjs')
@@ -199,3 +202,9 @@ vnoremap <leader>y "+y
 " Clean up all whitespace at the end of lines for the whole file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
+
+" vim specific stuff
+set laststatus=2
+if !has('gui_running')
+  set t_Co=256
+endif

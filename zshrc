@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/caseysullivan/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -10,6 +10,9 @@ export ZSH=/Users/caseysullivan/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
 set -g default-terminal "xterm"
+
+export TERM="screen-256color"
+export TERM=xterm-256color
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
