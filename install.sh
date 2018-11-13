@@ -1,11 +1,17 @@
 #!/bin/bash
 
 PWD=$(pwd)
+BREW=$(command -v brew)
 
 echo "Installing shit..."
 
 #Homebrew
+if command -v brew
+then 
+echo "  Brew installed already, skipping"
+else
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
 #ohMyZsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -26,14 +32,14 @@ brew tap caskroom/fonts
 brew cask install font-fira-code
 
 #OhMyTmux
-git clone https://github.com/gpakosz/.tmux.git
-ln -s -f .tmux/.tmux.conf
+git clone https://github.com/gpakosz/.tmux.git ~
+ln -s -f ~/.tmux/.tmux.conf
 
 echo "Setting up symlinks..."
 
 rm ~/.vimrc; ln -s "$PWD"/init.vim ~/.vimrc
-rm ~/.config/nvim/init.vim; "$PWD"/init.vim ~/.config/nvim/init.vim
-rm ~/.config/karabiner/karabiner.json; "$PWD"/karabiner.json ~/.config/karabiner/karabiner.json
+rm ~/.config/nvim/init.vim; ln -s "$PWD"/init.vim ~/.config/nvim/init.vim
+rm ~/.config/karabiner/karabiner.json; ln -s "$PWD"/karabiner.json ~/.config/karabiner/karabiner.json
 
 rm ~/.git_commit_message; ln -s "$PWD"/git_commit_message ~/.git_commit_message
 rm ~/.gitconfig; ln -s "$PWD"/gitconfig ~/.gitconfig
