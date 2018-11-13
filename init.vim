@@ -3,8 +3,7 @@
 " Download and install nvim, then install 'dein' the vim-package manager.
 " During installation of dein it will output a sample configuration, take the
 " two lines that `set runtimepath=PATH` and `dein#begin(PATH)` and replace the
-" ones in this file, then install FZF
-
+" ones in this file, then install FZF 
 let mapleader = " "
 
 set showmatch
@@ -60,6 +59,8 @@ call dein#add('kaicataldo/material.vim')
 call dein#add('rakr/vim-one')
 call dein#add('drewtempelmeyer/palenight.vim')
 call dein#add('dracula/vim.git')
+call dein#add('jacoborus/tender.vim')
+call dein#add('sonph/onehalf')
 
 " Deoplete (autocomplete) & other shitty IDE-like behaviour
 call dein#add('Shougo/deoplete.nvim')
@@ -194,7 +195,8 @@ let g:lightline = {
     \ }
 
 "let g:lightline.colorscheme = 'onedark'
-"let g:lightline.colorscheme = 'powerline'
+"let g:lightline.colorscheme = 'tender'
+"let g:lightline.colorscheme = 'onehalfdark'
 
 "fzf 
 set rtp+=/usr/local/opt/fzf
