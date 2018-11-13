@@ -59,3 +59,5 @@ fi
 echo "Increasing ulimit to 4096"
 ulimit -n 4096
 echo ".bash_profile loaded"
+
+export PATH="$HOME/.cargo/bin:$PATH"

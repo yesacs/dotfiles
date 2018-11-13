@@ -23,6 +23,8 @@ let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 
 colorscheme molokai
+" colorscheme palenight
+
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -40,3 +42,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
+
+set ttyfast
+set lazyredraw
+set nocursorline

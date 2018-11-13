@@ -56,6 +56,7 @@ Plug 'tpope/vim-surround'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'junegunn/vim-easy-align'
 Plug 'pangloss/vim-javascript'
+Plug 'drewtempelmeyer/palenight.vim'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local

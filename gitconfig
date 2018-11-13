@@ -1,6 +1,6 @@
 # core {{{
 [core]
-    editor = vim
+    editor = nvim
     pager=less -x4
 [commit]
     template = ~/.git_commit_message
@@ -8,8 +8,8 @@
 
 # user {{{
 [user]
-    email = (none)
-    name = Casey Sullivan
+	email = casey.sullivan@gmail.com
+	name = Casey Sullivan
 # color {{{
 [color]
     branch = auto
@@ -143,3 +143,10 @@
     ra = "!f() { git remote add $1 https://bitbucket.org/$2.git; }; f"
     # }}}
 # }}}
+[merge]
+	tool = opendiff
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
