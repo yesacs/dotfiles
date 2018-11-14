@@ -184,7 +184,7 @@ let g:go_version_warning = 0
 let g:lightline = {
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'readonly', 'absolutepath', 'modified' ] ],
+    \             [ 'readonly', 'filename', 'modified' ] ],
     \   'right': [ [ 'lineinfo' ],
     \              [ 'percent' ],
     \              [ 'filetype' ] ]
