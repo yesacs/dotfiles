@@ -35,6 +35,8 @@ brew install bat
 #FiraCode
 brew tap caskroom/fonts
 brew cask install font-fira-code
+brew cask install font-hack-nerd-font
+
 else
   echo "!!!!  Homebrew not found skipping brew setup, you may have to install
   manually"
