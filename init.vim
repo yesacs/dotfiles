@@ -68,10 +68,13 @@ call dein#add('Shougo/neoinclude.vim')
 call dein#add('Shougo/context_filetype.vim')
 call dein#add('carlitux/deoplete-ternjs')
 call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neopairs.vim')
 call dein#add('Shougo/neosnippet-snippets')
+call dein#add('chrisbra/NrrwRgn')
 
 " Required:
 call dein#end()
+
 
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -104,8 +107,7 @@ endif
 " Configure deoplete and subcandidates
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
-let g:deoplete#sources#clang#libclang_path="/usr/lib/llvm-4.0/lib/libclang.so"
-let g:deoplete#sources#clang#clang_header="/usr/include/clang"
+
 " Let auto-complete take effect on TAB key
 inoremap <silent><expr> <TAB>
     \ pumvisible() ? "\<C-n>" :
@@ -118,6 +120,24 @@ inoremap <silent><expr> <TAB>
 " Close any automatically opened scratch-buffers 
 " once completion popup the is closed
 autocmd CompleteDone * pclose
+
+"https://gist.github.com/philss/abfbb3a79975c33f283e874c9ada5c82
+let g:python_host_prog = '/usr/local/bin/python2'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
+"let g:deoplete#sources#clang#libclang_path="/usr/lib/llvm-4.0/lib/libclang.so"
+"let g:deoplete#sources#clang#clang_header="/usr/include/clang"
+let g:tern_show_signature_in_pum = 1 
+let g:deoplete#sources#ternjs#types = 1
+let g:deoplete#sources#ternjs#docs = 1
+"autocmd VimEnter * inoremap <expr> <cr> ((pumvisible()) ? (deoplete#close_popup()) : ("\<cr>"))
+"" This to close preview when insert mode leaves
+"autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+"let g:neopairs#enable = 1
+"call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
+
 
 map <leader>n :NERDTreeToggle<CR>
 map <leader>e :Explore<CR>
@@ -213,3 +233,4 @@ set laststatus=2
 if !has('gui_running')
   set t_Co=256
 endif
+

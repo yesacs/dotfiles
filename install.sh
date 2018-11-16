@@ -64,6 +64,7 @@ ln -sf "$PWD"/eslintrc ~/.eslintrc
 
 ln -sf "$PWD"/tmux.conf.local ~/.tmux.conf.local
 ln -sf "$PWD"/zshrc ~/.zshrc
+ln -sf "$PWD"/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 #ohMyZsh for last
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
