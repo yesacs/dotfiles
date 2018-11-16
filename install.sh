@@ -23,6 +23,9 @@ rm ./installer.sh
 
 if command -v brew
 then
+#zsh
+brew install zsh
+
 #Nvim
 brew install neovim
 
@@ -42,9 +45,16 @@ else
   manually"
 fi
 
-#OhMyTmux
+#ohMyTmux
 git clone https://github.com/gpakosz/.tmux.git ~/.tmux
 ln -sf ~/.tmux/.tmux.conf ~/.tmux.conf
+
+#ohMyZsh for last
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+#ohMyFish
+curl -L https://get.oh-my.fish | fish
+
 
 echo "Setting up config symlinks..."
 
@@ -65,8 +75,5 @@ ln -sf "$PWD"/eslintrc ~/.eslintrc
 ln -sf "$PWD"/tmux.conf.local ~/.tmux.conf.local
 ln -sf "$PWD"/zshrc ~/.zshrc
 ln -sf "$PWD"/alacritty.yml ~/.config/alacritty/alacritty.yml
-
-#ohMyZsh for last
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 tic "$PWD"/iTerm-italics-fix
