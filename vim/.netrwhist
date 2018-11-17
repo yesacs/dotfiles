@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/casey/GitHub/resume'
-let g:netrw_dirhist_2='/Users/casey'
-let g:netrw_dirhist_3='/Users/casey/GitHub/resume'
-let g:netrw_dirhist_4='/Users/casey/.atom'
-let g:netrw_dirhist_5='/Users/casey/GitHub/hikoo-ui'
-let g:netrw_dirhist_6='/Users/casey'
