@@ -1,7 +1,6 @@
 function fish_prompt
   set -l tomita_vi_mode "$TOMITA_VI"
 
-  printf ' '
   set_color $fish_color_cwd
   printf '%s' (prompt_pwd)
 
