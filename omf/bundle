@@ -1,0 +1,5 @@
+package config
+package tmux-zen
+theme cmorrell
+theme default
+theme tomita
