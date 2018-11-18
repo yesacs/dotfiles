@@ -17,5 +17,3 @@ ln -sf "$PWD"/git-completion.bash ~/.git-completion.bash
 ln -sf "$PWD"/eslintrc ~/.eslintrc
 ln -sf "$PWD"/tmux.conf.local ~/.tmux.conf.local
 
-tic "$PWD"/iTerm-italics-fix
-

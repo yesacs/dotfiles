@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# the iTerm theme you like MonokaiSoda
 PWD=$(pwd)
 BREW=$(command -v brew)
 
@@ -15,52 +14,46 @@ else
 fi
 
 #Dein
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh ./installer.sh ~/.cache/dein
+curl -s https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh ./installer.sh ~/.cache/dein > /dev/null
 rm ./installer.sh
 
 if command -v brew
 then
-#Nvim
+  
+# install Nvim
 brew install neovim
 
-#FZF
+# install FZF
 brew install fzf
 
-#bat
+# install bat
 brew install bat
 
-#FiraCode
+# install FiraCode
 brew tap caskroom/fonts
 brew cask install font-fira-code
 brew cask install font-hack-nerd-font
 
 else
   printf "!!!!  Homebrew not found skipping brew setup, you may have to install
-  manually"
+  some stuff manually"
 fi
 
 #ohMyTmux
 git clone https://github.com/gpakosz/.tmux.git ~/.tmux
 ln -sf ~/.tmux/.tmux.conf ~/.tmux.conf
 
-#ohMyFish
-#curl -L https://get.oh-my.fish | fish
-
-printf "\n Setting up config symlinks...\n"
-
-ln -sf "$PWD"/nvim ~/.config/nvim/
-ln -sf "$PWD"/alacritty ~/.config/alacritty
-ln -sf "$PWD"/karabiner ~/.config/karabiner/
-ln -sf "$PWD"/fish ~/.config/fish/
-ln -sf "$PWD"/omf ~/.config/omf/
-
-ln -sf "$PWD"/init.vim ~/.vimrc
-ln -sf "$PWD"/git_commit_message ~/.git_commit_message
-ln -sf "$PWD"/gitconfig ~/.gitconfig
-ln -sf "$PWD"/git-completion.bash ~/.git-completion.bash
-ln -sf "$PWD"/eslintrc ~/.eslintrc
-ln -sf "$PWD"/tmux.conf.local ~/.tmux.conf.local
+./symlinks.sh
 
 tic "$PWD"/iTerm-italics-fix
 
+
+
+################################################################################
+
+
+
+# the iTerm theme you like MonokaiSoda
+# you probably still need to install ohMyFish
+#curl -L https://get.oh-my.fish | fish
