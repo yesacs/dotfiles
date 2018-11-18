@@ -56,4 +56,6 @@ tic "$PWD"/iTerm-italics-fix
 
 # the iTerm theme you like MonokaiSoda
 # you probably still need to install ohMyFish
-#curl -L https://get.oh-my.fish | fish
+#   curl -L https://get.oh-my.fish | fish
+# once fish is your default shell, for vim mode
+#   fish_vi_key_bindings
