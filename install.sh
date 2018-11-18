@@ -1,22 +1,24 @@
 #!/bin/bash
 
 PWD=$(pwd)
-BREW=$(command -v brew)
 
 echo "Installing shit..."
 
-#Homebrew
-if command -v brew
-then 
-printf "!!!!  Brew installed already, skipping"
-else
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
 #Dein
+printf "Installing Dein..."
 curl -s https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 sh ./installer.sh ~/.cache/dein > /dev/null
 rm ./installer.sh
+printf " Done!\n\n"
+
+#Homebrew
+printf "Installing HomeBrew...\n"
+if command -v brew
+then 
+ printf "😓 Homebrew installed already, skipping...\n\n"
+else
+ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
 if command -v brew
 then
@@ -36,26 +38,19 @@ brew cask install font-fira-code
 brew cask install font-hack-nerd-font
 
 else
-  printf "!!!!  Homebrew not found skipping brew setup, you may have to install
-  some stuff manually"
+  printf "\n😓 Homebrew not found skipping brew setup, you may have to install
+  some stuff manually\n\n"
 fi
 
 #ohMyTmux
-git clone https://github.com/gpakosz/.tmux.git ~/.tmux
-ln -sf ~/.tmux/.tmux.conf ~/.tmux.conf
+printf "\n"
+git clone https://github.com/gpakosz/.tmux.git ~/.tmux || 
+  printf "😓 Tried to get ohMyTmux and failed, maybe you already got it?\n"
 
-./symlinks.sh
+ln -sf ~/.tmux/.tmux.conf ~/.tmux.conf
 
 tic "$PWD"/iTerm-italics-fix
 
+./symlinks.sh
+./errata.sh
 
-
-################################################################################
-
-
-
-# the iTerm theme you like MonokaiSoda
-# you probably still need to install ohMyFish
-#   curl -L https://get.oh-my.fish | fish
-# once fish is your default shell, for vim mode
-#   fish_vi_key_bindings

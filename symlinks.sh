@@ -2,7 +2,7 @@
 
 PWD=$(pwd)
 
-printf "\nSetting up config symlinks...\n"
+printf "\nSetting up config symlinks..."
 
 ln -sf "$PWD"/karabiner ~/.config
 ln -sf "$PWD"/nvim ~/.config
@@ -19,3 +19,4 @@ ln -sf "$PWD"/git-completion.bash ~/.git-completion.bash
 ln -sf "$PWD"/eslintrc ~/.eslintrc
 ln -sf "$PWD"/tmux.conf.local ~/.tmux.conf.local
 
+printf " Done!\n\n"
