@@ -15,17 +15,16 @@ function fish_prompt
 
   if test -z (string match -ri '^no|false|0$' $tomita_vi_mode)
     printf ' '
-    set_color --bold brwhite
     switch $fish_bind_mode
       case default
-        set_color -b green
-        printf ' N '
+        set_color -o green
+        printf '[N]'
       case insert
-        set_color -b cyan
-        printf ' I '
+        set_color -o cyan
+        printf '[I]'
       case visual
-        set_color -b yellow
-        printf ' V '
+        set_color -o yellow
+        printf '[V]'
     end
     set_color normal
   end
