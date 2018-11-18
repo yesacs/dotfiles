@@ -10,7 +10,9 @@ ln -sf "$PWD"/fish ~/.config
 ln -sf "$PWD"/omf ~/.config
 ln -sf "$PWD"/alacritty ~/.config
 
-ln -sf "$PWD"/init.vim ~/.vimrc
+# vim backwards compat
+ln -sf "$PWD"/nvim/init.vim ~/.vimrc
+
 ln -sf "$PWD"/git_commit_message ~/.git_commit_message
 ln -sf "$PWD"/gitconfig ~/.gitconfig
 ln -sf "$PWD"/git-completion.bash ~/.git-completion.bash
