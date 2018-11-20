@@ -22,7 +22,10 @@ fi
 
 if command -v brew
 then
-  
+
+#install fortune  
+brew install fortune
+
 # install Nvim
 brew install neovim
 
