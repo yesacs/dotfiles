@@ -1,4 +1,5 @@
 package config
+package sublime
 package tmux-zen
 theme cmorrell
 theme default
