@@ -24,6 +24,9 @@ function fish_prompt
       case visual
         set_color -o yellow
         printf '[V]'
+      case replace_one
+        set_color -o red
+        printf '[R]'
     end
     set_color normal
   end
