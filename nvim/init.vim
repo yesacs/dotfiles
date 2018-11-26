@@ -141,7 +141,6 @@ autocmd VimEnter * inoremap <expr> <cr> ((pumvisible()) ? (deoplete#close_popup(
 "let g:neopairs#enable = 1
 "call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
 
-
 map <leader>n :NERDTreeToggle<CR>
 map <leader>e :Explore<CR>
 map <C-p> :FZF<CR>
@@ -167,13 +166,18 @@ set numberwidth=5
 set relativenumber
 
 let g:ale_fix_on_save = 1
-let g:ale_fixers = ['prettier', 'eslint']
+let g:ale_fixers = {
+\   'javascript': ['prettier', 'eslint'],
+\   'css': ['prettier', 'eslint'],
+\   'html': ['prettier']
+\}
 
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
 if (has("nvim"))
   set colorcolumn=+1        " highlight column after 'textwidth'
 endif
+
 set noshowmode
 set textwidth=80
 

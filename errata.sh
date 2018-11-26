@@ -4,6 +4,8 @@ printf "\n##################  ERRATA ##################"
 
 printf "\n\nthe iTerm theme you like MonokaiSoda"
 
+printf "\n\ninstall npm, yarn and prettier"
+
 printf "\n\nadd fish to /etc/shells "
 printf "\n$ sudo echo /usr/local/bin/fish >> /etc/shells"
 
