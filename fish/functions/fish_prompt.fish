@@ -22,10 +22,10 @@ function fish_prompt
         set_color -o cyan
         printf '[I]'
       case visual
-        set_color -o yellow
+        set_color -o red
         printf '[V]'
       case replace_one
-        set_color -o red
+        set_color -o yellow
         printf '[R]'
     end
     set_color normal
