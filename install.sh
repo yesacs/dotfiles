@@ -1,4 +1,4 @@
-#!/bin/bash
+jj#!/bin/bash
 
 PWD=$(pwd)
 

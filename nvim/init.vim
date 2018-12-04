@@ -95,7 +95,7 @@ execute "set t_8b=\e[48;2;%lu;%lu;%lum"
 set background=dark
 colorscheme onedark
 
-let g:onedark_terminal_italics=1 
+"let g:onedark_terminal_italics=1 
 
 " Required:
 filetype plugin indent on
@@ -169,6 +169,7 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
 \   'css': ['prettier', 'eslint'],
+\   'scss': ['prettier', 'eslint'],
 \   'html': ['prettier']
 \}
 
@@ -200,7 +201,7 @@ nmap <leader>f :Ack
 nmap <leader>l :Lack 
 
 set ttyfast
-set lazyredraw
+"set lazyredraw
 set nocursorline
 set synmaxcol=128
 syntax sync minlines=256
