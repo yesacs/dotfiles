@@ -10,6 +10,7 @@ set showmatch
 set noswapfile
 set noruler
 set autowrite
+set noshowcmd
 
 let g:matchparen_timeout = 10 
 
@@ -249,5 +250,5 @@ endif
 
 " match line number colors to lightline color scheme
 " powerline
-let g:conoline_color_normal_nr_dark = 'guibg=#000000 guifg=#aed900'
-let g:conoline_color_insert_nr_dark = 'guibg=#005e89 guifg=#ffffff'
+let g:conoline_color_normal_dark = 'guibg=#181818'
+let g:conoline_color_insert_dark = 'guibg=#080808'
