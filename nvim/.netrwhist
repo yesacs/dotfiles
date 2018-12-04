@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/caseysullivan/Sites/quote-tool/src/components/Quote'
+let g:netrw_dirhist_2='/Users/caseysullivan/Sites/quote-tool/src'
+let g:netrw_dirhist_3='/Users/caseysullivan/Sites/quote-tool/src/selectors'
+let g:netrw_dirhist_4='/Users/caseysullivan/Sites/quote-tool/src'

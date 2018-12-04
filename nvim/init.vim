@@ -8,7 +8,7 @@ let mapleader = " "
 
 set showmatch
 set noswapfile
-set ruler
+set noruler
 set autowrite
 
 let g:matchparen_timeout = 10 
@@ -33,7 +33,10 @@ call dein#add('roxma/nvim-yarp')
 call dein#add('roxma/vim-hug-neovim-rpc')
 
 " Look'n'feel
-call dein#add('scrooloose/nerdtree')
+"call dein#add('scrooloose/nerdtree')
+"call dein#add('tpope/vim-vinegar')
+"call dein#add('Shougo/unite.vim')
+"call dein#add('Shougo/vimfiler.vim')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('junegunn/fzf')
 call dein#add('junegunn/fzf.vim')
@@ -46,6 +49,7 @@ call dein#add('tpope/vim-fugitive')
 call dein#add('wincent/ferret')
 call dein#add('easymotion/vim-easymotion')
 call dein#add('tpope/vim-surround')
+"call dein#add('myusuf3/numbers.vim')
 
 " Lang support
 call dein#add('pangloss/vim-javascript')
@@ -112,6 +116,8 @@ endif
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 
+let g:vimfiler_as_default_explorer = 1
+
 " Let auto-complete take effect on TAB key
 inoremap <silent><expr> <TAB>
     \ pumvisible() ? "\<C-n>" :
@@ -141,7 +147,7 @@ autocmd VimEnter * inoremap <expr> <cr> ((pumvisible()) ? (deoplete#close_popup(
 "let g:neopairs#enable = 1
 "call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
 
-map <leader>n :NERDTreeToggle<CR>
+"map <leader>n :NERDTreeToggle<CR>
 map <leader>e :Explore<CR>
 map <C-p> :FZF<CR>
 map <leader>p :FZF<CR>
@@ -163,7 +169,6 @@ inoremap <C-Space> <Esc>
 " Activate line-numbers eveywhere
 set number
 set numberwidth=5
-set relativenumber
 
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
@@ -175,9 +180,9 @@ let g:ale_fixers = {
 
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
-if (has("nvim"))
-  set colorcolumn=+1        " highlight column after 'textwidth'
-endif
+"if (has("nvim"))
+  "set colorcolumn=+1        " highlight column after 'textwidth'
+"endif
 
 set noshowmode
 set textwidth=80
@@ -242,3 +247,7 @@ if !has('gui_running')
   set t_Co=256
 endif
 
+" match line number colors to lightline color scheme
+" powerline
+let g:conoline_color_normal_nr_dark = 'guibg=#000000 guifg=#aed900'
+let g:conoline_color_insert_nr_dark = 'guibg=#005e89 guifg=#ffffff'
