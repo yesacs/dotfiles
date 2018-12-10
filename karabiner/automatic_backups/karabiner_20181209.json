@@ -1420,7 +1420,7 @@
                 }
             ],
             "name": "Mac Keys",
-            "selected": true,
+            "selected": false,
             "simple_modifications": [
                 {
                     "from": {
@@ -1428,14 +1428,6 @@
                     },
                     "to": {
                         "key_code": "left_control"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "left_control"
-                    },
-                    "to": {
-                        "key_code": "caps_lock"
                     }
                 }
             ],
@@ -1553,7 +1545,7 @@
                 }
             ],
             "name": "Pok3r",
-            "selected": false,
+            "selected": true,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0

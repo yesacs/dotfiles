@@ -1,8 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/caseysullivan/Sites/dotfiles'
-let g:netrw_dirhist_2='/Users/caseysullivan/Sites/dotfiles/nvim'
-let g:netrw_dirhist_3='/Users/caseysullivan/Sites/dotfiles'
-let g:netrw_dirhist_4='/Users/caseysullivan/Sites/dotfiles/nvim'
-let g:netrw_dirhist_5='/Users/caseysullivan/Sites/dotfiles'
-let g:netrw_dirhist_6='/Users/caseysullivan/Sites/dotfiles/nvim'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/caseysullivan/Sites/quote-tool/discada/src/Form'
+let g:netrw_dirhist_2='/Users/caseysullivan/Sites/quote-tool/discada/src/Form/ValueSelector'
