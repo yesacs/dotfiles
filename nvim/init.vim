@@ -11,6 +11,7 @@ set noswapfile
 set noruler
 set autowrite
 set noshowcmd
+set nohlsearch
 
 let g:matchparen_timeout = 10 
 
@@ -174,6 +175,7 @@ set numberwidth=5
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
+\   'json': ['prettier', 'eslint'],
 \   'css': ['prettier', 'eslint'],
 \   'scss': ['prettier', 'eslint'],
 \   'html': ['prettier']
