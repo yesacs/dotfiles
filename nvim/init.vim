@@ -35,10 +35,6 @@ call dein#add('roxma/nvim-yarp')
 call dein#add('roxma/vim-hug-neovim-rpc')
 
 " Look'n'feel
-"call dein#add('scrooloose/nerdtree')
-"call dein#add('tpope/vim-vinegar')
-"call dein#add('Shougo/unite.vim')
-"call dein#add('Shougo/vimfiler.vim')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('junegunn/fzf')
 call dein#add('junegunn/fzf.vim')
@@ -51,7 +47,7 @@ call dein#add('tpope/vim-fugitive')
 call dein#add('wincent/ferret')
 call dein#add('easymotion/vim-easymotion')
 call dein#add('tpope/vim-surround')
-"call dein#add('myusuf3/numbers.vim')
+call dein#add('myusuf3/numbers.vim')
 
 " Lang support
 call dein#add('pangloss/vim-javascript')
@@ -67,6 +63,8 @@ call dein#add('drewtempelmeyer/palenight.vim')
 call dein#add('dracula/vim.git')
 call dein#add('jacoborus/tender.vim')
 call dein#add('sonph/onehalf')
+call dein#add('morhetz/gruvbox')
+call dein#add('cocopon/lightline-hybrid.vim')
 
 " Deoplete (autocomplete) & other shitty IDE-like behaviour
 call dein#add('Shougo/deoplete.nvim')
@@ -98,10 +96,22 @@ endif
 execute "set t_8f=\e[38;2;%lu;%lu;%lum"
 execute "set t_8b=\e[48;2;%lu;%lu;%lum"
 
-set background=dark
-colorscheme onedark
+let g:onedark_terminal_italics=1 
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_bold = 0
+let g:gruvbox_number_column = 'bg0'
+let g:gruvbox_sign_column = 'bg0'
 
-"let g:onedark_terminal_italics=1 
+let g:material_theme_style = 'palenight'
+"let g:material_theme_style = 'dark'
+
+set background=dark
+colorscheme one
+"colorscheme onedark
+"colorscheme palenight
+"colorscheme material
+"colorscheme gruvbox
+"colorscheme hybrid
 
 " Required:
 filetype plugin indent on
@@ -231,8 +241,13 @@ let g:lightline = {
     \ }
 
 "let g:lightline.colorscheme = 'onedark'
-"let g:lightline.colorscheme = 'tender'
-"let g:lightline.colorscheme = 'onehalfdark'
+let g:lightline.colorscheme = 'tender'
+"let g:lightline.colorscheme = 'hybrid'
+"let g:lightline.colorscheme = 'wombat'
+"let g:lightline.colorscheme = 'one'
+"let g:lightline.colorscheme = 'gruvbox'
+"let g:lightline.colorscheme = 'material'
+"let g:lightline.colorscheme = 'material_vim'
 
 "fzf 
 set rtp+=/usr/local/opt/fzf
@@ -254,3 +269,10 @@ endif
 " powerline
 let g:conoline_color_normal_dark = 'guibg=#181818'
 let g:conoline_color_insert_dark = 'guibg=#080808'
+
+" Uncomment the following to have Vim jump to the last position when                                                       
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
