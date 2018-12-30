@@ -230,18 +230,28 @@ let g:go_version_warning = 0
 let g:lightline = {
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'readonly', 'filename', 'modified' ] ],
-    \   'right': [ [ 'lineinfo' ],
+    \             [ 'filename', 'modified', 'readonly' ] ],
+    \   'right': [ 
+    \              [ 'lineinfo' ],
     \              [ 'percent' ],
-    \              [ 'filetype' ] ]
+    \              [ 'linter_warnings', 'linter_errors'],
+    \              [ 'filetype' ],
+    \            ]
     \ },
-    \ 'component_function': {
-    \   'gitbranch': 'fugitive#head'
+    \ 'component_expand': {
+    \   'linter_warnings': 'LightlineLinterWarnings',
+    \   'linter_errors': 'LightlineLinterErrors',
+    \   'linter_ok': 'LightlineLinterOK'
+    \ },
+    \ 'component_type': {
+    \   'readonly': 'error',
+    \   'linter_warnings': 'warning',
+    \   'linter_errors': 'error'
     \ },
     \ }
 
-"let g:lightline.colorscheme = 'onedark'
-let g:lightline.colorscheme = 'tender'
+let g:lightline.colorscheme = 'onedark'
+"let g:lightline.colorscheme = 'tender'
 "let g:lightline.colorscheme = 'hybrid'
 "let g:lightline.colorscheme = 'wombat'
 "let g:lightline.colorscheme = 'one'
@@ -276,3 +286,19 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
+
+
+function! LightlineLinterWarnings() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '' : printf('%d', all_non_errors)
+endfunction
+
+function! LightlineLinterErrors() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '' : printf('%d', all_errors)
+endfunction
+
