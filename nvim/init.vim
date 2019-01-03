@@ -216,11 +216,11 @@ nnoremap <C-c> <C-w><C-c>
 
 "search
 nmap <leader>f :Ag 
-"nmap <leader>f :Ack 
-"nmap <leader>l :Lack 
+nmap <leader>F :Ack 
+nmap <leader>L :Lack 
 
 set ttyfast
-"set lazyredraw
+set lazyredraw
 set nocursorline
 set synmaxcol=128
 syntax sync minlines=256
@@ -261,7 +261,7 @@ let g:lightline.colorscheme = 'tender'
 "let g:lightline.colorscheme = 'material_vim'
 
 "fzf 
-"set rtp+=/usr/local/opt/fzf
+set rtp+=/usr/local/opt/fzf
 
 " Map copy to system clipboard to be a little more finger friendly
 nnoremap <leader>y "+y
