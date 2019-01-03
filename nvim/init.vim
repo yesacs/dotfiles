@@ -36,8 +36,8 @@ call dein#add('roxma/vim-hug-neovim-rpc')
 
 " Look'n'feel
 call dein#add('airblade/vim-gitgutter')
-call dein#add('junegunn/fzf')
-call dein#add('junegunn/fzf.vim')
+"call dein#add('junegunn/fzf')
+"call dein#add('junegunn/fzf.vim')
 call dein#add('mhinz/vim-startify')
 call dein#add('equalsraf/neovim-gui-shim')
 call dein#add('jlanzarotta/bufexplorer')
@@ -215,8 +215,9 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-c> <C-w><C-c>
 
 "search
-nmap <leader>f :Ack 
-nmap <leader>l :Lack 
+nmap <leader>f :Ag 
+"nmap <leader>f :Ack 
+"nmap <leader>l :Lack 
 
 set ttyfast
 "set lazyredraw
@@ -260,7 +261,7 @@ let g:lightline.colorscheme = 'tender'
 "let g:lightline.colorscheme = 'material_vim'
 
 "fzf 
-set rtp+=/usr/local/opt/fzf
+"set rtp+=/usr/local/opt/fzf
 
 " Map copy to system clipboard to be a little more finger friendly
 nnoremap <leader>y "+y
