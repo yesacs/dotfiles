@@ -250,8 +250,8 @@ let g:lightline = {
     \ },
     \ }
 
-let g:lightline.colorscheme = 'onedark'
-"let g:lightline.colorscheme = 'tender'
+"let g:lightline.colorscheme = 'onedark'
+let g:lightline.colorscheme = 'tender'
 "let g:lightline.colorscheme = 'hybrid'
 "let g:lightline.colorscheme = 'wombat'
 "let g:lightline.colorscheme = 'one'
