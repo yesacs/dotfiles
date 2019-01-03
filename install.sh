@@ -1,4 +1,4 @@
-jj#!/bin/bash
+#!/bin/bash
 
 PWD=$(pwd)
 
@@ -29,8 +29,9 @@ brew install fortune
 # install Nvim
 brew install neovim
 
-# install FZF
+# install search tools
 brew install fzf
+brew install the_silver_searcher
 
 # install bat
 brew install bat

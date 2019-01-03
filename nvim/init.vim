@@ -36,8 +36,8 @@ call dein#add('roxma/vim-hug-neovim-rpc')
 
 " Look'n'feel
 call dein#add('airblade/vim-gitgutter')
-"call dein#add('junegunn/fzf')
-"call dein#add('junegunn/fzf.vim')
+call dein#add('junegunn/fzf')
+call dein#add('junegunn/fzf.vim')
 call dein#add('mhinz/vim-startify')
 call dein#add('equalsraf/neovim-gui-shim')
 call dein#add('jlanzarotta/bufexplorer')
