@@ -102,13 +102,13 @@ let g:gruvbox_bold = 0
 let g:gruvbox_number_column = 'bg0'
 let g:gruvbox_sign_column = 'bg0'
 
-let g:material_theme_style = 'palenight'
+"let g:material_theme_style = 'palenight'
 "let g:material_theme_style = 'dark'
 
 set background=dark
-colorscheme one
+"colorscheme one
 "colorscheme onedark
-"colorscheme palenight
+colorscheme palenight
 "colorscheme material
 "colorscheme gruvbox
 "colorscheme hybrid
@@ -215,7 +215,7 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-c> <C-w><C-c>
 
 "search
-nmap <leader>f :Ag 
+nmap <leader>f :Ag<return>
 nmap <leader>F :Ack 
 nmap <leader>L :Lack 
 
