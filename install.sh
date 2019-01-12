@@ -23,6 +23,10 @@ fi
 if command -v brew
 then
 
+#install fish
+brew install fish
+curl -L https://get.oh-my.fish | fish
+
 #install fortune  
 brew install fortune
 
