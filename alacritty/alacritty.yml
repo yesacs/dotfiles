@@ -127,45 +127,36 @@ render_timer: false
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors (Tomorrow Night Bright)
+# Colors (Monokai Soda)
 colors:
   # Default colors
   primary:
-    background: "0x212121"
-    foreground: "0xeaeaea"
-
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not present.
-    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
-    # is `false`, the normal foreground color will be used.
-    #
-    #dim_foreground: '0x9a9a9a'
-    #bright_foreground: '0xffffff'
+    background: '0x1a1a1a'
+    foreground: '0xc4c5b5'
 
   # Normal colors
   normal:
-    black: "0x212121"
-    red: "0xf82a71"
-    green: "0xa6e12d"
-    yellow: "0xfd971e"
-    blue: "0xae80fe"
-    magenta: "0xf82a71"
-    cyan: "0x66d8ee"
-    white: "0xcfcfc1"
+    black:   '0x1a1a1a'
+    red:     '0xf4005f'
+    green:   '0x98e024'
+    yellow:  '0xfa8419'
+    blue:    '0x9d65ff'
+    magenta: '0xf4005f'
+    cyan:    '0x58d1eb'
+    white:   '0xc4c5b5'
 
   # Bright colors
   bright:
-    black: "0x74705d"
-    red: "0xf82a71"
-    green: "0xa6e12d"
-    yellow: "0xe6db73"
-    blue: "0xae80fe"
-    magenta: "0xf82a71"
-    cyan: "0x66d8ee"
-    white: "0xf7f7f1"
-
-  # Dim colors
+    black:   '0x625e4c'
+    red:     '0xf4005f'
+    green:   '0x98e024'
+    yellow:  '0xe0d561'
+    blue:    '0x9d65ff'
+    magenta: '0xf4005f'
+    cyan:    '0x58d1eb'
+    white:   '0xf6f6ef'
+    
+# Dim colors
   #
   # If the dim colors are not set, they will be calculated automatically based
   # on the `normal` colors.
@@ -277,7 +268,7 @@ live_config_reload: true
 #
 shell:
   program: login
-  args: ["-fp", "caseysullivan"]
+  args: ["-fp", "casey"]
 
 # Key bindings
 #
