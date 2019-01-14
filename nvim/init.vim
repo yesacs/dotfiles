@@ -36,7 +36,7 @@ call dein#add('roxma/vim-hug-neovim-rpc')
 
 " Look'n'feel
 call dein#add('airblade/vim-gitgutter')
-call dein#add('junegunn/fzf')
+call dein#add('junegunn/fzf', {'build': '~/.fzf/install --all'})
 call dein#add('junegunn/fzf.vim')
 call dein#add('mhinz/vim-startify')
 call dein#add('equalsraf/neovim-gui-shim')
@@ -215,6 +215,7 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-c> <C-w><C-c>
 
 "search
+set rtp+=~/.fzf
 nmap <leader>f :Ag<return>
 nmap <leader>F :Ack 
 nmap <leader>L :Lack 
