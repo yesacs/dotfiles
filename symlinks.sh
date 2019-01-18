@@ -18,5 +18,6 @@ ln -sf "$PWD"/gitconfig ~/.gitconfig
 ln -sf "$PWD"/git-completion.bash ~/.git-completion.bash
 ln -sf "$PWD"/eslintrc ~/.eslintrc
 ln -sf "$PWD"/tmux.conf.local ~/.tmux.conf.local
+ln -sf "$PWD"/spacemacs ~/.spacemacs
 
 printf " Done!\n\n"

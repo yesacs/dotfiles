@@ -54,6 +54,7 @@ call dein#add('pangloss/vim-javascript')
 call dein#add('mxw/vim-jsx')
 call dein#add('scrooloose/nerdcommenter')
 call dein#add('w0rp/ale')
+call dein#add('jpalardy/vim-slime')
 
 " Colors
 call dein#add('joshdick/onedark.vim')
@@ -214,6 +215,16 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <C-c> <C-w><C-c>
 
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>h <C-w>h
+nnoremap <leader>l <C-w>l
+nnoremap <leader>c <C-w><C-c>
+
+nmap <leader>v :vsp<return>
+nmap <leader>w :w<return>
+nmap <leader>q :q<return>
+
 "search
 set rtp+=~/.fzf
 nmap <leader>f :Ag<return>
@@ -303,4 +314,7 @@ function! LightlineLinterErrors() abort
   let l:all_non_errors = l:counts.total - l:all_errors
   return l:counts.total == 0 ? '' : printf('%d', all_errors)
 endfunction
+
+
+let g:slime_target = "tmux"
 

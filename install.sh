@@ -45,6 +45,10 @@ brew tap caskroom/fonts
 brew cask install font-fira-code
 brew cask install font-hack-nerd-font
 
+# install npm  
+brew install npm
+npm install -g yarn eslint vtop prettier
+
 else
   printf "\n😓 Homebrew not found skipping brew setup, you may have to install
   some stuff manually\n\n"
@@ -57,7 +61,7 @@ git clone https://github.com/gpakosz/.tmux.git ~/.tmux ||
 
 ln -sf ~/.tmux/.tmux.conf ~/.tmux.conf
 
-tic "$PWD"/iTerm-italics-fix
+tic -x -o "$PWD"/xterm-24bit.terminfo
 
 ./symlinks.sh
 ./errata.sh
