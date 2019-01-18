@@ -27,18 +27,15 @@ then
 brew install fish
 curl -L https://get.oh-my.fish | fish
 
-#install fortune  
 brew install fortune
-
-# install Nvim
 brew install neovim
-
-# install search tools
 brew install fzf
 brew install the_silver_searcher
-
-# install bat
 brew install bat
+
+#install emacs and spacemaces
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+brew install emacs-plus
 
 # install FiraCode
 brew tap caskroom/fonts
