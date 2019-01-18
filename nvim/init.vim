@@ -54,7 +54,6 @@ call dein#add('pangloss/vim-javascript')
 call dein#add('mxw/vim-jsx')
 call dein#add('scrooloose/nerdcommenter')
 call dein#add('w0rp/ale')
-call dein#add('jpalardy/vim-slime')
 
 " Colors
 call dein#add('joshdick/onedark.vim')
@@ -293,7 +292,7 @@ endif
 let g:conoline_color_normal_dark = 'guibg=#181818'
 let g:conoline_color_insert_dark = 'guibg=#080808'
 
-" Uncomment the following to have Vim jump to the last position when                                                       
+" Uncomment the following to have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")

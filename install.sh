@@ -42,7 +42,7 @@ brew tap caskroom/fonts
 brew cask install font-fira-code
 brew cask install font-hack-nerd-font
 
-# install npm  
+# install npm
 brew install npm
 npm install -g yarn eslint vtop prettier
 
