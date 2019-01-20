@@ -59,7 +59,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(prettier-js)
+   dotspacemacs-additional-packages '(prettier-js doom-modeline)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -264,7 +264,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers 'relative
+   dotspacemacs-line-numbers 'relative 
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -328,9 +328,9 @@ you should place your code here."
     (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
           doom-themes-enable-italic t) ; if nil, italics is universally disabled
 
-    ;;(use-package doom-modeline
-    ;;  :ensure t
-    ;;  :init (doom-modeline-init))
+    (use-package doom-modeline
+      :ensure t
+      :init (doom-modeline-init))
 
     '(version-control :variables
                      version-control-diff-tool 'git-gutter)

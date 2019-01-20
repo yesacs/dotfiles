@@ -58,7 +58,7 @@ git clone https://github.com/gpakosz/.tmux.git ~/.tmux ||
 
 ln -sf ~/.tmux/.tmux.conf ~/.tmux.conf
 
-tic -x -o "$PWD"/xterm-24bit.terminfo
+tic -x -o ~/.terminfo "$PWD"/xterm-24bit.terminfo
 
 ./symlinks.sh
 ./errata.sh
