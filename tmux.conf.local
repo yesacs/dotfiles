@@ -2,11 +2,11 @@
 #set -g default-terminal 'tmux-256color'
 #set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
 
-# set -gas terminal-overrides ",xterm-256color:Tc"
-# set -s escape-time 0
+set -gas terminal-overrides ",xterm-256color:Tc"
+set -s escape-time 0
 
-set -g default-terminal "xterm-24bit"
-set -g terminal-overrides ',xterm-24bit:Tc'
+#set -g default-terminal "xterm-24bit"
+#set -g terminal-overrides ',xterm-24bit:Tc'
 
 # https://github.com/gpakosz/.tmux
 # (‑●‑●)> dual licensed under the WTFPL v2 license and the MIT license,
