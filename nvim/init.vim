@@ -48,6 +48,7 @@ call dein#add('wincent/ferret')
 call dein#add('easymotion/vim-easymotion')
 call dein#add('tpope/vim-surround')
 call dein#add('myusuf3/numbers.vim')
+call dein#add('christoomey/vim-tmux-navigator')
 
 " Lang support
 call dein#add('pangloss/vim-javascript')
@@ -208,10 +209,11 @@ set splitbelow
 set splitright
 
 " Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+" vim-tmux-navigator handles these now, there is tmux conf too
+"nnoremap <C-j> <C-w>j
+"nnoremap <C-k> <C-w>k
+"nnoremap <C-h> <C-w>h
+"nnoremap <C-l> <C-w>l
 nnoremap <C-c> <C-w><C-c>
 
 nnoremap <leader>j <C-w>j
@@ -223,6 +225,9 @@ nnoremap <leader>c <C-w><C-c>
 nmap <leader>v :vsp<return>
 nmap <leader>w :w<return>
 nmap <leader>q :q<return>
+
+" vv to generate new vertical split
+nnoremap <silent> vv <C-w>v
 
 "search
 set rtp+=~/.fzf
