@@ -3,7 +3,8 @@
 " Download and install nvim, then install 'dein' the vim-package manager.
 " During installation of dein it will output a sample configuration, take the
 " two lines that `set runtimepath=PATH` and `dein#begin(PATH)` and replace the
-" ones in this file, then install FZF 
+" ones in this file, then install FZF
+
 let mapleader = " "
 
 set showmatch
@@ -313,7 +314,3 @@ function! LightlineLinterErrors() abort
   let l:all_non_errors = l:counts.total - l:all_errors
   return l:counts.total == 0 ? '' : printf('%d', all_errors)
 endfunction
-
-
-let g:slime_target = "tmux"
-
