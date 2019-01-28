@@ -32,13 +32,15 @@ brew install neovim
 brew install fzf
 brew install the_silver_searcher
 brew install bat
+brew install awscli
 
 #install emacs and spacemaces
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 brew install emacs-plus
 
-# install FiraCode
+# install fonts
 brew tap caskroom/fonts
+brew cask install font-source-code-pro 
 brew cask install font-fira-code
 brew cask install font-hack-nerd-font
 
