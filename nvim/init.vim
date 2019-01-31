@@ -48,7 +48,7 @@ call dein#add('tpope/vim-fugitive')
 call dein#add('wincent/ferret')
 call dein#add('easymotion/vim-easymotion')
 call dein#add('tpope/vim-surround')
-call dein#add('myusuf3/numbers.vim')
+"call dein#add('myusuf3/numbers.vim')
 call dein#add('christoomey/vim-tmux-navigator')
 
 " Lang support
