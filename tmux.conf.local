@@ -197,7 +197,7 @@ tmux_conf_theme_right_separator_sub=''
 #     - #{username_ssh}
 tmux_conf_theme_status_left=' ❐ #S | #{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,}  '
 tmux_conf_theme_status_left=' #S '
-tmux_conf_theme_status_right=' #{prefix}#{pairing}#{synchronized}| #{loadavg} |#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},}#{?battery_status, #{battery_status},} |#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} | %d %b %R | #{username}#{root}@#{hostname} '
+tmux_conf_theme_status_right=' #{prefix}#{pairing}#{synchronized}|#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},}#{?battery_status, #{battery_status},} | #{loadavg} |#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} | %d %b %R | #{username}#{root}@#{hostname} '
 
 # status left style
 tmux_conf_theme_status_left_fg='#005F00,#47ffaa,#ffffff'  # black, white , white
@@ -205,8 +205,8 @@ tmux_conf_theme_status_left_bg='#AFDF00,#111111,#00afff'  # yellow, pink, white 
 tmux_conf_theme_status_left_attr='bold,none,none'
 
 # status right style
-tmux_conf_theme_status_right_fg='#aaaaaa,#aaaaaa,#666666,#167c4d,#da4aa0,#000000' # light gray, white, black
-tmux_conf_theme_status_right_bg='#080808,#222229,#333335,#01190f,#220000,#da4aa0' # dark gray, red, white
+tmux_conf_theme_status_right_fg='#aaaaaa,#aaaaaa,#2c7c88,#167c4d,#da4aa0,#000000' # light gray, white, black
+tmux_conf_theme_status_right_bg='#080808,#080808,#0a2629,#01190f,#220000,#da4aa0' # dark gray, red, white
 tmux_conf_theme_status_right_attr='none,none,none,none,none,none'
 
 # pairing indicator
