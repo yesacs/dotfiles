@@ -697,7 +697,7 @@
                 }
             ],
             "name": "Win Keys",
-            "selected": false,
+            "selected": true,
             "simple_modifications": [
                 {
                     "from": {
@@ -1429,6 +1429,14 @@
                     "to": {
                         "key_code": "left_control"
                     }
+                },
+                {
+                    "from": {
+                        "key_code": "left_control"
+                    },
+                    "to": {
+                        "key_code": "caps_lock"
+                    }
                 }
             ],
             "virtual_hid_keyboard": {
@@ -1545,7 +1553,7 @@
                 }
             ],
             "name": "Pok3r",
-            "selected": true,
+            "selected": false,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0
