@@ -1,8 +1,11 @@
 function fish_prompt
   set -l tomita_vi_mode "$TOMITA_VI"
 
+  set_color -o yellow 
+  printf '%s:' (prompt_hostname)
   set_color $fish_color_cwd
   printf '%s' (prompt_pwd)
+  set_color normal
 
   if git_is_repo
     set_color white
