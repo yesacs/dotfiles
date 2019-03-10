@@ -146,8 +146,8 @@ inoremap <silent><expr> <TAB>
 autocmd CompleteDone * pclose
 
 "https://gist.github.com/philss/abfbb3a79975c33f283e874c9ada5c82
-let g:python_host_prog = '/usr/local/bin/python2'
-let g:python3_host_prog = '/usr/local/bin/python3'
+"let g:python_host_prog = '/usr/local/bin/python2'
+"let g:python3_host_prog = '/usr/local/bin/python3'
 
 let g:tern_show_signature_in_pum = 1 
 let g:deoplete#sources#ternjs#types = 1
