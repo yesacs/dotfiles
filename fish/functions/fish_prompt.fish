@@ -35,7 +35,8 @@ function fish_prompt
   end
   
   set_color -o white
-  printf ' ⋊> '
+  # printf ' ⋊> '
+  printf ' λ '
   set_color normal
 
 end
