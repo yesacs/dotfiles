@@ -330,9 +330,9 @@ you should place your code here."
 
     (setq inhibit-compacting-font-caches t)
 
-    ; (use-package doom-modeline
-    ;   :ensure t
-    ;   :init (doom-modeline-init))
+    ;(use-package doom-modeline
+    ;  :ensure t
+    ;  :init (doom-modeline-init))
 
     '(version-control :variables
                      version-control-diff-tool 'git-gutter)
