@@ -14,7 +14,7 @@ printf " Done!\n\n"
 #Homebrew
 printf "Installing HomeBrew...\n"
 if command -v brew
-then 
+then
  printf "😓 Homebrew installed already, skipping...\n\n"
 else
  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
