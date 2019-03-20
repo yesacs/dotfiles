@@ -323,9 +323,14 @@ you should place your code here."
 
     (setq linum-format " %4d  ")
 
+    (add-to-list 'load-path "/path/to/tern/emacs/")
+    (autoload 'tern-mode "tern.el" nil t)
+
     (add-hook 'js2-mode-hook 'prettier-js-mode)
     (add-hook 'scss-mode-hook 'prettier-js-mode)
     (add-hook 'web-mode-hook 'prettier-js-mode)
+
+    (add-hook 'js2-mode-hook (lambda () (tern-mode t))) 
 
     (setq js2-strict-missing-semi-warning nil)
     (setq js2-missing-semi-one-line-override nil)
@@ -347,7 +352,7 @@ you should place your code here."
 
     ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
     ;; may have their own settings.
-    (load-theme 'doom-one t)
+    (load-theme 'doom-dracula t)
 
     ;; Enable flashing mode-line on errors
     (doom-themes-visual-bell-config)
@@ -360,7 +365,6 @@ you should place your code here."
 
     ;; Corrects (and improves) org-mode's native fontification.
     (doom-themes-org-config)
-
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
