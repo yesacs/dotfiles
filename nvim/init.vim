@@ -110,10 +110,11 @@ let g:gruvbox_sign_column = 'bg0'
 set background=dark
 "colorscheme one
 "colorscheme onedark
-colorscheme palenight
+"colorscheme palenight
 "colorscheme material
 "colorscheme gruvbox
 "colorscheme hybrid
+colorscheme dracula
 
 " Required:
 filetype plugin indent on
@@ -269,13 +270,14 @@ let g:lightline = {
     \ }
 
 "let g:lightline.colorscheme = 'onedark'
-let g:lightline.colorscheme = 'tender'
+"let g:lightline.colorscheme = 'tender'
 "let g:lightline.colorscheme = 'hybrid'
 "let g:lightline.colorscheme = 'wombat'
 "let g:lightline.colorscheme = 'one'
 "let g:lightline.colorscheme = 'gruvbox'
 "let g:lightline.colorscheme = 'material'
 "let g:lightline.colorscheme = 'material_vim'
+let g:lightline.colorscheme = 'dracula'
 
 "fzf 
 set rtp+=/usr/local/opt/fzf
