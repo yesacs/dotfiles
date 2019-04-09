@@ -22,7 +22,9 @@ printf "\n\non a mac? install xcode and then"
 printf "\n$ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer"
 
 printf "\n\nAlacritty feeling slow on mac?"
-printf "\n\n$ defaults write -g InitialKeyRepeat -int 10"
-printf "\n\ndefaults write -g KeyRepeat -int 1"
+printf "\n$ defaults write -g InitialKeyRepeat -int 10"
+printf "\n$ defaults write -g KeyRepeat -int 1"
+printf "\nRead more here:
+https://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-x"
 
 printf "\n\n"
