@@ -62,11 +62,12 @@ call dein#add('joshdick/onedark.vim')
 call dein#add('kaicataldo/material.vim')
 call dein#add('rakr/vim-one')
 call dein#add('drewtempelmeyer/palenight.vim')
-call dein#add('dracula/vim.git')
+call dein#add('dracula/vim')
 call dein#add('jacoborus/tender.vim')
 call dein#add('sonph/onehalf')
 call dein#add('morhetz/gruvbox')
 call dein#add('cocopon/lightline-hybrid.vim')
+call dein#add('tomasr/molokai')
 
 " Deoplete (autocomplete) & other shitty IDE-like behaviour
 call dein#add('Shougo/deoplete.nvim')
@@ -113,8 +114,8 @@ set background=dark
 "colorscheme palenight
 "colorscheme material
 "colorscheme gruvbox
-"colorscheme hybrid
 colorscheme dracula
+"colorscheme molokai
 
 " Required:
 filetype plugin indent on
