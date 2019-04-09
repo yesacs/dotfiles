@@ -21,4 +21,8 @@ printf "\n$ curl -L https://get.oh-my.fish | fish"
 printf "\n\non a mac? install xcode and then"
 printf "\n$ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer"
 
+printf "\n\nAlacritty feeling slow on mac?"
+printf "\n\n$ defaults write -g InitialKeyRepeat -int 10"
+printf "\n\ndefaults write -g KeyRepeat -int 1"
+
 printf "\n\n"

@@ -27,8 +27,8 @@ window:
   # Blank space added around the window in pixels. This padding is not scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 2
-    y: 2
+    x: 4
+    y: 4
 
   # Window decorations
   #
@@ -46,7 +46,7 @@ window:
   #     - none: Neither borders nor title bar
   #     - buttonless: Title bar, transparent background and title bar buttons
   #     - transparent: Title bar, transparent background, but no title bar buttons
-  decorations: full
+  decorations: transparent
   dynamic_padding: true
 
 scrolling:
@@ -68,7 +68,7 @@ scrolling:
   faux_multiplier: 3
 
   # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
+  auto_scroll: true
 
 # Spaces per Tab (changes require restart)
 #
