@@ -200,8 +200,8 @@ tmux_conf_theme_status_left=' #S '
 tmux_conf_theme_status_right=' #{prefix}#{pairing}#{synchronized}|#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},}#{?battery_status, #{battery_status},} | #{loadavg} |#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} | %d %b %R | #{username}#{root}@#{hostname} '
 
 # status left style
-tmux_conf_theme_status_left_fg='#005F00,#47ffaa,#ffffff'  # black, white , white
-tmux_conf_theme_status_left_bg='#AFDF00,#111111,#00afff'  # yellow, pink, white blue
+tmux_conf_theme_status_left_fg='#da4aa0,#47ffaa,#ffffff'  # black, white , white
+tmux_conf_theme_status_left_bg='#220000,#111111,#00afff'  # yellow, pink, white blue
 tmux_conf_theme_status_left_attr='bold,none,none'
 
 # status right style

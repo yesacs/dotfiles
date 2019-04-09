@@ -109,12 +109,12 @@ let g:gruvbox_sign_column = 'bg0'
 "let g:material_theme_style = 'dark'
 
 set background=dark
-"colorscheme one
+colorscheme one
 "colorscheme onedark
 "colorscheme palenight
 "colorscheme material
 "colorscheme gruvbox
-colorscheme dracula
+"colorscheme dracula
 "colorscheme molokai
 
 " Required:
@@ -278,7 +278,7 @@ let g:lightline = {
 "let g:lightline.colorscheme = 'gruvbox'
 "let g:lightline.colorscheme = 'material'
 "let g:lightline.colorscheme = 'material_vim'
-let g:lightline.colorscheme = 'dracula'
+"let g:lightline.colorscheme = 'dracula'
 
 "fzf 
 set rtp+=/usr/local/opt/fzf
