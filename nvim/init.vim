@@ -16,6 +16,11 @@ set nohlsearch
 
 let g:matchparen_timeout = 10 
 
+if &term =~# '^screen'
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+end
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -109,9 +114,9 @@ let g:gruvbox_sign_column = 'bg0'
 "let g:material_theme_style = 'dark'
 
 set background=dark
-colorscheme one
+"colorscheme one
 "colorscheme onedark
-"colorscheme palenight
+colorscheme palenight
 "colorscheme material
 "colorscheme gruvbox
 "colorscheme dracula
@@ -298,8 +303,8 @@ endif
 
 " match line number colors to lightline color scheme
 " powerline
-let g:conoline_color_normal_dark = 'guibg=#181818'
-let g:conoline_color_insert_dark = 'guibg=#080808'
+let g:conoline_color_normal_dark = 'guibg=#222222'
+let g:conoline_color_insert_dark = 'guibg=#222222'
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file

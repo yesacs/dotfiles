@@ -8,6 +8,9 @@ set -s escape-time 0
 #set -g default-terminal "xterm-24bit"
 #set -g terminal-overrides ',xterm-24bit:Tc'
 
+set -g default-terminal 'screen-256color'
+set -ga terminal-overrides ',screen-256color:Tc'
+
 # https://github.com/gpakosz/.tmux
 # (‑●‑●)> dual licensed under the WTFPL v2 license and the MIT license,
 #         without any warranty.
@@ -200,8 +203,8 @@ tmux_conf_theme_status_left=' #S '
 tmux_conf_theme_status_right=' #{prefix}#{pairing}#{synchronized}|#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},}#{?battery_status, #{battery_status},} | #{loadavg} |#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} | %d %b %R | #{username}#{root}@#{hostname} '
 
 # status left style
-tmux_conf_theme_status_left_fg='#da4aa0,#47ffaa,#ffffff'  # black, white , white
-tmux_conf_theme_status_left_bg='#220000,#111111,#00afff'  # yellow, pink, white blue
+tmux_conf_theme_status_left_fg='#44475a,#47ffaa,#ffffff'  # black, white , white
+tmux_conf_theme_status_left_bg='#bd93f9,#111111,#00afff'  # yellow, pink, white blue
 tmux_conf_theme_status_left_attr='bold,none,none'
 
 # status right style
