@@ -16,10 +16,10 @@ set nohlsearch
 
 let g:matchparen_timeout = 10 
 
-if &term =~# '^screen'
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-end
+"if &term =~# '^screen'
+  "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"end
 
 "dein Scripts-----------------------------
 if &compatible
@@ -73,6 +73,7 @@ call dein#add('sonph/onehalf')
 call dein#add('morhetz/gruvbox')
 call dein#add('cocopon/lightline-hybrid.vim')
 call dein#add('tomasr/molokai')
+call dein#add('NLKNguyen/papercolor-theme')
 
 " Deoplete (autocomplete) & other shitty IDE-like behaviour
 call dein#add('Shougo/deoplete.nvim')
@@ -116,11 +117,12 @@ let g:gruvbox_sign_column = 'bg0'
 set background=dark
 "colorscheme one
 "colorscheme onedark
-colorscheme palenight
+"colorscheme palenight
 "colorscheme material
 "colorscheme gruvbox
-"colorscheme dracula
+colorscheme dracula
 "colorscheme molokai
+"colorscheme papercolor
 
 " Required:
 filetype plugin indent on
@@ -276,7 +278,7 @@ let g:lightline = {
     \ }
 
 "let g:lightline.colorscheme = 'onedark'
-let g:lightline.colorscheme = 'tender'
+"let g:lightline.colorscheme = 'tender'
 "let g:lightline.colorscheme = 'hybrid'
 "let g:lightline.colorscheme = 'wombat'
 "let g:lightline.colorscheme = 'one'
@@ -284,6 +286,7 @@ let g:lightline.colorscheme = 'tender'
 "let g:lightline.colorscheme = 'material'
 "let g:lightline.colorscheme = 'material_vim'
 "let g:lightline.colorscheme = 'dracula'
+"let g:lightline.colorscheme = 'PaperColor'
 
 "fzf 
 set rtp+=/usr/local/opt/fzf
