@@ -120,9 +120,8 @@ set background=dark
 "colorscheme palenight
 "colorscheme material
 "colorscheme gruvbox
-colorscheme dracula
-"colorscheme molokai
-"colorscheme papercolor
+"colorscheme dracula
+colorscheme molokai
 
 " Required:
 filetype plugin indent on
