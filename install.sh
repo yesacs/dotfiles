@@ -22,32 +22,30 @@ fi
 
 if command -v brew
 then
-
-#install fish
-brew install fish
-curl -L https://get.oh-my.fish | fish
-
-brew install fortune
-brew install neovim
-brew install fzf
-brew install the_silver_searcher
-brew install bat
-brew install awscli
-
-#install emacs and spacemaces
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-brew install emacs-plus
-
-# install fonts
-brew tap caskroom/fonts
-brew cask install font-source-code-pro 
-brew cask install font-fira-code
-brew cask install font-hack-nerd-font
-
-# install npm
-brew install npm
-npm install -g yarn eslint vtop prettier
-
+  #install fish
+  brew install fish
+  curl -L https://get.oh-my.fish | fish
+  
+  brew install fortune
+  brew install neovim
+  brew install fzf
+  brew install the_silver_searcher
+  brew install bat
+  brew install awscli
+  
+  #install emacs and spacemaces
+  git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+  brew install emacs-plus
+  
+  # install fonts
+  brew tap caskroom/fonts
+  brew cask install font-source-code-pro 
+  brew cask install font-fira-code
+  brew cask install font-hack-nerd-font
+  
+  # install npm
+  brew install npm
+  npm install -g yarn eslint vtop prettier
 else
   printf "\n😓 Homebrew not found skipping brew setup, you may have to install
   some stuff manually\n\n"
