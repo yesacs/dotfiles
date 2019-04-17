@@ -117,11 +117,11 @@ let g:gruvbox_sign_column = 'bg0'
 set background=dark
 "colorscheme one
 "colorscheme onedark
-"colorscheme palenight
+colorscheme palenight
 "colorscheme material
 "colorscheme gruvbox
 "colorscheme dracula
-colorscheme molokai
+"colorscheme molokai
 
 " Required:
 filetype plugin indent on
@@ -329,3 +329,8 @@ function! LightlineLinterErrors() abort
   let l:all_non_errors = l:counts.total - l:all_errors
   return l:counts.total == 0 ? '' : printf('%d', all_errors)
 endfunction
+
+if !empty(glob("~/.config/init.local.vim"))
+  source ~/.config/init.local.vim
+end
+
