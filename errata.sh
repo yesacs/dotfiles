@@ -30,4 +30,7 @@ printf "\n$ defaults write -g KeyRepeat -int 1"
 printf "\nRead more here:
 https://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-x"
 
+printf "\n\nCaps <=> Escape on Ubuntu"
+printf "\nhttp://tiborsimko.org/capslock-escape-control.html"
+
 printf "\n\n"
