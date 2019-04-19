@@ -32,5 +32,7 @@ https://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-rep
 
 printf "\n\nCaps <=> Escape on Ubuntu"
 printf "\nhttp://tiborsimko.org/capslock-escape-control.html"
+printf
+"\nhttps://unix.stackexchange.com/questions/345116/remap-esc-to-caps-lock-after-mapping-caps-lock-to-ctrl-and-esc-with-xcape"
 
 printf "\n\n"
