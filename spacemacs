@@ -350,8 +350,8 @@ you should place your code here."
 
     ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
     ;; may have their own settings.
-    (load-theme 'doom-dracula t)
-    ;; (load-theme 'doom-molokai t)
+    ;; (load-theme 'doom-dracula t)
+    (load-theme 'doom-molokai t)
     ;; (load-theme 'doom-one t)
     ;; (load-theme 'gruvbox t)
 
