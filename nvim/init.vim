@@ -201,7 +201,7 @@ nnoremap <silent> vv <C-w>v
 
 "search
 set rtp+=~/.fzf
-nmap <leader>f :Ag<return>
+nmap <leader>f :Rg<return>
 nmap <leader>F :Ack 
 nmap <leader>L :Lack 
 
