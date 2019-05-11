@@ -31,6 +31,7 @@ then
   brew install fzf
   brew install the_silver_searcher
   brew install ripgrep
+  brew install ctags
   brew install bat
   brew install awscli
   

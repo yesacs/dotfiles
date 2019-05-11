@@ -77,6 +77,7 @@ call dein#add('NLKNguyen/papercolor-theme')
 
 " Deoplete (autocomplete) & other shitty IDE-like behaviour
 call dein#add('neoclide/coc.nvim', {'merge':0, 'build': './install.sh nightly'})
+call dein#add('ludovicchabant/vim-gutentags')
 call dein#add('chrisbra/NrrwRgn')
 
 " Required:
@@ -202,8 +203,9 @@ nnoremap <silent> vv <C-w>v
 "search
 set rtp+=~/.fzf
 nmap <leader>f :Rg<return>
-nmap <leader>F :Ack 
-nmap <leader>L :Lack 
+nmap <leader>T :Tags<return>
+
+let g:gutentags_file_list_command = 'rg --files'
 
 set ttyfast
 set lazyredraw
