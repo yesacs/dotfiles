@@ -76,13 +76,7 @@ call dein#add('tomasr/molokai')
 call dein#add('NLKNguyen/papercolor-theme')
 
 " Deoplete (autocomplete) & other shitty IDE-like behaviour
-call dein#add('Shougo/deoplete.nvim')
-call dein#add('Shougo/neoinclude.vim')
-call dein#add('Shougo/context_filetype.vim')
-call dein#add('carlitux/deoplete-ternjs')
-call dein#add('Shougo/neosnippet.vim')
-call dein#add('Shougo/neopairs.vim')
-call dein#add('Shougo/neosnippet-snippets')
+call dein#add('neoclide/coc.nvim', {'merge':0, 'build': './install.sh nightly'})
 call dein#add('chrisbra/NrrwRgn')
 
 " Required:
@@ -133,41 +127,7 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
-
-" Configure deoplete and subcandidates
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-
 let g:vimfiler_as_default_explorer = 1
-
-" Let auto-complete take effect on TAB key
-inoremap <silent><expr> <TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ deoplete#mappings#manual_complete()
-    function! s:check_back_space() abort "{{{
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-    endfunction"}}}
-" Close any automatically opened scratch-buffers 
-" once completion popup the is closed
-autocmd CompleteDone * pclose
-
-"https://gist.github.com/philss/abfbb3a79975c33f283e874c9ada5c82
-"let g:python_host_prog = '/usr/local/bin/python2'
-"let g:python3_host_prog = '/usr/local/bin/python3'
-
-let g:tern_show_signature_in_pum = 1 
-let g:deoplete#sources#ternjs#types = 1
-let g:deoplete#sources#ternjs#docs = 1
-
-autocmd VimEnter * inoremap <expr> <cr> ((pumvisible()) ? (deoplete#close_popup()) : ("\<cr>"))
-"" This to close preview when insert mode leaves
-"autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
-"let g:neopairs#enable = 1
-"call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
 
 "map <leader>n :NERDTreeToggle<CR>
 map <leader>e :Explore<CR>
@@ -195,6 +155,7 @@ set numberwidth=5
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
+\   'javascrip.jsx': ['prettier', 'eslint'],
 \   'json': ['prettier', 'eslint'],
 \   'css': ['prettier', 'eslint'],
 \   'scss': ['prettier', 'eslint'],

@@ -43,9 +43,12 @@ then
   brew cask install font-fira-code
   brew cask install font-hack-nerd-font
   
-  # install npm
+  # install npm et. all
   brew install npm
   npm install -g yarn eslint vtop prettier
+
+  yarn add -g coc-json coc-tsserver coc-css 
+
 else
   printf "\n😓 Homebrew not found skipping brew setup, you may have to install
   some stuff manually\n\n"
