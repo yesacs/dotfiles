@@ -1,0 +1,129 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+$NVIM_TUI_ENABLE_TRUE_COLOR	nvim/init.vim	/^  let $NVIM_TUI_ENABLE_TRUE_COLOR=1$/;"	v
+<C-Space>	nvim/init.vim	/^inoremap <C-Space> <Esc>$/;"	m
+<C-Space>	nvim/init.vim	/^nnoremap <C-Space> i$/;"	m
+<C-c>	nvim/init.vim	/^nnoremap <C-c> <C-w><C-c>$/;"	m
+<C-p>	nvim/init.vim	/^map <C-p> :FZF<CR>$/;"	m
+<leader>T	nvim/init.vim	/^nmap <leader>T :Tags<return>$/;"	m
+<leader>W	nvim/init.vim	/^nnoremap <leader>W :%s\/\\s\\+$\/\/<cr>:let @\/=''<CR>$/;"	m
+<leader>c	nvim/init.vim	/^nnoremap <leader>c <C-w><C-c>$/;"	m
+<leader>e	nvim/init.vim	/^map <leader>e :Explore<CR>$/;"	m
+<leader>f	nvim/init.vim	/^nmap <leader>f :Rg<return>$/;"	m
+<leader>h	nvim/init.vim	/^nnoremap <leader>h <C-w>h$/;"	m
+<leader>j	nvim/init.vim	/^nnoremap <leader>j <C-w>j$/;"	m
+<leader>k	nvim/init.vim	/^nnoremap <leader>k <C-w>k$/;"	m
+<leader>l	nvim/init.vim	/^nnoremap <leader>l <C-w>l$/;"	m
+<leader>p	nvim/init.vim	/^map <leader>p :FZF<CR>$/;"	m
+<leader>q	nvim/init.vim	/^nmap <leader>q :q<return>$/;"	m
+<leader>t	nvim/init.vim	/^map <leader>t :FZF<CR>$/;"	m
+<leader>v	nvim/init.vim	/^nmap <leader>v :vsp<return>$/;"	m
+<leader>w	nvim/init.vim	/^nmap <leader>w :w<return>$/;"	m
+<leader>y	nvim/init.vim	/^nnoremap <leader>y "+y$/;"	m
+<leader>y	nvim/init.vim	/^vnoremap <leader>y "+y$/;"	m
+LightlineLinterErrors	nvim/init.vim	/^function! LightlineLinterErrors() abort$/;"	f
+LightlineLinterWarnings	nvim/init.vim	/^function! LightlineLinterWarnings() abort$/;"	f
+__git_aliased_command	git-completion.bash	/^__git_aliased_command ()$/;"	f
+__git_aliases	git-completion.bash	/^__git_aliases ()$/;"	f
+__git_complete_file	git-completion.bash	/^__git_complete_file ()$/;"	f
+__git_complete_remote_or_refspec	git-completion.bash	/^__git_complete_remote_or_refspec ()$/;"	f
+__git_complete_revlist	git-completion.bash	/^__git_complete_revlist ()$/;"	f
+__git_complete_strategy	git-completion.bash	/^__git_complete_strategy ()$/;"	f
+__git_compute_all_commands	git-completion.bash	/^__git_compute_all_commands ()$/;"	f
+__git_compute_merge_strategies	git-completion.bash	/^__git_compute_merge_strategies ()$/;"	f
+__git_compute_porcelain_commands	git-completion.bash	/^__git_compute_porcelain_commands ()$/;"	f
+__git_config_get_set_variables	git-completion.bash	/^__git_config_get_set_variables ()$/;"	f
+__git_find_on_cmdline	git-completion.bash	/^__git_find_on_cmdline ()$/;"	f
+__git_has_doubledash	git-completion.bash	/^__git_has_doubledash ()$/;"	f
+__git_heads	git-completion.bash	/^__git_heads ()$/;"	f
+__git_list_all_commands	git-completion.bash	/^__git_list_all_commands ()$/;"	f
+__git_list_merge_strategies	git-completion.bash	/^__git_list_merge_strategies ()$/;"	f
+__git_list_porcelain_commands	git-completion.bash	/^__git_list_porcelain_commands ()$/;"	f
+__git_ps1	git-completion.bash	/^__git_ps1 ()$/;"	f
+__git_refs	git-completion.bash	/^__git_refs ()$/;"	f
+__git_refs2	git-completion.bash	/^__git_refs2 ()$/;"	f
+__git_refs_remotes	git-completion.bash	/^__git_refs_remotes ()$/;"	f
+__git_remotes	git-completion.bash	/^__git_remotes ()$/;"	f
+__git_tags	git-completion.bash	/^__git_tags ()$/;"	f
+__gitcomp	git-completion.bash	/^__gitcomp ()$/;"	f
+__gitcomp_1	git-completion.bash	/^__gitcomp_1 ()$/;"	f
+__gitdir	git-completion.bash	/^__gitdir ()$/;"	f
+_git	git-completion.bash	/^_git ()$/;"	f
+_git_add	git-completion.bash	/^_git_add ()$/;"	f
+_git_am	git-completion.bash	/^_git_am ()$/;"	f
+_git_apply	git-completion.bash	/^_git_apply ()$/;"	f
+_git_archive	git-completion.bash	/^_git_archive ()$/;"	f
+_git_bisect	git-completion.bash	/^_git_bisect ()$/;"	f
+_git_branch	git-completion.bash	/^_git_branch ()$/;"	f
+_git_bundle	git-completion.bash	/^_git_bundle ()$/;"	f
+_git_checkout	git-completion.bash	/^_git_checkout ()$/;"	f
+_git_cherry	git-completion.bash	/^_git_cherry ()$/;"	f
+_git_cherry_pick	git-completion.bash	/^_git_cherry_pick ()$/;"	f
+_git_clean	git-completion.bash	/^_git_clean ()$/;"	f
+_git_clone	git-completion.bash	/^_git_clone ()$/;"	f
+_git_commit	git-completion.bash	/^_git_commit ()$/;"	f
+_git_config	git-completion.bash	/^_git_config ()$/;"	f
+_git_describe	git-completion.bash	/^_git_describe ()$/;"	f
+_git_diff	git-completion.bash	/^_git_diff ()$/;"	f
+_git_difftool	git-completion.bash	/^_git_difftool ()$/;"	f
+_git_fetch	git-completion.bash	/^_git_fetch ()$/;"	f
+_git_format_patch	git-completion.bash	/^_git_format_patch ()$/;"	f
+_git_fsck	git-completion.bash	/^_git_fsck ()$/;"	f
+_git_gc	git-completion.bash	/^_git_gc ()$/;"	f
+_git_gitk	git-completion.bash	/^_git_gitk ()$/;"	f
+_git_grep	git-completion.bash	/^_git_grep ()$/;"	f
+_git_help	git-completion.bash	/^_git_help ()$/;"	f
+_git_init	git-completion.bash	/^_git_init ()$/;"	f
+_git_log	git-completion.bash	/^_git_log ()$/;"	f
+_git_ls_files	git-completion.bash	/^_git_ls_files ()$/;"	f
+_git_ls_remote	git-completion.bash	/^_git_ls_remote ()$/;"	f
+_git_ls_tree	git-completion.bash	/^_git_ls_tree ()$/;"	f
+_git_merge	git-completion.bash	/^_git_merge ()$/;"	f
+_git_merge_base	git-completion.bash	/^_git_merge_base ()$/;"	f
+_git_mergetool	git-completion.bash	/^_git_mergetool ()$/;"	f
+_git_mv	git-completion.bash	/^_git_mv ()$/;"	f
+_git_name_rev	git-completion.bash	/^_git_name_rev ()$/;"	f
+_git_notes	git-completion.bash	/^_git_notes ()$/;"	f
+_git_pull	git-completion.bash	/^_git_pull ()$/;"	f
+_git_push	git-completion.bash	/^_git_push ()$/;"	f
+_git_rebase	git-completion.bash	/^_git_rebase ()$/;"	f
+_git_remote	git-completion.bash	/^_git_remote ()$/;"	f
+_git_replace	git-completion.bash	/^_git_replace ()$/;"	f
+_git_reset	git-completion.bash	/^_git_reset ()$/;"	f
+_git_revert	git-completion.bash	/^_git_revert ()$/;"	f
+_git_rm	git-completion.bash	/^_git_rm ()$/;"	f
+_git_send_email	git-completion.bash	/^_git_send_email ()$/;"	f
+_git_shortlog	git-completion.bash	/^_git_shortlog ()$/;"	f
+_git_show	git-completion.bash	/^_git_show ()$/;"	f
+_git_show_branch	git-completion.bash	/^_git_show_branch ()$/;"	f
+_git_stage	git-completion.bash	/^_git_stage ()$/;"	f
+_git_stash	git-completion.bash	/^_git_stash ()$/;"	f
+_git_submodule	git-completion.bash	/^_git_submodule ()$/;"	f
+_git_svn	git-completion.bash	/^_git_svn ()$/;"	f
+_git_tag	git-completion.bash	/^_git_tag ()$/;"	f
+_git_whatchanged	git-completion.bash	/^_git_whatchanged ()$/;"	f
+_gitk	git-completion.bash	/^_gitk ()$/;"	f
+g:ale_fix_on_save	nvim/init.vim	/^let g:ale_fix_on_save = 1$/;"	v
+g:ale_fixers	nvim/init.vim	/^let g:ale_fixers = {$/;"	v
+g:conoline_color_insert_dark	nvim/init.vim	/^let g:conoline_color_insert_dark = 'guibg=#222222'$/;"	v
+g:conoline_color_normal_dark	nvim/init.vim	/^let g:conoline_color_normal_dark = 'guibg=#222222'$/;"	v
+g:go_version_warning	nvim/init.vim	/^let g:go_version_warning = 0$/;"	v
+g:gruvbox_bold	nvim/init.vim	/^let g:gruvbox_bold = 0$/;"	v
+g:gruvbox_contrast_dark	nvim/init.vim	/^let g:gruvbox_contrast_dark = 'hard'$/;"	v
+g:gruvbox_number_column	nvim/init.vim	/^let g:gruvbox_number_column = 'bg0'$/;"	v
+g:gruvbox_sign_column	nvim/init.vim	/^let g:gruvbox_sign_column = 'bg0'$/;"	v
+g:gutentags_file_list_command	nvim/init.vim	/^let g:gutentags_file_list_command = 'rg --files'$/;"	v
+g:lightline	nvim/init.vim	/^let g:lightline = {$/;"	v
+g:matchparen_timeout	nvim/init.vim	/^let g:matchparen_timeout = 10 $/;"	v
+g:onedark_terminal_italics	nvim/init.vim	/^let g:onedark_terminal_italics=1 $/;"	v
+g:vimfiler_as_default_explorer	nvim/init.vim	/^let g:vimfiler_as_default_explorer = 1$/;"	v
+mapleader	nvim/init.vim	/^let mapleader = " "$/;"	v
+module.exports.semi	prettierrc.js	/^  semi: false,$/;"	p
+module.exports.singleQuote	prettierrc.js	/^  singleQuote: true,$/;"	p
+module.exports.tabWidth	prettierrc.js	/^  tabWidth: 2,$/;"	p
+module.exports.trailingComma	prettierrc.js	/^  trailingComma: 'es5',$/;"	p
+vv	nvim/init.vim	/^nnoremap <silent> vv <C-w>v$/;"	m

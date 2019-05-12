@@ -73,7 +73,7 @@ call dein#add('sonph/onehalf')
 call dein#add('morhetz/gruvbox')
 call dein#add('cocopon/lightline-hybrid.vim')
 call dein#add('tomasr/molokai')
-call dein#add('NLKNguyen/papercolor-theme')
+call dein#add('sickill/vim-monokai')
 
 " Deoplete (autocomplete) & other shitty IDE-like behaviour
 call dein#add('neoclide/coc.nvim', {'merge':0, 'build': './install.sh nightly'})
@@ -117,6 +117,7 @@ colorscheme palenight
 "colorscheme gruvbox
 "colorscheme dracula
 "colorscheme molokai
+"colorscheme monokai
 
 " Required:
 filetype plugin indent on
