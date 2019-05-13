@@ -150,6 +150,17 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <C-Space> i
 inoremap <C-Space> <Esc>
 
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
 " Activate line-numbers eveywhere
 set number
 set numberwidth=5
