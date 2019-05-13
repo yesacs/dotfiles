@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "coc-css": "^1.0.7",
+    "coc-tsserver": "^1.2.1"
+  }
+}

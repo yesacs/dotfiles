@@ -34,4 +34,7 @@ printf "\n\nCaps <=> Escape on Ubuntu"
 printf "\n$ sudo apt install xcape"
 printf "\nhttps://askubuntu.com/a/750535" 
 
+printf "\n\nNeoVim intellisense"
+printf "\n:CocInstall coc-json coc-tsserver coc-css"
+
 printf "\n\n"
