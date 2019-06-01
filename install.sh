@@ -47,8 +47,7 @@ then
   
   # install npm et. all
   brew install npm
-  npm install -g yarn eslint vtop prettier
-
+  npm install -g yarn eslint vtop prettier neovim
   yarn add -g coc-json coc-tsserver coc-css 
 
 else

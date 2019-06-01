@@ -29,9 +29,14 @@ printf "\n$ defaults write -g InitialKeyRepeat -int 10"
 printf "\n$ defaults write -g KeyRepeat -int 1"
 printf "\nRead more here:
 https://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-x"
+printf "\nOR:"
+printf "\n$ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool true"
 
 printf "\n\nCaps <=> Escape on Ubuntu"
 printf "\n$ sudo apt install xcape"
 printf "\nhttps://askubuntu.com/a/750535" 
+
+printf "\n\nNeoVim intellisense"
+printf "\n:CocInstall coc-json coc-tsserver coc-css"
 
 printf "\n\n"

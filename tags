@@ -9,6 +9,7 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	nvim/init.vim	/^  let $NVIM_TUI_ENABLE_TRUE_COLOR=1$
 <C-Space>	nvim/init.vim	/^nnoremap <C-Space> i$/;"	m
 <C-c>	nvim/init.vim	/^nnoremap <C-c> <C-w><C-c>$/;"	m
 <C-p>	nvim/init.vim	/^map <C-p> :FZF<CR>$/;"	m
+<TAB>	nvim/init.vim	/^inoremap <silent><expr> <TAB>$/;"	m
 <leader>T	nvim/init.vim	/^nmap <leader>T :Tags<return>$/;"	m
 <leader>W	nvim/init.vim	/^nnoremap <leader>W :%s\/\\s\\+$\/\/<cr>:let @\/=''<CR>$/;"	m
 <leader>c	nvim/init.vim	/^nnoremap <leader>c <C-w><C-c>$/;"	m
@@ -107,6 +108,7 @@ _git_svn	git-completion.bash	/^_git_svn ()$/;"	f
 _git_tag	git-completion.bash	/^_git_tag ()$/;"	f
 _git_whatchanged	git-completion.bash	/^_git_whatchanged ()$/;"	f
 _gitk	git-completion.bash	/^_gitk ()$/;"	f
+check_back_space	nvim/init.vim	/^function! s:check_back_space() abort$/;"	f
 g:ale_fix_on_save	nvim/init.vim	/^let g:ale_fix_on_save = 1$/;"	v
 g:ale_fixers	nvim/init.vim	/^let g:ale_fixers = {$/;"	v
 g:conoline_color_insert_dark	nvim/init.vim	/^let g:conoline_color_insert_dark = 'guibg=#222222'$/;"	v
@@ -119,6 +121,7 @@ g:gruvbox_sign_column	nvim/init.vim	/^let g:gruvbox_sign_column = 'bg0'$/;"	v
 g:gutentags_file_list_command	nvim/init.vim	/^let g:gutentags_file_list_command = 'rg --files'$/;"	v
 g:lightline	nvim/init.vim	/^let g:lightline = {$/;"	v
 g:matchparen_timeout	nvim/init.vim	/^let g:matchparen_timeout = 10 $/;"	v
+g:material_theme_style	nvim/init.vim	/^let g:material_theme_style = 'palenight'$/;"	v
 g:onedark_terminal_italics	nvim/init.vim	/^let g:onedark_terminal_italics=1 $/;"	v
 g:vimfiler_as_default_explorer	nvim/init.vim	/^let g:vimfiler_as_default_explorer = 1$/;"	v
 mapleader	nvim/init.vim	/^let mapleader = " "$/;"	v

@@ -2,3 +2,5 @@
 nvim/.cache/
 nvim/repos/
 nvim/.netrwhist
+**/node_modules/
+tags

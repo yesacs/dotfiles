@@ -16,6 +16,13 @@ set nohlsearch
 
 let g:matchparen_timeout = 10 
 
+if has("gui_running")
+  set guifont=Fira\ Code\ Retina:h12
+  set guioptions=
+  set linespace=1
+endif
+
+
 "if &term =~# '^screen'
   "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -106,7 +113,7 @@ let g:gruvbox_bold = 0
 let g:gruvbox_number_column = 'bg0'
 let g:gruvbox_sign_column = 'bg0'
 
-"let g:material_theme_style = 'palenight'
+let g:material_theme_style = 'palenight'
 "let g:material_theme_style = 'dark'
 
 set background=dark
@@ -149,6 +156,17 @@ tnoremap <Esc> <C-\><C-n>
 " map Ctrl-space to leave insert mode
 nnoremap <C-Space> i
 inoremap <C-Space> <Esc>
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 
 " Activate line-numbers eveywhere
 set number
@@ -210,6 +228,7 @@ let g:gutentags_file_list_command = 'rg --files'
 
 set ttyfast
 set lazyredraw
+
 set nocursorline
 set synmaxcol=128
 syntax sync minlines=256
