@@ -10,6 +10,7 @@ $NVIM_TUI_ENABLE_TRUE_COLOR	nvim/init.vim	/^  let $NVIM_TUI_ENABLE_TRUE_COLOR=1$
 <C-c>	nvim/init.vim	/^nnoremap <C-c> <C-w><C-c>$/;"	m
 <C-p>	nvim/init.vim	/^map <C-p> :FZF<CR>$/;"	m
 <TAB>	nvim/init.vim	/^inoremap <silent><expr> <TAB>$/;"	m
+<leader>G	nvim/init.vim	/^map <leader>G :ALEGoToDefinition<CR>$/;"	m
 <leader>T	nvim/init.vim	/^nmap <leader>T :Tags<return>$/;"	m
 <leader>W	nvim/init.vim	/^nnoremap <leader>W :%s\/\\s\\+$\/\/<cr>:let @\/=''<CR>$/;"	m
 <leader>c	nvim/init.vim	/^nnoremap <leader>c <C-w><C-c>$/;"	m

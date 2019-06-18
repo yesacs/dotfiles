@@ -4,9 +4,9 @@ printf "\n##################  ERRATA ##################"
 
 printf "\n\nthe iTerm theme you like MonokaiSoda"
 
-printf "\n\n you might have to install npm, yarn and prettier"
+printf "\n\nyou might have to install npm, yarn and prettier"
 
-printf "\n\n have some custom vim stuff for this host?"
+printf "\n\nhave some custom vim stuff for this host?"
 printf "\nput it in ~/.config/init.local.vim"
 
 printf "\n\nadd fish to /etc/shells "

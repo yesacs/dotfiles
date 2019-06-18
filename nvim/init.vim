@@ -172,6 +172,8 @@ inoremap <silent><expr> <TAB>
 set number
 set numberwidth=5
 
+"let g:ale_completion_enabled = 1
+map <leader>G :ALEGoToDefinition<CR>
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],

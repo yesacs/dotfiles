@@ -1,8 +1,6 @@
-set -gx EDITOR nvim
-set -gx VISUAL nvim
-
-set -g fish_user_paths "/home/linuxbrew/.linuxbrew/bin" $fish_user_paths
+set -x EDITOR nvim
+set -x VISUAL nvim
 
 alias evil "env TERM=xterm-24bit emacs -nw" 
 
-set -gx FZF_DEFAULT_COMMAND  'rg --files --follow --hidden'
+set -x FZF_DEFAULT_COMMAND  'rg --files --follow --hidden'
