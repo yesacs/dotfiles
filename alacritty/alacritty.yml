@@ -27,8 +27,8 @@ window:
   # Blank space added around the window in pixels. This padding is not scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 2
-    y: 2
+    x: 0
+    y: 0
 
   # Window decorations
   #
@@ -46,6 +46,7 @@ window:
   #     - none: Neither borders nor title bar
   #     - buttonless: Title bar, transparent background and title bar buttons
   #     - transparent: Title bar, transparent background, but no title bar buttons
+  #decorations: transparent
   decorations: full
   dynamic_padding: true
 
@@ -89,18 +90,18 @@ font:
 
   # Italic font face
   bold:
-    family: "Fira Code Bold"
+    family: "Fira Code"
     # The `style` can be specified to pick a specific face.
-    # style: Bold
+    style: Bold
 
   # Italic font face
   italic:
-    family: "Fira Code Italic"
+    family: "Fira Code"
     # The `style` can be specified to pick a specific face.
-    # style: Italic
+    style: Italic
 
   # Point size
-  size: 12.0
+  size: 11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
