@@ -124,6 +124,7 @@ g:lightline	nvim/init.vim	/^let g:lightline = {$/;"	v
 g:matchparen_timeout	nvim/init.vim	/^let g:matchparen_timeout = 10 $/;"	v
 g:material_theme_style	nvim/init.vim	/^let g:material_theme_style = 'palenight'$/;"	v
 g:onedark_terminal_italics	nvim/init.vim	/^let g:onedark_terminal_italics=1 $/;"	v
+g:palenight_terminal_italics	nvim/init.vim	/^let g:palenight_terminal_italics=1$/;"	v
 g:vimfiler_as_default_explorer	nvim/init.vim	/^let g:vimfiler_as_default_explorer = 1$/;"	v
 mapleader	nvim/init.vim	/^let mapleader = " "$/;"	v
 module.exports.semi	prettierrc.js	/^  semi: false,$/;"	p

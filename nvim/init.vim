@@ -84,7 +84,7 @@ call dein#add('sickill/vim-monokai')
 
 " Deoplete (autocomplete) & other shitty IDE-like behaviour
 call dein#add('neoclide/coc.nvim', {'merge':0, 'build': './install.sh nightly'})
-call dein#add('ludovicchabant/vim-gutentags')
+"call dein#add('ludovicchabant/vim-gutentags')
 call dein#add('chrisbra/NrrwRgn')
 
 " Required:
@@ -112,6 +112,7 @@ let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_bold = 0
 let g:gruvbox_number_column = 'bg0'
 let g:gruvbox_sign_column = 'bg0'
+let g:palenight_terminal_italics=1
 
 let g:material_theme_style = 'palenight'
 "let g:material_theme_style = 'dark'
