@@ -7,14 +7,14 @@ coc-css@^1.2.2:
   resolved "https://registry.yarnpkg.com/coc-css/-/coc-css-1.2.2.tgz#9b62ac96a9db8c687396ab4648c0c67dc3897a2f"
   integrity sha512-JvZnKZZJZemS70o972OEjfnMGGO2sLpJA3iX1OT3CXmaymPb8CmufboyCVnzGMDMbFL/qHgfjbdw9kOg5ZtzzQ==
 
-coc-tsserver@^1.4.9:
-  version "1.4.9"
-  resolved "https://registry.yarnpkg.com/coc-tsserver/-/coc-tsserver-1.4.9.tgz#a6a1424d2445d323670046c3823f2ad89c8246a7"
-  integrity sha512-zrszvyK/dI0ueebeGKg0LKE79ci6iXe9/kCAAS/312ayh7M0t5BJT+u90ZrVYqvhtBrSu3UCmOw7dnDUwboSjg==
+coc-tsserver@^1.4.13:
+  version "1.4.13"
+  resolved "https://registry.yarnpkg.com/coc-tsserver/-/coc-tsserver-1.4.13.tgz#2972db2a73f4ca2285bbc7ef4aa42a4323503ca5"
+  integrity sha512-/aaZO76VB3kYjJq7YQO97MFSE3GSEMETZtyTGKaIKcCtvzN9Bsq1PVUg3aARoDnUL+gnO+5CTy4cBUBv7LGgdQ==
   dependencies:
-    typescript "3.7.3"
+    typescript "3.8.3"
 
-typescript@3.7.3:
-  version "3.7.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.7.3.tgz#b36840668a16458a7025b9eabfad11b66ab85c69"
-  integrity sha512-Mcr/Qk7hXqFBXMN7p7Lusj1ktCBydylfQM/FZCk5glCNQJrCUKPkMHdo9R0MTFWsC/4kPFvDS0fDPvukfCkFsw==
+typescript@3.8.3:
+  version "3.8.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.8.3.tgz#409eb8544ea0335711205869ec458ab109ee1061"
+  integrity sha512-MYlEfn5VrLNsgudQTVJeNaQFUAI7DkhnOjdpAp4T+ku1TfQClewlbSuTVHiA+8skNBgaf02TL/kLOvig4y3G8w==
