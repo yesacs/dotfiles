@@ -698,6 +698,9 @@
                 }
             ],
             "name": "Win Keys",
+            "parameters": {
+                "delay_milliseconds_before_open_device": 1000
+            },
             "selected": true,
             "simple_modifications": [
                 {
@@ -1291,6 +1294,9 @@
                 }
             ],
             "name": "Mac Keys",
+            "parameters": {
+                "delay_milliseconds_before_open_device": 1000
+            },
             "selected": false,
             "simple_modifications": [
                 {
@@ -1418,6 +1424,9 @@
                 }
             ],
             "name": "Pok3r",
+            "parameters": {
+                "delay_milliseconds_before_open_device": 1000
+            },
             "selected": false,
             "simple_modifications": [],
             "virtual_hid_keyboard": {

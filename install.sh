@@ -48,7 +48,7 @@ then
   # install npm et. all
   brew install npm
   npm install -g yarn eslint vtop prettier neovim
-  yarn add -g coc-json coc-tsserver coc-css 
+  yarn add -g coc-json coc-tsserver coc-css coc-eslint coc-prettier
 
 else
   printf "\n😓 Homebrew not found skipping brew setup, you may have to install

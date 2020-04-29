@@ -60,14 +60,14 @@ call dein#add('tpope/vim-fugitive')
 call dein#add('wincent/ferret')
 call dein#add('easymotion/vim-easymotion')
 call dein#add('tpope/vim-surround')
-"call dein#add('myusuf3/numbers.vim')
 call dein#add('christoomey/vim-tmux-navigator')
+call dein#add('junegunn/goyo.vim')
 
 " Lang support
 call dein#add('pangloss/vim-javascript')
 call dein#add('mxw/vim-jsx')
+call dein#add('mustache/vim-mustache-handlebars')
 call dein#add('scrooloose/nerdcommenter')
-call dein#add('w0rp/ale')
 
 " Colors
 call dein#add('joshdick/onedark.vim')
@@ -84,7 +84,6 @@ call dein#add('sickill/vim-monokai')
 
 " Deoplete (autocomplete) & other shitty IDE-like behaviour
 call dein#add('neoclide/coc.nvim', {'merge':0, 'build': './install.sh nightly'})
-"call dein#add('ludovicchabant/vim-gutentags')
 call dein#add('chrisbra/NrrwRgn')
 
 " Required:
@@ -172,18 +171,8 @@ inoremap <silent><expr> <TAB>
 " Activate line-numbers eveywhere
 set number
 set numberwidth=5
-
-"let g:ale_completion_enabled = 1
-map <leader>G :ALEGoToDefinition<CR>
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-\   'javascript': ['prettier', 'eslint'],
-\   'javascrip.jsx': ['prettier', 'eslint'],
-\   'json': ['prettier', 'eslint'],
-\   'css': ['prettier', 'eslint'],
-\   'scss': ['prettier', 'eslint'],
-\   'html': ['prettier']
-\}
+"
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
