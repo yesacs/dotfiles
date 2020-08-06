@@ -122,10 +122,10 @@ set background=dark
 
 "colorscheme one
 "colorscheme onedark
-"colorscheme palenight
+colorscheme palenight
 "colorscheme material
 "colorscheme gruvbox
-colorscheme dracula
+"colorscheme dracula
 "colorscheme molokai
 "colorscheme monokai
 "colorscheme solarized8
