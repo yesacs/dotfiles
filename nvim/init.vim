@@ -33,63 +33,57 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-" Required:
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
-call dein#begin('~/.config/nvim/')
-
-" Let dein manage dein
-" Required:
-call dein#add('Shougo/dein.vim')
+call plug#begin('~/.vim/plugged')
 
 "vim compat
-call dein#add('roxma/nvim-yarp')
-call dein#add('roxma/vim-hug-neovim-rpc')
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 
 " Look'n'feel
-call dein#add('airblade/vim-gitgutter')
-call dein#add('junegunn/fzf', {'build': '~/.fzf/install --all'})
-call dein#add('junegunn/fzf.vim')
-call dein#add('mhinz/vim-startify')
-call dein#add('equalsraf/neovim-gui-shim')
-call dein#add('jlanzarotta/bufexplorer')
-call dein#add('miyakogi/conoline.vim')
-call dein#add('itchyny/lightline.vim')
-call dein#add('tpope/vim-fugitive')
-call dein#add('wincent/ferret')
-call dein#add('easymotion/vim-easymotion')
-call dein#add('tpope/vim-surround')
-call dein#add('christoomey/vim-tmux-navigator')
-call dein#add('junegunn/goyo.vim')
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-startify'
+Plug 'equalsraf/neovim-gui-shim'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'miyakogi/conoline.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'wincent/ferret'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-surround'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'junegunn/goyo.vim'
 
 " Lang support
-call dein#add('pangloss/vim-javascript')
-call dein#add('mxw/vim-jsx')
-call dein#add('mustache/vim-mustache-handlebars')
-call dein#add('scrooloose/nerdcommenter')
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'scrooloose/nerdcommenter'
 
 " Colors
-call dein#add('joshdick/onedark.vim')
-call dein#add('kaicataldo/material.vim')
-call dein#add('rakr/vim-one')
-call dein#add('drewtempelmeyer/palenight.vim')
-call dein#add('dracula/vim')
-call dein#add('jacoborus/tender.vim')
-call dein#add('sonph/onehalf')
-call dein#add('morhetz/gruvbox')
-call dein#add('cocopon/lightline-hybrid.vim')
-call dein#add('tomasr/molokai')
-call dein#add('sickill/vim-monokai')
-call dein#add('lifepillar/vim-solarized8')
+Plug 'joshdick/onedark.vim'
+Plug 'kaicataldo/material.vim'
+Plug 'rakr/vim-one'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'dracula/vim'
+Plug 'jacoborus/tender.vim'
+Plug 'sonph/onehalf'
+Plug 'morhetz/gruvbox'
+Plug 'cocopon/lightline-hybrid.vim'
+Plug 'tomasr/molokai'
+Plug 'sickill/vim-monokai'
+Plug 'lifepillar/vim-solarized8'
 
-" Deoplete (autocomplete) & other shitty IDE-like behaviour
-call dein#add('neoclide/coc.nvim', {'merge':0, 'build': './install.sh nightly'})
-call dein#add('chrisbra/NrrwRgn')
+" IDE stuff
+Plug 'preservim/nerdtree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'chrisbra/NrrwRgn'
+Plug 'liuchengxu/vim-which-key'
 
 " Required:
-call dein#end()
-
+"call dein#end()
+call plug#end()
 
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -134,15 +128,9 @@ colorscheme palenight
 filetype plugin indent on
 syntax enable
 
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
-
-"End dein Scripts-------------------------
 let g:vimfiler_as_default_explorer = 1
 
-"map <leader>n :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 map <leader>e :Explore<CR>
 map <C-p> :FZF<CR>
 map <leader>p :FZF<CR>
@@ -213,7 +201,13 @@ nmap <leader>w :w<return>
 nmap <leader>q :q<return>
 
 " vv to generate new vertical split
-nnoremap <silent> vv <C-w>v
+nnoremap <silent> vv <C-w>
+
+" WhichKey
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ','
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 
 "search
 set rtp+=~/.fzf
