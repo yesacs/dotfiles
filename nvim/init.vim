@@ -235,6 +235,10 @@ if !empty(glob("~/.config/nvim/keys/which-key.vim"))
   source ~/.config/nvim/keys/which-key.vim
 end
 
+" Disable NrrwRgn default mappings
+let g:nrrw_rgn_nomap_nr = 1
+let g:nrrw_rgn_nomap_Nr = 1
+
 " Local config overrides
 if !empty(glob("~/.config/init.local.vim"))
   source ~/.config/init.local.vim

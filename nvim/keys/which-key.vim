@@ -28,8 +28,8 @@ let g:which_key_map['c'] = [ '<Plug>NERDCommenterToggle'  , 'comment' ]
 let g:which_key_map['e'] = [ ':CocCommand explorer'       , 'CocExplorer' ]
 let g:which_key_map['f'] = [ ':Files'                     , 'search files' ]
 let g:which_key_map['h'] = [ '<C-W>s'                     , 'split below']
-let g:which_key_map['r'] = [ ':Ranger'                    , 'ranger' ]
-let g:which_key_map['S'] = [ ':Startify'                  , 'start screen' ]
+let g:which_key_map['r'] = [ ':Ranger'                    , 'Ranger' ]
+let g:which_key_map['S'] = [ ':Startify'                  , 'Startify' ]
 let g:which_key_map['T'] = [ ':Rg'                        , 'search text' ]
 let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
 let g:which_key_map['y'] = [ '"+y'                        , 'yank to clipboard' ]
@@ -62,6 +62,13 @@ let g:which_key_map.w = {
       \ 'k' : ['<C-w>k'   , 'focus above'],
       \ 'h' : ['<C-w>h'   , 'focus left'],
       \ 'l' : ['<C-w>l'   , 'focus right'],
+      \}
+
+" n is for NrrwRgn
+let g:which_key_map.n = {
+      \'name': '+NrrwRgn',
+      \ 'r' : [':NRV'      , 'open previous selection in narrow window'],
+      \ 'l' : [':NRL'      , 'Reselect the last selected region and open it again in a narrowed window'],
       \}
 
 " g is for git
