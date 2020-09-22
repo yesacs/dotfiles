@@ -38,7 +38,8 @@ printf "\n$ sudo apt install xcape"
 printf "\nhttps://askubuntu.com/a/750535" 
 
 printf "\n\nNeoVim intellisense"
-printf "\n:CocInstall coc-json coc-tsserver coc-css coc-prettier coc-eslint"
+printf "\n:CocInstall coc-json coc-tsserver coc-css coc-prettier coc-eslint
+coc-explorer coc-git"
 
 printf "\n\nMosh True color"
 printf "\nhttps://github.com/mobile-shell/mosh/issues/961"
