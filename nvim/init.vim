@@ -81,19 +81,17 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'scrooloose/nerdcommenter'
 
 " Colors
-Plug 'joshdick/onedark.vim'
 Plug 'kaicataldo/material.vim'
 Plug 'rakr/vim-one'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'dracula/vim'
 Plug 'jacoborus/tender.vim'
-Plug 'sonph/onehalf'
 Plug 'morhetz/gruvbox'
-Plug 'cocopon/lightline-hybrid.vim'
 Plug 'tomasr/molokai'
 Plug 'sickill/vim-monokai'
-Plug 'lifepillar/vim-solarized8'
+Plug 'lifepillar/vim-solarized8', { 'as': 'solarized' }
 Plug 'embark-theme/vim', { 'as': 'embark' }
+Plug 'cocopon/lightline-hybrid.vim'
 
 " IDE stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -110,7 +108,8 @@ call plug#end()
 " Theme
 let g:palenight_terminal_italics=1
 set background=dark
-colorscheme palenight
+"colorscheme palenight
+colorscheme one
 
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -176,10 +175,11 @@ vnoremap <leader>y "+y
 let g:lightline = {
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'relativepath', 'gitbranch', 'modified', 'readonly' ]],
+    \             [ 'relativepath', 'modified', 'readonly' ]],
     \   'right': [
     \              [ 'filetype' ],
     \              [ 'percent', 'lineinfo' ],
+    \              [ 'gitbranch' ],
     \              [ 'linter_warnings', 'linter_errors'],
     \            ]
     \ },
@@ -196,7 +196,9 @@ let g:lightline = {
     \   'linter_warnings': 'warning',
     \   'linter_errors': 'error',
     \ },
-    \ 'colorscheme': 'default',
+    \ 'xcolorscheme': 'wombat',
+    \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+    \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
     \ }
 
 " hello thee
