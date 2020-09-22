@@ -82,6 +82,7 @@ let g:which_key_map.g = {
       \ 'D' : [':Gdiffsplit'   , 'diff split'],
       \ 'a' : [':G add'        , 'add'],
       \ 'I' : [':G ai'         , 'interactive add'],
+      \ 'r' : [':Gread'        , 'revert uncommited changes'],
       \}
 
 " s is for search

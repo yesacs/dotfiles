@@ -64,7 +64,6 @@ Plug 'roxma/vim-hug-neovim-rpc'
 " Look'n'feel
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'mhinz/vim-startify'
 Plug 'equalsraf/neovim-gui-shim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'miyakogi/conoline.vim'
@@ -73,6 +72,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
+Plug 'Yggdroot/indentLine'
 
 " Lang support
 Plug 'pangloss/vim-javascript'
@@ -84,6 +84,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'kaicataldo/material.vim'
 Plug 'rakr/vim-one'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'ayu-theme/ayu-vim'
 Plug 'dracula/vim'
 Plug 'jacoborus/tender.vim'
 Plug 'morhetz/gruvbox'
@@ -107,9 +108,12 @@ call plug#end()
 
 " Theme
 let g:palenight_terminal_italics=1
+let ayucolor="mirage" " for mirage version of theme
 set background=dark
+
 "colorscheme palenight
-colorscheme one
+"colorscheme one
+colorscheme ayu
 
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -201,8 +205,6 @@ let g:lightline = {
     \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
     \ }
 
-" hello thee
-
 function! LightlineLinterWarnings() abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
@@ -238,6 +240,13 @@ end
 " Disable NrrwRgn default mappings
 let g:nrrw_rgn_nomap_nr = 1
 let g:nrrw_rgn_nomap_Nr = 1
+
+" IndentLine {{
+let g:indentLine_char = ''
+let g:indentLine_first_char = ''
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_setColors = 0
+" }}
 
 " Local config overrides
 if !empty(glob("~/.config/init.local.vim"))
