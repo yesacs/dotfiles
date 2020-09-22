@@ -5,10 +5,11 @@ PWD=$(pwd)
 echo "Installing shit..."
 
 #Dein
-printf "Installing Dein..."
-curl -s https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh ./installer.sh ~/.cache/dein > /dev/null
-rm ./installer.sh
+printf "Installing vim-plug..."
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 printf " Done!\n\n"
 
 #Homebrew

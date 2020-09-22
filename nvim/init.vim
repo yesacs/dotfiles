@@ -8,21 +8,33 @@
 let mapleader = " "
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
-set timeoutlen=500
 
+set timeoutlen=500
 set showmatch
 set noswapfile
 set noruler
 set autowrite
 set noshowcmd
 set nohlsearch
-
 set ttyfast
 set lazyredraw
-
 set nocursorline
-set synmaxcol=128
-syntax sync minlines=256
+"set synmaxcol=128
+set number
+set numberwidth=5
+set textwidth=80
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set nowrap
+set noshowmode
+set hidden
+set laststatus=2
+
+filetype plugin indent on
+
+"syntax sync minlines=256
+syntax enable
 
 let g:go_version_warning = 0
 let g:matchparen_timeout = 10
@@ -57,7 +69,6 @@ Plug 'equalsraf/neovim-gui-shim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'miyakogi/conoline.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
@@ -82,14 +93,24 @@ Plug 'cocopon/lightline-hybrid.vim'
 Plug 'tomasr/molokai'
 Plug 'sickill/vim-monokai'
 Plug 'lifepillar/vim-solarized8'
+Plug 'embark-theme/vim', { 'as': 'embark' }
 
 " IDE stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chrisbra/NrrwRgn'
 Plug 'liuchengxu/vim-which-key'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'tpope/vim-fugitive' 
+Plug 'airblade/vim-gitgutter'
 
 " End Plugins
 call plug#end()
+
+" Theme
+let g:palenight_terminal_italics=1
+set background=dark
+colorscheme palenight
 
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -107,32 +128,9 @@ endif
 execute "set t_8f=\e[38;2;%lu;%lu;%lum"
 execute "set t_8b=\e[48;2;%lu;%lu;%lum"
 
-set background=dark
-
-let g:onedark_terminal_italics=1
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_bold = 0
-let g:gruvbox_number_column = 'bg0'
-let g:gruvbox_sign_column = 'bg0'
-let g:palenight_terminal_italics=1
-let g:material_theme_style = 'palenight'
-let g:material_theme_style = 'dark'
-
-colorscheme palenight
-
-filetype plugin indent on
-syntax enable
-
-nmap <leader>e :CocCommand explorer<CR>
-
-
 
 " Terminal break to normal remap to ESC
 tnoremap <Esc> <C-\><C-n>
-
-" map Ctrl-space to leave insert mode
-nnoremap <C-Space> i
-inoremap <C-Space> <Esc>
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
@@ -145,17 +143,8 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 
-" Magic
-set number
-set numberwidth=5
-set textwidth=80
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set nowrap
-set noshowmode
-set hidden
-set laststatus=2
+" C-c closes splits/buffers too
+nnoremap <C-c> <C-w><C-c>
 
 " Prettier config
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
@@ -179,71 +168,38 @@ set splitright
 " fzf location
 set rtp+=/usr/local/opt/fzf
 
-" Vertical split
-"nmap <leader>v :vsp<return>
-" Write file
-"nmap <leader>w :w<return>
-" Close/quit
-"nmap <leader>q :q<return>
-
-" Movement
-"nnoremap <leader>j <C-w>j
-"nnoremap <leader>k <C-w>k
-"nnoremap <leader>h <C-w>h
-"nnoremap <leader>l <C-w>l
-nnoremap <leader>wj <C-w>j
-nnoremap <leader>wk <C-w>k
-nnoremap <leader>wh <C-w>h
-nnoremap <leader>wl <C-w>l
-nnoremap <leader>wv :vsp<CR>
-
-nnoremap <leader>bw :w
-nnoremap <leader>bc :q
-
 " Map copy to system clipboard
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
-
-" WhichKey
-nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
-nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
-
-" Search
-set rtp+=~/.fzf
-nmap <leader>f :Rg<return>
-nmap <leader>m :Maps<return>
-nmap <leader>p :FZF<CR>
-nmap <leader>t :FZF<CR>
-nmap <leader>T :Tags<return>
-
-" Clean up all whitespace at the end of lines for the whole file
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
-
-let g:gutentags_file_list_command = 'rg --files'
 
 " Lightline config
 let g:lightline = {
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'relativepath', 'modified', 'readonly' ] ],
+    \             [ 'relativepath', 'gitbranch', 'modified', 'readonly' ]],
     \   'right': [
-    \              [ 'lineinfo' ],
-    \              [ 'percent' ],
-    \              [ 'linter_warnings', 'linter_errors'],
     \              [ 'filetype' ],
+    \              [ 'percent', 'lineinfo' ],
+    \              [ 'linter_warnings', 'linter_errors'],
     \            ]
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'FugitiveHead'
     \ },
     \ 'component_expand': {
     \   'linter_warnings': 'LightlineLinterWarnings',
     \   'linter_errors': 'LightlineLinterErrors',
-    \   'linter_ok': 'LightlineLinterOK'
+    \   'linter_ok': 'LightlineLinterOK',
     \ },
     \ 'component_type': {
     \   'readonly': 'error',
     \   'linter_warnings': 'warning',
-    \   'linter_errors': 'error'
+    \   'linter_errors': 'error',
     \ },
+    \ 'colorscheme': 'default',
     \ }
+
+" hello thee
 
 function! LightlineLinterWarnings() abort
   let l:counts = ale#statusline#Count(bufnr(''))
@@ -268,6 +224,14 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
+
+" Disable default Ranger mapping
+let g:ranger_map_keys = 0
+
+" WhichKey config
+if !empty(glob("~/.config/nvim/keys/which-key.vim"))
+  source ~/.config/nvim/keys/which-key.vim
+end
 
 " Local config overrides
 if !empty(glob("~/.config/init.local.vim"))
