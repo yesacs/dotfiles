@@ -81,18 +81,12 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'scrooloose/nerdcommenter'
 
 " Colors
-Plug 'kaicataldo/material.vim'
 Plug 'rakr/vim-one'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'ayu-theme/ayu-vim'
-Plug 'dracula/vim'
-Plug 'jacoborus/tender.vim'
-Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
 Plug 'sickill/vim-monokai'
-Plug 'lifepillar/vim-solarized8', { 'as': 'solarized' }
-Plug 'embark-theme/vim', { 'as': 'embark' }
-Plug 'cocopon/lightline-hybrid.vim'
+Plug 'arcticicestudio/nord-vim'
 
 " IDE stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -107,13 +101,13 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " Theme
+set background=dark
 let g:palenight_terminal_italics=1
 let ayucolor="mirage" " for mirage version of theme
-set background=dark
 
-"colorscheme palenight
-"colorscheme one
-colorscheme ayu
+colorscheme palenight
+" colorscheme one
+" colorscheme ayu
 
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -179,7 +173,7 @@ vnoremap <leader>y "+y
 let g:lightline = {
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'relativepath', 'modified', 'readonly' ]],
+    \             [ 'relativepath'],['modified'],['readonly' ]],
     \   'right': [
     \              [ 'filetype' ],
     \              [ 'percent', 'lineinfo' ],
@@ -245,7 +239,7 @@ let g:nrrw_rgn_nomap_Nr = 1
 let g:indentLine_char = ''
 let g:indentLine_first_char = ''
 let g:indentLine_showFirstIndentLevel = 1
-let g:indentLine_setColors = 0
+let g:indentLine_setColors = 1
 " }}
 
 " Local config overrides
