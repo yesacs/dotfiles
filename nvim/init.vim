@@ -19,7 +19,6 @@ set nohlsearch
 set ttyfast
 set lazyredraw
 set nocursorline
-"set synmaxcol=128
 set number
 set numberwidth=5
 set textwidth=80
@@ -32,8 +31,6 @@ set hidden
 set laststatus=2
 
 filetype plugin indent on
-
-"syntax sync minlines=256
 syntax enable
 
 let g:go_version_warning = 0
@@ -87,6 +84,7 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'tomasr/molokai'
 Plug 'sickill/vim-monokai'
 Plug 'arcticicestudio/nord-vim'
+Plug 'mhartington/oceanic-next'
 
 " IDE stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -148,10 +146,6 @@ command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 " Set markdown files to 80 char width (???)
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
-
-if (has("nvim"))
-  set colorcolumn=+1        " highlight column after 'textwidth'
-endif
 
 " vim specific stuff
 if !has('gui_running')
@@ -240,6 +234,26 @@ let g:indentLine_char = ''
 let g:indentLine_first_char = ''
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_setColors = 1
+" }}
+
+" Coc {{
+let g:coc_global_extensions = [
+  \'coc-fzf-preview',
+  \'coc-json',
+  \'coc-actions',
+  \'coc-tsserver',
+  \'coc-css',
+  \'coc-html',
+  \'coc-prettier',
+  \'coc-eslint',
+  \'coc-explorer',
+  \'coc-sh',
+  \'coc-yaml',
+  \'coc-xml',
+  \'coc-yank' ,
+  \'coc-tsserver',
+  \'coc-spell-checker'
+  \ ]
 " }}
 
 " Local config overrides
