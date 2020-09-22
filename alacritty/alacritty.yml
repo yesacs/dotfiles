@@ -47,7 +47,7 @@ window:
   #     - buttonless: Title bar, transparent background and title bar buttons
   #     - transparent: Title bar, transparent background, but no title bar buttons
   #decorations: transparent
-  decorations: none
+  decorations: full
   dynamic_padding: true
 
 scrolling:

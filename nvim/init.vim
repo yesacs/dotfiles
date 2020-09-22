@@ -94,6 +94,7 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'tpope/vim-fugitive' 
 Plug 'airblade/vim-gitgutter'
+Plug 'antoinemadec/coc-fzf'
 
 " End Plugins
 call plug#end()
@@ -122,7 +123,6 @@ endif
 " color fixes for vanilla vim inside alacritty
 execute "set t_8f=\e[38;2;%lu;%lu;%lum"
 execute "set t_8b=\e[48;2;%lu;%lu;%lum"
-
 
 " Terminal break to normal remap to ESC
 tnoremap <Esc> <C-\><C-n>
@@ -159,20 +159,16 @@ set splitright
 " fzf location
 set rtp+=/usr/local/opt/fzf
 
-" Map copy to system clipboard
-nnoremap <leader>y "+y
-vnoremap <leader>y "+y
-
 " Lightline config
 let g:lightline = {
     \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'relativepath'],['modified'],['readonly' ]],
+    \   'left': [ ['mode','paste'],
+    \             ['relativepath','modified'],['readonly' ]],
     \   'right': [
-    \              [ 'filetype' ],
-    \              [ 'percent', 'lineinfo' ],
-    \              [ 'gitbranch' ],
-    \              [ 'linter_warnings', 'linter_errors'],
+    \              ['filetype'],
+    \              ['percent','lineinfo' ],
+    \              ['gitbranch'],
+    \              ['linter_warnings','linter_errors'],
     \            ]
     \ },
     \ 'component_function': {
@@ -189,9 +185,10 @@ let g:lightline = {
     \   'linter_errors': 'error',
     \ },
     \ 'xcolorscheme': 'wombat',
-    \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-    \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+    \ 'xseparator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+    \ 'xsubseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
     \ }
+
 
 function! LightlineLinterWarnings() abort
   let l:counts = ale#statusline#Count(bufnr(''))
@@ -237,22 +234,21 @@ let g:indentLine_setColors = 1
 " }}
 
 " Coc {{
+"\'coc-fzf-preview',
 let g:coc_global_extensions = [
-  \'coc-fzf-preview',
-  \'coc-json',
   \'coc-actions',
+  \'coc-sh',
+  \'coc-highlight',
+  \'coc-json',
   \'coc-tsserver',
   \'coc-css',
-  \'coc-html',
   \'coc-prettier',
   \'coc-eslint',
   \'coc-explorer',
-  \'coc-sh',
+  \'coc-yank',
   \'coc-yaml',
+  \'coc-html',
   \'coc-xml',
-  \'coc-yank' ,
-  \'coc-tsserver',
-  \'coc-spell-checker'
   \ ]
 " }}
 

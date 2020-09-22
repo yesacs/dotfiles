@@ -1,5 +1,6 @@
 package config
 package foreign-env
+package fzf
 package nvm
 package sublime
 theme cmorrell
