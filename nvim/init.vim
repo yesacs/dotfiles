@@ -80,11 +80,9 @@ Plug 'scrooloose/nerdcommenter'
 " Colors
 Plug 'rakr/vim-one'
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'ayu-theme/ayu-vim'
 Plug 'tomasr/molokai'
 Plug 'sickill/vim-monokai'
-Plug 'arcticicestudio/nord-vim'
-Plug 'mhartington/oceanic-next'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 " IDE stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -101,12 +99,18 @@ call plug#end()
 
 " Theme
 set background=dark
+
+let g:material_terminal_italics = 1
 let g:palenight_terminal_italics=1
+
 let ayucolor="mirage" " for mirage version of theme
 
-colorscheme palenight
-" colorscheme one
-" colorscheme ayu
+"'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
+let g:material_theme_style = 'palenight'
+
+"colorscheme palenight
+colorscheme one
+"colorscheme ayu
 
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -159,14 +163,16 @@ set splitright
 " fzf location
 set rtp+=/usr/local/opt/fzf
 
+
+
 " Lightline config
 let g:lightline = {
     \ 'active': {
     \   'left': [ ['mode','paste'],
-    \             ['relativepath','modified'],['readonly' ]],
+    \             ['relativepath'],['modified'],['readonly' ]],
     \   'right': [
     \              ['filetype'],
-    \              ['percent','lineinfo' ],
+    \              ['lineinfo' ],
     \              ['gitbranch'],
     \              ['linter_warnings','linter_errors'],
     \            ]
@@ -184,9 +190,9 @@ let g:lightline = {
     \   'linter_warnings': 'warning',
     \   'linter_errors': 'error',
     \ },
-    \ 'xcolorscheme': 'wombat',
-    \ 'xseparator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-    \ 'xsubseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+    \ 'xcolorscheme': 'material',
+    \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+    \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
     \ }
 
 
@@ -232,6 +238,7 @@ let g:indentLine_first_char = ''
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_setColors = 1
 " }}
+
 
 " Coc {{
 "\'coc-fzf-preview',

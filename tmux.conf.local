@@ -1,4 +1,6 @@
-set -g default-terminal "xterm-256color"
+#set -g default-terminal "xterm-256color"
+set -g default-terminal "xterm-24bit"
+
 #set -g default-terminal 'tmux-256color'
 #set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
 
@@ -7,8 +9,8 @@ set -g terminal-overrides ',xterm-24bit:Tc'
 
 #set -g default-terminal 'screen-256color'
 #set -ga terminal-overrides ',screen-256color:Tc'
-#
-set -s escape-time 0 #set -g default-terminal "xterm-24bit"
+
+set -s escape-time 0 
 
 # https://github.com/gpakosz/.tmux
 # (‑●‑●)> dual licensed under the WTFPL v2 license and the MIT license,
@@ -245,7 +247,7 @@ tmux_conf_battery_bar_symbol_empty='◻'
 # battery bar length (in number of symbols), possible values are
 #   - auto
 #   - a number, e.g. 5
-tmux_conf_battery_bar_length='auto'
+tmux_conf_battery_bar_length='10'
 
 # battery bar palette, possible values are:
 #   - gradient (default)
@@ -272,8 +274,8 @@ tmux_conf_battery_vbar_palette='gradient'
 #tmux_conf_battery_status_charging='↑'       # U+2191
 #tmux_conf_battery_status_discharging='↓'    # U+2193
 #tmux_conf_battery_status_charging='⚡ '    # U+26A1
-#tmux_conf_battery_status_charging='🔌 '    # U+1F50C
-#tmux_conf_battery_status_discharging='🔋 ' # U+1F50B
+tmux_conf_battery_status_charging='🔌 '    # U+1F50C
+tmux_conf_battery_status_discharging='🔋 ' # U+1F50B
 
 # clock style
 tmux_conf_theme_clock_colour='#00afff'  # light blue

@@ -29,7 +29,7 @@ let g:which_key_map['e'] = [ ':CocCommand explorer'       , 'CocExplorer' ]
 let g:which_key_map['f'] = [ ':Files'                     , 'search files' ]
 let g:which_key_map['h'] = [ '<C-W>s'                     , 'split below']
 let g:which_key_map['r'] = [ ':Ranger'                    , 'Ranger' ]
-let g:which_key_map['T'] = [ ':Rg'                        , 'search text' ]
+let g:which_key_map['t'] = [ ':Rg'                        , 'search text' ]
 let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
 let g:which_key_map['y'] = [ '"+y'                        , 'yank to clipboard' ]
 let g:which_key_map['z'] = [ 'Goyo'                       , 'zen mode' ]
@@ -44,7 +44,10 @@ let g:which_key_map.c = {
 let g:which_key_map.C = {
       \ 'name' : '+Coc' ,
       \ 'e' : [':CocCommand explorer'     , 'CocExplorer'],
-      \ 'u' : [':CocUninstall'            , 'CocUninstall'],
+      \ 'l' : [':CocFzfList'              , 'CocFzfList'],
+      \ 'r' : [':CocFzfListResume'        , 'CocFzfListResume'],
+      \ 'y' : [':CocFzfList yank'         , 'yanks'],
+      \ 'a' : [':CocCommand actions.open' , 'actions'],
       \}
 " b is for buffer
 let g:which_key_map.b = {
@@ -74,6 +77,12 @@ let g:which_key_map.w = {
       \ 'k' : ['<C-w>k'   , 'focus above'],
       \ 'h' : ['<C-w>h'   , 'focus left'],
       \ 'l' : ['<C-w>l'   , 'focus right'],
+      \}
+
+" Space is for (Easy)motion
+let g:which_key_map.m = {
+      \ 'name' : '+Easymotion' ,
+      \ 'w' : ['w'       , 'word'],
       \}
 
 " n is for NrrwRgn
