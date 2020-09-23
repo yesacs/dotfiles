@@ -35,10 +35,8 @@ then
   brew install ctags
   brew install bat
   brew install awscli
-  
-  #install emacs and spacemaces
-  git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-  brew install emacs-plus
+  brew install vtop
+  brew install gotop
   
   # install fonts
   brew tap caskroom/fonts
@@ -48,8 +46,7 @@ then
   
   # install npm et. all
   brew install npm
-  npm install -g yarn eslint vtop prettier neovim
-  yarn add -g coc-json coc-tsserver coc-css coc-eslint coc-prettier
+  npm install -g yarn eslint prettier eslint-config-prettier eslint-plugin-prettier
 
 else
   printf "\n😓 Homebrew not found skipping brew setup, you may have to install
