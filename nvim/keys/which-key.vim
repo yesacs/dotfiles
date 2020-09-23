@@ -42,20 +42,21 @@ let g:which_key_map.c = {
 
 " C is for Coc
 let g:which_key_map.C = {
-      \ 'name' : '+Coc' ,
-      \ 'e' : [':CocCommand explorer'     , 'CocExplorer'],
-      \ 'l' : [':CocFzfList'              , 'CocFzfList'],
-      \ 'r' : [':CocFzfListResume'        , 'CocFzfListResume'],
-      \ 'y' : [':CocFzfList yank'         , 'yanks'],
-      \ 'a' : [':CocCommand actions.open' , 'actions'],
+      \ 'name' : '+Coc',
+      \ 'e' : [':CocCommand explorer',            'CocExplorer'],
+      \ 'l' : [':CocFzfList',                     'CocFzfList'],
+      \ 'r' : [':CocFzfListResume',               'CocFzfListResume'],
+      \ 'y' : [':CocFzfList yank',                'yanks'],
+      \ 'a' : ['<Plug>(coc-codeaction-selected)', 'actions'],
       \}
+
 " b is for buffer
 let g:which_key_map.b = {
-      \ 'name' : '+buffers' ,
-      \ 'w' : [':w'     , 'write'],
-      \ 'S' : [':w<CR>:so $MYVIMRC<CR>' , 'write buffer and source init.vim'],
-      \ 'W' : [':wa'    , 'write all'],
-      \ 'n' : [':vnew'  , 'new empty buffer split'],
+      \ 'name' : '+buffers',
+      \ 'w' : [':w',                     'write'],
+      \ 'S' : [':w<CR>:so $MYVIMRC<CR>', 'write buffer and source init.vim'],
+      \ 'W' : [':wa',                    'write all'],
+      \ 'n' : [':vnew',                  'new empty buffer split'],
       \}
 
 " q is for quit
