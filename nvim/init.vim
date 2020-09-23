@@ -42,13 +42,8 @@ if has("gui_running")
   set linespace=1
 endif
 
-"if &term =~# '^screen'
-  "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"end
-
 if &compatible
-  set nocompatible               " Be iMproved
+  set nocompatible " Be iMproved
 endif
 
 " Begin Plugins
@@ -239,9 +234,7 @@ let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_setColors = 1
 " }}
 
-
 " Coc {{
-"\'coc-fzf-preview',
 let g:coc_global_extensions = [
   \'coc-actions',
   \'coc-sh',

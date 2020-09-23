@@ -26,19 +26,15 @@ then
   #install fish
   brew install fish
   curl -L https://get.oh-my.fish | fish
-  
+ 
   brew install fortune
   brew install neovim
   brew install fzf
-  brew install the_silver_searcher
-  brew install ripgrep
-  brew install ctags
   brew install bat
   brew install awscli
-  brew install vtop
   brew install gotop
   
-  # install fonts
+  # install fonts (only works on macs)
   brew tap caskroom/fonts
   brew cask install font-source-code-pro 
   brew cask install font-fira-code
