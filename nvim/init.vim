@@ -81,13 +81,13 @@ Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 " IDE stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/NrrwRgn'
 Plug 'liuchengxu/vim-which-key'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'tpope/vim-fugitive' 
-Plug 'airblade/vim-gitgutter'
-Plug 'antoinemadec/coc-fzf'
+"Plug 'antoinemadec/coc-fzf'
 
 " End Plugins
 call plug#end()
@@ -233,17 +233,18 @@ let g:indentLine_setColors = 1
 let g:coc_global_extensions = [
   \'coc-actions',
   \'coc-sh',
-  \'coc-highlight',
   \'coc-json',
   \'coc-tsserver',
   \'coc-css',
   \'coc-prettier',
   \'coc-eslint',
+  \'coc-snippets',
   \'coc-explorer',
   \'coc-yank',
   \'coc-yaml',
   \'coc-html',
   \'coc-xml',
+  \'coc-react-refactor',
   \ ]
 " }}
 
