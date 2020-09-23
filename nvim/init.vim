@@ -155,11 +155,6 @@ endif
 set splitbelow
 set splitright
 
-" fzf location
-set rtp+=/usr/local/opt/fzf
-
-
-
 " Lightline config
 let g:lightline = {
     \ 'active': {
