@@ -1,0 +1,9 @@
+{
+  "extends": "react-app",
+  "plugins": [
+    "compat"
+  ],
+  "rules": {
+    "compat/compat": "error"
+  }
+}

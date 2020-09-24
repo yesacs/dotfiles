@@ -65,6 +65,7 @@ Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'junegunn/limelight.vim'
 
 " Lang support
 Plug 'pangloss/vim-javascript'
@@ -89,6 +90,7 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'tpope/vim-fugitive' 
 Plug 'antoinemadec/coc-fzf'
 Plug 'junegunn/vim-easy-align'
+Plug 'neoclide/coc-highlight'
 
 " End Plugins
 call plug#end()
@@ -252,6 +254,13 @@ let g:coc_global_extensions = [
 " coc-react-refactor {{
 "xmap <leader>a  <Plug>(coc-codeaction-selected)
 "nmap <leader>a  <Plug>(coc-codeaction-selected)
+" }}
+
+" vim limelight {{
+nmap <Leader>l <Plug>(Limelight)
+xmap <Leader>l <Plug>(Limelight)
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 " }}
 
 " vim-easy-align {{
