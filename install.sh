@@ -41,9 +41,11 @@ then
   brew cask install font-hack-nerd-font
   
   # install npm et. all
+  brew install node
   brew install npm
-  npm install -g yarn eslint prettier eslint-config-prettier eslint-plugin-prettier
+  brew install yarn
 
+  yarn global add eslint prettier
 else
   printf "\n😓 Homebrew not found skipping brew setup, you may have to install
   some stuff manually\n\n"
