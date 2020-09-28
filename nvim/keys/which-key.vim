@@ -39,14 +39,14 @@ let g:which_key_map['z'] = [ 'Goyo',                      'zen mode' ]
 
 " a is for EasyAlign
 let g:which_key_map.a = {
-      \ 'name' : '+Easy[a]lign' ,
+      \ 'name' : '+align' ,
       \ 'a' : ['<Plug>(EasyAlign)>', 'line'],
       \ 'p' : ['<Plug>(EasyAlign)ip', 'in-paragraph'],
       \}
 
 " C is for Coc
 let g:which_key_map.p = {
-      \ 'name' : '+Plug',
+      \ 'name' : '+plug',
       \ 'i' : [':PlugInstall', 'PlugInstall'],
       \ 'c' : [':PlugClean',   'PlugClean'],
       \ 'u' : [':PlugUpgrade', 'PlugUpgrade  '],
@@ -59,7 +59,7 @@ let g:which_key_map.c = {
 
 " C is for Coc
 let g:which_key_map.C = {
-      \ 'name' : '+Coc',
+      \ 'name' : '+coc',
       \ 'e' : [':CocCommand explorer',            'CocExplorer'],
       \ 'l' : [':CocFzfList',                     'CocFzfList'],
       \ 'r' : [':CocFzfListResume',               'CocFzfListResume'],
@@ -101,7 +101,7 @@ let g:which_key_map.w = {
 
 " Space is for (Easy)Motion
 let g:which_key_map.m = {
-      \ 'name' : '+Easy[M]otion',
+      \ 'name' : '+motion',
       \ 'l' : ['<Plug>(easymotion-bd-jk)',        'line'],
       \ 'w' : ['<Plug>(easymotion-bd-w)',         'word'],
       \ 'e' : ['<Plug>(easymotion-bd-e)',         'word end'],
@@ -130,16 +130,6 @@ let g:which_key_map.g = {
       \ 'a' : [':G add',      'add'],
       \ 'I' : [':G ai',       'interactive add'],
       \ 'r' : [':Gread',      'revert uncommited changes'],
-      \}
-
-" S is for snippets
-let g:which_key_map.S = {
-      \ 'name' : '+snippets',
-      \ '?' : [':CocList snippets',                 'list snippets'],
-      \ ',' : [':CocCommand snippets.editSnippets', 'edit snippets'],
-      \ 'c' : ['Redux Class',                       'React-redux class'],
-      \ 'f' : ['Redux Function',                    'React-Redux function'],
-      \ 'F' :  ['Redux Function w/state',           'React-Redux funtion w/ state'],
       \}
 
 " s is for search
