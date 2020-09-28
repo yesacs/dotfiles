@@ -25,21 +25,23 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " Single mappings
-let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle'  , 'comment/uncomment' ]
-let g:which_key_map['e'] = [ ':CocCommand explorer'       , 'CocExplorer' ]
-let g:which_key_map['t'] = [ ':Files'                     , 'search files' ]
-let g:which_key_map['p'] = [ ':Files'                     , 'search files' ]
-let g:which_key_map['h'] = [ '<C-W>s'                     , 'split below']
-let g:which_key_map['r'] = [ ':Ranger'                    , 'Ranger' ]
-let g:which_key_map['f'] = [ ':Rg'                        , 'search text' ]
-let g:which_key_map['l'] = [ ':Limelight!!'               , 'Limelight' ]
-let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
-let g:which_key_map['y'] = [ '"+y'                        , 'yank to clipboard' ]
-let g:which_key_map['z'] = [ 'Goyo'                       , 'zen mode' ]
+let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle', 'comment/uncomment' ]
+let g:which_key_map['e'] = [ ':CocCommand explorer',      'CocExplorer' ]
+let g:which_key_map['t'] = [ ':Files',                    'search files' ]
+let g:which_key_map['p'] = [ ':Files',                    'search files' ]
+let g:which_key_map['h'] = [ '<C-W>s',                    'split below']
+let g:which_key_map['r'] = [ ':Ranger',                   'Ranger' ]
+let g:which_key_map['f'] = [ ':Rg',                       'search text' ]
+let g:which_key_map['l'] = [ ':Limelight!!',              'Limelight' ]
+let g:which_key_map['v'] = [ '<C-W>v',                    'split right']
+let g:which_key_map['y'] = [ '"+y',                       'yank to clipboard' ]
+let g:which_key_map['z'] = [ 'Goyo',                      'zen mode' ]
 
 " a is for EasyAlign
 let g:which_key_map.a = {
-      \ 'name' : '+EasyAlign' ,
+      \ 'name' : '+Easy[a]lign' ,
+      \ 'a' : ['<Plug>(EasyAlign)>', 'line'],
+      \ 'p' : ['<Plug>(EasyAlign)ip', 'in-paragraph'],
       \}
 
 " C is for Coc
@@ -62,16 +64,17 @@ let g:which_key_map.C = {
       \ 'l' : [':CocFzfList',                     'CocFzfList'],
       \ 'r' : [':CocFzfListResume',               'CocFzfListResume'],
       \ 'y' : [':CocFzfList yank',                'yanks'],
-      \ 'a' : ['<Plug>(coc-codeaction-selected)', 'actions for selection'],
+      \ 'a' : [':CocCommand actions.open',        'actions for cursor'],
+      \ 'A' : ['<Plug>(coc-codeaction-selected)', 'actions for selection'],
       \}
 
 " b is for buffer
 let g:which_key_map.b = {
       \ 'name' : '+buffers',
-      \ 'w' : [':w',                     'write'],
-      \ 'S' : [':w<CR>:so $MYVIMRC<CR>', 'write buffer and source init.vim'],
-      \ 'W' : [':wa',                    'write all'],
-      \ 'n' : [':vnew',                  'new empty buffer split'],
+      \ 'w' : [':w',                           'write'],
+      \ 'S' : [':w<CR>:source $MYVIMRC<CR>', 'write buffer and source init.vim'],
+      \ 'W' : [':wa',                          'write all'],
+      \ 'n' : [':vnew',                        'new empty buffer split'],
       \}
 
 " q is for quit
@@ -85,41 +88,48 @@ let g:which_key_map.q = {
 
 " w is for window
 let g:which_key_map.w = {
-      \ 'name' : '+window' ,
-      \ 'd' : [':q'       , 'close'],
-      \ 'b' : ['<C-W>s'   , 'split below'],
-      \ 'v' : [':vsp'     , 'split right'],
-      \ 'j' : ['<C-w>j'   , 'focus below'],
-      \ 'k' : ['<C-w>k'   , 'focus above'],
-      \ 'h' : ['<C-w>h'   , 'focus left'],
-      \ 'l' : ['<C-w>l'   , 'focus right'],
+      \ 'name' : '+window',
+      \ 'd' : [':q',        'close'],
+      \ 'q' : [':wq',       'save and close'],
+      \ 'b' : ['<C-W>s',    'split-below'],
+      \ 'v' : [':vsp',      'split-right'],
+      \ 'j' : ['<C-w>j',    'focus-below'],
+      \ 'k' : ['<C-w>k',    'focus-above'],
+      \ 'h' : ['<C-w>h',    'focus-left'],
+      \ 'l' : ['<C-w>l',    'focus-right'],
       \}
 
-" Space is for (Easy)motion
+" Space is for (Easy)Motion
 let g:which_key_map.m = {
-      \ 'name' : '+Easymotion' ,
-      \ 'w' : ['w'       , 'word'],
+      \ 'name' : '+Easy[M]otion',
+      \ 'l' : ['<Plug>(easymotion-bd-jk)',        'line'],
+      \ 'w' : ['<Plug>(easymotion-bd-w)',         'word'],
+      \ 'e' : ['<Plug>(easymotion-bd-e)',         'word end'],
+      \ 'W' : ['<Plug>(easymotion-overwin-w)',    'word (overwin)'],
+      \ 'L' : ['<Plug>(easymotion-overwin-line)', 'line (overwin)'],
+      \ 's' : ['<Plug>(easymotion-bd-f)',         'search'],
+      \ 'S' : ['<Plug>(easymotion-overwin-f)',    'search (overwin)'],
       \}
 
 " n is for NrrwRgn
 let g:which_key_map.n = {
       \ 'name': '+NrrwRgn',
-      \ 'r' : [':NRV'      , 'open previous selection in narrow window'],
-      \ 'l' : [':NRL'      , 'Reselect the last selected region and open it again in a narrowed window'],
+      \ 'r' : [':NRV',      'open previous selection in narrow window'],
+      \ 'l' : [':NRL',      'Reselect the last selected region and open it again in a narrowed window'],
       \}
 
 " g is for git
 let g:which_key_map.g = {
-      \ 'name' : '+git' ,
-      \ 's' : [':G'            , 'status'],
-      \ 'b' : [':G blame'      , 'blame'],
-      \ 'c' : [':G commit'     , 'commit'],
-      \ 'l' : [':G log'        , 'log'],
-      \ 'd' : [':G diff'       , 'diff'],
-      \ 'D' : [':Gdiffsplit'   , 'diff split'],
-      \ 'a' : [':G add'        , 'add'],
-      \ 'I' : [':G ai'         , 'interactive add'],
-      \ 'r' : [':Gread'        , 'revert uncommited changes'],
+      \ 'name' : '+git',
+      \ 's' : [':G',          'status'],
+      \ 'b' : [':G blame',    'blame'],
+      \ 'c' : [':G commit',   'commit'],
+      \ 'l' : [':G log',      'log'],
+      \ 'd' : [':G diff',     'diff'],
+      \ 'D' : [':Gdiffsplit', 'diff split'],
+      \ 'a' : [':G add',      'add'],
+      \ 'I' : [':G ai',       'interactive add'],
+      \ 'r' : [':Gread',      'revert uncommited changes'],
       \}
 
 " S is for snippets
@@ -129,36 +139,36 @@ let g:which_key_map.S = {
       \ ',' : [':CocCommand snippets.editSnippets', 'edit snippets'],
       \ 'c' : ['Redux Class',                       'React-redux class'],
       \ 'f' : ['Redux Function',                    'React-Redux function'],
-      \ 'F' :  ['Redux Function w/state',            'React-Redux funtion w/ state'],
+      \ 'F' :  ['Redux Function w/state',           'React-Redux funtion w/ state'],
       \}
 
 " s is for search
 let g:which_key_map.s = {
-      \ 'name' : '+search' ,
-      \ '/' : [':History/'     , 'history'],
-      \ ';' : [':Commands'     , 'commands'],
-      \ 'a' : [':Ag'           , 'text Ag'],
-      \ 'b' : [':BLines'       , 'current buffer'],
-      \ 'B' : [':Buffers'      , 'open buffers'],
-      \ 'c' : [':Commits'      , 'commits'],
-      \ 'C' : [':BCommits'     , 'buffer commits'],
-      \ 'f' : [':Files'        , 'files'],
-      \ 'g' : [':GFiles'       , 'git files'],
-      \ 'G' : [':GFiles?'      , 'modified git files'],
-      \ 'h' : [':History'      , 'file history'],
-      \ 'H' : [':History:'     , 'command history'],
-      \ 'l' : [':Lines'        , 'lines'] ,
-      \ 'm' : [':Marks'        , 'marks'] ,
-      \ 'M' : [':Maps'         , 'normal maps'] ,
-      \ 'p' : [':Helptags'     , 'help tags'] ,
-      \ 'P' : [':Tags'         , 'project tags'],
-      \ 's' : [':Snippets'     , 'snippets'],
-      \ 'S' : [':Colors'       , 'color schemes'],
-      \ 't' : [':Rg'           , 'text Rg'],
-      \ 'T' : [':BTags'        , 'buffer tags'],
-      \ 'w' : [':Windows'      , 'search windows'],
-      \ 'y' : [':Filetypes'    , 'file types'],
-      \ 'z' : [':FZF'          , 'FZF'],
+      \ 'name' : '+search',
+      \ '/' : [':History/',  'history'],
+      \ ';' : [':Commands',  'commands'],
+      \ 'a' : [':Ag',        'text Ag'],
+      \ 'b' : [':BLines',    'current buffer'],
+      \ 'B' : [':Buffers',   'open buffers'],
+      \ 'c' : [':Commits',   'commits'],
+      \ 'C' : [':BCommits',  'buffer commits'],
+      \ 'f' : [':Files',     'files'],
+      \ 'g' : [':GFiles',    'git files'],
+      \ 'G' : [':GFiles?',   'modified git files'],
+      \ 'h' : [':History',   'file history'],
+      \ 'H' : [':History:',  'command history'],
+      \ 'l' : [':Lines',     'lines'] ,
+      \ 'm' : [':Marks',     'marks'] ,
+      \ 'M' : [':Maps',      'normal maps'] ,
+      \ 'p' : [':Helptags',  'help tags'] ,
+      \ 'P' : [':Tags',      'project tags'],
+      \ 's' : [':Snippets',  'snippets'],
+      \ 'S' : [':Colors',    'color schemes'],
+      \ 't' : [':Rg',        'text Rg'],
+      \ 'T' : [':BTags',     'buffer tags'],
+      \ 'w' : [':Windows',   'search windows'],
+      \ 'y' : [':Filetypes', 'file types'],
+      \ 'z' : [':FZF',       'FZF'],
       \ }
 
 " Register which key map

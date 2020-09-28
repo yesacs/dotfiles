@@ -92,8 +92,8 @@ Plug 'antoinemadec/coc-fzf'
 Plug 'junegunn/vim-easy-align'
 Plug 'neoclide/coc-highlight'
 Plug 'SirVer/ultisnips'
-Plug 'epilande/vim-es2015-snippets'
-Plug 'epilande/vim-react-snippets'
+"Plug 'epilande/vim-es2015-snippets'
+"Plug 'epilande/vim-react-snippets'
 
 " End Plugins
 call plug#end()
@@ -254,17 +254,10 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 " }}
 
-" vim-easy-align {{
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-" }}
-
-
 " UtiliSnips {{
 let g:UltiSnipsExpandTrigger="<c-k>"
 " }}
+
 
 " WhichKey config
 if !empty(glob("~/.config/nvim/keys/which-key.vim"))
