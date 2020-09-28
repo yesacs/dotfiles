@@ -91,6 +91,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'antoinemadec/coc-fzf'
 Plug 'junegunn/vim-easy-align'
 Plug 'neoclide/coc-highlight'
+Plug 'SirVer/ultisnips'
+Plug 'epilande/vim-es2015-snippets'
+Plug 'epilande/vim-react-snippets'
 
 " End Plugins
 call plug#end()
@@ -216,11 +219,6 @@ endif
 " Disable default Ranger mapping
 let g:ranger_map_keys = 0
 
-" WhichKey config
-if !empty(glob("~/.config/nvim/keys/which-key.vim"))
-  source ~/.config/nvim/keys/which-key.vim
-end
-
 " Disable NrrwRgn default mappings
 let g:nrrw_rgn_nomap_nr = 1
 let g:nrrw_rgn_nomap_Nr = 1
@@ -251,14 +249,7 @@ let g:coc_global_extensions = [
   \ ]
 " }}
 
-" coc-react-refactor {{
-"xmap <leader>a  <Plug>(coc-codeaction-selected)
-"nmap <leader>a  <Plug>(coc-codeaction-selected)
-" }}
-
 " vim limelight {{
-nmap <Leader>l <Plug>(Limelight)
-xmap <Leader>l <Plug>(Limelight)
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 " }}
@@ -269,6 +260,16 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 " }}
+
+
+" UtiliSnips {{
+let g:UltiSnipsExpandTrigger="<c-k>"
+" }}
+
+" WhichKey config
+if !empty(glob("~/.config/nvim/keys/which-key.vim"))
+  source ~/.config/nvim/keys/which-key.vim
+end
 
 " Local config overrides
 if !empty(glob("~/.config/init.local.vim"))

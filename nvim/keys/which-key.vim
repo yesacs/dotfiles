@@ -1,13 +1,14 @@
 " Map leader to which_key
 nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
-vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
+vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR> 
 
-" Create map to add keys to
-let g:which_key_map =  {}
-" Define a separator
-let g:which_key_sep = '→'
-" set timeoutlen=100
+" Create map to add keys to 
+let g:which_key_map =  {} 
 
+"Define a separator 
+"let g:which_key_sep = '→' 
+let g:which_key_sep = ':' 
+set timeoutlen=1000
 
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
@@ -26,14 +27,28 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 " Single mappings
 let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle'  , 'comment/uncomment' ]
 let g:which_key_map['e'] = [ ':CocCommand explorer'       , 'CocExplorer' ]
-let g:which_key_map['f'] = [ ':Files'                     , 'search files' ]
+let g:which_key_map['t'] = [ ':Files'                     , 'search files' ]
+let g:which_key_map['p'] = [ ':Files'                     , 'search files' ]
 let g:which_key_map['h'] = [ '<C-W>s'                     , 'split below']
 let g:which_key_map['r'] = [ ':Ranger'                    , 'Ranger' ]
-let g:which_key_map['t'] = [ ':Rg'                        , 'search text' ]
+let g:which_key_map['f'] = [ ':Rg'                        , 'search text' ]
+let g:which_key_map['l'] = [ ':Limelight!!'               , 'Limelight' ]
 let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
 let g:which_key_map['y'] = [ '"+y'                        , 'yank to clipboard' ]
 let g:which_key_map['z'] = [ 'Goyo'                       , 'zen mode' ]
 
+" a is for EasyAlign
+let g:which_key_map.a = {
+      \ 'name' : '+EasyAlign' ,
+      \}
+
+" C is for Coc
+let g:which_key_map.p = {
+      \ 'name' : '+Plug',
+      \ 'i' : [':PlugInstall', 'PlugInstall'],
+      \ 'c' : [':PlugClean',   'PlugClean'],
+      \ 'u' : [':PlugUpgrade', 'PlugUpgrade  '],
+      \}
 
 " C is for Coc
 let g:which_key_map.c = {
@@ -47,7 +62,7 @@ let g:which_key_map.C = {
       \ 'l' : [':CocFzfList',                     'CocFzfList'],
       \ 'r' : [':CocFzfListResume',               'CocFzfListResume'],
       \ 'y' : [':CocFzfList yank',                'yanks'],
-      \ 'a' : ['<Plug>(coc-codeaction-selected)', 'actions'],
+      \ 'a' : ['<Plug>(coc-codeaction-selected)', 'actions for selection'],
       \}
 
 " b is for buffer
@@ -88,7 +103,7 @@ let g:which_key_map.m = {
 
 " n is for NrrwRgn
 let g:which_key_map.n = {
-      \'name': '+NrrwRgn',
+      \ 'name': '+NrrwRgn',
       \ 'r' : [':NRV'      , 'open previous selection in narrow window'],
       \ 'l' : [':NRL'      , 'Reselect the last selected region and open it again in a narrowed window'],
       \}
@@ -105,6 +120,16 @@ let g:which_key_map.g = {
       \ 'a' : [':G add'        , 'add'],
       \ 'I' : [':G ai'         , 'interactive add'],
       \ 'r' : [':Gread'        , 'revert uncommited changes'],
+      \}
+
+" S is for snippets
+let g:which_key_map.S = {
+      \ 'name' : '+snippets',
+      \ '?' : [':CocList snippets',                 'list snippets'],
+      \ ',' : [':CocCommand snippets.editSnippets', 'edit snippets'],
+      \ 'c' : ['Redux Class',                       'React-redux class'],
+      \ 'f' : ['Redux Function',                    'React-Redux function'],
+      \ 'F' :  ['Redux Function w/state',            'React-Redux funtion w/ state'],
       \}
 
 " s is for search
