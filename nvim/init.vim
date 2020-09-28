@@ -247,6 +247,8 @@ let g:coc_global_extensions = [
   \'coc-xml',
   \'coc-react-refactor',
   \ ]
+
+autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 " }}
 
 " vim limelight {{

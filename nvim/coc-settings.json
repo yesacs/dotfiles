@@ -11,5 +11,6 @@
     "md",
     "vue",
     "html"
-  ]
+  ],
+  "coc.preferences.jumpCommand": "vsplit"
 }

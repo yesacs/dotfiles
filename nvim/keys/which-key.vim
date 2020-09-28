@@ -1,14 +1,19 @@
 " Map leader to which_key
-nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
-vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR> 
+"nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
+"vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR> 
+
+nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
+vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
+
+nnoremap <silent> <localleader> :<c-u>WhichKey ','<CR>
+vnoremap <silent> <localleader> :<c-u>WhichKeyVisual ','<CR>
 
 " Create map to add keys to 
 let g:which_key_map =  {} 
 
 "Define a separator 
-"let g:which_key_sep = '→' 
-let g:which_key_sep = ':' 
-set timeoutlen=1000
+let g:which_key_sep = '→' 
+set timeoutlen=500
 
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
@@ -44,7 +49,7 @@ let g:which_key_map.a = {
       \ 'p' : ['<Plug>(EasyAlign)ip', 'in-paragraph'],
       \}
 
-" C is for Coc
+" p is for vim-plug
 let g:which_key_map.p = {
       \ 'name' : '+plug',
       \ 'i' : [':PlugInstall', 'PlugInstall'],
@@ -57,16 +62,25 @@ let g:which_key_map.c = {
       \ 'name' : '+NERDCommenter' ,
       \}
 
-" C is for Coc
-let g:which_key_map.C = {
-      \ 'name' : '+coc',
+" , is for Coc
+let g:which_key_local_map = {
+      \ 'name' : '+Coc',
       \ 'e' : [':CocCommand explorer',            'CocExplorer'],
       \ 'l' : [':CocFzfList',                     'CocFzfList'],
-      \ 'r' : [':CocFzfListResume',               'CocFzfListResume'],
-      \ 'y' : [':CocFzfList yank',                'yanks'],
-      \ 'a' : [':CocCommand actions.open',        'actions for cursor'],
-      \ 'A' : ['<Plug>(coc-codeaction-selected)', 'actions for selection'],
+      \ '?' : [':call CocActionAsync("doHover")', 'show-docs'],
+      \'g':{
+          \ 'name' : '+goto',
+          \ 'd' : ['<Plug>(coc-definition)',          'goto-definition'],
+          \ 't' : ['<Plug>(coc-type-definition)',     'goto-type-definition'],
+          \ 'i' : ['<Plug>(coc-implementation)',      'goto-implementation'],
+      \},
+      \ 'R' : ['<Plug>(coc-references)',          'show-uses'],
+      \ 'r' : ['<Plug>(coc-rename)',              'rename'],
+      \ 'a' : ['<Plug>(coc-codeaction)',          'actions'],
+      \ 'A' : ['<Plug>(coc-codeaction-selected)', 'actions-for-selection'],
       \}
+
+let g:which_key_map[','] = g:which_key_local_map
 
 " b is for buffer
 let g:which_key_map.b = {
@@ -135,31 +149,33 @@ let g:which_key_map.g = {
 " s is for search
 let g:which_key_map.s = {
       \ 'name' : '+search',
-      \ '/' : [':History/',  'history'],
-      \ ';' : [':Commands',  'commands'],
-      \ 'a' : [':Ag',        'text Ag'],
-      \ 'b' : [':BLines',    'current buffer'],
-      \ 'B' : [':Buffers',   'open buffers'],
-      \ 'c' : [':Commits',   'commits'],
-      \ 'C' : [':BCommits',  'buffer commits'],
-      \ 'f' : [':Files',     'files'],
-      \ 'g' : [':GFiles',    'git files'],
-      \ 'G' : [':GFiles?',   'modified git files'],
-      \ 'h' : [':History',   'file history'],
-      \ 'H' : [':History:',  'command history'],
-      \ 'l' : [':Lines',     'lines'] ,
-      \ 'm' : [':Marks',     'marks'] ,
-      \ 'M' : [':Maps',      'normal maps'] ,
-      \ 'p' : [':Helptags',  'help tags'] ,
-      \ 'P' : [':Tags',      'project tags'],
-      \ 's' : [':Snippets',  'snippets'],
-      \ 'S' : [':Colors',    'color schemes'],
-      \ 't' : [':Rg',        'text Rg'],
-      \ 'T' : [':BTags',     'buffer tags'],
-      \ 'w' : [':Windows',   'search windows'],
-      \ 'y' : [':Filetypes', 'file types'],
-      \ 'z' : [':FZF',       'FZF'],
+      \ '/' : [':History/',        'history'],
+      \ ';' : [':Commands',        'commands'],
+      \ 'a' : [':Ag',              'text Ag'],
+      \ 'b' : [':BLines',          'current buffer'],
+      \ 'B' : [':Buffers',         'open buffers'],
+      \ 'c' : [':Commits',         'commits'],
+      \ 'C' : [':BCommits',        'buffer commits'],
+      \ 'f' : [':Files',           'files'],
+      \ 'g' : [':GFiles',          'git files'],
+      \ 'G' : [':GFiles?',         'modified git files'],
+      \ 'h' : [':History',         'file history'],
+      \ 'H' : [':History:',        'command history'],
+      \ 'l' : [':Lines',           'lines'] ,
+      \ 'm' : [':Marks',           'marks'] ,
+      \ 'M' : [':Maps',            'normal maps'] ,
+      \ 'p' : [':Helptags',        'help tags'] ,
+      \ 'P' : [':Tags',            'project tags'],
+      \ 's' : [':Snippets',        'snippets'],
+      \ 'S' : [':Colors',          'color schemes'],
+      \ 't' : [':Rg',              'text Rg'],
+      \ 'T' : [':BTags',           'buffer tags'],
+      \ 'w' : [':Windows',         'search windows'],
+      \ 'Y' : [':Filetypes',       'file types'],
+      \ 'z' : [':FZF',             'FZF'],
+      \ 'y' : [':CocFzfList yank', 'yanks'],
       \ }
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")
+call which_key#register(',', "g:which_key_local_map")
