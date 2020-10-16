@@ -13,7 +13,7 @@ let g:which_key_map =  {}
 
 "Define a separator 
 let g:which_key_sep = '→' 
-set timeoutlen=500
+set timeoutlen=1000
 
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
@@ -67,8 +67,9 @@ let g:which_key_local_map = {
       \ 'name' : '+Coc',
       \ 'e' : [':CocCommand explorer',            'CocExplorer'],
       \ 'l' : [':CocFzfList',                     'CocFzfList'],
-      \ '?' : [':call CocActionAsync("doHover")', 'show-docs'],
-      \'g':{
+      \ 'h' : [':call CocActionAsync("doHover")', 'show-docs'],
+      \ 'd' : ['<Plug>(coc-definition)',          'definition'],
+      \ 'g':{
           \ 'name' : '+goto',
           \ 'd' : ['<Plug>(coc-definition)',          'goto-definition'],
           \ 't' : ['<Plug>(coc-type-definition)',     'goto-type-definition'],

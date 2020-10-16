@@ -90,10 +90,6 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'tpope/vim-fugitive' 
 Plug 'antoinemadec/coc-fzf'
 Plug 'junegunn/vim-easy-align'
-Plug 'neoclide/coc-highlight'
-Plug 'SirVer/ultisnips'
-"Plug 'epilande/vim-es2015-snippets'
-"Plug 'epilande/vim-react-snippets'
 
 " End Plugins
 call plug#end()
@@ -234,16 +230,15 @@ let g:indentLine_setColors = 1
 let g:coc_global_extensions = [
   \'coc-actions',
   \'coc-sh',
+  \'coc-css',
   \'coc-json',
   \'coc-tsserver',
-  \'coc-css',
   \'coc-prettier',
   \'coc-eslint',
-  \'coc-snippets',
   \'coc-explorer',
-  \'coc-yank',
   \'coc-yaml',
   \'coc-html',
+  \'coc-yank',
   \'coc-xml',
   \'coc-react-refactor',
   \ ]
@@ -256,10 +251,9 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 " }}
 
-" UtiliSnips {{
-let g:UltiSnipsExpandTrigger="<c-k>"
+" coc-yank {{
+autocmd WinLeave * call coc#util#clear_pos_matches('^HighlightedyankRegion')
 " }}
-
 
 " WhichKey config
 if !empty(glob("~/.config/nvim/keys/which-key.vim"))
