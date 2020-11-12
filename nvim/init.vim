@@ -75,6 +75,7 @@ Plug 'scrooloose/nerdcommenter'
 
 " Colors
 Plug 'rakr/vim-one'
+Plug 'joshdick/onedark.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tomasr/molokai'
 Plug 'sickill/vim-monokai'
@@ -107,7 +108,8 @@ let g:material_theme_style = 'palenight'
 
 "colorscheme palenight
 colorscheme one
-"colorscheme ayu
+"colorscheme material
+"colorscheme onedark
 
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -172,35 +174,14 @@ let g:lightline = {
     \ 'component_function': {
     \   'gitbranch': 'FugitiveHead'
     \ },
-    \ 'component_expand': {
-    \   'linter_warnings': 'LightlineLinterWarnings',
-    \   'linter_errors': 'LightlineLinterErrors',
-    \   'linter_ok': 'LightlineLinterOK',
-    \ },
     \ 'component_type': {
     \   'readonly': 'error',
-    \   'linter_warnings': 'warning',
-    \   'linter_errors': 'error',
     \ },
     \ 'xcolorscheme': 'material',
     \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
     \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
     \ }
 
-
-function! LightlineLinterWarnings() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '' : printf('%d', all_non_errors)
-endfunction
-
-function! LightlineLinterErrors() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '' : printf('%d', all_errors)
-endfunction
 
 " match line number colors to lightline color scheme powerline
 let g:conoline_color_normal_dark = 'guibg=#222222'
@@ -259,7 +240,6 @@ autocmd WinLeave * call coc#util#clear_pos_matches('^HighlightedyankRegion')
 if !empty(glob("~/.config/nvim/keys/which-key.vim"))
   source ~/.config/nvim/keys/which-key.vim
 end
-
 " Local config overrides
 if !empty(glob("~/.config/init.local.vim"))
   source ~/.config/init.local.vim
