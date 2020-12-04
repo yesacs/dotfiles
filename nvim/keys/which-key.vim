@@ -33,10 +33,9 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle', 'comment/uncomment' ]
 let g:which_key_map['e'] = [ ':CocCommand explorer',      'CocExplorer' ]
 let g:which_key_map['t'] = [ ':Files',                    'search files' ]
-let g:which_key_map['p'] = [ ':Files',                    'search files' ]
+let g:which_key_map['T'] = [ ':FloatermToggle',           'FLoaterm' ]
 let g:which_key_map['h'] = [ '<C-W>s',                    'split below']
 let g:which_key_map['r'] = [ ':Ranger',                   'Ranger' ]
-let g:which_key_map['f'] = [ ':Rg',                       'search text' ]
 let g:which_key_map['l'] = [ ':Limelight!!',              'Limelight' ]
 let g:which_key_map['v'] = [ '<C-W>v',                    'split right']
 let g:which_key_map['y'] = [ '"+y',                       'yank to clipboard' ]
@@ -47,6 +46,30 @@ let g:which_key_map.a = {
       \ 'name' : '+align' ,
       \ 'a' : ['<Plug>(EasyAlign)>', 'line'],
       \ 'p' : ['<Plug>(EasyAlign)ip', 'in-paragraph'],
+      \}
+
+" f is for fzf 
+let g:which_key_map.f = {
+      \ 'name' : '+FZF',
+      \ 'p' : [':Files', 'Files'],
+      \ 'g' : [':GFiles', 'Git ls-files'],
+      \ 'G' : [':GFiles?', 'Git Files'],
+      \ 'b' : [':Buffers', 'Buffers'],
+      \ 'f' : [':Rg', 'Rg'],
+      \ 'a' : [':Ag', 'Ag'],
+      \ 'l' : [':Lines', 'Lines in open Buffers'],
+      \ 'L' : [':BLines', 'Lines in current Buffer'],
+      \ 't' : [':Tags', 'Tags in open Buffers'],
+      \ 'T' : [':Tags', 'Tags in current Buffer'],
+      \ 'm' : [':Marks', 'Marks'],
+      \ 'w' : [':Windows', 'Windows'],
+      \ 'h' : [':History', 'History'],
+      \ 'H' : [':History:', 'Command History'],
+      \ 'S' : [':History/', 'Search History'],
+      \ 's' : [':Snippets', 'Snippets'],
+      \ 'c' : [':Commits', 'Commits'],
+      \ 'C' : [':BCommits', 'Commits for current Buffers'],
+      \ 'z' : [':Commands', 'Commands'],
       \}
 
 " p is for vim-plug
@@ -87,7 +110,8 @@ let g:which_key_map[','] = g:which_key_local_map
 let g:which_key_map.b = {
       \ 'name' : '+buffers',
       \ 'w' : [':w',                           'write'],
-      \ 'S' : [':w<CR>:source $MYVIMRC<CR>', 'write buffer and source init.vim'],
+      \ 'b' : [':Buffers',                     ':Buffers'],
+      \ 'S' : [':w<CR>:source $MYVIMRC<CR>',   'write buffer and source init.vim'],
       \ 'W' : [':wa',                          'write all'],
       \ 'n' : [':vnew',                        'new empty buffer split'],
       \}

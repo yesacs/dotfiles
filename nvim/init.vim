@@ -91,6 +91,7 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'tpope/vim-fugitive' 
 Plug 'antoinemadec/coc-fzf'
 Plug 'junegunn/vim-easy-align'
+Plug 'voldikss/vim-floaterm'
 
 " End Plugins
 call plug#end()
