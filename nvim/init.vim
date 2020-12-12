@@ -234,7 +234,7 @@ autocmd! User GoyoLeave Limelight!
 " }}
 
 " coc-yank {{
-autocmd WinLeave * call coc#util#clear_pos_matches('^HighlightedyankRegion')
+"autocmd WinLeave * call coc#util#clear_pos_matches('^HighlightedyankRegion')
 " }}
 
 " WhichKey config

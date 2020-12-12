@@ -29,16 +29,18 @@ then
  
   brew install fortune
   brew install neovim
+  brew install rg
+  brew install the_silver_searcher 
   brew install fzf
   brew install bat
   brew install awscli
   brew install gotop
   
   # install fonts (only works on macs)
-  brew tap caskroom/fonts
-  brew cask install font-source-code-pro 
-  brew cask install font-fira-code
-  brew cask install font-hack-nerd-font
+  brew tap homebrew/cask-fonts
+  brew install --cask font-source-code-pro 
+  brew install --cask font-fira-code
+  brew install --cask font-hack-nerd-font
   
   # install npm et. all
   brew install node
