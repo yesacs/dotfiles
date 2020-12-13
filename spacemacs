@@ -338,9 +338,9 @@ you should place your code here."
 
     (setq inhibit-compacting-font-caches t)
 
-    (use-package doom-modeline
-      :ensure t
-      :init (doom-modeline-init))
+    ;; (use-package doom-modeline
+    ;;   :ensure t
+    ;;   :init (doom-modeline-init))
 
     ;; (global-diff-hl-mode)
 
@@ -354,7 +354,7 @@ you should place your code here."
     ;; (load-theme 'doom-molokai t)
     ;; (load-theme 'doom-monokai t)
     ;; (load-theme 'doom-one t)
-    (load-theme 'doom-palenight t)
+    ;; (load-theme 'doom-palenight t)
     ;; (load-theme 'gruvbox t)
 
     ;; Enable flashing mode-line on errors

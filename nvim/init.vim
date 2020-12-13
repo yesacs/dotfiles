@@ -107,8 +107,8 @@ let ayucolor="mirage" " for mirage version of theme
 "'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
 let g:material_theme_style = 'palenight'
 
-"colorscheme palenight
-colorscheme one
+colorscheme palenight
+"colorscheme one
 "colorscheme material
 "colorscheme onedark
 

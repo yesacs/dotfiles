@@ -19,6 +19,7 @@ ln -sf "$PWD"/git-completion.bash ~/.git-completion.bash
 ln -sf "$PWD"/eslintrc ~/.eslintrc
 ln -sf "$PWD"/tmux.conf.local ~/.tmux.conf.local
 ln -sf "$PWD"/spacemacs ~/.spacemacs
+ln -sf "$PWD"/doom.d ~/.doom.d
 ln -sf "$PWD"/prettierrc.js ~/.prettierrc.js
 ln -sf "$PWD"/xprofile ~/.xprofile
 

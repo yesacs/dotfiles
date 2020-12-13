@@ -47,7 +47,7 @@ then
   brew install npm
   brew install yarn
 
-  yarn global add eslint prettier
+  yarn global add eslint prettier typescript
 else
   printf "\n😓 Homebrew not found skipping brew setup, you may have to install
   some stuff manually\n\n"
