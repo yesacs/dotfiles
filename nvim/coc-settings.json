@@ -12,5 +12,14 @@
     "vue",
     "html"
   ],
-  "coc.preferences.jumpCommand": "vsplit"
+  "coc.preferences.jumpCommand": "vsplit",
+  "eslint.packageManager": "yarn",
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact",
+    "css",
+    "scss"
+  ]
 }

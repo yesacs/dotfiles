@@ -16,7 +16,7 @@ ln -sf "$PWD"/nvim/init.vim ~/.vimrc
 ln -sf "$PWD"/git_commit_message ~/.git_commit_message
 ln -sf "$PWD"/gitconfig ~/.gitconfig
 ln -sf "$PWD"/git-completion.bash ~/.git-completion.bash
-ln -sf "$PWD"/eslintrc ~/.eslintrc
+ln -sf "$PWD"/eslintrc.js ~/.eslintrc.js
 ln -sf "$PWD"/tmux.conf.local ~/.tmux.conf.local
 ln -sf "$PWD"/spacemacs ~/.spacemacs
 ln -sf "$PWD"/doom.d ~/.doom.d

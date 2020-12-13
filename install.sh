@@ -47,7 +47,12 @@ then
   brew install npm
   brew install yarn
 
-  yarn global add eslint prettier typescript
+  # i dunno which i actually need here
+  yarn global add eslint-plugin-jsx-a11y eslint-plugin-import babel-eslint
+  yarn gloabl add eslint-plugin-react eslint-plugin-react-hooks
+  yarn global add @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-flowtype
+  yarn global add prettier typescript
+  yarn global add eslint eslint-config-airbnb eslint-config-react
 else
   printf "\n😓 Homebrew not found skipping brew setup, you may have to install
   some stuff manually\n\n"

@@ -5,4 +5,7 @@ export const hello = {
   x: 1234,
 }
 
-x = 145,
+const x = 145
+x = 123
+
+y = 13
