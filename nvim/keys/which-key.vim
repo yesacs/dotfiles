@@ -38,7 +38,7 @@ let g:which_key_map['h'] = [ '<C-W>s',                    'split below']
 let g:which_key_map['r'] = [ ':Ranger',                   'Ranger' ]
 let g:which_key_map['l'] = [ ':Limelight!!',              'Limelight' ]
 let g:which_key_map['v'] = [ '<C-W>v',                    'split right']
-let g:which_key_map['y'] = [ '"+y',                       'yank to clipboard' ]
+let g:which_key_map['y'] = [ '+y',                       'yank to clipboard' ]
 let g:which_key_map['z'] = [ 'Goyo',                      'zen mode' ]
 
 " a is for EasyAlign
