@@ -1,3 +1,5 @@
+// file to test eslint settings
+
 import React from 'react'
 import c from 'classnames'
 
@@ -10,4 +12,4 @@ x = 123
 
 y = 13
 
-// export const test = <span />
+export const test = <span />

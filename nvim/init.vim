@@ -102,20 +102,13 @@ set background=dark
 let g:material_terminal_italics = 1
 let g:palenight_terminal_italics=1
 
-let ayucolor="mirage" " for mirage version of theme
-
 "'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
 let g:material_theme_style = 'palenight'
 
-colorscheme palenight
+"colorscheme palenight
 "colorscheme one
 "colorscheme material
-"colorscheme onedark
-
-if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
+colorscheme onedark
 
 "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
 "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
@@ -123,10 +116,6 @@ endif
 if (has("termguicolors"))
   set termguicolors
 endif
-
-" color fixes for vanilla vim inside alacritty
-execute "set t_8f=\e[38;2;%lu;%lu;%lum"
-execute "set t_8b=\e[48;2;%lu;%lu;%lum"
 
 " Terminal break to normal remap to ESC
 tnoremap <Esc> <C-\><C-n>
@@ -150,11 +139,6 @@ command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 " Set markdown files to 80 char width (???)
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
-
-" vim specific stuff
-if !has('gui_running')
-  set t_Co=256
-endif
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -245,4 +229,10 @@ end
 if !empty(glob("~/.config/init.local.vim"))
   source ~/.config/init.local.vim
 end
+
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.6,'yoffset':0.5,'xoffset': 0.5, 'border': 'rounded' } }
+hi FZFColor guifg=#555555 guibg=#222222 ctermbg=NONE ctermfg=NONE cterm=NONE
+let g:fzf_colors = { 'border': ['fg', 'FZFColor'], 'bg': [ 'bg', 'FZFColor'] }
+
+
 
