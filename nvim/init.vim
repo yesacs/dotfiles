@@ -232,7 +232,7 @@ end
 
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.6,'yoffset':0.5,'xoffset': 0.5, 'border': 'rounded' } }
 hi FZFColor guifg=#555555 guibg=#222222 ctermbg=NONE ctermfg=NONE cterm=NONE
-let g:fzf_colors = { 'border': ['fg', 'FZFColor'], 'bg': [ 'bg', 'FZFColor'] }
+let g:fzf_colors = { 'border': ['fg', 'FZFColor'] }
 
 
 
