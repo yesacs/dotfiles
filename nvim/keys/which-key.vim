@@ -1,7 +1,4 @@
 " Map leader to which_key
-"nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
-"vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR> 
-
 nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 
@@ -38,36 +35,35 @@ let g:which_key_map['h'] = [ '<C-W>s',                    'split below']
 let g:which_key_map['r'] = [ ':Ranger',                   'Ranger' ]
 let g:which_key_map['l'] = [ ':Limelight!!',              'Limelight' ]
 let g:which_key_map['v'] = [ '<C-W>v',                    'split right']
-let g:which_key_map['y'] = [ '+y',                       'yank to clipboard' ]
 let g:which_key_map['z'] = [ 'Goyo',                      'zen mode' ]
 
 " a is for EasyAlign
 let g:which_key_map.a = {
-      \ 'name' : '+align' ,
-      \ 'a' : ['<Plug>(EasyAlign)>', 'line'],
+      \ 'name' : '+align',
+      \ 'a' : ['<Plug>(EasyAlign)>',  'line'],
       \ 'p' : ['<Plug>(EasyAlign)ip', 'in-paragraph'],
       \}
 
 " f is for fzf 
 let g:which_key_map.f = {
       \ 'name' : '+FZF',
-      \ 'p' : [':Files', 'Files'],
-      \ 'g' : [':GFiles', 'Git ls-files'],
-      \ 'G' : [':GFiles?', 'Git Files'],
-      \ 'b' : [':Buffers', 'Buffers'],
-      \ 'f' : [':Rg', 'Rg'],
-      \ 'a' : [':Ag', 'Ag'],
-      \ 'l' : [':Lines', 'Lines in open Buffers'],
-      \ 'L' : [':BLines', 'Lines in current Buffer'],
-      \ 't' : [':Tags', 'Tags in open Buffers'],
-      \ 'T' : [':Tags', 'Tags in current Buffer'],
-      \ 'm' : [':Marks', 'Marks'],
-      \ 'w' : [':Windows', 'Windows'],
-      \ 'h' : [':History', 'History'],
+      \ 'p' : [':Files',    'Files'],
+      \ 'g' : [':GFiles',   'Git ls-files'],
+      \ 'G' : [':GFiles?',  'Git Files'],
+      \ 'b' : [':Buffers',  'Buffers'],
+      \ 'f' : [':Rg',       'Rg'],
+      \ 'a' : [':Ag',       'Ag'],
+      \ 'l' : [':Lines',    'Lines in open Buffers'],
+      \ 'L' : [':BLines',   'Lines in current Buffer'],
+      \ 't' : [':Tags',     'Tags in open Buffers'],
+      \ 'T' : [':Tags',     'Tags in current Buffer'],
+      \ 'm' : [':Marks',    'Marks'],
+      \ 'w' : [':Windows',  'Windows'],
+      \ 'h' : [':History',  'History'],
       \ 'H' : [':History:', 'Command History'],
       \ 'S' : [':History/', 'Search History'],
       \ 's' : [':Snippets', 'Snippets'],
-      \ 'c' : [':Commits', 'Commits'],
+      \ 'c' : [':Commits',  'Commits'],
       \ 'C' : [':BCommits', 'Commits for current Buffers'],
       \ 'z' : [':Commands', 'Commands'],
       \}
