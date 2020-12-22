@@ -33,7 +33,6 @@ then
   brew install the_silver_searcher 
   brew install fzf
   brew install bat
-  brew install awscli
   brew install gotop
   
   # install fonts (only works on macs)
