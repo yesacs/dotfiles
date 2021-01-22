@@ -29,8 +29,8 @@ set nowrap
 set noshowmode
 set hidden
 set laststatus=2
-
 set clipboard=unnamed
+set list listchars=tab:»\ ,trail:·,nbsp:⎵,precedes:<,extends:>
 
 filetype plugin indent on
 syntax enable
@@ -243,6 +243,11 @@ autocmd! User GoyoLeave Limelight!
 if !empty(glob("~/.config/nvim/keys/which-key.vim"))
   source ~/.config/nvim/keys/which-key.vim
 end
+
+let g:indentLine_enabled = 0
+let g:indentLine_char = '┊'
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
 " Local config overrides
 if !empty(glob("~/.config/init.local.vim"))
   source ~/.config/init.local.vim
