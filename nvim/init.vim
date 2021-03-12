@@ -16,8 +16,8 @@ set noruler
 set autowrite
 set noshowcmd
 set nohlsearch
-set ttyfast
-set lazyredraw
+set ttyfast 
+set lazyredraw 
 set nocursorline
 set number
 set numberwidth=5
