@@ -413,31 +413,49 @@
                             "from": {
                                 "key_code": "f10"
                             },
+<<<<<<< HEAD
                             "to": [
                                 {
                                     "key_code": "scroll_lock"
                                 }
                             ]
+=======
+                            "to": {
+                                "key_code": "scroll_lock"
+                            }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                         },
                         {
                             "from": {
                                 "key_code": "left_command"
                             },
+<<<<<<< HEAD
                             "to": [
                                 {
                                     "key_code": "left_option"
                                 }
                             ]
+=======
+                            "to": {
+                                "key_code": "left_option"
+                            }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                         },
                         {
                             "from": {
                                 "key_code": "left_option"
                             },
+<<<<<<< HEAD
                             "to": [
                                 {
                                     "key_code": "left_command"
                                 }
                             ]
+=======
+                            "to": {
+                                "key_code": "left_command"
+                            }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                         }
                     ]
                 },
@@ -486,143 +504,228 @@
                     "from": {
                         "key_code": "f1"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "display_brightness_decrement"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "display_brightness_decrement"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f2"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "display_brightness_increment"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "display_brightness_increment"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f3"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "key_code": "mission_control"
                         }
                     ]
+=======
+                    "to": {
+                        "key_code": "mission_control"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f4"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "key_code": "launchpad"
                         }
                     ]
+=======
+                    "to": {
+                        "key_code": "launchpad"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f5"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "key_code": "illumination_decrement"
                         }
                     ]
+=======
+                    "to": {
+                        "key_code": "illumination_decrement"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f6"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "key_code": "illumination_increment"
                         }
                     ]
+=======
+                    "to": {
+                        "key_code": "illumination_increment"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f7"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "rewind"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "rewind"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f8"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "play_or_pause"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "play_or_pause"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f9"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "fastforward"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "fastforward"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f10"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "mute"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "mute"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f11"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "volume_decrement"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "volume_decrement"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f12"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "volume_increment"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "volume_increment"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 }
             ],
             "name": "Apple",
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
+<<<<<<< HEAD
             "selected": false,
+=======
+            "selected": true,
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
             "simple_modifications": [
                 {
                     "from": {
                         "key_code": "caps_lock"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "key_code": "left_control"
                         }
                     ]
+=======
+                    "to": {
+                        "key_code": "left_control"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 }
             ],
             "virtual_hid_keyboard": {
                 "country_code": 0,
+<<<<<<< HEAD
                 "indicate_sticky_modifier_keys_state": true,
+=======
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 "mouse_key_xy_scale": 100
             }
         },
@@ -1158,31 +1261,49 @@
                             "from": {
                                 "key_code": "f10"
                             },
+<<<<<<< HEAD
                             "to": [
                                 {
                                     "key_code": "scroll_lock"
                                 }
                             ]
+=======
+                            "to": {
+                                "key_code": "scroll_lock"
+                            }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                         },
                         {
                             "from": {
                                 "key_code": "left_command"
                             },
+<<<<<<< HEAD
                             "to": [
                                 {
                                     "key_code": "left_option"
                                 }
                             ]
+=======
+                            "to": {
+                                "key_code": "left_option"
+                            }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                         },
                         {
                             "from": {
                                 "key_code": "left_option"
                             },
+<<<<<<< HEAD
                             "to": [
                                 {
                                     "key_code": "left_command"
                                 }
                             ]
+=======
+                            "to": {
+                                "key_code": "left_command"
+                            }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                         }
                     ]
                 },
@@ -1231,163 +1352,260 @@
                     "from": {
                         "key_code": "f1"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "display_brightness_decrement"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "display_brightness_decrement"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f2"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "display_brightness_increment"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "display_brightness_increment"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f3"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "key_code": "mission_control"
                         }
                     ]
+=======
+                    "to": {
+                        "key_code": "mission_control"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f4"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "key_code": "launchpad"
                         }
                     ]
+=======
+                    "to": {
+                        "key_code": "launchpad"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f5"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "key_code": "illumination_decrement"
                         }
                     ]
+=======
+                    "to": {
+                        "key_code": "illumination_decrement"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f6"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "key_code": "illumination_increment"
                         }
                     ]
+=======
+                    "to": {
+                        "key_code": "illumination_increment"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f7"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "rewind"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "rewind"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f8"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "play_or_pause"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "play_or_pause"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f9"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "fastforward"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "fastforward"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f10"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "mute"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "mute"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f11"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "volume_decrement"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "volume_decrement"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f12"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "volume_increment"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "volume_increment"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 }
             ],
             "name": "Win",
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
+<<<<<<< HEAD
             "selected": true,
+=======
+            "selected": false,
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
             "simple_modifications": [
                 {
                     "from": {
                         "key_code": "caps_lock"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "key_code": "left_control"
                         }
                     ]
+=======
+                    "to": {
+                        "key_code": "left_control"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "left_command"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "key_code": "left_option"
                         }
                     ]
+=======
+                    "to": {
+                        "key_code": "left_option"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "left_option"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "key_code": "left_command"
                         }
                     ]
+=======
+                    "to": {
+                        "key_code": "left_command"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 }
             ],
             "virtual_hid_keyboard": {
                 "country_code": 0,
+<<<<<<< HEAD
                 "indicate_sticky_modifier_keys_state": true,
+=======
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 "mouse_key_xy_scale": 100
             }
         },
@@ -1408,121 +1626,193 @@
                     "from": {
                         "key_code": "f1"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "display_brightness_decrement"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "display_brightness_decrement"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f2"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "display_brightness_increment"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "display_brightness_increment"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f3"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "key_code": "mission_control"
                         }
                     ]
+=======
+                    "to": {
+                        "key_code": "mission_control"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f4"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "key_code": "launchpad"
                         }
                     ]
+=======
+                    "to": {
+                        "key_code": "launchpad"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f5"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "key_code": "illumination_decrement"
                         }
                     ]
+=======
+                    "to": {
+                        "key_code": "illumination_decrement"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f6"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "key_code": "illumination_increment"
                         }
                     ]
+=======
+                    "to": {
+                        "key_code": "illumination_increment"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f7"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "rewind"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "rewind"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f8"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "play_or_pause"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "play_or_pause"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f9"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "fastforward"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "fastforward"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f10"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "mute"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "mute"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f11"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "volume_decrement"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "volume_decrement"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 },
                 {
                     "from": {
                         "key_code": "f12"
                     },
+<<<<<<< HEAD
                     "to": [
                         {
                             "consumer_key_code": "volume_increment"
                         }
                     ]
+=======
+                    "to": {
+                        "consumer_key_code": "volume_increment"
+                    }
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 }
             ],
             "name": "QMK",
@@ -1533,7 +1823,10 @@
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
+<<<<<<< HEAD
                 "indicate_sticky_modifier_keys_state": true,
+=======
+>>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
                 "mouse_key_xy_scale": 100
             }
         }

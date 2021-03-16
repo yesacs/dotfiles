@@ -16,8 +16,8 @@ set noruler
 set autowrite
 set noshowcmd
 set nohlsearch
-set ttyfast
-set lazyredraw
+set ttyfast 
+set lazyredraw 
 set nocursorline
 set number
 set numberwidth=5
@@ -39,7 +39,7 @@ let g:go_version_warning = 0
 let g:matchparen_timeout = 10
 
 if has("gui_running")
-  set guifont=Fira\ Code\ Retina:h12
+  set guifont=Fira\ Code\ Retina:h10
   set guioptions=
   set linespace=1
 endif
@@ -62,12 +62,11 @@ Plug 'equalsraf/neovim-gui-shim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'miyakogi/conoline.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/limelight.vim'
+Plug 'mhinz/vim-startify'
 
 " Lang support
 Plug 'pangloss/vim-javascript'
@@ -84,6 +83,8 @@ Plug 'sickill/vim-monokai'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 " IDE stuff
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/NrrwRgn'
@@ -94,6 +95,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'antoinemadec/coc-fzf'
 Plug 'junegunn/vim-easy-align'
 Plug 'voldikss/vim-floaterm'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 " End Plugins
 call plug#end()
