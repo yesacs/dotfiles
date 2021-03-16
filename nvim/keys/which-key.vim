@@ -32,7 +32,7 @@ let g:which_key_map['e'] = [ ':CocCommand explorer',      'CocExplorer' ]
 let g:which_key_map['t'] = [ ':Files',                    'search files' ]
 let g:which_key_map['T'] = [ ':FloatermToggle',           'FLoaterm' ]
 let g:which_key_map['h'] = [ '<C-W>s',                    'split below']
-let g:which_key_map['r'] = [ ':Ranger',                   'Ranger' ]
+"let g:which_key_map['r'] = [ ':Ranger',                   'Ranger' ]
 let g:which_key_map['l'] = [ ':Limelight!!',              'Limelight' ]
 let g:which_key_map['v'] = [ '<C-W>v',                    'split right']
 let g:which_key_map['z'] = [ 'Goyo',                      'zen mode' ]
@@ -78,12 +78,13 @@ let g:which_key_map.p = {
 
 " C is for Coc
 let g:which_key_map.c = {
-      \ 'name' : '+NERDCommenter' ,
+      "\ 'name' : '+NERDCommenter' ,
       \}
 
 " , is for Coc
 let g:which_key_local_map = {
       \ 'name' : '+Coc',
+      \ ',' : [':CocCommand',                     'CocCommand'],
       \ 'e' : [':CocCommand explorer',            'CocExplorer'],
       \ 'l' : [':CocFzfList',                     'CocFzfList'],
       \ 'h' : [':call CocActionAsync("doHover")', 'show-docs'],

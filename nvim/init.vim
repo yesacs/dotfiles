@@ -258,4 +258,3 @@ hi FZFColor guifg=#555555 guibg=#222222 ctermbg=NONE ctermfg=NONE cterm=NONE
 let g:fzf_colors = { 'border': ['fg', 'FZFColor'] }
 
 
-

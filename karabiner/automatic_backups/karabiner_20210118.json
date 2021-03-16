@@ -2,7 +2,7 @@
     "global": {
         "check_for_updates_on_startup": true,
         "show_in_menu_bar": true,
-        "show_profile_name_in_menu_bar": true
+        "show_profile_name_in_menu_bar": false
     },
     "profiles": [
         {
@@ -344,7 +344,7 @@
                                     },
                                     "simultaneous": [
                                         {
-                                            "key_code": "s"
+                                            "key_code": "tab"
                                         },
                                         {
                                             "key_code": "f"
@@ -577,7 +577,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": false,
+            "selected": true,
             "simple_modifications": [
                 {
                     "from": {
@@ -932,7 +932,7 @@
                                     },
                                     "simultaneous": [
                                         {
-                                            "key_code": "s"
+                                            "key_code": "tab"
                                         },
                                         {
                                             "key_code": "f"
@@ -1289,7 +1289,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": true,
+            "selected": false,
             "simple_modifications": [
                 {
                     "from": {
