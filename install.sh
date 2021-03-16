@@ -45,6 +45,7 @@ then
   brew install node
   brew install npm
   brew install yarn
+  brew install grip
 
   yarn global add prettier typescript eslint sass-lint
 else

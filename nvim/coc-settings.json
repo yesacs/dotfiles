@@ -14,12 +14,5 @@
   ],
   "coc.preferences.jumpCommand": "vsplit",
   "eslint.packageManager": "yarn",
-  "eslint.filetypes": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "javascriptreact",
-    "css",
-    "scss"
-  ]
+  "prettier.eslintIntegration": true
 }

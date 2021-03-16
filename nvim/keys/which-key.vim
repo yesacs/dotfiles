@@ -27,15 +27,17 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " Single mappings
-let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle', 'comment/uncomment' ]
-let g:which_key_map['e'] = [ ':CocCommand explorer',      'CocExplorer' ]
-let g:which_key_map['t'] = [ ':Files',                    'search files' ]
-let g:which_key_map['T'] = [ ':FloatermToggle',           'FLoaterm' ]
-let g:which_key_map['h'] = [ '<C-W>s',                    'split below']
-let g:which_key_map['r'] = [ ':Ranger',                   'Ranger' ]
-let g:which_key_map['l'] = [ ':Limelight!!',              'Limelight' ]
-let g:which_key_map['v'] = [ '<C-W>v',                    'split right']
-let g:which_key_map['z'] = [ 'Goyo',                      'zen mode' ]
+let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle',        'comment/uncomment' ]
+let g:which_key_map['e'] = [ ':CocCommand explorer',             'CocExplorer' ]
+let g:which_key_map['t'] = [ ':Files',                           'search files' ]
+let g:which_key_map['T'] = [ ':FloatermToggle',                  'FLoaterm' ]
+let g:which_key_map['h'] = [ '<C-W>s',                           'split below']
+let g:which_key_map['r'] = [ ':Ranger',                          'Ranger' ]
+let g:which_key_map['l'] = [ ':Limelight!!',                     'Limelight' ]
+let g:which_key_map['S'] = [ ':setlocal spell! spelllang=en_us', 'Spell check (en_us)' ]
+let g:which_key_map['M'] = [ ':MarkdownPreviewToggle',           'Markdown Preview' ]
+let g:which_key_map['v'] = [ '<C-W>v',                           'split right']
+let g:which_key_map['z'] = [ 'Goyo',                             'zen mode' ]
 
 " a is for EasyAlign
 let g:which_key_map.a = {
