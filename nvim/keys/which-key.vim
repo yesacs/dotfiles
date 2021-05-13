@@ -81,12 +81,13 @@ let g:which_key_map.p = {
 
 " C is for Coc
 let g:which_key_map.c = {
-      \ 'name' : '+NERDCommenter' ,
+      "\ 'name' : '+NERDCommenter' ,
       \}
 
 " , is for Coc
 let g:which_key_local_map = {
       \ 'name' : '+Coc',
+      \ ',' : [':CocCommand',                     'CocCommand'],
       \ 'e' : [':CocCommand explorer',            'CocExplorer'],
       \ 'l' : [':CocFzfList',                     'CocFzfList'],
       \ 'h' : [':call CocActionAsync("doHover")', 'show-docs'],

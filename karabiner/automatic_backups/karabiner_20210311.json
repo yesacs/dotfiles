@@ -607,11 +607,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-<<<<<<< HEAD
-            "selected": false,
-=======
             "selected": true,
->>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
             "simple_modifications": [
                 {
                     "from": {
@@ -1356,11 +1352,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-<<<<<<< HEAD
-            "selected": true,
-=======
             "selected": false,
->>>>>>> e5cf95c8637b63a7b433b30caa4c07b372f51ada
             "simple_modifications": [
                 {
                     "from": {
