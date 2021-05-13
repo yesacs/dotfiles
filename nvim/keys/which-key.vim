@@ -75,7 +75,8 @@ let g:which_key_map.p = {
       \ 'name' : '+plug',
       \ 'i' : [':PlugInstall', 'PlugInstall'],
       \ 'c' : [':PlugClean',   'PlugClean'],
-      \ 'u' : [':PlugUpgrade', 'PlugUpgrade  '],
+      \ 'u' : [':PlugUdate',   'PlugUdate'],
+      \ 'U' : [':PlugUpgrade', 'PlugUpgrade'],
       \}
 
 " C is for Coc
@@ -107,10 +108,9 @@ let g:which_key_map[','] = g:which_key_local_map
 " b is for buffer
 let g:which_key_map.b = {
       \ 'name' : '+buffers',
-      \ 'w' : [':w',                           'write'],
+      \ 'w' : [':wa',                          'write all'],
       \ 'b' : [':Buffers',                     ':Buffers'],
       \ 'S' : [':w<CR>:source $MYVIMRC<CR>',   'write buffer and source init.vim'],
-      \ 'W' : [':wa',                          'write all'],
       \ 'n' : [':vnew',                        'new empty buffer split'],
       \}
 
