@@ -32,3 +32,4 @@ set __fish_git_prompt_color_branch FF69B4 --bold
 set __fish_git_prompt_color_upstream_ahead yellow
 set __fish_git_prompt_color_upstream_behind red
 
+set __fish_git_prompt_char_stateseparator ':'
