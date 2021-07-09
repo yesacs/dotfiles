@@ -34,6 +34,7 @@ then
   brew install fzf
   brew install bat
   brew install gotop
+  brew install neofetch
   
   # install fonts (only works on macs)
   brew tap homebrew/cask-fonts
