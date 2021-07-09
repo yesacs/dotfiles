@@ -1,4 +1,4 @@
-function fish_greeting
+function xfish_greeting
     echo '                 '(set_color F00)'___
   ___======____='(set_color FF7F00)'-'(set_color FF0)'-'(set_color FF7F00)'-='(set_color F00)')
 /T            \_'(set_color FF0)'--='(set_color FF7F00)'=='(set_color F00)')    '(set_color red)(whoami)'@'(hostname)'
@@ -15,4 +15,8 @@ function fish_greeting
                       (J'(set_color FF7F00)'JJ'(set_color F00)'| \UUU)
                        (UU)'(set_color normal)
    printf '\n'
+end
+
+function fish_greeting
+  neofetch
 end
