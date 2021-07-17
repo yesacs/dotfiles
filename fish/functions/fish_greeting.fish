@@ -17,6 +17,6 @@ function xfish_greeting
    printf '\n'
 end
 
-function fish_greeting
+function x:fish_greeting
   neofetch
 end
