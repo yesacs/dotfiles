@@ -30,9 +30,9 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle',        'comment/uncomment' ]
 let g:which_key_map['e'] = [ ':CocCommand explorer',             'CocExplorer' ]
 let g:which_key_map['t'] = [ ':Files',                           'search files' ]
-let g:which_key_map['T'] = [ ':FloatermToggle',                  'FLoaterm' ]
+let g:which_key_map['T'] = [ ':FloatermToggle',                  'Floaterm' ]
 let g:which_key_map['h'] = [ '<C-W>s',                           'split below']
-let g:which_key_map['r'] = [ ':Ranger',                          'Ranger' ]
+let g:which_key_map['R'] = [ ':Ranger',                          'Ranger' ]
 let g:which_key_map['l'] = [ ':Limelight!!',                     'Limelight' ]
 let g:which_key_map['S'] = [ ':setlocal spell! spelllang=en_us', 'Spell check (en_us)' ]
 let g:which_key_map['M'] = [ ':MarkdownPreviewToggle',           'Markdown Preview' ]
@@ -109,7 +109,8 @@ let g:which_key_map[','] = g:which_key_local_map
 " b is for buffer
 let g:which_key_map.b = {
       \ 'name' : '+buffers',
-      \ 'w' : [':wa',                          'write all'],
+      \ 'W' : [':wa',                          'write all'],
+      \ 'w' : [':w',                           'write buffer'],
       \ 'b' : [':Buffers',                     ':Buffers'],
       \ 'S' : [':w<CR>:source $MYVIMRC<CR>',   'write buffer and source init.vim'],
       \ 'n' : [':vnew',                        'new empty buffer split'],
@@ -199,6 +200,15 @@ let g:which_key_map.s = {
       \ 'z' : [':FZF',             'FZF'],
       \ 'y' : [':CocFzfList yank', 'yanks'],
       \ }
+
+" r is for repl
+let g:which_key_map.r = {
+     \ 'name' : '+repl',
+     \ 'n' : [':Repl',             'Open New REPL'],
+     \ 'q' : [':ReplStop',         'Kill Active REPL'],
+     \ 's' : [':ReplSend',         'Send to REPL'],
+     \ 'r' : [":'<,'>ReplSend",    'Send selection to REPL'],
+     \ }
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")

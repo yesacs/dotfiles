@@ -12,4 +12,6 @@ x = 123
 
 y = 13
 
+x + y
+
 export const test = <span />

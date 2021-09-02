@@ -96,6 +96,7 @@ Plug 'antoinemadec/coc-fzf'
 Plug 'junegunn/vim-easy-align'
 Plug 'voldikss/vim-floaterm'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'rhysd/reply.vim'
 
 " End Plugins
 call plug#end()
@@ -249,6 +250,10 @@ end
 let g:indentLine_enabled = 0
 let g:indentLine_char = '┊'
 "let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+let g:reply_repls = {
+  \'javascript.jsx': ['node']
+  \}
 
 " Local config overrides
 if !empty(glob("~/.config/init.local.vim"))
