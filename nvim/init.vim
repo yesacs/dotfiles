@@ -97,6 +97,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'voldikss/vim-floaterm'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'rhysd/reply.vim'
+Plug 'jpalardy/vim-slime'
 
 " End Plugins
 call plug#end()
@@ -247,13 +248,19 @@ if !empty(glob("~/.config/nvim/keys/which-key.vim"))
   source ~/.config/nvim/keys/which-key.vim
 end
 
-let g:indentLine_enabled = 0
-let g:indentLine_char = '┊'
-"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-
+" reply {{
 let g:reply_repls = {
   \'javascript.jsx': ['node']
   \}
+" }}
+
+" slime {{
+let g:slime_no_mappings = 1
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+let g:slime_target = "tmux"
+"let g:slime_target = "neovim"
+" }}
+
 
 " Local config overrides
 if !empty(glob("~/.config/init.local.vim"))

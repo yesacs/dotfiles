@@ -35,6 +35,7 @@ then
   brew install bat
   brew install gotop
   brew install neofetch
+  brew install ranger
   
   # install fonts (only works on macs)
   brew tap homebrew/cask-fonts

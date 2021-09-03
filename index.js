@@ -11,7 +11,9 @@ const x = 145
 x = 123
 
 y = 13
-
 x + y
 
 export const test = <span />
+
+
+let myGreatFunc = () => console.log('hello')

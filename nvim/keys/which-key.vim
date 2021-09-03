@@ -32,7 +32,6 @@ let g:which_key_map['e'] = [ ':CocCommand explorer',             'CocExplorer' ]
 let g:which_key_map['t'] = [ ':Files',                           'search files' ]
 let g:which_key_map['T'] = [ ':FloatermToggle',                  'Floaterm' ]
 let g:which_key_map['h'] = [ '<C-W>s',                           'split below']
-let g:which_key_map['R'] = [ ':Ranger',                          'Ranger' ]
 let g:which_key_map['l'] = [ ':Limelight!!',                     'Limelight' ]
 let g:which_key_map['S'] = [ ':setlocal spell! spelllang=en_us', 'Spell check (en_us)' ]
 let g:which_key_map['M'] = [ ':MarkdownPreviewToggle',           'Markdown Preview' ]
@@ -201,13 +200,20 @@ let g:which_key_map.s = {
       \ 'y' : [':CocFzfList yank', 'yanks'],
       \ }
 
-" r is for repl
-let g:which_key_map.r = {
-     \ 'name' : '+repl',
+" R is for repl
+let g:which_key_map.R = {
+     \ 'name' : '+reply',
      \ 'n' : [':Repl',             'Open New REPL'],
      \ 'q' : [':ReplStop',         'Kill Active REPL'],
-     \ 's' : [':ReplSend',         'Send to REPL'],
      \ 'r' : [":'<,'>ReplSend",    'Send selection to REPL'],
+     \ }
+
+" r is for REPL (slime)
+let g:which_key_map.r = {
+     \ 'name' : '+Slime',
+     \ 's' : ['<Plug>SlimeRegionSend',    'SlimeRegionSend'],
+     \ 'p' : ['<Plug>SlimeParagraphSend', 'SlimeParagraphSend'],
+     \ 'c' : ['<Plug>SlimeConfig',        'SlimeConfig'],
      \ }
 
 " Register which key map
