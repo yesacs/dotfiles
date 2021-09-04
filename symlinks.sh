@@ -22,5 +22,6 @@ ln -sf "$PWD"/spacemacs ~/.spacemacs
 ln -sf "$PWD"/doom.d ~/.doom.d
 ln -sf "$PWD"/prettierrc.js ~/.prettierrc.js
 ln -sf "$PWD"/xprofile ~/.xprofile
+ln -sf "$PWD"/noderc.js ~/.noderc.js 
 
 printf " Done!\n\n"

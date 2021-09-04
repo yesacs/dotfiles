@@ -27,27 +27,13 @@ then
   brew install fish
   curl -L https://get.oh-my.fish | fish
  
-  brew install fortune
-  brew install neovim
-  brew install rg
-  brew install the_silver_searcher 
-  brew install fzf
-  brew install bat
-  brew install gotop
-  brew install neofetch
-  brew install ranger
+  brew install fortune neovim rg the_silver_searcher fzf bat gotop neofetch ranger clojure/tools/clojure java node npm yarn grip
   
   # install fonts (only works on macs)
   brew tap homebrew/cask-fonts
   brew install --cask font-source-code-pro 
   brew install --cask font-fira-code
   brew install --cask font-hack-nerd-font
-  
-  # install npm et. all
-  brew install node
-  brew install npm
-  brew install yarn
-  brew install grip
 
   yarn global add prettier typescript eslint sass-lint
 else
