@@ -18,36 +18,23 @@ if command -v brew
 then
  printf "😓 Homebrew installed already, skipping...\n\n"
 else
- /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 if command -v brew
 then
-  #install fish
+  #install fish, fisher, fzf
   brew install fish
-  curl -L https://get.oh-my.fish | fish
+  curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+  fisher install PatrickF1/fzf.fish
  
-  brew install fortune
-  brew install neovim
-  brew install rg
-  brew install the_silver_searcher 
-  brew install fzf
-  brew install bat
-  brew install gotop
-  brew install neofetch
-  brew install ranger
+  brew install vivid fortune neovim fd rg the_silver_searcher fzf bat gotop neofetch ranger clojure/tools/clojure java node npm yarn grip eth-p/software/bat-extras
   
   # install fonts (only works on macs)
   brew tap homebrew/cask-fonts
   brew install --cask font-source-code-pro 
   brew install --cask font-fira-code
   brew install --cask font-hack-nerd-font
-  
-  # install npm et. all
-  brew install node
-  brew install npm
-  brew install yarn
-  brew install grip
 
   yarn global add prettier typescript eslint sass-lint
 else

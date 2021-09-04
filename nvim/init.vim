@@ -79,6 +79,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tomasr/molokai'
 Plug 'sickill/vim-monokai'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'dracula/vim'
 
 " IDE stuff
 Plug 'easymotion/vim-easymotion'
@@ -87,7 +88,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/NrrwRgn'
 Plug 'liuchengxu/vim-which-key'
-Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'tpope/vim-fugitive' 
 Plug 'antoinemadec/coc-fzf'
@@ -109,10 +109,10 @@ let g:palenight_terminal_italics=1
 "'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
 let g:material_theme_style = 'palenight'
 
-colorscheme palenight
+"colorscheme palenight
 "colorscheme one
 "colorscheme material
-"colorscheme onedark
+colorscheme onedark
 
 "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
 "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
@@ -230,10 +230,6 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 " }}
 
-" coc-yank {{
-"autocmd WinLeave * call coc#util#clear_pos_matches('^HighlightedyankRegion')
-" }}
-
 " WhichKey config
 if !empty(glob("~/.config/nvim/keys/which-key.vim"))
   source ~/.config/nvim/keys/which-key.vim
@@ -252,12 +248,68 @@ let g:slime_target = "tmux"
 "let g:slime_target = "neovim"
 " }}
 
+" fzf {{
+nnoremap <C-t> :Files<Cr>
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.6,'yoffset':0.5,'xoffset': 0.5, 'border': 'rounded' } }
+hi FZFColor guifg=#555555 guibg=#222222 ctermbg=NONE ctermfg=NONE cterm=NONE
+let g:fzf_colors = { 'border': ['fg', 'FZFColor'] }
+" }}
+
+" coc-explorer {{
+autocmd FileType coc-explorer set winblend=20
+autocmd FileType coc-explorer-border set winblend=20
+
+let g:coc_explorer_global_presets = {
+\   '.vim': {
+\     'root-uri': '~/.vim',
+\   },
+\   'cocConfig': {
+\      'root-uri': '~/.config/coc',
+\   },
+\   'tab': {
+\     'position': 'tab',
+\     'quit-on-open': v:true,
+\   },
+\   'tab:$': {
+\     'position': 'tab:$',
+\     'quit-on-open': v:true,
+\   },
+\   'floating': {
+\     'position': 'floating',
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingTop': {
+\     'position': 'floating',
+\     'floating-position': 'center-top',
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingLeftside': {
+\     'position': 'floating',
+\     'floating-position': 'left-center',
+\     'floating-width': 70,
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingRightside': {
+\     'position': 'floating',
+\     'floating-position': 'right-center',
+\     'floating-width': 70,
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'simplify': {
+\     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+\   },
+\   'buffer': {
+\     'sources': [{'name': 'buffer', 'expand': v:true}],
+\     'position': 'floating',
+\     'floating-position': 'right-center',
+\     'open-action-strategy': 'select',
+\     'floating-width': 70
+\   },
+\ }
+" }}
 
 " Local config overrides
 if !empty(glob("~/.config/init.local.vim"))
   source ~/.config/init.local.vim
 end
 
-let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.6,'yoffset':0.5,'xoffset': 0.5, 'border': 'rounded' } }
-hi FZFColor guifg=#555555 guibg=#222222 ctermbg=NONE ctermfg=NONE cterm=NONE
-let g:fzf_colors = { 'border': ['fg', 'FZFColor'] }
