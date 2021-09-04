@@ -5,6 +5,9 @@ vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey ','<CR>
 vnoremap <silent> <localleader> :<c-u>WhichKeyVisual ','<CR>
 
+let g:which_key_vertical = 0 
+let g:which_key_centered = 0 
+
 " Create map to add keys to 
 let g:which_key_map =  {} 
 
@@ -25,6 +28,7 @@ highlight default link WhichKeyDesc      Function
 autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
+
 
 " Single mappings
 let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle',        'comment/uncomment' ]
@@ -211,6 +215,7 @@ let g:which_key_map.R = {
 " r is for REPL (slime)
 let g:which_key_map.r = {
      \ 'name' : '+Slime',
+     \ 'r' : ['<Plug>SlimeRegionSend',    'SlimeRegionSend'],
      \ 's' : ['<Plug>SlimeRegionSend',    'SlimeRegionSend'],
      \ 'p' : ['<Plug>SlimeParagraphSend', 'SlimeParagraphSend'],
      \ 'c' : ['<Plug>SlimeConfig',        'SlimeConfig'],
