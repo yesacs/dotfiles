@@ -2,7 +2,9 @@ set -x EDITOR nvim
 set -x VISUAL nvim
 
 alias evil "env TERM=xterm-24bit emacs -nw" 
+alias nve "nvim -c 'CocCommand explorer'"
 alias fzf "fzf-tmux -p 80%,60%"
+alias gac "git add . && git commit"
 
 contains /usr/local/sbin $fish_user_paths; or set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 contains /Users/casey/.emacs.d/bin $fish_user_paths; or set -g fish_user_paths "/Users/casey/.emacs.d/bin" $fish_user_paths
@@ -31,8 +33,11 @@ set __fish_git_prompt_color_upstream_behind red
 
 set __fish_git_prompt_char_stateseparator ':'
 
-set -x FZF_DEFAULT_COMMAND  'rg --files --follow'
-set -x FZF_CTRL_T_COMMAND '$FZF_DEFAULT_COMMAND'
-set -x FZF_DEFAULT_OPTS '--no-height --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 set -x BAT_THEME OneHalfDark
 
+set -x FZF_DEFAULT_COMMAND  'rg --files --follow'
+set -x FZF_DEFAULT_OPTS '--preview "bat --color=always --style=numbers --line-range=:500 {}"'
+set -x FZF_CTRL_T_COMMAND '$FZF_DEFAULT_COMMAND'
+set -x FZF_CTRL_R_OPTS "--reverse --preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+
+fzf_configure_bindings --directory=\ct --git_status=\cs --git_log=\cg --history=\cr --variables=\cv
