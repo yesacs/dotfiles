@@ -9,7 +9,7 @@ set -x FZF_DEFAULT_OPTS '--no-height --preview "bat {}"'
 
 contains /usr/local/sbin $fish_user_paths; or set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 contains /Users/casey/.emacs.d/bin $fish_user_paths; or set -g fish_user_paths "/Users/casey/.emacs.d/bin" $fish_user_paths
-contains /home/linuxbrew/.linuxbrew $fish_user_paths; or set -g fish_user_paths "/home/linuxbrew/.linuxbrew" $fish_user_paths
+contains /home/linuxbrew/.linuxbrew/bin $fish_user_paths; or set -g fish_user_paths "/home/linuxbrew/.linuxbrew/bin" $fish_user_paths
 
 # Colors
 set green (set_color green)
