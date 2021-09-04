@@ -265,6 +265,9 @@ let g:fzf_colors = { 'border': ['fg', 'FZFColor'] }
 " }}
 
 " coc-explorer {{
+autocmd FileType coc-explorer set winblend=20
+autocmd FileType coc-explorer-border set winblend=20
+
 let g:coc_explorer_global_presets = {
 \   '.vim': {
 \     'root-uri': '~/.vim',
