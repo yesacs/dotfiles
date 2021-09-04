@@ -23,11 +23,12 @@ fi
 
 if command -v brew
 then
-  #install fish
+  #install fish, omf
   brew install fish
   curl -L https://get.oh-my.fish | fish
+  omf install fzf
  
-  brew install fortune neovim rg the_silver_searcher fzf bat gotop neofetch ranger clojure/tools/clojure java node npm yarn grip
+  brew install fortune neovim rg the_silver_searcher fzf bat gotop neofetch ranger clojure/tools/clojure java node npm yarn grip eth-p/software/bat-extras
   
   # install fonts (only works on macs)
   brew tap homebrew/cask-fonts

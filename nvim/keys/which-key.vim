@@ -31,9 +31,8 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 
 " Single mappings
-let g:which_key_map['/'] = [ '<Plug>NERDCommenterToggle',        'comment/uncomment' ]
 let g:which_key_map['e'] = [ ':CocCommand explorer',             'CocExplorer' ]
-let g:which_key_map['t'] = [ ':Files',                           'search files' ]
+let g:which_key_map['t'] = [ ':Files',                           ':Files' ]
 let g:which_key_map['T'] = [ ':FloatermToggle',                  'Floaterm' ]
 let g:which_key_map['h'] = [ '<C-W>s',                           'split below']
 let g:which_key_map['l'] = [ ':Limelight!!',                     'Limelight' ]

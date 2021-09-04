@@ -2,10 +2,7 @@ set -x EDITOR nvim
 set -x VISUAL nvim
 
 alias evil "env TERM=xterm-24bit emacs -nw" 
-
-set -x FZF_DEFAULT_COMMAND  'rg --files --follow'
-set -x FZF_CTRL_T_COMMAND '$FZF_DEFAULT_COMMAND'
-set -x FZF_DEFAULT_OPTS '--no-height --preview "bat {}"'
+alias fzf "fzf-tmux -p 80%,60%"
 
 contains /usr/local/sbin $fish_user_paths; or set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 contains /Users/casey/.emacs.d/bin $fish_user_paths; or set -g fish_user_paths "/Users/casey/.emacs.d/bin" $fish_user_paths
@@ -33,3 +30,9 @@ set __fish_git_prompt_color_upstream_ahead yellow
 set __fish_git_prompt_color_upstream_behind red
 
 set __fish_git_prompt_char_stateseparator ':'
+
+set -x FZF_DEFAULT_COMMAND  'rg --files --follow'
+set -x FZF_CTRL_T_COMMAND '$FZF_DEFAULT_COMMAND'
+set -x FZF_DEFAULT_OPTS '--no-height --preview "bat --color=always --style=numbers --line-range=:500 {}"'
+set -x BAT_THEME OneHalfDark
+

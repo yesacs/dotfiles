@@ -81,6 +81,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tomasr/molokai'
 Plug 'sickill/vim-monokai'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'dracula/vim'
 
 " IDE stuff
 Plug 'easymotion/vim-easymotion'
@@ -239,10 +240,6 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 " }}
 
-" coc-yank {{
-"autocmd WinLeave * call coc#util#clear_pos_matches('^HighlightedyankRegion')
-" }}
-
 " WhichKey config
 if !empty(glob("~/.config/nvim/keys/which-key.vim"))
   source ~/.config/nvim/keys/which-key.vim
@@ -259,6 +256,10 @@ let g:slime_no_mappings = 1
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 let g:slime_target = "tmux"
 "let g:slime_target = "neovim"
+" }}
+
+" fzf {{
+nnoremap <C-t> :Files<Cr>
 " }}
 
 
