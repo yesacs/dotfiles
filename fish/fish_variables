@@ -1,7 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export EDITOR:nvim
-SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dpreview\x20\x22bat\x20\x2d\x2dcolor\x3dalways\x20\x2d\x2dstyle\x3dnumbers\x20\x2d\x2dline\x2drange\x3d\x3a500\x20\x7b\x7d\x22
+SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dheight\x2040\x25\x20\x2d\x2dpreview\x20\x22bat\x20\x2d\x2dcolor\x3dalways\x20\x2d\x2dstyle\x3dnumbers\x20\x2d\x2dline\x2drange\x3d\x3a500\x20\x7b\x7d\x22
 SETUVAR FZF_DISABLE_KEYBINDINGS:0
 SETUVAR FZF_LEGACY_KEYBINDINGS:1
 SETUVAR FZF_PREVIEW_DIR_CMD:ls
