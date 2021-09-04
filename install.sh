@@ -28,7 +28,7 @@ then
   curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
   fisher install PatrickF1/fzf.fish
  
-  brew install fortune neovim fd rg the_silver_searcher fzf bat gotop neofetch ranger clojure/tools/clojure java node npm yarn grip eth-p/software/bat-extras
+  brew install vivid fortune neovim fd rg the_silver_searcher fzf bat gotop neofetch ranger clojure/tools/clojure java node npm yarn grip eth-p/software/bat-extras
   
   # install fonts (only works on macs)
   brew tap homebrew/cask-fonts

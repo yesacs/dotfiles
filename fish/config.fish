@@ -14,6 +14,8 @@ contains /Users/casey/.emacs.d/bin $fish_user_paths; or set -g fish_user_paths "
 contains /home/linuxbrew/.linuxbrew/bin $fish_user_paths; or set -g fish_user_paths "/home/linuxbrew/.linuxbrew/bin" $fish_user_paths
 
 # Colors
+set -x LS_COLORS "(vivid generate snazzy)"
+
 set green (set_color green)
 set magenta (set_color magenta)
 set normal (set_color normal)
