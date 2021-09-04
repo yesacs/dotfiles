@@ -31,7 +31,6 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 
 " Single mappings
-let g:which_key_map['e'] = [ ':CocCommand explorer',             'CocExplorer' ]
 let g:which_key_map['t'] = [ ':Files',                           ':Files' ]
 let g:which_key_map['T'] = [ ':FloatermToggle',                  'Floaterm' ]
 let g:which_key_map['h'] = [ '<C-W>s',                           'split below']
@@ -46,6 +45,17 @@ let g:which_key_map.a = {
       \ 'name' : '+align',
       \ 'a' : ['<Plug>(EasyAlign)>',  'line'],
       \ 'p' : ['<Plug>(EasyAlign)ip', 'in-paragraph'],
+      \}
+
+" a is for CocExplorer 
+let g:which_key_map.e = {
+      \ 'name' : '+CocExplore',
+      \ 'e' : [ ':CocCommand explorer',                            'Left-side column' ],
+      \ 'b' : [ ':CocCommand explorer --preset buffer',            'buffers' ],
+      \ 'f' : [ ':CocCommand explorer --preset floating',          'Left-side floater' ],
+      \ 'l' : [ ':CocCommand explorer --preset floatingLeftside',  'Center floater' ],
+      \ 'r' : [ ':CocCommand explorer --preset floatingRightside', 'Right-side floater' ],
+      \ 't' : [ ':CocCommand explorer --preset floatingTop',       'Top-side floater' ],
       \}
 
 " f is for fzf 
