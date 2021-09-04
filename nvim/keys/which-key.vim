@@ -215,6 +215,7 @@ let g:which_key_map.R = {
 " r is for REPL (slime)
 let g:which_key_map.r = {
      \ 'name' : '+Slime',
+     \ 'r' : ['<Plug>SlimeRegionSend',    'SlimeRegionSend'],
      \ 's' : ['<Plug>SlimeRegionSend',    'SlimeRegionSend'],
      \ 'p' : ['<Plug>SlimeParagraphSend', 'SlimeParagraphSend'],
      \ 'c' : ['<Plug>SlimeConfig',        'SlimeConfig'],
