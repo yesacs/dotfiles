@@ -44,7 +44,7 @@ set -x BAT_THEME OneHalfDark
 # FZF et al.
 
 set -x FZF_DEFAULT_COMMAND  'rg --files --follow'
-set -x FZF_DEFAULT_OPTS '--height 99% --preview "bat --color=always --style=numbers --line-range=:500 {}"'
+set -x FZF_DEFAULT_OPTS '--height 99% --preview "bat --color=always --style=numbers --line-range=:500 {}" --bind "ctrl-j:preview-down,ctrl-k:preview-up"'
 set -x FZF_CTRL_T_COMMAND '$FZF_DEFAULT_COMMAND'
 set -x FZF_CTRL_R_OPTS "--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 
