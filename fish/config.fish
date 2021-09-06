@@ -50,7 +50,7 @@ set -x FZF_CTRL_R_OPTS "--preview 'echo {}' --preview-window down:3:hidden:wrap 
 
 set diff_preview "git diff $argv --color=always -- {-1}"
 set fzf_git_status_opts "--preview=$diff_preview"
-set fzf_preview_dir_cmd "la -T"
+set fzf_preview_dir_cmd "exa -T"
 
 fzf_configure_bindings --directory=\ct --git_status=\cs --git_log=\cg --history=\cr --variables=\cv
 
