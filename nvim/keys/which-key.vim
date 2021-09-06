@@ -152,13 +152,13 @@ let g:which_key_map.w = {
 
 " m is for (Easy)Motion
 let g:which_key_map.m = {
-      \ 'name' : '+motion',
+      \ 'name' : '+EasyMotion',
       \ 'l' : ['<Plug>(easymotion-bd-jk)',        'line'],
       \ 'w' : ['<Plug>(easymotion-bd-w)',         'word'],
       \ 'e' : ['<Plug>(easymotion-bd-e)',         'word end'],
+      \ 'f' : ['<Plug>(easymotion-bd-f)',         'search'],
       \ 'W' : ['<Plug>(easymotion-overwin-w)',    'word (overwin)'],
       \ 'L' : ['<Plug>(easymotion-overwin-line)', 'line (overwin)'],
-      \ 'f' : ['<Plug>(easymotion-bd-f)',         'search'],
       \ 'F' : ['<Plug>(easymotion-overwin-f)',    'search (overwin)'],
       \}
 
