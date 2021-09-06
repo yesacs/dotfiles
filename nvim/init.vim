@@ -32,7 +32,6 @@ set laststatus=2
 set clipboard=unnamed
 set list listchars=tab:»\ ,trail:·,nbsp:⎵,precedes:<,extends:>
 
-filetype plugin indent on
 syntax enable
 
 let g:go_version_warning = 0
@@ -64,7 +63,6 @@ Plug 'miyakogi/conoline.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
-Plug 'Yggdroot/indentLine'
 Plug 'junegunn/limelight.vim'
 Plug 'mhinz/vim-startify'
 
@@ -207,13 +205,6 @@ let g:ranger_map_keys = 0
 let g:nrrw_rgn_nomap_nr = 1
 let g:nrrw_rgn_nomap_Nr = 1
 
-" IndentLine {{
-let g:indentLine_char = ''
-let g:indentLine_first_char = ''
-let g:indentLine_showFirstIndentLevel = 1
-let g:indentLine_setColors = 1
-" }}
-
 " Coc {{
 let g:coc_global_extensions = [
   \'coc-actions',
@@ -265,6 +256,9 @@ let g:fzf_colors = { 'border': ['fg', 'FZFColor'] }
 " }}
 
 " coc-explorer {{
+autocmd FileType coc-explorer set winblend=20
+autocmd FileType coc-explorer-border set winblend=20
+
 let g:coc_explorer_global_presets = {
 \   '.vim': {
 \     'root-uri': '~/.vim',

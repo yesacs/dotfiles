@@ -15,5 +15,6 @@ x + y
 
 export const test = <span />
 
-
 let myGreatFunc = () => console.log('hello')
+
+myGreatFunc()
