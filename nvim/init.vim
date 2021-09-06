@@ -314,6 +314,7 @@ let g:coc_explorer_global_presets = {
 \ }
 " }}
 
+
 " Local config overrides
 if !empty(glob("~/.config/init.local.vim"))
   source ~/.config/init.local.vim

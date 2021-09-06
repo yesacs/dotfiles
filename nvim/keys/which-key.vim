@@ -150,7 +150,7 @@ let g:which_key_map.w = {
       \ 'l' : ['<C-w>l',    'focus-right'],
       \}
 
-" Space is for (Easy)Motion
+" m is for (Easy)Motion
 let g:which_key_map.m = {
       \ 'name' : '+motion',
       \ 'l' : ['<Plug>(easymotion-bd-jk)',        'line'],
@@ -158,8 +158,8 @@ let g:which_key_map.m = {
       \ 'e' : ['<Plug>(easymotion-bd-e)',         'word end'],
       \ 'W' : ['<Plug>(easymotion-overwin-w)',    'word (overwin)'],
       \ 'L' : ['<Plug>(easymotion-overwin-line)', 'line (overwin)'],
-      \ 's' : ['<Plug>(easymotion-bd-f)',         'search'],
-      \ 'S' : ['<Plug>(easymotion-overwin-f)',    'search (overwin)'],
+      \ 'f' : ['<Plug>(easymotion-bd-f)',         'search'],
+      \ 'F' : ['<Plug>(easymotion-overwin-f)',    'search (overwin)'],
       \}
 
 " n is for NrrwRgn
