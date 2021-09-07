@@ -9,6 +9,7 @@ ln -sf "$PWD"/nvim ~/.config
 ln -sf "$PWD"/fish ~/.config
 ln -sf "$PWD"/omf ~/.config
 ln -sf "$PWD"/alacritty ~/.config
+ln -sf "$PWD"/kitty ~/.config
 
 # vim backwards compat
 ln -sf "$PWD"/nvim/init.vim ~/.vimrc

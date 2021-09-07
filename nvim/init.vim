@@ -58,7 +58,6 @@ Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'equalsraf/neovim-gui-shim'
-Plug 'jlanzarotta/bufexplorer'
 Plug 'miyakogi/conoline.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -71,6 +70,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'scrooloose/nerdcommenter'
+Plug 'fladson/vim-kitty'
 
 " Colors
 Plug 'rakr/vim-one'
@@ -109,10 +109,10 @@ let g:palenight_terminal_italics=1
 "'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
 let g:material_theme_style = 'palenight'
 
-"colorscheme palenight
+colorscheme palenight
 "colorscheme one
 "colorscheme material
-colorscheme onedark
+"colorscheme onedark
 
 "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
 "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
@@ -251,11 +251,15 @@ let g:slime_target = "tmux"
 " fzf {{
 nnoremap <C-t> :Files<Cr>
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.6,'yoffset':0.5,'xoffset': 0.5, 'border': 'rounded' } }
-hi FZFColor guifg=#555555 guibg=#222222 ctermbg=NONE ctermfg=NONE cterm=NONE
+hi FZFColor guifg=#555554 guibg=#222222 ctermbg=NONE ctermfg=NONE cterm=NONE
 let g:fzf_colors = { 'border': ['fg', 'FZFColor'] }
+autocmd FileType fzf set winblend=20
 " }}
 
 " coc-explorer {{
+hi CocExplorerNormalFloat guibg=None
+hi CocExplorerNormalFloatBorder guibg=None
+
 autocmd FileType coc-explorer set winblend=20
 autocmd FileType coc-explorer-border set winblend=20
 

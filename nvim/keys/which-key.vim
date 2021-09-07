@@ -121,11 +121,12 @@ let g:which_key_map[','] = g:which_key_local_map
 " b is for buffer
 let g:which_key_map.b = {
       \ 'name' : '+buffers',
-      \ 'W' : [':wa',                          'write all'],
-      \ 'w' : [':w',                           'write buffer'],
-      \ 'b' : [':Buffers',                     ':Buffers'],
-      \ 'S' : [':w<CR>:source $MYVIMRC<CR>',   'write buffer and source init.vim'],
-      \ 'n' : [':vnew',                        'new empty buffer split'],
+      \ 'W' : [':wa',                                   'write all'],
+      \ 'w' : [':w',                                    'write buffer'],
+      \ 'b' : [':Buffers',                              ':Buffers'],
+      \ 'S' : [':w<CR>:source $MYVIMRC<CR>',            'write buffer and source init.vim'],
+      \ 'n' : [':vnew',                                 'new empty buffer split'],
+      \ 'e' : [ ':CocCommand explorer --preset buffer', 'buffers' ],
       \}
 
 " q is for quit

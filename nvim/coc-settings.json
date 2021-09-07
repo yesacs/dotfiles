@@ -16,5 +16,9 @@
   ],
   "coc.preferences.jumpCommand": "vsplit",
   "eslint.packageManager": "yarn",
-  "prettier.eslintIntegration": true
+  "prettier.eslintIntegration": true,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.file.showHiddenFiles": true,
+  "explorer.floating.border.title": "CocExplorer",
+  "explorer.floating.width": -40
 }
