@@ -5,6 +5,7 @@ alias evil "env TERM=xterm-24bit emacs -nw"
 alias nve "nvim -c 'CocCommand explorer'"
 alias fzf "fzf-tmux -p 80%,60%"
 alias la "exa -la --git --git-ignore $argv"
+alias kssh "kitty +kitten ssh"
 
 alias gg "git add . && git commit"
 alias gs "git status -vv"

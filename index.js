@@ -20,3 +20,5 @@ let myGreatFunc
 myGreatFunc = (...argsv) => console.log('hello', ...argsv)
 
 myGreatFunc(1, 2, 3, 4)
+
+console.clear()

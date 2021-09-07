@@ -28,4 +28,7 @@ printf "\nhttps://github.com/mobile-shell/mosh/issues/961"
 printf "\n\nLinuxbrew? If you hate yourself"
 printf "\nhttps://docs.brew.sh/Homebrew-on-Linux"
 
+printf "\n\nFunny chars using ssh in ktty?"
+printf "\ninfocmp -a xterm-kitty | ssh myserver tic -x -o \~/.terminfo/dev/stdin"
+
 printf "\n\n"
