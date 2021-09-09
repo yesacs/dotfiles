@@ -58,3 +58,11 @@ fzf_configure_bindings --directory=\ct --git_status=\cs --git_log=\cg --history=
 function fdiff
   git diff $argv --name-only | fzf -m --ansi --preview $diff_preview
 end
+
+function popuptmux
+  if [ "(tmux display-message -p -F \"#{session_name}\")" = "popup" ]
+      tmux detach-client
+  else
+      tmux popup -E "tmux attach -t popup || tmux new -s popup"
+  end 
+end

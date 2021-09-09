@@ -10,6 +10,7 @@ ln -sf "$PWD"/fish ~/.config
 ln -sf "$PWD"/omf ~/.config
 ln -sf "$PWD"/alacritty ~/.config
 ln -sf "$PWD"/kitty ~/.config
+ln -sf "$PWD"/popuptmux.sh ~/.popuptmux.sh
 
 # vim backwards compat
 ln -sf "$PWD"/nvim/init.vim ~/.vimrc

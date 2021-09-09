@@ -344,4 +344,6 @@ bind - split-window -v -c "#{pane_current_path}"
 set -g window-style 'fg=colour247,bg=colour236'
 set -g window-active-style 'fg=colour250,bg=black'
 
+bind-key b run-shell '~/.popuptmux.sh'
+
 # END
