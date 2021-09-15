@@ -346,4 +346,7 @@ set -g window-active-style 'fg=colour250,bg=black'
 
 bind-key b run-shell '~/.popuptmux.sh'
 
+# Clear buffer
+bind -n C-K clear-history
+
 # END
