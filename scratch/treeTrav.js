@@ -14,8 +14,8 @@ processNodeTwo = (node, filter = x => x, path = []) => {
   return children.length
     ? children.flatMap(c => processNode(c, filter, newPath)).filter(x => x)
     : filter(node)
-    ? newPath.join('/')
-    : null
+      ? newPath.join('/')
+      : null
 }
 
 processNodeAlso = filter => (node, path = [], acc = []) => {

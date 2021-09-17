@@ -36,7 +36,7 @@ then
   brew install --cask font-fira-code
   brew install --cask font-hack-nerd-font
 
-  yarn global add prettier typescript eslint sass-lint
+  npm install -g prettier typescript eslint sass-lint
 else
   printf "\n😓 Homebrew not found skipping brew setup, you may have to install
   some stuff manually\n\n"

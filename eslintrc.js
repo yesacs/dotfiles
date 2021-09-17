@@ -1,14 +1,16 @@
 module.exports = {
+  extends: 'eslint:recommended',
   env: {
-    browser: true,
     es6: true,
+    node: true,
+    browser: true,
   },
   extends: ['eslint:recommended'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 12,
+    ecmaVersion: 8,
     sourceType: 'module',
   },
   rules: {
