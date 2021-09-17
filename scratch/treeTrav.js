@@ -40,9 +40,4 @@ console.clear()
 // ---------------
 
 console.log('Your paths, sire', processNode(require('./tree.json'), filterFn))
-
-console.log('Your paths, sire', processNode(require('./tree.json'), filterFn))
-
-console.log('Your paths, sire', processNode(require('./tree.json'), filterFn))
-
 console.log('Your paths, sire', processNode(filterFn)(require('./tree.json')))
