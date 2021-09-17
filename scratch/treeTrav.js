@@ -20,15 +20,17 @@ processNode = (node, filter = x => x, path = []) => {
       : null
 }
 
-processNode = filter => (node, path = [], acc = []) => {
-  let { name, children = [] } = node,
-    newPath = [...path, name]
+processNode =
+  filter =>
+    (node, path = [], acc = []) => {
+      let { name, children = [] } = node,
+        newPath = [...path, name]
 
-  children.forEach(c => processNode(filter)(c, newPath, acc))
-  filter(node) && acc.push(newPath.join('/'))
+      children.forEach(c => processNode(filter)(c, newPath, acc))
+      filter(node) && acc.push(newPath.join('/'))
 
-  return acc
-}
+      return acc
+    }
 
 filterFn = n => n % 10 === 0
 filterFn = ({ numbers }) => numbers && numbers.some(n => n % 10 === 0)
@@ -39,19 +41,8 @@ console.clear()
 
 console.log('Your paths, sire', processNode(require('./tree.json'), filterFn))
 
-console.log(
-  'Your paths, sire',
-  processNode(require('./tree.json'), filterFn)
-)
+console.log('Your paths, sire', processNode(require('./tree.json'), filterFn))
 
-console.log(
-  'Your paths, sire',
-  processNode(
-    require('./tree.json'), filterFn)
-  )
-)
+console.log('Your paths, sire', processNode(require('./tree.json'), filterFn))
 
-console.log(
-  'Your paths, sire',
-  processNode(filterFn)(require('./tree.json'))
-)
+console.log('Your paths, sire', processNode(filterFn)(require('./tree.json')))
