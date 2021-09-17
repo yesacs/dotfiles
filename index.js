@@ -8,7 +8,7 @@ export const hello = {
 }
 
 const x = 145
-x = 123
+   x = 123
 
 y = 13
 x + y

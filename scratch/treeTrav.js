@@ -1,3 +1,5 @@
+let processNode, filterFn
+
 // v1
 processNode = (node, filter = x => x, acc = [], path) => {
   let { name, children = [], numbers = [] } = node,
@@ -7,7 +9,7 @@ processNode = (node, filter = x => x, acc = [], path) => {
 }
 
 // no passed accumulator
-processNodeTwo = (node, filter = x => x, path = []) => {
+processNode = (node, filter = x => x, path = []) => {
   let { name, children = [] } = node,
     newPath = [...path, name]
 
@@ -18,18 +20,18 @@ processNodeTwo = (node, filter = x => x, path = []) => {
       : null
 }
 
-processNodeAlso = filter => (node, path = [], acc = []) => {
+processNode = filter => (node, path = [], acc = []) => {
   let { name, children = [] } = node,
     newPath = [...path, name]
 
-  children.forEach(c => processNodeAlso(filter)(c, newPath, acc))
+  children.forEach(c => processNode(filter)(c, newPath, acc))
   filter(node) && acc.push(newPath.join('/'))
 
   return acc
 }
 
 filterFn = n => n % 10 === 0
-filterFn2 = ({ numbers }) => numbers && numbers.some(n => n % 10 === 0)
+filterFn = ({ numbers }) => numbers && numbers.some(n => n % 10 === 0)
 
 console.clear()
 
@@ -39,18 +41,17 @@ console.log('Your paths, sire', processNode(require('./tree.json'), filterFn))
 
 console.log(
   'Your paths, sire',
-  processNodeTwo(require('./tree.json'), filterFn2)
+  processNode(require('./tree.json'), filterFn)
 )
 
 console.log(
   'Your paths, sire',
-  processNodeTwo(
-    require('./tree.json'),
-    ({ numbers }) => numbers && numbers.some(n => n % 10 === 0)
+  processNode(
+    require('./tree.json'), filterFn)
   )
 )
 
 console.log(
   'Your paths, sire',
-  processNodeAlso(filterFn2)(require('./tree.json'))
+  processNode(filterFn)(require('./tree.json'))
 )
