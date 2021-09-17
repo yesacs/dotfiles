@@ -1,3 +1,4 @@
+// v1
 processNode = (node, filter = x => x, acc = [], path) => {
   let { name, children = [], numbers = [] } = node,
     newPath = [path, name].filter(x => x).join('/')
@@ -5,6 +6,7 @@ processNode = (node, filter = x => x, acc = [], path) => {
   return numbers.some(filter) ? [...acc, newPath] : [...acc]
 }
 
+// no passed accumulator
 processNodeTwo = (node, filter = x => x, path = []) => {
   let { name, children = [] } = node,
     newPath = [...path, name]
