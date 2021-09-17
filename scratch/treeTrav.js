@@ -20,6 +20,7 @@ processNode = (node, filter = x => x, path = []) => {
       : null
 }
 
+// partially applicated version with passed accumulator
 processNode =
   filter =>
     (node, path = [], acc = []) => {
@@ -32,12 +33,14 @@ processNode =
       return acc
     }
 
+// two versions of the filter fn
 filterFn = n => n % 10 === 0
 filterFn = ({ numbers }) => numbers && numbers.some(n => n % 10 === 0)
 
-console.clear()
-
 // ---------------
 
+console.clear()
+
 console.log('Your paths, sire', processNode(require('./tree.json'), filterFn))
+
 console.log('Your paths, sire', processNode(filterFn)(require('./tree.json')))
