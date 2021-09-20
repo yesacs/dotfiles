@@ -87,7 +87,7 @@ let g:which_key_map.p = {
       \ 'name' : '+plug',
       \ 'i' : [':PlugInstall', 'PlugInstall'],
       \ 'c' : [':PlugClean',   'PlugClean'],
-      \ 'u' : [':PlugUdate',   'PlugUdate'],
+      \ 'u' : [':PlugUpdate',  'PlugUpdate'],
       \ 'U' : [':PlugUpgrade', 'PlugUpgrade'],
       \}
 
