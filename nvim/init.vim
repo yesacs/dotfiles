@@ -94,7 +94,6 @@ Plug 'antoinemadec/coc-fzf'
 Plug 'junegunn/vim-easy-align'
 Plug 'voldikss/vim-floaterm'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'rhysd/reply.vim'
 Plug 'jpalardy/vim-slime'
 
 " End Plugins
@@ -109,10 +108,10 @@ let g:palenight_terminal_italics=1
 "'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
 let g:material_theme_style = 'palenight'
 
-colorscheme palenight
+"colorscheme palenight
 "colorscheme one
 "colorscheme material
-"colorscheme onedark
+colorscheme onedark
 
 "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
 "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
@@ -198,9 +197,6 @@ if has("autocmd")
     \| exe "normal! g'\"" | endif
 endif
 
-" Disable default Ranger mapping
-let g:ranger_map_keys = 0
-
 " Disable NrrwRgn default mappings
 let g:nrrw_rgn_nomap_nr = 1
 let g:nrrw_rgn_nomap_Nr = 1
@@ -212,6 +208,7 @@ let g:coc_global_extensions = [
   \'coc-css',
   \'coc-json',
   \'coc-tsserver',
+  \'coc-conjure',
   \'coc-prettier',
   \'coc-eslint',
   \'coc-explorer',
@@ -235,17 +232,11 @@ if !empty(glob("~/.config/nvim/keys/which-key.vim"))
   source ~/.config/nvim/keys/which-key.vim
 end
 
-" reply {{
-let g:reply_repls = {
-  \'javascript.jsx': ['node']
-  \}
-" }}
 
 " slime {{
 let g:slime_no_mappings = 1
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 let g:slime_target = "tmux"
-"let g:slime_target = "neovim"
 " }}
 
 " fzf {{
