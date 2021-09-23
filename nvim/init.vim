@@ -97,6 +97,13 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-fireplace'
 
+" Clojure
+Plug 'Olical/conjure'
+Plug 'Olical/aniseed'
+Plug 'tpope/vim-dispatch'
+Plug 'clojure-vim/vim-jack-in'
+Plug 'radenling/vim-dispatch-neovim'
+
 " End Plugins
 call plug#end()
 
@@ -218,6 +225,7 @@ let g:coc_global_extensions = [
   \'coc-yank',
   \'coc-xml',
   \'coc-react-refactor',
+  \'coc-diagnostic'
   \ ]
 
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
@@ -303,6 +311,10 @@ let g:coc_explorer_global_presets = {
 \   },
 \ }
 " }}
+
+"{{ conjure
+let g:conjure#log#hud#enabled = 'false'
+"}}
 
 
 " Local config overrides

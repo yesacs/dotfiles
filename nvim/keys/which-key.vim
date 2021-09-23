@@ -47,8 +47,8 @@ let g:which_key_map.a = {
       \ 'p' : ['<Plug>(EasyAlign)ip', 'in-paragraph'],
       \}
 
-" a is for CocExplorer 
-let g:which_key_map.e = {
+" E is for CocExplorer  
+let g:which_key_map.E = {
       \ 'name' : '+CocExplore',
       \ 'e' : [ ':CocCommand explorer',                            'Left-side column' ],
       \ 'b' : [ ':CocCommand explorer --preset buffer',            'buffers' ],
@@ -100,7 +100,7 @@ let g:which_key_map.c = {
 let g:which_key_local_map = {
       \ 'name' : '+Coc',
       \ ',' : [':CocCommand',                     'CocCommand'],
-      \ 'e' : [':CocCommand explorer',            'CocExplorer'],
+      \ 'E' : [':CocCommand explorer',            'CocExplorer'],
       \ 'l' : [':CocFzfList',                     'CocFzfList'],
       \ 'h' : [':call CocActionAsync("doHover")', 'show-docs'],
       \ 'd' : ['<Plug>(coc-definition)',          'definition'],
@@ -222,6 +222,25 @@ let g:which_key_map.R = {
      \ 'n' : [':Repl',             'Open New REPL'],
      \ 'q' : [':ReplStop',         'Kill Active REPL'],
      \ 'r' : [":'<,'>ReplSend",    'Send selection to REPL'],
+     \ }
+
+" e is for Conjure(Eval) (WIP)
+let g:which_key_map.e = {
+     \ 'name' : '+ConjureEval',
+     \ 'e' : [':ConjureEval',            'eval'],
+     \ 'b' : [':ConjureEvalBuf',         'Buf'],
+     \ 'f' : [':ConjureEvalCurrentForm', 'Current Form'],
+     \ 'r' : [':ConjureEvalRootForm',    'Root Form'],
+     \ 'm' : [':ConjureEvalMarkedForm',  'Marked Form'],
+     \ 'v' : [':ConjureEvalVisual',      'Visual'],
+     \ 'w' : [':ConjureEvalWord',        'Word'],
+     \ 'F' : [':ConjureEvalFile',        'File'],
+     \ 'c' :{
+        \ 'name': '+ConjureEvalComment',
+        \ 'f' : [':ConjureEvalCommentCurrentForm', 'Current Form'],
+        \ 'r' : [':ConjureEvalCommentRootForm',    'Root Form'],
+        \ 'm' : [':ConjureEvalCommentMarkedForm',  'Marked Form'],
+        \ }
      \ }
 
 " r is for REPL (slime)
