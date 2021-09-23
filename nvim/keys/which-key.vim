@@ -127,6 +127,8 @@ let g:which_key_map.b = {
       \ 'S' : [':w<CR>:source $MYVIMRC<CR>',            'write buffer and source init.vim'],
       \ 'n' : [':vnew',                                 'new empty buffer split'],
       \ 'e' : [ ':CocCommand explorer --preset buffer', 'buffers' ],
+      \ 'd' : [ ':Blose',                               'Delete Buffer' ],
+      \ 'D' : [ ':Blose!',                              'Delete Buffer (Force)' ],
       \}
 
 " q is for quit

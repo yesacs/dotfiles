@@ -95,6 +95,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'voldikss/vim-floaterm'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jpalardy/vim-slime'
+Plug 'tpope/vim-fireplace'
 
 " End Plugins
 call plug#end()
