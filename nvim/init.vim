@@ -112,6 +112,8 @@ Plug 'Olical/aniseed'
 Plug 'tpope/vim-dispatch'
 Plug 'clojure-vim/vim-jack-in'
 Plug 'radenling/vim-dispatch-neovim'
+Plug 'guns/vim-clojure-static'
+Plug 'guns/vim-clojure-hightlight'
 
 " End Plugins
 call plug#end()
