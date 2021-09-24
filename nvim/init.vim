@@ -66,6 +66,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'mhinz/vim-startify'
 
 " Lang support
+Plug 'sheerun/vim-polyglot'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'mustache/vim-mustache-handlebars'
@@ -75,11 +76,19 @@ Plug 'fladson/vim-kitty'
 " Colors
 Plug 'rakr/vim-one'
 Plug 'joshdick/onedark.vim'
-Plug 'drewtempelmeyer/palenight.vim'
+"Plug 'drewtempelmeyer/palenight.vim'
+Plug 'kyazdani42/nvim-palenight.lua'
 Plug 'tomasr/molokai'
 Plug 'sickill/vim-monokai'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'dracula/vim'
+Plug 'sainnhe/sonokai'
+Plug 'sainnhe/edge'
+Plug 'sainnhe/gruvbox-material'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'jacoborus/tender.vim'
+Plug 'liuchengxu/space-vim-theme'
+
 
 " IDE stuff
 Plug 'easymotion/vim-easymotion'
@@ -95,9 +104,9 @@ Plug 'junegunn/vim-easy-align'
 Plug 'voldikss/vim-floaterm'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jpalardy/vim-slime'
-Plug 'tpope/vim-fireplace'
 
 " Clojure
+Plug 'tpope/vim-fireplace'
 Plug 'Olical/conjure'
 Plug 'Olical/aniseed'
 Plug 'tpope/vim-dispatch'
@@ -113,13 +122,24 @@ set background=dark
 let g:material_terminal_italics = 1
 let g:palenight_terminal_italics=1
 
-"'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
-let g:material_theme_style = 'palenight'
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
 
-colorscheme palenight
+"material_theme_style = 'default' | 'palenight' | 'ocean' | 'lighter' | 'darker' | 'default-community' | 'palenight-community' | 'ocean-community' | 'lighter-community' | 'darker-community'
+let g:material_theme_style = 'ocean'
+let g:material_terminal_italics = 1
+
+"colorscheme palenight
 "colorscheme one
 "colorscheme material
 "colorscheme onedark
+"colorscheme dracula
+colorscheme tokyonight
+"colorscheme tender
+"colorscheme sonokai
+"colorscheme edge
+"colorscheme gruvbox-material
+"colorscheme space_vim_theme
 
 "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
 "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
