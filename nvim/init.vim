@@ -113,7 +113,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'clojure-vim/vim-jack-in'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'guns/vim-clojure-static'
-Plug 'guns/vim-clojure-hightlight'
+Plug 'guns/vim-clojure-highlight'
 
 " End Plugins
 call plug#end()
