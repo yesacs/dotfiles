@@ -305,9 +305,10 @@ let g:coc_explorer_global_presets = {
 \   'buffer': {
 \     'sources': [{'name': 'buffer', 'expand': v:true}],
 \     'position': 'floating',
-\     'floating-position': 'right-center',
+\     'floating-position': 'center',
 \     'open-action-strategy': 'select',
-\     'floating-width': 70
+\     'floating-width': 140,
+\     'floating-height': 40,
 \   },
 \ }
 " }}
