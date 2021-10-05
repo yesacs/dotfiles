@@ -9,7 +9,7 @@ alias kssh "kitty +kitten ssh"
 
 alias gg "git add . && git commit"
 alias gs "git status -vv"
-alias gd "batdiff"
+alias gd "git diff"
 
 alias cider "clj -Sdeps '{:deps {cider/cider-nrepl {:mvn/version \"0.21.1\"} }}' -m nrepl.cmdline --middleware \"[cider.nrepl/cider-middleware]\""
 
@@ -55,7 +55,7 @@ set diff_preview "git diff $argv --color=always -- {-1}"
 set fzf_git_status_opts "--preview=$diff_preview"
 set fzf_preview_dir_cmd "exa -T"
 
-fzf_configure_bindings --directory=\ct --git_status=\cs --git_log=\cg --history=\cr --variables=\cv
+fzf_configure_bindings --directory=\ct --git_status=\cs --git_log=\cg --history=\cr --variables=\cv --git_branch=\cq
 
 function fdiff
   git diff $argv --name-only | fzf -m --ansi --preview $diff_preview
