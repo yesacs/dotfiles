@@ -1,40 +1,40 @@
-;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
+(setq doom-leader-key "SPC"
+      doom-localleader-key ",")
 
-;; Place your private configuration here! Remember, you do not need to run 'doom
-;; sync' after modifying this file!
+(map! :leader
+      "p a" #'projectile-toggle-between-implementation-and-test)
 
+(map! :leader
+      "w =" #'balance-windows-area)
 
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; clients, file templates and snippets.
-(setq user-full-name "Casey Sullivan"
-      user-mail-address "casey.sullivan@gmail.com")
+(map! :map cider-repl-mode-map
+      (:localleader
+       "b" #'cider-switch-to-last-clojure-buffer))
 
-;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
-;; are the three important ones:
-;;
-;; + `doom-font'
-;; + `doom-variable-pitch-font'
-;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
-;;   presentations or streaming.
-;;
-;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
-;; font string. You generally only need these two:
-;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
-;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
+(map! :map (clojure-mode-map clojurescript-mode-map)
+      (:localleader
+       "b" #'cider-switch-to-repl-buffer))
 
-;; There are two ways to load a theme. Both assume the theme is installed and
-;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-font (font-spec :family "Hack Nerd Font Mono"
+                           :size 11))
 
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq doom-themes-treemacs-enable-variable-pitch nil)
 
-;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(with-eval-after-load "treemacs" (treemacs-follow-mode t))
 
+(setq cider-clojure-cli-global-options "-A:test:local -m nrepl.cmdline --middleware '[\"refactor-nrepl.middleware/wrap-refactor\", \"cider.nrepl/cider-middleware\"]'")
+;;(setq cider-clojure-cli-global-options nil)
+
+;(add-to-list 'warning-suppress-types '(undo discard-info))
+
+;; make ligatures work
+(mac-auto-operator-composition-mode)
+
+(setq lsp-ui-sideline-show-code-actions nil)
+(setq lsp-ui-sideline-enable nil)
+(setq lsp-ui-doc-show-with-cursor nil)
+
+(add-hook 'lisp-mode-hook #'evil-cleverparens-mode)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -53,21 +53,14 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;; so vagrant jack-in works
+;;(setq nrepl-use-ssh-fallback-for-remote-hosts t)
+
+;; -- MY CHANGES --
+
+;;(setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-palenight)
+
 (add-hook 'after-init-hook #'global-prettier-mode)
 
-;; TIDE
-(defun setup-tide-mode ()
-  "Setup function for tide."
-  (interactive)
-  (tide-setup)
-  (flycheck-mode +1)
-  (setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (eldoc-mode +1)
-  (tide-hl-identifier-mode +1)
-  (company-mode +1))
-
 (setq company-tooltip-align-annotations t)
-
-(add-hook 'js-mode-hook #'setup-tide-mode)
-(add-hook 'js2-mode-hook #'setup-tide-mode)
-

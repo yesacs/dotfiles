@@ -336,7 +336,7 @@ let g:coc_explorer_global_presets = {
 " }}
 
 "{{ conjure
-let g:conjure#log#hud#enabled = 'false'
+"let g:conjure#log#hud#enabled = 'false'
 "}}
 
 

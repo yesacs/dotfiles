@@ -25,6 +25,7 @@ if command -v brew
 then
   #install fish, fisher, fzf
   brew install fish
+
   curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
   fisher install PatrickF1/fzf.fish
 
@@ -32,7 +33,10 @@ then
     fzf bat gotop neofetch ranger \
     node npm yarn grip eth-p/software/bat-extras \
     clojure/tools/clojure adoptopenjdk redis leiningen \
-    borkdude/brew/clj-kondo
+    borkdude/brew/clj-kondo coreutils
+
+  brew tap railwaycat/emacsmacport
+  brew install emacs-mac --with-modules
 
   # install fonts (only works on macs)
   brew tap homebrew/cask-fonts

@@ -44,6 +44,8 @@ set __fish_git_prompt_char_stateseparator ':'
 
 set -x BAT_THEME OneHalfDark
 
+export NVM_DIR=~/.nvm
+
 # FZF et al.
 
 set -x FZF_DEFAULT_COMMAND  'rg --files --follow'
