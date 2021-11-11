@@ -105,7 +105,8 @@ Plug 'voldikss/vim-floaterm'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jpalardy/vim-slime'
 Plug 'liuchengxu/vim-which-key'
-Plug 'sbdchd/neoformat'
+"Plug 'sbdchd/neoformat'
+Plug 'prettier/vim-prettier'
 
 " Clojure
 Plug 'tpope/vim-fireplace'
@@ -165,11 +166,16 @@ let g:nrrw_rgn_nomap_nr = 1
 let g:nrrw_rgn_nomap_Nr = 1
 
 " Format on save
-autocmd BufWritePre *.js Neoformat
-autocmd BufWritePre *.jsx Neoformat
-autocmd BufWritePre *.scss Neoformat
-autocmd BufWritePre *.css Neoformat
+"autocmd BufWritePre *.js Neoformat
+"autocmd BufWritePre *.jsx Neoformat
+"autocmd BufWritePre *.scss Neoformat
+"autocmd BufWritePre *.css Neoformat
 
+nmap <Leader>P <Plug>(Prettier)
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#autoformat_config_present = 1
+let g:prettier#exec_cmd_async = 1
 
 source ~/.config/nvim/limelight.init.vim
 source ~/.config/nvim/lightline.init.vim
