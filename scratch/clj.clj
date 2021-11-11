@@ -12,16 +12,10 @@
   )
 
 (farbtoner "Hello" "Goodbye")
-
 (str "Hello" " Goodbye")
 
 (+' 1 2 3)
 
-(+ 123)
-
 (map)
 
-def 
-
-
-
+(+ 123)

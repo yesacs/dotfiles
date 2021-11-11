@@ -105,6 +105,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jpalardy/vim-slime'
 Plug 'liuchengxu/vim-which-key'
+Plug 'sbdchd/neoformat'
 
 " Clojure
 Plug 'tpope/vim-fireplace'
@@ -115,17 +116,17 @@ Plug 'clojure-vim/vim-jack-in'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
+Plug 'guns/vim-sexp'
 
 " Coc
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'antoinemadec/coc-fzf'
 
 " NVIM LSP
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 
 " End Plugins
 call plug#end()
@@ -163,19 +164,41 @@ endif
 let g:nrrw_rgn_nomap_nr = 1
 let g:nrrw_rgn_nomap_Nr = 1
 
+" Format on save
+autocmd BufWritePre *.js Neoformat
+autocmd BufWritePre *.jsx Neoformat
+autocmd BufWritePre *.scss Neoformat
+autocmd BufWritePre *.css Neoformat
+
+
 source ~/.config/nvim/limelight.init.vim
 source ~/.config/nvim/lightline.init.vim
 source ~/.config/nvim/slime.init.vim
 source ~/.config/nvim/fzf.init.vim
-"source ~/.config/nvim/coc.init.vim
+source ~/.config/nvim/clojure.init.vim
 source ~/.config/nvim/keys/which-key.vim
 
+let g:coq_settings = { 'auto_start': v:true }
+
 lua << END
-require('evil_lualine')
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.eslint.setup{}
 require'lspconfig'.clojure_lsp.setup{}
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+require'lspconfig'.cssls.setup {
+  capabilities = capabilities,
+}
+
+require'nvim-tree'.setup{
+  auto_close = true,
+}
+
+require('lsp_conf')
+require('evil_lualine')
 END
+
 
 " Local config overrides
 if !empty(glob("~/.config/init.local.vim"))

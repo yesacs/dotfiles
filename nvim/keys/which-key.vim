@@ -49,15 +49,12 @@ let g:which_key_map.a = {
       \ 'p' : ['<Plug>(EasyAlign)ip', 'in-paragraph'],
       \}
 
-" E is for CocExplorer  
-let g:which_key_map.E = {
-      \ 'name' : '+CocExplore',
-      \ 'e' : [ ':CocCommand explorer',                            'Left-side column' ],
-      \ 'b' : [ ':CocCommand explorer --preset buffer',            'buffers' ],
-      \ 'f' : [ ':CocCommand explorer --preset floating',          'Left-side floater' ],
-      \ 'l' : [ ':CocCommand explorer --preset floatingLeftside',  'Center floater' ],
-      \ 'r' : [ ':CocCommand explorer --preset floatingRightside', 'Right-side floater' ],
-      \ 't' : [ ':CocCommand explorer --preset floatingTop',       'Top-side floater' ],
+" n is for NvimTree  
+let g:which_key_map.n = {
+      \ 'name' : '+NvimTree',
+      \ 'n' : [ ':NvimTreeToggle',   'NvimTreeToggle' ],
+      \ 'f' : [ ':NvimTreeFindFile', 'NvimTreeFindFile' ],
+      \ 'r' : [ ':NvimTreeRefresh',  'NvimTreeRefresh' ],
       \}
 
 " f is for fzf 
@@ -98,33 +95,6 @@ let g:which_key_map.c = {
       "\ 'name' : '+NERDCommenter' ,
       \}
 
-" , is for Coc
-let g:which_key_local_map = {
-      \ 'name' : '+Coc',
-      \ ',' : [':CocCommand',                                'CocCommand'],
-      \ 'e':{
-          \ 'name' : '+CocExplore',
-          \ 'b' : [':CocCommand explorer --preset buffer',   'buffers' ],
-          \ 'f' : [':CocCommand explorer --preset floating', 'Left-side floater' ],
-          \ 'e' : [':CocCommand explorer',                   'CocExplorer'],
-      \},
-      \ 'l' : [':CocFzfList',                                'CocFzfList'],
-      \ 'h' : [':call CocActionAsync("doHover")',            'show-docs'],
-      \ 'd' : ['<Plug>(coc-definition)',                     'definition'],
-      \ 'g':{
-          \ 'name' : '+goto',
-          \ 'd' : ['<Plug>(coc-definition)',                 'goto-definition'],
-          \ 't' : ['<Plug>(coc-type-definition)',            'goto-type-definition'],
-          \ 'i' : ['<Plug>(coc-implementation)',             'goto-implementation'],
-      \},
-      \ 'R' : ['<Plug>(coc-references)',                     'show-uses'],
-      \ 'r' : ['<Plug>(coc-rename)',                         'rename'],
-      \ 'a' : ['<Plug>(coc-codeaction)',                     'actions'],
-      \ 'A' : ['<Plug>(coc-codeaction-selected)',            'actions-for-selection'],
-      \}
-
-let g:which_key_map[','] = g:which_key_local_map
-
 " b is for buffer
 let g:which_key_map.b = {
       \ 'name' : '+buffers',
@@ -152,11 +122,11 @@ let g:which_key_map.w = {
       \ 'name' : '+window',
       \ 'd' : [':q',        'close'],
       \ 'q' : [':wq',       'save and close'],
-      \ 'b' : ['<C-W>s',    'split-below'],
       \ 'v' : [':vsp',      'split-right'],
+      \ 'b' : ['<C-w>s',    'split-below'],
+      \ 'h' : ['<C-w>h',    'focus-left'],
       \ 'j' : ['<C-w>j',    'focus-below'],
       \ 'k' : ['<C-w>k',    'focus-above'],
-      \ 'h' : ['<C-w>h',    'focus-left'],
       \ 'l' : ['<C-w>l',    'focus-right'],
       \}
 
@@ -172,8 +142,8 @@ let g:which_key_map.m = {
       \ 'F' : ['<Plug>(easymotion-overwin-f)',    'search (overwin)'],
       \}
 
-" n is for NrrwRgn
-let g:which_key_map.n = {
+" N is for NrrwRgn
+let g:which_key_map.N = {
       \ 'name': '+NrrwRgn',
       \ 'r' : [':NRV',      'open previous selection in narrow window'],
       \ 'l' : [':NRL',      'Reselect the last selected region and open it again in a narrowed window'],

@@ -5,3 +5,5 @@ nvim/.netrwhist
 **/node_modules/
 tags
 .clj-kondo
+.cpcache
+.lsp
