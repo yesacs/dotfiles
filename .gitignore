@@ -4,3 +4,4 @@ nvim/repos/
 nvim/.netrwhist
 **/node_modules/
 tags
+.clj-kondo
