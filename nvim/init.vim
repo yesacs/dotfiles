@@ -79,6 +79,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'mhinz/vim-startify'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 
 " Status lines
 Plug 'nvim-lualine/lualine.nvim'
@@ -197,12 +198,9 @@ require'lspconfig'.cssls.setup {
   capabilities = capabilities,
 }
 
-require'nvim-tree'.setup{
-  auto_close = true,
-}
-
 require('lsp_conf')
 require('evil_lualine')
+require('nvimtree')
 END
 
 
