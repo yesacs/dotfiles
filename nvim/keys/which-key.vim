@@ -1,3 +1,4 @@
+
 " Map leader to which_key
 nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
@@ -13,7 +14,7 @@ let g:which_key_map =  {}
 
 "Define a separator 
 let g:which_key_sep = '→' 
-set timeoutlen=1000
+set timeoutlen=500
 
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
@@ -31,6 +32,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 
 " Single mappings
+let g:which_key_map[' '] = [ ':Files',                           ':Files' ]
 let g:which_key_map['t'] = [ ':Files',                           ':Files' ]
 let g:which_key_map['T'] = [ ':FloatermToggle',                  'Floaterm' ]
 let g:which_key_map['h'] = [ '<C-W>s',                           'split below']

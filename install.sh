@@ -44,7 +44,13 @@ then
   brew install --cask font-fira-code
   brew install --cask font-hack-nerd-font
 
-  npm install -g prettier typescript eslint sass-lint
+  #webev tooling
+  npm install -g prettier eslint sass-lint
+
+  # neovim lsp support addons
+  npm install -g typescript-language-server vscode-langservers-extracted
+  brew install clojure-lsp/brew/clojure-lsp-native
+
 else
   printf "\n😓 Homebrew not found skipping brew setup, you may have to install
   some stuff manually\n\n"
