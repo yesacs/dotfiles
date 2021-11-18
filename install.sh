@@ -7,22 +7,20 @@ echo "Installing shit..."
 #Dein
 printf "Installing vim-plug..."
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 printf " Done!\n\n"
 
 #Homebrew
 printf "Installing HomeBrew...\n"
-if command -v brew
-then
- printf "😓 Homebrew installed already, skipping...\n\n"
+if command -v brew; then
+  printf "😓 Homebrew installed already, skipping...\n\n"
 else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-if command -v brew
-then
+if command -v brew; then
   #install fish, fisher, fzf
   brew install fish
 
@@ -33,14 +31,14 @@ then
     fzf bat gotop neofetch ranger \
     node npm yarn grip eth-p/software/bat-extras \
     clojure/tools/clojure adoptopenjdk redis leiningen \
-    borkdude/brew/clj-kondo coreutils
+    borkdude/brew/clj-kondo coreutils zprint
 
   brew tap railwaycat/emacsmacport
   brew install emacs-mac --with-modules
 
   # install fonts (only works on macs)
   brew tap homebrew/cask-fonts
-  brew install --cask font-source-code-pro 
+  brew install --cask font-source-code-pro
   brew install --cask font-fira-code
   brew install --cask font-hack-nerd-font
 
@@ -58,7 +56,7 @@ fi
 
 #ohMyTmux
 printf "\n"
-git clone https://github.com/gpakosz/.tmux.git ~/.tmux || 
+git clone https://github.com/gpakosz/.tmux.git ~/.tmux ||
   printf "😓 Tried to get ohMyTmux and failed, maybe you already got it?\n"
 
 ln -sf ~/.tmux/.tmux.conf ~/.tmux.conf
@@ -67,4 +65,3 @@ tic -x -o ~/.terminfo "$PWD"/xterm-24bit.terminfo
 
 ./symlinks.sh
 ./errata.sh
-

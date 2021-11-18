@@ -86,17 +86,21 @@ ins_left {
   padding = { left = 0, right = 1 }, -- We don't need space before this
 }
 
+--ins_left {
+  --'mode'
+--}
+
 ins_left {
   -- mode component
   function()
     -- auto change color according to neovims mode
     local mode_color = {
-      n = colors.red,
-      i = colors.green,
-      v = colors.blue,
-      [''] = colors.blue,
-      V = colors.blue,
-      c = colors.magenta,
+      n = colors.green,
+      i = colors.blue,
+      v = colors.orange,
+      [''] = colors.orange,
+      V = colors.orange,
+      c = colors.yellow,
       no = colors.red,
       s = colors.orange,
       S = colors.orange,
@@ -113,11 +117,11 @@ ins_left {
       t = colors.red,
     }
     vim.api.nvim_command('hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. ' guibg=' .. colors.bg)
-    -- return '<' .. vim.fn.mode() .. '>'
-    return ''
+     return vim.fn.mode()
+    --return ''
   end,
   color = 'LualineMode',
-  padding = { right = 1 },
+  padding = { left = 1, right = 1 },
 }
 
 ins_left {
@@ -128,8 +132,9 @@ ins_left {
 
 ins_left {
   'filename',
-  cond = conditions.buffer_not_empty,
   color = { fg = colors.magenta, gui = 'bold' },
+  file_status = true, -- displays file status (readonly status, modified status)
+  path = 1 -- 0 = just filename, 1 = relative path, 2 = absolute path
 }
 
 ins_left { 'location' }
@@ -138,12 +143,12 @@ ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
 ins_left {
   'diagnostics',
-  sources = { 'coc' },
+  sources = { 'nvim_lsp' },
   symbols = { error = ' ', warn = ' ', info = ' ' },
-  diagnostics_color = {
-    color_error = { fg = colors.red },
-    color_warn = { fg = colors.yellow },
-    color_info = { fg = colors.blue },
+  color = {
+    error = { fg = colors.red },
+    warn = { fg = colors.yellow },
+    info = { fg = colors.cyan },
   },
 }
 

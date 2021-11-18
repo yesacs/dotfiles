@@ -35,11 +35,9 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 let g:which_key_map[' '] = [ ':Files',                           ':Files' ]
 let g:which_key_map['t'] = [ ':Files',                           ':Files' ]
 let g:which_key_map['T'] = [ ':FloatermToggle',                  'Floaterm' ]
-let g:which_key_map['h'] = [ '<C-W>s',                           'split below']
 let g:which_key_map['l'] = [ ':Limelight!!',                     'Limelight' ]
 let g:which_key_map['S'] = [ ':setlocal spell! spelllang=en_us', 'Spell check (en_us)' ]
 let g:which_key_map['M'] = [ ':MarkdownPreviewToggle',           'Markdown Preview' ]
-let g:which_key_map['v'] = [ '<C-W>v',                           'split right']
 let g:which_key_map['z'] = [ 'Goyo',                             'zen mode' ]
 
 " a is for EasyAlign
@@ -90,7 +88,7 @@ let g:which_key_map.p = {
       \ 'U' : [':PlugUpgrade', 'PlugUpgrade'],
       \}
 
-" C is for Coc
+" C is for NERDCommenter
 let g:which_key_map.c = {
       "\ 'name' : '+NERDCommenter' ,
       \}
@@ -103,7 +101,6 @@ let g:which_key_map.b = {
       \ 'b' : [':Buffers',                              ':Buffers'],
       \ 'S' : [':w<CR>:source $MYVIMRC<CR>',            'write buffer and source init.vim'],
       \ 'n' : [':vnew',                                 'new empty buffer split'],
-      \ 'e' : [ ':CocCommand explorer --preset buffer', 'buffers' ],
       \ 'd' : [ ':Blose',                               'Delete Buffer' ],
       \ 'D' : [ ':Blose!',                              'Delete Buffer (Force)' ],
       \}
@@ -190,7 +187,6 @@ let g:which_key_map.s = {
       \ 'w' : [':Windows',         'search windows'],
       \ 'Y' : [':Filetypes',       'file types'],
       \ 'z' : [':FZF',             'FZF'],
-      \ 'y' : [':CocFzfList yank', 'yanks'],
       \ }
 
 " R is for repl
@@ -204,6 +200,7 @@ let g:which_key_map.R = {
 " e is for Conjure(Eval) (WIP)
 let g:which_key_map.e = {
      \ 'name' : '+ConjureEval',
+     \ "'" : [':Clj',                    'jack in'],
      \ 'e' : [':ConjureEval',            'eval'],
      \ 'b' : [':ConjureEvalBuf',         'Buf'],
      \ 'f' : [':ConjureEvalCurrentForm', 'Current Form'],
@@ -231,4 +228,4 @@ let g:which_key_map.r = {
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")
-call which_key#register(',', "g:which_key_local_map")
+"call which_key#register(',', "g:which_key_local_map")

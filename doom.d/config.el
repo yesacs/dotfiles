@@ -22,7 +22,7 @@
 
 (with-eval-after-load "treemacs" (treemacs-follow-mode t))
 
-(setq cider-clojure-cli-global-options "-A:test:local -m nrepl.cmdline --middleware '[\"refactor-nrepl.middleware/wrap-refactor\", \"cider.nrepl/cider-middleware\"]'")
+;(setq cider-clojure-cli-global-options "-A:test:local -m nrepl.cmdline --middleware '[\"refactor-nrepl.middleware/wrap-refactor\", \"cider.nrepl/cider-middleware\"]'")
 ;;(setq cider-clojure-cli-global-options nil)
 
 ;(add-to-list 'warning-suppress-types '(undo discard-info))

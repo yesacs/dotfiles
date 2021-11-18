@@ -79,6 +79,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'mhinz/vim-startify'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " Status lines
 Plug 'nvim-lualine/lualine.nvim'
@@ -105,15 +106,14 @@ Plug 'voldikss/vim-floaterm'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jpalardy/vim-slime'
 Plug 'liuchengxu/vim-which-key'
-"Plug 'sbdchd/neoformat'
-Plug 'prettier/vim-prettier'
+Plug 'sbdchd/neoformat'
 
 " Clojure
 Plug 'tpope/vim-fireplace'
 Plug 'Olical/conjure'
 Plug 'Olical/aniseed'
-Plug 'tpope/vim-dispatch'
 Plug 'clojure-vim/vim-jack-in'
+Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
@@ -124,7 +124,6 @@ Plug 'guns/vim-sexp'
 "Plug 'antoinemadec/coc-fzf'
 
 " NVIM LSP
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
@@ -165,17 +164,17 @@ endif
 let g:nrrw_rgn_nomap_nr = 1
 let g:nrrw_rgn_nomap_Nr = 1
 
-" Format on save
-"autocmd BufWritePre *.js Neoformat
-"autocmd BufWritePre *.jsx Neoformat
-"autocmd BufWritePre *.scss Neoformat
-"autocmd BufWritePre *.css Neoformat
+" NeoFormat on save
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
 
-nmap <Leader>P <Plug>(Prettier)
-let g:prettier#autoformat = 1
-let g:prettier#autoformat_require_pragma = 0
-let g:prettier#autoformat_config_present = 1
-let g:prettier#exec_cmd_async = 1
+"nmap <Leader>P <Plug>(Prettier)
+"let g:prettier#autoformat = 1
+"let g:prettier#autoformat_require_pragma = 0
+"let g:prettier#autoformat_config_present = 1
+"let g:prettier#exec_cmd_async = 1
 
 source ~/.config/nvim/limelight.init.vim
 source ~/.config/nvim/lightline.init.vim
@@ -186,14 +185,23 @@ source ~/.config/nvim/keys/which-key.vim
 
 let g:coq_settings = { 'auto_start': v:true }
 
+let g:conjure#log#hud#enabled = 0
+
 lua << END
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.eslint.setup{}
+require'lspconfig'.html.setup{}
 require'lspconfig'.clojure_lsp.setup{}
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 require'lspconfig'.cssls.setup {
+  capabilities = capabilities,
+}
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+require'lspconfig'.html.setup {
   capabilities = capabilities,
 }
 
