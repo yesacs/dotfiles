@@ -117,8 +117,8 @@ ins_left {
       t = colors.red,
     }
     vim.api.nvim_command('hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. ' guibg=' .. colors.bg)
-     return vim.fn.mode()
-    --return ''
+    --return vim.fn.mode()
+    return ''
   end,
   color = 'LualineMode',
   padding = { left = 1, right = 1 },
@@ -139,11 +139,11 @@ ins_left {
 
 ins_left { 'location' }
 
-ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
+--ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
 ins_left {
   'diagnostics',
-  sources = { 'nvim_lsp' },
+  sources = { 'nvim_lsp', 'coc' },
   symbols = { error = ' ', warn = ' ', info = ' ' },
   color = {
     error = { fg = colors.red },
@@ -189,12 +189,12 @@ ins_right {
   color = { fg = colors.green, gui = 'bold' },
 }
 
-ins_right {
-  'fileformat',
-  fmt = string.upper,
-  icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-  color = { fg = colors.green, gui = 'bold' },
-}
+--ins_right {
+  --'fileformat',
+  --fmt = string.upper,
+  --icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+  --color = { fg = colors.green, gui = 'bold' },
+--}
 
 ins_right {
   'branch',
@@ -205,7 +205,7 @@ ins_right {
 ins_right {
   'diff',
   -- Is it me or the symbol for modified us really weird
-  symbols = { added = ' ', modified = '柳 ', removed = ' ' },
+  -- symbols = { added = ' ', modified = '柳 ', removed = ' ' },
   diff_color = {
     added = { fg = colors.green },
     modified = { fg = colors.orange },
