@@ -6,5 +6,6 @@ p {
 
 h1 {
   display: block;
+  display: inline;
   color: red;
 }

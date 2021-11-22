@@ -46,7 +46,7 @@ if command -v brew; then
   npm install -g prettier eslint sass-lint
 
   # neovim lsp support addons
-  npm install -g typescript-language-server vscode-langservers-extracted
+  npm install -g eslint_d vim-language-server typescript-language-server vscode-langservers-extracted
   brew install clojure-lsp/brew/clojure-lsp-native
 
 else

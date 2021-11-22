@@ -107,11 +107,12 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jpalardy/vim-slime'
 Plug 'liuchengxu/vim-which-key'
 Plug 'sbdchd/neoformat'
+Plug 'kyazdani42/nvim-tree.lua'
 
 " Clojure
-Plug 'tpope/vim-fireplace'
+"Plug 'tpope/vim-fireplace'
 Plug 'Olical/conjure'
-Plug 'Olical/aniseed'
+"Plug 'Olical/aniseed'
 Plug 'clojure-vim/vim-jack-in'
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
@@ -119,14 +120,23 @@ Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
 Plug 'guns/vim-sexp'
 
-" Coc
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'antoinemadec/coc-fzf'
-
 " NVIM LSP
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+"Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+"Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'onsails/lspkind-nvim'
+
+" ORG mode
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-orgmode/orgmode'
+
 
 " End Plugins
 call plug#end()
@@ -170,12 +180,6 @@ augroup fmt
   autocmd BufWritePre * undojoin | Neoformat
 augroup END
 
-"nmap <Leader>P <Plug>(Prettier)
-"let g:prettier#autoformat = 1
-"let g:prettier#autoformat_require_pragma = 0
-"let g:prettier#autoformat_config_present = 1
-"let g:prettier#exec_cmd_async = 1
-
 source ~/.config/nvim/limelight.init.vim
 source ~/.config/nvim/lightline.init.vim
 source ~/.config/nvim/slime.init.vim
@@ -183,29 +187,13 @@ source ~/.config/nvim/fzf.init.vim
 source ~/.config/nvim/clojure.init.vim
 source ~/.config/nvim/keys/which-key.vim
 
-let g:coq_settings = { 'auto_start': v:true }
+"let g:coq_settings = { 'auto_start': v:true }
 
 let g:conjure#log#hud#enabled = 0
 
 lua << END
-require'lspconfig'.tsserver.setup{}
-require'lspconfig'.eslint.setup{}
-require'lspconfig'.html.setup{}
-require'lspconfig'.clojure_lsp.setup{}
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-require'lspconfig'.cssls.setup {
-  capabilities = capabilities,
-}
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-require'lspconfig'.html.setup {
-  capabilities = capabilities,
-}
-
 require('lsp_conf')
+require('org-mode')
 require('evil_lualine')
 require('nvimtree')
 END
