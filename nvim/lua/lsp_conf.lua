@@ -193,5 +193,23 @@ lspconfig.tsserver.setup({
     end,
 })
 
+lspconfig.cssls.setup({
+    on_attach = function(client, bufnr)
+        client.resolved_capabilities.document_formatting = false
+        client.resolved_capabilities.document_range_formatting = false
+
+        local ts_utils = require("nvim-lsp-ts-utils")
+        ts_utils.setup({
+            eslint_bin = "eslint_d",
+            eslint_enable_diagnostics = true,
+            eslint_enable_code_actions = true,
+            enable_formatting = false,
+            formatter = "prettier",
+        })
+
+        ts_utils.setup_client(client)
+    end,
+})
+
 require("null-ls").config({})
 lspconfig["null-ls"].setup({ on_attach = on_attach })
