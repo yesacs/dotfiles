@@ -11,12 +11,11 @@ export const hello = {
 isEmpty([])
 
 const x = y => console.log('!!!')
-
-const x = 145
-x = 123
+x = 12
 
 y = 13
-x + y
+
+x = x + y + z
 
 t = 10
 

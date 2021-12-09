@@ -65,6 +65,7 @@ Plug 'ghifarit53/tokyonight-vim'
 Plug 'jacoborus/tender.vim'
 Plug 'liuchengxu/space-vim-theme'
 "Plug 'drewtempelmeyer/palenight.vim'
+Plug 'catppuccin/nvim'
 
 "vim compat
 Plug 'roxma/nvim-yarp'
@@ -96,7 +97,6 @@ Plug 'fladson/vim-kitty'
 " IDE stuff
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
-Plug 'neovim/nvim-lspconfig'
 Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/NrrwRgn'
 Plug 'rbgrouleff/bclose.vim'
@@ -106,25 +106,32 @@ Plug 'voldikss/vim-floaterm'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jpalardy/vim-slime'
 Plug 'liuchengxu/vim-which-key'
-Plug 'sbdchd/neoformat'
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'sbdchd/neoformat'
 
 " Clojure
-"Plug 'tpope/vim-fireplace'
 Plug 'Olical/conjure'
-"Plug 'Olical/aniseed'
 Plug 'clojure-vim/vim-jack-in'
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
 Plug 'guns/vim-sexp'
+"Plug 'tpope/vim-fireplace'
+"Plug 'Olical/aniseed'
 
 " NVIM LSP
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'williamboman/nvim-lsp-installer'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+
+" coq
 "Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 "Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+
+" nvim-cmp
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -137,6 +144,8 @@ Plug 'onsails/lspkind-nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-orgmode/orgmode'
 
+" Coc
+"Plug 'neoclide/coc.nvim', {'branch': 'release'} 
 
 " End Plugins
 call plug#end()
@@ -180,6 +189,7 @@ augroup fmt
   autocmd BufWritePre * undojoin | Neoformat
 augroup END
 
+"source ~/.config/nvim/coc.init.vim
 source ~/.config/nvim/limelight.init.vim
 source ~/.config/nvim/lightline.init.vim
 source ~/.config/nvim/slime.init.vim
@@ -187,7 +197,7 @@ source ~/.config/nvim/fzf.init.vim
 source ~/.config/nvim/clojure.init.vim
 source ~/.config/nvim/keys/which-key.vim
 
-"let g:coq_settings = { 'auto_start': v:true }
+let g:coq_settings = { 'auto_start': v:true }
 
 let g:conjure#log#hud#enabled = 0
 
@@ -202,5 +212,5 @@ END
 " Local config overrides
 if !empty(glob("~/.config/init.local.vim"))
   source ~/.config/init.local.vim
-end
+en
 

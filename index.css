@@ -5,7 +5,11 @@ p {
 }
 
 h1 {
-  display: block;
   display: inline;
   color: red;
+}
+
+h1 {
+  display: block;
+  border: 1px solid;
 }

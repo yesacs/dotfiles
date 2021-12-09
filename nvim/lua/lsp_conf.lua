@@ -1,7 +1,9 @@
-local nvim_lsp = require('lspconfig')
+local lspconfig = require('lspconfig')
+
+-- Setup coq
 --local coq = require('coq')
 
--- Setup nvim-cmp.
+-- Setup nvim-cmp
 local cmp = require'cmp'
 local lspkind = require('lspkind')
 
@@ -13,8 +15,7 @@ local kind_icons = {
   Field = "",
   Variable = "",
   Class = "ﴯ",
-  Interface = "",
-  Module = "",
+  Interface = "", Module = "",
   Property = "ﰠ",
   Unit = "",
   Value = "",
@@ -97,6 +98,12 @@ cmp.setup.cmdline(':', {
 })
 
 
+local buf_map = function(bufnr, mode, lhs, rhs, opts)
+    vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
+        silent = true,
+    })
+end
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -127,7 +134,6 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<LocalLeader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap('n', '<LocalLeader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-
 end
 
 -- show diag errors in floater
@@ -149,11 +155,12 @@ end
 --local capabilities = vim.lsp.protocol.make_client_capabilities()
 --capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+-- cmp setup
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local servers = { 'tsserver', 'eslint', 'cssls', 'html', 'jsonls', 'clojure_lsp', 'vimls' }
+local servers = {'cssls', 'html', 'jsonls', 'clojure_lsp', 'vimls' }
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup{
+  lspconfig[lsp].setup{
     capabilities = capabilities,
     on_attach = on_attach,
     flags = {
@@ -161,3 +168,30 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+
+-- https://jose-elias-alvarez.medium.com/configuring-neovims-lsp-client-for-typescript-development-5789d58ea9c
+lspconfig.tsserver.setup({
+    on_attach = function(client, bufnr)
+        client.resolved_capabilities.document_formatting = false
+        client.resolved_capabilities.document_range_formatting = false
+
+        local ts_utils = require("nvim-lsp-ts-utils")
+        ts_utils.setup({
+            eslint_bin = "eslint_d",
+            eslint_enable_diagnostics = true,
+            eslint_enable_code_actions = true,
+            enable_formatting = true,
+            formatter = "prettier",
+        })
+
+        ts_utils.setup_client(client)
+
+        buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>")
+        buf_map(bufnr, "n", "gi", ":TSLspRenameFile<CR>")
+        buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
+        on_attach(client, bufnr)
+    end,
+})
+
+require("null-ls").config({})
+lspconfig["null-ls"].setup({ on_attach = on_attach })

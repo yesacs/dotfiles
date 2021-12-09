@@ -22,3 +22,4 @@ colorscheme sonokai
 "colorscheme edge
 "colorscheme gruvbox-material
 "colorscheme space_vim_theme
+"colorscheme catppuccin

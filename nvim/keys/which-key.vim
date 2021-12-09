@@ -217,6 +217,31 @@ let g:which_key_map.e = {
         \ }
      \ }
 
+" , is for Coc
+let g:which_key_local_map = {
+      \ 'name' : '+Coc',
+      \ ',' : [':CocCommand',                                'CocCommand'],
+      \ 'e':{
+          \ 'name' : '+CocExplore',
+          \ 'b' : [':CocCommand explorer --preset buffer',   'buffers' ],
+          \ 'f' : [':CocCommand explorer --preset floating', 'Left-side floater' ],
+          \ 'e' : [':CocCommand explorer',                   'CocExplorer'],
+      \},
+      \ 'l' : [':CocFzfList',                                'CocFzfList'],
+      \ 'h' : [':call CocActionAsync("doHover")',            'show-docs'],
+      \ 'd' : ['<Plug>(coc-definition)',                     'definition'],
+      \ 'g':{
+          \ 'name' : '+goto',
+          \ 'd' : ['<Plug>(coc-definition)',                 'goto-definition'],
+          \ 't' : ['<Plug>(coc-type-definition)',            'goto-type-definition'],
+          \ 'i' : ['<Plug>(coc-implementation)',             'goto-implementation'],
+      \},
+      \ 'R' : ['<Plug>(coc-references)',                     'show-uses'],
+      \ 'r' : ['<Plug>(coc-rename)',                         'rename'],
+      \ 'a' : ['<Plug>(coc-codeaction)',                     'actions'],
+      \ 'A' : ['<Plug>(coc-codeaction-selected)',            'actions-for-selection'],
+      \}
+
 " r is for REPL (slime)
 let g:which_key_map.r = {
      \ 'name' : '+Slime',

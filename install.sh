@@ -29,9 +29,9 @@ if command -v brew; then
 
   brew install exa vivid fortune neovim fd rg the_silver_searcher \
     fzf bat gotop neofetch ranger \
-    node npm yarn grip eth-p/software/bat-extras \
+    yarn grip eth-p/software/bat-extras \
     clojure/tools/clojure adoptopenjdk redis leiningen \
-    borkdude/brew/clj-kondo coreutils zprint
+    borkdude/brew/clj-kondo coreutils zprint nvm node@14
 
   brew tap railwaycat/emacsmacport
   brew install emacs-mac --with-modules
@@ -48,6 +48,9 @@ if command -v brew; then
   # neovim lsp support addons
   npm install -g eslint_d vim-language-server typescript-language-server vscode-langservers-extracted
   brew install clojure-lsp/brew/clojure-lsp-native
+
+  #https://jose-elias-alvarez.medium.com/configuring-neovims-lsp-client-for-typescript-development-5789d58ea9c
+  npm install -g typescript typescript-language-server diagnostic-languageserver eslint_d
 
 else
   printf "\n😓 Homebrew not found skipping brew setup, you may have to install

@@ -1,7 +1,7 @@
 set -x EDITOR nvim
 set -x VISUAL nvim
 
-alias evil "env TERM=xterm-24bit emacs -nw" 
+alias evil "env TERM=xterm-24bit emacs -nw"
 alias nve "nvim -c 'CocCommand explorer'"
 alias fzf "fzf-tmux -p 80%,60%"
 alias la "exa -la --git --git-ignore $argv"
@@ -13,7 +13,7 @@ alias gd "git diff"
 
 alias cider "clj -Sdeps '{:deps {cider/cider-nrepl {:mvn/version \"0.21.1\"} }}' -m nrepl.cmdline --middleware \"[cider.nrepl/cider-middleware]\""
 
-contains /usr/local/sbin $fish_user_paths; or set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+contains /usr/local/sbin $fish_user_paths; or set -g fish_user_paths /usr/local/sbin $fish_user_paths
 contains /Users/casey/.emacs.d/bin $fish_user_paths; or set -g fish_user_paths "/Users/casey/.emacs.d/bin" $fish_user_paths
 contains /home/linuxbrew/.linuxbrew/bin $fish_user_paths; or set -g fish_user_paths "/home/linuxbrew/.linuxbrew/bin" $fish_user_paths
 
@@ -44,11 +44,11 @@ set __fish_git_prompt_char_stateseparator ':'
 
 set -x BAT_THEME OneHalfDark
 
-export NVM_DIR=~/.nvm
+export nvm_default_version=v14.18.2
 
 # FZF et al.
 
-set -x FZF_DEFAULT_COMMAND  'rg --files --follow'
+set -x FZF_DEFAULT_COMMAND 'rg --files --follow'
 set -x FZF_DEFAULT_OPTS '--height 99% --preview "bat --color=always --style=numbers --line-range=:500 {}" --bind "ctrl-j:preview-down,ctrl-k:preview-up"'
 set -x FZF_CTRL_T_COMMAND '$FZF_DEFAULT_COMMAND'
 set -x FZF_CTRL_R_OPTS "--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
@@ -60,13 +60,14 @@ set fzf_preview_dir_cmd "exa -T"
 fzf_configure_bindings --directory=\ct --git_status=\cs --git_log=\cg --history=\cr --variables=\cv --git_branch=\cq
 
 function fdiff
-  git diff $argv --name-only | fzf -m --ansi --preview $diff_preview
+    git diff $argv --name-only | fzf -m --ansi --preview $diff_preview
 end
 
 function popuptmux
-  if [ "(tmux display-message -p -F \"#{session_name}\")" = "popup" ]
-      tmux detach-client
-  else
-      tmux popup -E "tmux attach -t popup || tmux new -s popup"
-  end 
+    if [ "(tmux display-message -p -F \"#{session_name}\")" = popup ]
+        tmux detach-client
+    else
+        tmux popup -E "tmux attach -t popup || tmux new -s popup"
+    end
 end
+

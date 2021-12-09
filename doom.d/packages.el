@@ -10,9 +10,13 @@
 ;(package! some-package)
 (package! prettier)
 (package! zprint-mode)
+(package! company-mode)
+(package! lsp-mode)
+
 (package! gitconfig-mode
 	  :recipe (:host github :repo "magit/git-modes"
 			 :files ("gitconfig-mode.el")))
+
 (package! gitignore-mode
 	  :recipe (:host github :repo "magit/git-modes"
 			 :files ("gitignore-mode.el")))
