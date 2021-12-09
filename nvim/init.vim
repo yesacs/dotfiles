@@ -107,7 +107,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jpalardy/vim-slime'
 Plug 'liuchengxu/vim-which-key'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'sbdchd/neoformat'
 
 " Clojure
 Plug 'Olical/conjure'
@@ -182,12 +181,6 @@ endif
 " Disable NrrwRgn default mappings
 let g:nrrw_rgn_nomap_nr = 1
 let g:nrrw_rgn_nomap_Nr = 1
-
-" NeoFormat on save
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
 
 "source ~/.config/nvim/coc.init.vim
 source ~/.config/nvim/limelight.init.vim
