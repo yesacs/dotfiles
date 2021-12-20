@@ -21,18 +21,13 @@ else
 fi
 
 if command -v brew; then
-  #install fish, fisher, fzf
-  brew install fish
-
-  curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-  fisher install PatrickF1/fzf.fish
-
-  brew install exa vivid fortune neovim fd rg the_silver_searcher \
+  brew install fish exa vivid fortune neovim fd rg the_silver_searcher \
     fzf bat gotop neofetch ranger \
     yarn grip eth-p/software/bat-extras \
     clojure/tools/clojure adoptopenjdk redis leiningen \
-    borkdude/brew/clj-kondo coreutils zprint nvm node@14
+    borkdude/brew/clj-kondo coreutils zprint
 
+  #the correct emacs for mac
   brew tap railwaycat/emacsmacport
   brew install emacs-mac --with-modules
 
@@ -42,15 +37,21 @@ if command -v brew; then
   brew install --cask font-fira-code
   brew install --cask font-hack-nerd-font
 
-  #webev tooling
-  npm install -g prettier eslint sass-lint
-
   # neovim lsp support addons
-  npm install -g eslint_d vim-language-server typescript-language-server vscode-langservers-extracted
+  #https://jose-elias-alvarez.medium.com/configuring-neovims-lsp-client-for-typescript-development-5789d58ea9c
+  npm install -g prettier eslint sass-lint eslint_d vim-language-server vscode-langservers-extracted typescript typescript-language-server diagnostic-languageserver
   brew install clojure-lsp/brew/clojure-lsp-native
 
-  #https://jose-elias-alvarez.medium.com/configuring-neovims-lsp-client-for-typescript-development-5789d58ea9c
-  npm install -g typescript typescript-language-server diagnostic-languageserver eslint_d
+  #oh my zsh
+  bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+  #fisher
+  fish
+  curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+  fisher install PatrickF1/fzf.fish
+  fisher install jorgebucaran/nvm.fish
+  nvm install 14
+  exit
 
 else
   printf "\n😓 Homebrew not found skipping brew setup, you may have to install
