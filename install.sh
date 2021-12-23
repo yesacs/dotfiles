@@ -39,7 +39,7 @@ if command -v brew; then
 
   # neovim lsp support addons
   #https://jose-elias-alvarez.medium.com/configuring-neovims-lsp-client-for-typescript-development-5789d58ea9c
-  npm install -g prettier eslint sass-lint eslint_d vim-language-server vscode-langservers-extracted typescript typescript-language-server diagnostic-languageserver
+  npm install -g @fsouza/prettierd sass-lint eslint_d vim-language-server vscode-langservers-extracted typescript typescript-language-server diagnostic-languageserver
   brew install clojure-lsp/brew/clojure-lsp-native
 
   #oh my zsh

@@ -116,6 +116,9 @@ local on_attach = function(client, bufnr)
   -- Mappings.
   local opts = { noremap=true, silent=true }
 
+  -- Disable formatting in favor of null-ls
+ client.resolved_capabilities.document_formatting = false
+
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -136,29 +139,10 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<LocalLeader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
--- show diag errors in floater
--- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
---   vim.lsp.diagnostic.on_publish_diagnostics, {
---     underline = true,
---     virtual_text = false,
---     signs = true,
---     update_in_insert = false,
---   }
--- )
--- vim.cmd [[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]]
--- vim.cmd [[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]]
-
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-
--- coq setup
---local capabilities = vim.lsp.protocol.make_client_capabilities()
---capabilities.textDocument.completion.completionItem.snippetSupport = true
-
 -- cmp setup
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local servers = {'cssls', 'html', 'jsonls', 'clojure_lsp', 'vimls' }
+local servers = {'tsserver', 'cssls', 'html', 'jsonls', 'clojure_lsp', 'vimls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup{
     capabilities = capabilities,
@@ -169,47 +153,27 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- https://jose-elias-alvarez.medium.com/configuring-neovims-lsp-client-for-typescript-development-5789d58ea9c
-lspconfig.tsserver.setup({
-    on_attach = function(client, bufnr)
-        client.resolved_capabilities.document_formatting = false
-        client.resolved_capabilities.document_range_formatting = false
 
-        local ts_utils = require("nvim-lsp-ts-utils")
-        ts_utils.setup({
-            eslint_bin = "eslint_d",
-            eslint_enable_diagnostics = true,
-            eslint_enable_code_actions = true,
-            enable_formatting = true,
-            formatter = "prettier",
-        })
+-- null-ls setup
+local null_ls = require("null-ls")
 
-        ts_utils.setup_client(client)
-
-        buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>")
-        buf_map(bufnr, "n", "gi", ":TSLspRenameFile<CR>")
-        buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
-        on_attach(client, bufnr)
+null_ls.setup({
+    on_attach = function(client)
+      if client.resolved_capabilities.document_formatting then
+        vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+      end
     end,
+    sources = {
+      null_ls.builtins.diagnostics.eslint_d,
+      null_ls.builtins.diagnostics.luacheck,
+      null_ls.builtins.diagnostics.vint,
+      null_ls.builtins.formatting.fish_indent,
+      null_ls.builtins.formatting.lua_format,
+      null_ls.builtins.formatting.prettierd,
+      null_ls.builtins.formatting.stylelint,  
+      null_ls.builtins.code_actions.eslint_d,
+      null_ls.builtins.code_actions.gitsigns,
+      null_ls.builtins.code_actions.refactoring,
+      null_ls.builtins.completion.spell,
+    },
 })
-
-lspconfig.cssls.setup({
-    on_attach = function(client, bufnr)
-        client.resolved_capabilities.document_formatting = false
-        client.resolved_capabilities.document_range_formatting = false
-
-        local ts_utils = require("nvim-lsp-ts-utils")
-        ts_utils.setup({
-            eslint_bin = "eslint_d",
-            eslint_enable_diagnostics = true,
-            eslint_enable_code_actions = true,
-            enable_formatting = false,
-            formatter = "prettier",
-        })
-
-        ts_utils.setup_client(client)
-    end,
-})
-
-require("null-ls").config({})
-lspconfig["null-ls"].setup({ on_attach = on_attach })

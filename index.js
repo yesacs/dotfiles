@@ -21,11 +21,13 @@ t = 10
 
 export const test = <span />
 
-let myGreatFunctionality
+let myGreatFunctionalityAlso
 
-myGreatFunctionality = (...argsv) => console.log('hello', ...argsv)
+myGreatFunctionalityAlso = (...argsv) => console.log('hello', ...argsv)
 
-myGreatFunctionality(1, 2, 3, 4)
+myGreatFunctionalityAlsoAlso = c => console.log('hello', x)
+
+myGreatFunctionalityAlso(1, 2, 3, 4)
 
 document.addEventListener(asdf, oiuo)
 

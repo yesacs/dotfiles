@@ -124,7 +124,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'jose-elias-alvarez/null-ls.nvim'
-Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+"Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
 " coq
 "Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
@@ -145,10 +145,6 @@ Plug 'nvim-orgmode/orgmode'
 
 " Coc
 "Plug 'neoclide/coc.nvim', {'branch': 'release'} 
-
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install --frozen-lockfile --production',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
 " End Plugins
 call plug#end()
@@ -181,9 +177,6 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
-
-let g:prettier#autoformat = 1
-let g:prettier#autoformat_require_pragma = 0
 
 " Disable NrrwRgn default mappings
 let g:nrrw_rgn_nomap_nr = 1
