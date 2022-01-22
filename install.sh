@@ -43,16 +43,14 @@ if command -v brew; then
   brew install clojure-lsp/brew/clojure-lsp-native
 
   #oh my zsh
-  bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  #bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-  #fisher
-  fish
-  curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-  fisher install PatrickF1/fzf.fish
-  fisher install jorgebucaran/nvm.fish
-  nvm install 14
-  exit
+  #fisher | TODO fix
+  #curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+  #fisher install PatrickF1/fzf.fish
+  #fisher install jorgebucaran/nvm.fish
 
+  #nvm install 14 #TODO fix
 else
   printf "\n😓 Homebrew not found skipping brew setup, you may have to install
   some stuff manually\n\n"
