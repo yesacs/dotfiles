@@ -208,5 +208,5 @@ END
 " Local config overrides
 if !empty(glob("~/.config/init.local.vim"))
   source ~/.config/init.local.vim
-en
+endif
 

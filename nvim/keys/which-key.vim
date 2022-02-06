@@ -1,4 +1,3 @@
-
 " Map leader to which_key
 nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
@@ -30,15 +29,13 @@ autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
-
 " Single mappings
-let g:which_key_map[' '] = [ ':Files',                           ':Files' ]
-let g:which_key_map['t'] = [ ':Files',                           ':Files' ]
+"let g:which_key_map['t'] = [ ':Files',                           ':Files' ]
 let g:which_key_map['T'] = [ ':FloatermToggle',                  'Floaterm' ]
-let g:which_key_map['l'] = [ ':Limelight!!',                     'Limelight' ]
+let g:which_key_map['L'] = [ ':Limelight!!',                     'Limelight' ]
 let g:which_key_map['S'] = [ ':setlocal spell! spelllang=en_us', 'Spell check (en_us)' ]
 let g:which_key_map['M'] = [ ':MarkdownPreviewToggle',           'Markdown Preview' ]
-let g:which_key_map['z'] = [ 'Goyo',                             'zen mode' ]
+let g:which_key_map['Z'] = [ 'Goyo',                             'zen mode' ]
 
 " a is for EasyAlign
 let g:which_key_map.a = {
@@ -79,8 +76,15 @@ let g:which_key_map.f = {
       \ 'z' : [':Commands', 'Commands'],
       \}
 
-" p is for vim-plug
+" p is for project
 let g:which_key_map.p = {
+      \ 'name' : '+project',
+      \ 'f' : [':Files',    'Find files in project'],
+      \ 's' : [':Rg',       'Search in Project'],
+      \}
+
+" P is for vim-plug
+let g:which_key_map.P = {
       \ 'name' : '+plug',
       \ 'i' : [':PlugInstall', 'PlugInstall'],
       \ 'c' : [':PlugClean',   'PlugClean'],
