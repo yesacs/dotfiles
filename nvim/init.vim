@@ -7,7 +7,7 @@
 
 let mapleader = " "
 let g:mapleader = "\<Space>"
-let g:maplocalleader = ','
+let g:maplocalleader = ","
 
 set timeoutlen=500
 set showmatch
