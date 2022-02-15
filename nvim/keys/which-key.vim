@@ -94,7 +94,7 @@ let g:which_key_map.P = {
 
 " C is for NERDCommenter
 let g:which_key_map.c = {
-      "\ 'name' : '+NERDCommenter' ,
+      \ 'name' : '+NERDCommenter' ,
       \}
 
 " b is for buffer
@@ -121,7 +121,7 @@ let g:which_key_map.q = {
 " w is for window
 let g:which_key_map.w = {
       \ 'name' : '+window',
-      \ 'd' : [':q',        'close'],
+      \ 'd' : [':close',    'close'],
       \ 'q' : [':wq',       'save and close'],
       \ 'v' : [':vsp',      'split-right'],
       \ 'b' : ['<C-w>s',    'split-below'],
