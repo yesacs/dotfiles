@@ -199,7 +199,8 @@ lua << END
 -- require('lsp_conf_cmp')
 require('lsp_conf_coq')
 require('null_ls')
-require('org-mode')
+-- require('org-mode')
+require('orgmode').setup_ts_grammar()
 require('evil_lualine')
 require('nvimtree')
 END
