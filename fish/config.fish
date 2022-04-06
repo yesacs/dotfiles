@@ -4,7 +4,8 @@ set -x VISUAL nvim
 alias evil "env TERM=xterm-24bit emacs -nw"
 alias nve "nvim -c 'CocCommand explorer'"
 alias fzf "fzf-tmux -p 80%,60%"
-alias la "exa -la --git --git-ignore $argv"
+# alias la "exa -la --git --git-ignore $argv"
+alias la "exa -la $argv"
 alias kssh "kitty +kitten ssh"
 
 alias gg "git add . && git commit"
@@ -70,4 +71,3 @@ function popuptmux
         tmux popup -E "tmux attach -t popup || tmux new -s popup"
     end
 end
-
