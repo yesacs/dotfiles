@@ -71,9 +71,14 @@ Plug 'catppuccin/nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 
-" Look'n'feel
+" Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+" Look'n'feel
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'equalsraf/neovim-gui-shim'
 Plug 'miyakogi/conoline.vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -84,7 +89,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 " Status lines
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
+"Plug 'feline-nvim/feline.nvim'
+"Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 
 " Lang support
 Plug 'sheerun/vim-polyglot'
@@ -199,12 +205,19 @@ lua << END
 -- require('lsp_conf_cmp')
 require('lsp_conf_coq')
 require('null_ls')
--- require('org-mode')
 require('orgmode').setup_ts_grammar()
-require('evil_lualine')
 require('nvimtree')
+-- require('galaxyline')
+require('evil_lualine')
+-- require('plugins/feline/init')
 END
 
+" NVIM Telescope
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>fr <cmd>lua require('telescope.builtin').lsp_references()<cr>
 
 " Local config overrides
 if !empty(glob("~/.config/init.local.vim"))

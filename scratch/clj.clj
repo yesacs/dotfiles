@@ -8,8 +8,7 @@
 
 (defn farbtoner
   [& args]
-  (str args)
-  )
+  (str args))
 
 (farbtoner "Hello" "Goodbye")
 (str "Hello" " Goodbye")

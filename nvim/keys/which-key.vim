@@ -53,7 +53,7 @@ let g:which_key_map.n = {
       \}
 
 " f is for fzf 
-let g:which_key_map.f = {
+let g:which_key_map.Q = {
       \ 'name' : '+FZF',
       \ 'p' : [':Files',    'Files'],
       \ 'g' : [':GFiles',   'Git ls-files'],
@@ -79,7 +79,7 @@ let g:which_key_map.f = {
 " p is for project
 let g:which_key_map.p = {
       \ 'name' : '+project',
-      \ 'f' : [':Files',    'Find files in project'],
+      \ 'f' : [':Telescope find_files', 'Find files in project'],
       \ 's' : [':Rg',       'Search in Project'],
       \}
 
