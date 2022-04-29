@@ -130,7 +130,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'jose-elias-alvarez/null-ls.nvim'
-"Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
 " coq
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
@@ -206,18 +206,18 @@ lua << END
 require('lsp_conf_coq')
 require('null_ls')
 require('orgmode').setup_ts_grammar()
-require('nvimtree')
+-- require('nvimtree')
 -- require('galaxyline')
 require('evil_lualine')
 -- require('plugins/feline/init')
 END
 
 " NVIM Telescope
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-nnoremap <leader>fr <cmd>lua require('telescope.builtin').lsp_references()<cr>
+"nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+"nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+"nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+"nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+"nnoremap <leader>fr <cmd>lua require('telescope.builtin').lsp_references()<cr>
 
 " Local config overrides
 if !empty(glob("~/.config/init.local.vim"))

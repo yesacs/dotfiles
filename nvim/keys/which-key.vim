@@ -51,9 +51,9 @@ let g:which_key_map.n = {
       \ 'f' : [ ':NvimTreeFindFile', 'NvimTreeFindFile' ],
       \ 'r' : [ ':NvimTreeRefresh',  'NvimTreeRefresh' ],
       \}
-
+      
 " f is for fzf 
-let g:which_key_map.Q = {
+let g:which_key_map.f = {
       \ 'name' : '+FZF',
       \ 'p' : [':Files',    'Files'],
       \ 'g' : [':GFiles',   'Git ls-files'],
@@ -79,7 +79,8 @@ let g:which_key_map.Q = {
 " p is for project
 let g:which_key_map.p = {
       \ 'name' : '+project',
-      \ 'f' : [':Telescope find_files', 'Find files in project'],
+      \ 'F' : [':Telescope find_files', 'Find files in project'],
+      \ 'f' : [':Files',    'Files'],
       \ 's' : [':Rg',       'Search in Project'],
       \}
 
@@ -204,7 +205,7 @@ let g:which_key_map.R = {
 " e is for Conjure(Eval) (WIP)
 let g:which_key_map.e = {
      \ 'name' : '+ConjureEval',
-     \ "'" : [':Clj',                    'jack in'],
+     \ "'" : [':Clj -M:test:local',                    'jack in'],
      \ 'e' : [':ConjureEval',            'eval'],
      \ 'b' : [':ConjureEvalBuf',         'Buf'],
      \ 'f' : [':ConjureEvalCurrentForm', 'Current Form'],
