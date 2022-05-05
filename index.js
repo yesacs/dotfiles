@@ -8,6 +8,8 @@ export const hello = {
   x: 1234,
 }
 
+hello = goodbye
+
 isEmpty([])
 
 const x = y => console.log('!!!')

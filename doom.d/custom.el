@@ -6,7 +6,7 @@
  '(ansi-color-names-vector
    ["#292D3E" "#ff5370" "#c3e88d" "#ffcb6b" "#82aaff" "#c792ea" "#89DDFF" "#EEFFFF"])
  '(custom-safe-themes
-   '("47db50ff66e35d3a440485357fb6acb767c100e135ccdf459060407f8baea7b2" "234dbb732ef054b109a9e5ee5b499632c63cc24f7c2383a849815dacc1727cb6" default))
+   '("0d01e1e300fcafa34ba35d5cf0a21b3b23bc4053d388e352ae6a901994597ab1" "47db50ff66e35d3a440485357fb6acb767c100e135ccdf459060407f8baea7b2" "234dbb732ef054b109a9e5ee5b499632c63cc24f7c2383a849815dacc1727cb6" default))
  '(exwm-floating-border-color "#232635")
  '(fci-rule-color "#676E95")
  '(highlight-tail-colors ((("#383f45") . 0) (("#323e51") . 20)))
@@ -14,7 +14,8 @@
  '(jdee-db-requested-breakpoint-face-colors (cons "#1c1f2b" "#c3e88d"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#1c1f2b" "#676E95"))
  '(objed-cursor-color "#ff5370")
- '(package-selected-packages '(prettier tide zones))
+ '(package-selected-packages
+   '(css-comb scss-mode treemacs-all-the-icons prettier tide zones))
  '(pdf-view-midnight-colors (cons "#EEFFFF" "#292D3E"))
  '(rustic-ansi-faces
    ["#292D3E" "#ff5370" "#c3e88d" "#ffcb6b" "#82aaff" "#c792ea" "#89DDFF" "#EEFFFF"])

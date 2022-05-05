@@ -23,12 +23,12 @@
 (with-eval-after-load "treemacs" (treemacs-follow-mode t))
 
 ;(setq cider-clojure-cli-global-options "-A:test:local -m nrepl.cmdline --middleware '[\"refactor-nrepl.middleware/wrap-refactor\", \"cider.nrepl/cider-middleware\"]'")
-;;(setq cider-clojure-cli-global-options nil)
+;(setq cider-clojure-cli-global-options nil)
 
 ;(add-to-list 'warning-suppress-types '(undo discard-info))
 
 ;; make ligatures work
-(mac-auto-operator-composition-mode)
+;(mac-auto-operator-composition-mode)
 
 (setq lsp-ui-sideline-show-code-actions nil)
 (setq lsp-ui-sideline-enable nil)
@@ -58,9 +58,12 @@
 
 ;; -- MY CHANGES --
 
-;;(setq doom-theme 'doom-dracula)
-(setq doom-theme 'doom-palenight)
+(setq doom-theme 'doom-vibrant)
 
 (add-hook 'after-init-hook #'global-prettier-mode)
 
 (setq company-tooltip-align-annotations t)
+
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+(map! :leader
+      "t t" #'+neotree/open)

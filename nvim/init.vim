@@ -210,6 +210,8 @@ require('orgmode').setup_ts_grammar()
 -- require('galaxyline')
 require('evil_lualine')
 -- require('plugins/feline/init')
+
+require'lspconfig'.denols.setup{}
 END
 
 " NVIM Telescope
@@ -220,7 +222,7 @@ END
 "nnoremap <leader>fr <cmd>lua require('telescope.builtin').lsp_references()<cr>
 
 " Local config overrides
-if !empty(glob("~/.config/init.local.vim"))
+if !empty(glob('~/.config/init.local.vim'))
   source ~/.config/init.local.vim
 endif
 

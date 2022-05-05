@@ -6,7 +6,7 @@ h1 {
   color: red;
 }
 
-h1 {
-  display: block;
+.also {
   border: 1px solid;
+  display: block;
 }

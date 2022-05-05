@@ -5,13 +5,15 @@
 ;; on the command line, then restart Emacs for the changes to take effect -- or
 ;; use 'M-x doom/reload'.
 
-
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
-(package! prettier)
 (package! zprint-mode)
 (package! company-mode)
 (package! lsp-mode)
+(package! all-the-icons)
+
+(package! scss-mode)
+(package! prettier)
 
 (package! gitconfig-mode
 	  :recipe (:host github :repo "magit/git-modes"
