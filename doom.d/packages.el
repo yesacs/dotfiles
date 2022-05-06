@@ -15,6 +15,8 @@
 (package! scss-mode)
 (package! prettier)
 
+(package! clojure-mode)
+
 (package! gitconfig-mode
 	  :recipe (:host github :repo "magit/git-modes"
 			 :files ("gitconfig-mode.el")))

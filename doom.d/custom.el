@@ -15,10 +15,15 @@
  '(jdee-db-spec-breakpoint-face-colors (cons "#1c1f2b" "#676E95"))
  '(objed-cursor-color "#ff5370")
  '(package-selected-packages
-   '(css-comb scss-mode treemacs-all-the-icons prettier tide zones))
+   '(clojure-mode css-comb scss-mode treemacs-all-the-icons prettier tide zones))
  '(pdf-view-midnight-colors (cons "#EEFFFF" "#292D3E"))
  '(rustic-ansi-faces
    ["#292D3E" "#ff5370" "#c3e88d" "#ffcb6b" "#82aaff" "#c792ea" "#89DDFF" "#EEFFFF"])
+ '(safe-local-variable-values
+   '((cider-ns-refresh-show-log-buffer . f)
+     (cider-ns-refresh-after-fn . "config.system/start-system!")
+     (cider-ns-refresh-before-fn . "config.system/stop-system!")
+     (cider-clojure-cli-aliases . "-M:test:local:tasks")))
  '(vc-annotate-background "#292D3E")
  '(vc-annotate-color-map
    (list

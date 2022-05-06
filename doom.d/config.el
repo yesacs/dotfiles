@@ -62,8 +62,39 @@
 
 (add-hook 'after-init-hook #'global-prettier-mode)
 
-(setq company-tooltip-align-annotations t)
-
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 (map! :leader
       "t t" #'+neotree/open)
+
+;; tide?
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  (company-mode +1))
+
+;; aligns annotation to the right hand side
+(setq company-tooltip-align-annotations t)
+
+(use-package tide
+  :ensure t
+  :after (typescript-mode company flycheck)
+  :hook ((typescript-mode . tide-setup)
+         (typescript-mode . tide-hl-identifier-mode)
+         (before-save . tide-format-before-save)))
+
+;; formats the buffer before saving
+(add-hook 'before-save-hook 'tide-format-before-save)
+
+(add-hook 'typescript-mode-hook #'setup-tide-mode)
+(add-hook 'rjsx-mode-hook #'setup-tide-mode)
+
+;; start the css/scss lsp on open
+(add-hook 'css-mode-hook 'lsp)
+(add-hook 'scss-mode-hook 'lsp)
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . typescript-mode))
+(add-to-list 'auto-mode-alist '("\\.clj\\'" . clojure-mode))

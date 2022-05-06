@@ -16,22 +16,22 @@ processNode = (node, filter = x => x, path = []) => {
   return children.length
     ? children.flatMap(c => processNode(c, filter, newPath)).filter(x => x)
     : filter(node)
-      ? newPath.join('/')
-      : null
+    ? newPath.join('/')
+    : null
 }
 
 // partially applicated version with passed accumulator
 processNode =
   filter =>
-    (node, path = [], acc = []) => {
-      let { name, children = [] } = node,
-        newPath = [...path, name]
+  (node, path = [], acc = []) => {
+    let { name, children = [] } = node,
+      newPath = [...path, name]
 
-      children.forEach(c => processNode(filter)(c, newPath, acc))
-      filter(node) && acc.push(newPath.join('/'))
+    children.forEach(c => processNode(filter)(c, newPath, acc))
+    filter(node) && acc.push(newPath.join('/'))
 
-      return acc
-    }
+    return acc
+  }
 
 // two versions of the filter fn
 filterFn = n => n % 10 === 0
