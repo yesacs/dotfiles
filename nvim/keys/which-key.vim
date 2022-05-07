@@ -205,7 +205,7 @@ let g:which_key_map.R = {
 " e is for Conjure(Eval) (WIP)
 let g:which_key_map.e = {
      \ 'name' : '+ConjureEval',
-     \ "'" : [':Clj -M:test:local',                    'jack in'],
+     \ "'" : [':Clj -M:test:local',      'Jack in'],
      \ 'e' : [':ConjureEval',            'eval'],
      \ 'b' : [':ConjureEvalBuf',         'Buf'],
      \ 'f' : [':ConjureEvalCurrentForm', 'Current Form'],

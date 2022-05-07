@@ -206,11 +206,8 @@ lua << END
 require('lsp_conf_coq')
 require('null_ls')
 require('orgmode').setup_ts_grammar()
--- require('nvimtree')
--- require('galaxyline')
 require('evil_lualine')
--- require('plugins/feline/init')
-
+require('nvimtree')
 require'lspconfig'.denols.setup{}
 END
 
