@@ -1,15 +1,23 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+./symlinks.sh
+
 # brew setup
 printf "Installing HomeBrew...\n"
 if command -v brew; then
   printf "😓 Homebrew installed already, skipping...\n\n"
 else
+  # this is kinda messy
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/casey/.profile
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  sudo apt-get install build-essential || printf ""
+  source ~/.profile
 fi
 
-brew install fish \
+brew install gcc \
+	     fish \
              tmux \
              exa \
              vivid \
@@ -25,14 +33,15 @@ brew install fish \
              bat \
              eth-p/software/bat-extras \
              coreutils \
-             zprint \
              neovim
 
 # install fonts (only works on macs)
-brew tap homebrew/cask-fonts
-brew install --cask font-source-code-pro
-brew install --cask font-fira-code
-brew install --cask font-hack-nerd-font
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  brew tap homebrew/cask-fonts
+  brew install --cask font-source-code-pro
+  brew install --cask font-fira-code
+  brew install --cask font-hack-nerd-font
+fi
 # brew setup -- END
 
 # lsp setup
@@ -59,8 +68,11 @@ npm install -g @fsouza/prettierd \
 
 brew install clojure-lsp/brew/clojure-lsp-native \
              clojure/tools/clojure \
-             adoptopenjdk \
              borkdude/brew/clj-kondo
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  brew install adoptopenjdk zprint
+fi
 # lsp setup -- END
 
 # neovim setup
@@ -75,13 +87,19 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 # doom setup
 printf "Setting up Doom...\n\n"
 
-brew tap railwaycat/emacsmacport
-brew install emacs-mac --with-modules
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  brew tap railwaycat/emacsmacport
+  brew install emacs-mac --with-modules
+else
+  sudo apt remove emacs
+  sudo apt autoremove
+
+  sudo snap install emacs --classic
+fi
 
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d || printf ""
 ~/.emacs.d/bin/doom install
-
-doom sync
+~/.emacs.d/bin/doom sync
 # doom setup -- END
 
 # tmux setup
@@ -93,5 +111,4 @@ ln -sf ~/.tmux/.tmux.conf ~/.tmux.conf
 tic -x -o ~/.terminfo "$PWD"/xterm-24bit.terminfo
 # tmux setup -- END
 
-./symlinks.sh
 ./errata.sh
