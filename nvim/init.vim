@@ -208,7 +208,6 @@ require('null_ls')
 require('orgmode').setup_ts_grammar()
 require('evil_lualine')
 require('nvimtree')
-require'lspconfig'.denols.setup{}
 END
 
 " NVIM Telescope

@@ -142,7 +142,8 @@ end
 -- cmp setup
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local servers = {'tsserver', 'cssls', 'html', 'jsonls', 'clojure_lsp', 'vimls' }
+--local servers = {'tsserver', 'cssls', 'html', 'jsonls', 'clojure_lsp', 'vimls' }
+local servers = {'cssls', 'html', 'jsonls', 'clojure_lsp', 'vimls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup{
     capabilities = capabilities,

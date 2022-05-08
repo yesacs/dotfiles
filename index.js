@@ -32,7 +32,6 @@ myGreatFunctionalityAlsoAlso = c => console.log('hello', x)
 myGreatFunctionalityAlso(1, 2, 3, 4)
 
 document.addEventListener(asdf, oiuo)
-
 window.document.addEventListener()
 
 console.clear()
