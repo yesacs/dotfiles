@@ -10,14 +10,14 @@ if command -v brew; then
 else
   # this is kinda messy
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/casey/.profile
+  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.profile
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   sudo apt-get install build-essential || printf ""
   source ~/.profile
 fi
 
 brew install gcc \
-	     fish \
+      	     fish \
              tmux \
              exa \
              vivid \

@@ -1,3 +1,4 @@
+package bass
 package config
 package foreign-env
 package fzf
