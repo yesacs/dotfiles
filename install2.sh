@@ -48,6 +48,7 @@ fi
 printf "Setting up LSPs and REPLs...\n\n"
 
 mkdir ~/.nvm || printf ""
+mkdir ~/.local/share/nvm  || printf ""
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 export NVM_DIR=$HOME/.nvm;
