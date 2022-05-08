@@ -69,6 +69,7 @@ npm install -g @fsouza/prettierd \
 
 brew install clojure-lsp/brew/clojure-lsp-native \
              clojure/tools/clojure \
+             leiningen \
              borkdude/brew/clj-kondo
 
 if [[ "$OSTYPE" == "darwin"* ]]; then

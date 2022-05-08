@@ -8,3 +8,4 @@ tags
 .cpcache
 .lsp
 .log
+.nrepl-port
