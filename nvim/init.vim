@@ -189,15 +189,6 @@ endif
 let g:nrrw_rgn_nomap_nr = 1
 let g:nrrw_rgn_nomap_Nr = 1
 
-"source ~/.config/nvim/coc.init.vim
-source ~/.config/nvim/limelight.init.vim
-source ~/.config/nvim/lightline.init.vim
-source ~/.config/nvim/slime.init.vim
-source ~/.config/nvim/fzf.init.vim
-source ~/.config/nvim/clojure.init.vim
-source ~/.config/nvim/keys/which-key.vim
-
-let g:coq_settings = { 'auto_start': v:true }
 
 let g:conjure#log#hud#enabled = 0
 
@@ -216,6 +207,15 @@ END
 "nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 "nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 "nnoremap <leader>fr <cmd>lua require('telescope.builtin').lsp_references()<cr>
+
+"source ~/.config/nvim/coc.init.vim
+source ~/.config/nvim/limelight.init.vim
+source ~/.config/nvim/lightline.init.vim
+source ~/.config/nvim/slime.init.vim
+source ~/.config/nvim/fzf.init.vim
+source ~/.config/nvim/clojure.init.vim
+source ~/.config/nvim/keys/which-key.vim
+source ~/.config/nvim/coq.init.vim
 
 " Local config overrides
 if !empty(glob('~/.config/init.local.vim'))
