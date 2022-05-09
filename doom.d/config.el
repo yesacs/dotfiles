@@ -92,9 +92,10 @@
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 (add-hook 'rjsx-mode-hook #'setup-tide-mode)
 
-;; start the css/scss lsp on open
-(add-hook 'css-mode-hook 'lsp)
-(add-hook 'scss-mode-hook 'lsp)
-
 (add-to-list 'auto-mode-alist '("\\.js\\'" . typescript-mode))
 (add-to-list 'auto-mode-alist '("\\.clj\\'" . clojure-mode))
+
+;; start the lsp on open
+(add-hook 'css-mode-hook 'lsp)
+(add-hook 'scss-mode-hook 'lsp)
+(add-hook 'clojure-mode-hook 'lsp)

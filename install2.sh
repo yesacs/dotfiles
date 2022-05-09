@@ -36,12 +36,12 @@ brew install gcc \
              neovim
 
 # install fonts (only works on macs)
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  brew tap homebrew/cask-fonts
-  brew install --cask font-source-code-pro
-  brew install --cask font-fira-code
-  brew install --cask font-hack-nerd-font
-fi
+#if [[ "$OSTYPE" == "darwin"* ]]; then
+  #brew tap homebrew/cask-fonts
+  #brew install --cask font-source-code-pro
+  #brew install --cask font-fira-code
+  #brew install --cask font-hack-nerd-font
+#fi
 # brew setup -- END
 
 # lsp setup
