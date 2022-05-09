@@ -14,8 +14,10 @@ alias gd "git diff"
 
 alias cider "clj -Sdeps '{:deps {cider/cider-nrepl {:mvn/version \"0.21.1\"} }}' -m nrepl.cmdline --middleware \"[cider.nrepl/cider-middleware]\""
 
+contains ~/.emacs.d/bin $fish_user_paths; or set -g fish_user_paths "~/.emacs.d/bin" $fish_user_paths
+
 contains /usr/local/sbin $fish_user_paths; or set -g fish_user_paths /usr/local/sbin $fish_user_paths
-contains /Users/casey/.emacs.d/bin $fish_user_paths; or set -g fish_user_paths "/Users/casey/.emacs.d/bin" $fish_user_paths
+contains /home/linuxbrew/.linuxbrew/bin $fish_user_paths; or set -g fish_user_paths "/home/linuxbrew/.linuxbrew/bin" $fish_user_paths
 contains /home/linuxbrew/.linuxbrew/bin $fish_user_paths; or set -g fish_user_paths "/home/linuxbrew/.linuxbrew/bin" $fish_user_paths
 
 # Colors

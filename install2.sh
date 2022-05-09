@@ -17,7 +17,7 @@ else
 fi
 
 brew install gcc \
-      	     fish \
+             fish \
              tmux \
              exa \
              vivid \
