@@ -4,7 +4,7 @@ let g:coq_settings = { 'auto_start': v:true }
 
 " Set recommended to false
 "let g:coq_settings = { 'keymap.recommended': v:false }
-"let g:coq_settings = { 'keymap.jump_to_mark': 'C-h' }
+let g:coq_settings = { 'keymap.jump_to_mark': v:null }
 
 " Keybindings
 "ino <silent><expr> <Esc>   pumvisible() ? "\<C-e><Esc>" : "\<Esc>"
