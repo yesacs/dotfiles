@@ -13,6 +13,8 @@ hello = goodbye
 isEmpty([])
 
 const x = y => console.log('!!!')
+const k = asdfasdf => Math.min
+
 x = 12
 
 y = 13

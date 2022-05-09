@@ -7,15 +7,13 @@
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
-(package! zprint-mode)
-(package! company-mode)
 (package! lsp-mode)
 (package! all-the-icons)
-
 (package! scss-mode)
-(package! prettier)
-
+(package! prettier-js)
 (package! clojure-mode)
+(package! zprint-mode)
+(package! company-mode)
 
 (package! gitconfig-mode
 	  :recipe (:host github :repo "magit/git-modes"

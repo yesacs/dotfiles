@@ -60,13 +60,11 @@
 
 (setq doom-theme 'doom-vibrant)
 
-(add-hook 'after-init-hook #'global-prettier-mode)
-
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 (map! :leader
       "t t" #'+neotree/open)
 
-;; tide?
+;; tide - config
 (defun setup-tide-mode ()
   (interactive)
   (tide-setup)
@@ -86,11 +84,11 @@
          (typescript-mode . tide-hl-identifier-mode)
          (before-save . tide-format-before-save)))
 
-;; formats the buffer before saving
-(add-hook 'before-save-hook 'tide-format-before-save)
-
+(add-hook 'js2-mode-hook #'setup-tide-mode)
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 (add-hook 'rjsx-mode-hook #'setup-tide-mode)
+
+;; tide - config end
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . typescript-mode))
 (add-to-list 'auto-mode-alist '("\\.clj\\'" . clojure-mode))
@@ -99,3 +97,11 @@
 (add-hook 'css-mode-hook 'lsp)
 (add-hook 'scss-mode-hook 'lsp)
 (add-hook 'clojure-mode-hook 'lsp)
+
+;; prettier setup
+(add-hook 'js2-mode-hook 'prettier-js-mode)
+(add-hook 'web-mode-hook 'prettier-js-mode)
+(add-hook 'typescript-mode-hook 'prettier-js-mode)
+(add-hook 'rjsx-mode-hook 'prettier-js-mode)
+(add-hook 'css-mode-hook 'prettier-js-mode)
+(add-hook 'scss-mode-hook 'prettier-js-mode)
