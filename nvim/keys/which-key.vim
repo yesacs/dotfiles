@@ -45,9 +45,9 @@ let g:which_key_map.a = {
       \}
 
 " n is for NvimTree  
-let g:which_key_map.n = {
+let g:which_key_map.t = {
       \ 'name' : '+NvimTree',
-      \ 'n' : [ ':NvimTreeToggle',   'NvimTreeToggle' ],
+      \ 't' : [ ':NvimTreeToggle',   'NvimTreeToggle' ],
       \ 'f' : [ ':NvimTreeFindFile', 'NvimTreeFindFile' ],
       \ 'r' : [ ':NvimTreeRefresh',  'NvimTreeRefresh' ],
       \}
