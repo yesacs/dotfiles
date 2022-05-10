@@ -20,7 +20,7 @@ contains /home/linuxbrew/.linuxbrew/bin $fish_user_paths; or set -g fish_user_pa
 contains /home/casey/.emacs.d/bin $fish_user_paths; or set -g fish_user_paths "/home/casey/.emacs.d/bin" $fish_user_paths
 
 # Colors
-set -x LS_COLORS "(vivid generate snazzy)"
+#set -x LS_COLORS "(vivid generate snazzy)"
 
 set green (set_color green)
 set magenta (set_color magenta)
