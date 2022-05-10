@@ -61,6 +61,7 @@
 (setq doom-theme 'doom-vibrant)
 
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+
 (map! :leader
       "t t" #'+neotree/open)
 
@@ -79,11 +80,13 @@
 
 (use-package tide
   :ensure t
-  :after (typescript-mode company flycheck)
+  :after ((typescript-mode company flycheck)
+          (rjsx-mode company flycheck))
   :hook ((typescript-mode . tide-setup)
-         (typescript-mode . tide-hl-identifier-mode)))
+         (typescript-mode . tide-hl-identifier-mode)
+         (rjsx-mode . tide-setup)
+         (rjsx-mode . tide-hl-identifier-mode)))
 
-(add-hook 'js2-mode-hook #'setup-tide-mode)
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 (add-hook 'rjsx-mode-hook #'setup-tide-mode)
 
@@ -99,8 +102,17 @@
 
 ;; prettier setup
 (add-hook 'js2-mode-hook 'prettier-js-mode)
-(add-hook 'web-mode-hook 'prettier-js-mode)
 (add-hook 'typescript-mode-hook 'prettier-js-mode)
 (add-hook 'rjsx-mode-hook 'prettier-js-mode)
+(add-hook 'web-mode-hook 'prettier-js-mode)
 (add-hook 'css-mode-hook 'prettier-js-mode)
 (add-hook 'scss-mode-hook 'prettier-js-mode)
+
+;; node-repl setup
+(map! :map (rjsx-mode-map typescript-mode-map)
+  (:localleader
+    ("b"   #'nodejs-repl-switch-to-repl)
+    ("e e" #'nodejs-repl-send-line)
+    ("e r" #'nodejs-repl-send-region)
+    ("e f" #'nodejs-repl-send-buffer)
+    ("e b" #'nodejs-repl-send-buffer)))

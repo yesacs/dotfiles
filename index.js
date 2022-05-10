@@ -21,8 +21,12 @@ safety()
 danger()
 obj
 
-const x = y => console.log('!!!')
+const x = y => console.log('!!!', y)
+
 const k = asdfasdf => Math.min
+
+x(1, 2, 3)
+k(1, 2, 3)
 
 x = 12
 

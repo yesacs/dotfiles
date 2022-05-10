@@ -33,7 +33,8 @@ brew install gcc \
              bat \
              eth-p/software/bat-extras \
              coreutils \
-             neovim
+             neovim \
+             node
 
 # install fonts (only works on macs)
 #if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -47,15 +48,15 @@ brew install gcc \
 # lsp setup
 printf "Setting up LSPs and REPLs...\n\n"
 
-mkdir ~/.nvm || printf ""
-mkdir ~/.local/share/nvm  || printf ""
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-
-export NVM_DIR=$HOME/.nvm;
-source $NVM_DIR/nvm.sh;
-
-nvm install 14
-nvm use 14
+# mkdir ~/.nvm || printf ""
+# mkdir ~/.local/share/nvm  || printf ""
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+#
+# export NVM_DIR=$HOME/.nvm;
+# source $NVM_DIR/nvm.sh;
+#
+# nvm install 14
+# nvm use 14
 
 #https://jose-elias-alvarez.medium.com/configuring-neovims-lsp-client-for-typescript-development-5789d58ea9c
 npm install -g @fsouza/prettierd \
