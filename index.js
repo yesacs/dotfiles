@@ -4,6 +4,11 @@ import React from 'react'
 import c from 'classnames'
 import isEmpty from 'lodash'
 
+import obj, { danger, safety } from './indexImports'
+
+import './index.css'
+import './index.scss'
+
 export const hello = {
   x: 1234,
 }
@@ -11,6 +16,10 @@ export const hello = {
 hello = goodbye
 
 isEmpty([])
+
+safety()
+danger()
+obj
 
 const x = y => console.log('!!!')
 const k = asdfasdf => Math.min

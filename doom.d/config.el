@@ -89,7 +89,7 @@
 
 ;; tide - config end
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . typescript-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.clj\\'" . clojure-mode))
 
 ;; start the lsp on open
