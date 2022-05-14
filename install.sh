@@ -105,12 +105,10 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d || printf 
 ~/.emacs.d/bin/doom sync
 # doom setup -- END
 
-# tmux setup
+# tmux/tpm setup
 printf "\n"
-git clone https://github.com/gpakosz/.tmux.git ~/.tmux ||
-  printf "😓 Tried to get ohMyTmux and failed, maybe you already got it?\n"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-ln -sf ~/.tmux/.tmux.conf ~/.tmux.conf
 tic -x -o ~/.terminfo "$PWD"/xterm-24bit.terminfo
 # tmux setup -- END
 
