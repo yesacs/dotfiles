@@ -60,6 +60,8 @@
 
 (setq doom-theme 'doom-vibrant)
 
+(setq fill-column-indicator 1)
+
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
 (map! :leader
@@ -111,6 +113,7 @@
 ;; node-repl setup
 (map! :map (rjsx-mode-map typescript-mode-map)
   (:localleader
+    ("'"   #'nodejs-repl)
     ("b"   #'nodejs-repl-switch-to-repl)
     ("e e" #'nodejs-repl-send-line)
     ("e r" #'nodejs-repl-send-region)

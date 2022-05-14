@@ -14,6 +14,7 @@
 (package! clojure-mode)
 (package! zprint-mode)
 (package! company-mode)
+(package! fill-column-indicator)
 
 (package! gitconfig-mode
 	  :recipe (:host github :repo "magit/git-modes"

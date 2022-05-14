@@ -12,6 +12,8 @@ alias gg "git add . && git commit"
 alias gs "git status -vv"
 alias gd "git diff"
 
+alias httpdir "python -m SimpleHTTPServer 8000"
+
 alias cider "clj -Sdeps '{:deps {cider/cider-nrepl {:mvn/version \"0.21.1\"} }}' -m nrepl.cmdline --middleware \"[cider.nrepl/cider-middleware]\""
 
 contains /usr/local/sbin $fish_user_paths; or set -g fish_user_paths /usr/local/sbin $fish_user_paths
