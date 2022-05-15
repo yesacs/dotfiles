@@ -19,7 +19,6 @@ isEmpty([])
 
 safety()
 danger()
-obj
 
 const x = y => console.log('!!!', y)
 

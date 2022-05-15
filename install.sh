@@ -34,7 +34,8 @@ brew install gcc \
              eth-p/software/bat-extras \
              coreutils \
              neovim \
-             node
+             node \
+             eslint
 
 # install fonts (only works on macs)
 #if [[ "$OSTYPE" == "darwin"* ]]; then
