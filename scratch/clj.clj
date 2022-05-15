@@ -1,6 +1,7 @@
 (+ 2 3)
 
 (defn fartboner
+  "A fartboner is a german toner company"
   [a b]
   (+ a b))
 

@@ -50,3 +50,9 @@ document.addEventListener(asdf, oiuo)
 window.document.addEventListener()
 
 console.clear()
+
+const p = 9
+p = 0
+
+p = 15
+g = 1234

@@ -101,6 +101,9 @@
 (add-hook 'css-mode-hook 'lsp)
 (add-hook 'scss-mode-hook 'lsp)
 (add-hook 'clojure-mode-hook 'lsp)
+(add-hook 'rjsx-mode-hook 'lsp)
+(add-hook 'js2-mode-hook 'lsp)
+(add-hook 'typescript-mode-hook 'lsp)
 
 ;; prettier setup
 (add-hook 'js2-mode-hook 'prettier-js-mode)
