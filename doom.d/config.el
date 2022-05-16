@@ -59,10 +59,14 @@
 ;; -- MY CHANGES --
 
 (setq doom-theme 'doom-vibrant)
-
 (setq fill-column-indicator 1)
-
+(setq lsp-eslint-runtime "/usr/local/bin/eslint")
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+
+(setq fill-column 80)
+(setq display-fill-column-indicator-column 80)
+
+(global-display-fill-column-indicator-mode)
 
 (map! :leader
       "t t" #'+neotree/open)

@@ -34,8 +34,7 @@ brew install gcc \
              eth-p/software/bat-extras \
              coreutils \
              neovim \
-             node \
-             eslint
+             node
 
 # install fonts (only works on macs)
 #if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -62,6 +61,7 @@ printf "Setting up LSPs and REPLs...\n\n"
 #https://jose-elias-alvarez.medium.com/configuring-neovims-lsp-client-for-typescript-development-5789d58ea9c
 npm install -g @fsouza/prettierd \
                sass-lint \
+               eslint \
                eslint_d \
                vim-language-server \
                vscode-langservers-extracted \
