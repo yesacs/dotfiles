@@ -59,8 +59,8 @@
 ;; -- MY CHANGES --
 
 (setq doom-theme 'doom-vibrant)
+(setq doom-theme 'doom-dracula)
 (setq fill-column-indicator 1)
-(setq lsp-eslint-runtime "/usr/local/bin/eslint")
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
 (setq fill-column 80)
@@ -76,6 +76,7 @@
   (interactive)
   (tide-setup)
   (flycheck-mode +1)
+  (flycheck-select-checker 'javascript-eslint)
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
   (eldoc-mode +1)
   (tide-hl-identifier-mode +1)

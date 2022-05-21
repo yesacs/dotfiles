@@ -1,8 +1,13 @@
 /**
  * Danger will alert the user of doom
  * @param {any} args - the dooms
+ * @returns args
  */
-const danger = (...args) => alert(['Danger:', ...args].join(' '))
+const danger = (...args) => {
+  alert(['Danger:', ...args].join(' '))
+
+  return args
+}
 
 /**
  * Safety will tell the user of peace
