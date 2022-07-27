@@ -12,7 +12,7 @@
   (str args))
 
 (farbtoner "Hello" "Goodbye")
-(str "Hello" " Goodbye")
+(str               "Hello" " Goodbye")
 
 (+' 1 2 3)
 

@@ -57,9 +57,16 @@
 ;;(setq nrepl-use-ssh-fallback-for-remote-hosts t)
 
 ;; -- MY CHANGES --
+(map! :map (clojure-mode-map clojurescript-mode-map)
+      (:localleader
+       "f b" #'cider-format-buffer
+       "f r" #'cider-format-region))
 
-(setq doom-theme 'doom-vibrant)
-(setq doom-theme 'doom-dracula)
+;;(setq doom-theme 'doom-vibrant)
+;;(setq doom-theme 'doom-dracula)
+;;(setq doom-theme 'doom-ephemeral)
+(setq doom-theme 'doom-monokai-pro)
+
 (setq fill-column-indicator 1)
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
@@ -117,6 +124,7 @@
 (add-hook 'web-mode-hook 'prettier-js-mode)
 (add-hook 'css-mode-hook 'prettier-js-mode)
 (add-hook 'scss-mode-hook 'prettier-js-mode)
+(add-hook '-mode-hook 'prettier-js-mode)
 
 ;; node-repl setup
 (map! :map (rjsx-mode-map typescript-mode-map)
@@ -127,3 +135,5 @@
     ("e r" #'nodejs-repl-send-region)
     ("e f" #'nodejs-repl-send-buffer)
     ("e b" #'nodejs-repl-send-buffer)))
+
+(setq doom-modeline-buffer-file-name-style 'truncate-with-project)

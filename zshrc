@@ -9,8 +9,8 @@ export ZSH="/Users/casey/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="af-magic"
-#ZSH_THEME="half-life"
+#ZSH_THEME="af-magic"
+ZSH_THEME="half-life"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -72,7 +72,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git node lein npm npx nvm tmux yarn sublime sublime-merge sudo themes fzf ripgrep aws battery brew)
+plugins=(git node lein npm nvm tmux yarn sublime sublime-merge sudo themes fzf ripgrep aws battery brew)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,5 +101,27 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias evil="env TERM=xterm-24bit emacs -nw"
+alias nve="nvim -c 'CocCommand explorer'"
+alias fzf="fzf-tmux -p 80%,60%"
+# alias la="exa -la --git --git-ignore $argv"
+alias la="exa -la $argv"
+alias kssh="kitty +kitten ssh"
+alias gg="git add . && git commit"
+alias gs="git status -vv"
+alias gd="git diff"
+alias httpdir="python -m SimpleHTTPServer 8000"
+alias cider="clj -Sdeps '{:deps {cider/cider-nrepl {:mvn/version \"0.21.1\"} }}' -m nrepl.cmdline --middleware \"[cider.nrepl/cider-middleware]\""
+
+export NVM_AUTOLOAD=1
+
+export FZF_DEFAULT_COMMAND='rg --files --follow'
+export FZF_DEFAULT_OPTS='--height 99% --preview "bat --color=always --style=numbers --line-range=:500 {}" --bind "ctrl-j:preview-down,ctrl-k:preview-up"'
+export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+
+TMUX_FZF_OPTIONS="-p -w 62% -h 38% -m"
+export TMUX_FZF_OPTIONS="-p -w 62% -h 38% -m"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

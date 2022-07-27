@@ -15,6 +15,8 @@
 (package! zprint-mode)
 (package! company-mode)
 (package! fill-column-indicator)
+(package! evil-nerd-commenter)
+(package! mood-line)
 
 (package! gitconfig-mode
 	  :recipe (:host github :repo "magit/git-modes"
