@@ -47,9 +47,9 @@ USER me
 # Copy configs
 RUN mkdir .config
 COPY ./nvim .config/nvim
-COPY ./prettierrc.js .prettierrc.js
-COPY ./eslintrc.js .eslintrc.js
-COPY ./noderc.js .noderc.js 
+#COPY ./prettierrc.js .prettierrc.js
+#COPY ./eslintrc.js .eslintrc.js
+#COPY ./noderc.js .noderc.js 
 
 # Install doom emacs for dev user
 #COPY ./doom.d .doom.d
@@ -57,10 +57,12 @@ COPY ./noderc.js .noderc.js
 #RUN .emacs.d/bin/doom sync
 
 # Install nvim plugins
+#RUN curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 #RUN nvim +PlugInstall +qall >> /dev/null
 #RUN nvim +PlugInstall +qa
 #RUN nvim -es -u .config/init.vim -i NONE -c "PlugInstall" -c "qa"
 
 # Launch neovim ?
-ENTRYPOINT nvim
+#ENTRYPOINT nvim
 

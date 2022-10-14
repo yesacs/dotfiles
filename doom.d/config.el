@@ -70,14 +70,14 @@
 (setq fill-column-indicator 1)
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
-(setq fill-column 80)
-(setq display-fill-column-indicator-column 80)
-
-(global-display-fill-column-indicator-mode)
-
-(map! :leader
-      "t t" #'+neotree/open)
-
+;; (setq fill-column 80)
+;; (setq display-fill-column-indicator-column 80)
+;;
+;; (global-display-fill-column-indicator-mode)
+;;
+;; (map! :leader
+;;       "t t" #'+neotree/open)
+;;
 ;; tide - config
 (defun setup-tide-mode ()
   (interactive)
@@ -88,35 +88,35 @@
   (eldoc-mode +1)
   (tide-hl-identifier-mode +1)
   (company-mode +1))
-
-;; aligns annotation to the right hand side
-(setq company-tooltip-align-annotations t)
-
-(use-package tide
-  :ensure t
-  :after ((typescript-mode company flycheck)
-          (rjsx-mode company flycheck))
-  :hook ((typescript-mode . tide-setup)
-         (typescript-mode . tide-hl-identifier-mode)
-         (rjsx-mode . tide-setup)
-         (rjsx-mode . tide-hl-identifier-mode)))
-
-(add-hook 'typescript-mode-hook #'setup-tide-mode)
-(add-hook 'rjsx-mode-hook #'setup-tide-mode)
-
-;; tide - config end
-
-(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
-(add-to-list 'auto-mode-alist '("\\.clj\\'" . clojure-mode))
-
-;; start the lsp on open
-(add-hook 'css-mode-hook 'lsp)
-(add-hook 'scss-mode-hook 'lsp)
-(add-hook 'clojure-mode-hook 'lsp)
-(add-hook 'rjsx-mode-hook 'lsp)
-(add-hook 'js2-mode-hook 'lsp)
-(add-hook 'typescript-mode-hook 'lsp)
-
+;;
+;; ;; aligns annotation to the right hand side
+;; (setq company-tooltip-align-annotations t)
+;;
+;; (use-package tide
+;;   :ensure t
+;;   :after ((typescript-mode company flycheck)
+;;           (rjsx-mode company flycheck))
+;;   :hook ((typescript-mode . tide-setup)
+;;          (typescript-mode . tide-hl-identifier-mode)
+;;          (rjsx-mode . tide-setup)
+;;          (rjsx-mode . tide-hl-identifier-mode)))
+;;
+;; (add-hook 'typescript-mode-hook #'setup-tide-mode)
+;; (add-hook 'rjsx-mode-hook #'setup-tide-mode)
+;;
+;; ;; tide - config end
+;;
+;; (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
+;; (add-to-list 'auto-mode-alist '("\\.clj\\'" . clojure-mode))
+;;
+;; ;; start the lsp on open
+;; (add-hook 'css-mode-hook 'lsp)
+;; (add-hook 'scss-mode-hook 'lsp)
+;; (add-hook 'clojure-mode-hook 'lsp)
+;; (add-hook 'rjsx-mode-hook 'lsp)
+;; (add-hook 'js2-mode-hook 'lsp)
+;; (add-hook 'typescript-mode-hook 'lsp)
+;;
 ;; prettier setup
 (add-hook 'js2-mode-hook 'prettier-js-mode)
 (add-hook 'typescript-mode-hook 'prettier-js-mode)
@@ -124,16 +124,16 @@
 (add-hook 'web-mode-hook 'prettier-js-mode)
 (add-hook 'css-mode-hook 'prettier-js-mode)
 (add-hook 'scss-mode-hook 'prettier-js-mode)
-(add-hook '-mode-hook 'prettier-js-mode)
 
-;; node-repl setup
-(map! :map (rjsx-mode-map typescript-mode-map)
-  (:localleader
-    ("'"   #'nodejs-repl)
-    ("b"   #'nodejs-repl-switch-to-repl)
-    ("e e" #'nodejs-repl-send-line)
-    ("e r" #'nodejs-repl-send-region)
-    ("e f" #'nodejs-repl-send-buffer)
-    ("e b" #'nodejs-repl-send-buffer)))
-
-(setq doom-modeline-buffer-file-name-style 'truncate-with-project)
+;;
+;; ;; node-repl setup
+;; (map! :map (rjsx-mode-map typescript-mode-map)
+;;   (:localleader
+;;     ("'"   #'nodejs-repl)
+;;     ("b"   #'nodejs-repl-switch-to-repl)
+;;     ("e e" #'nodejs-repl-send-line)
+;;     ("e r" #'nodejs-repl-send-region)
+;;     ("e f" #'nodejs-repl-send-buffer)
+;;     ("e b" #'nodejs-repl-send-buffer)))
+;;
+;; (setq doom-modeline-buffer-file-name-style 'truncate-with-project)
