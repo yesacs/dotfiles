@@ -17,9 +17,6 @@ local on_attach = function(client, bufnr)
     -- Mappings.
     local opts = {noremap = true, silent = true}
 
-    -- Disable formatting in favor of null-ls
-    client.resolved_capabilities.document_formatting = false
-
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -55,8 +52,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- Enable some language servers with the additional completion capabilities offered by coq_nvim
-local servers = {
-    'tsserver', 'cssls', 'html', 'jsonls', 'clojure_lsp', 'vimls'}
+local servers = {'tsserver', 'cssls', 'html', 'jsonls', 'clojure_lsp', 'vimls'}
 
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup(require('coq').lsp_ensure_capabilities({
