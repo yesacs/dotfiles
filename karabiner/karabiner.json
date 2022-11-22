@@ -17,11 +17,54 @@
                 },
                 "rules": [
                     {
-                        "description": "Post escape if left_control is pressed alone.",
+                        "description": "Change right_shift + left_shift to caps_lock",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "left_control",
+                                    "key_code": "left_shift",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "caps_lock"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "right_shift",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "caps_lock"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Caps Lock to Left Control/Escape",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -43,12 +86,120 @@
                         ]
                     },
                     {
-                        "description": "Simple Vi Mode v3 (rev 2)",
+                        "description": "Tab + e to equal sign",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "simple_vi_mode",
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "equal_sign"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "equal_sign"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Tab + r to angle bracket",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "period",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "period",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Tab + hjkl to arrow keys",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -69,141 +220,9 @@
                                 "type": "basic"
                             },
                             {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "e"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "="
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "r"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": ">"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "j"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "down_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
-                                        "name": "simple_vi_mode",
+                                        "name": "tab pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -224,53 +243,9 @@
                                 "type": "basic"
                             },
                             {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "k"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "up_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
-                                        "name": "simple_vi_mode",
+                                        "name": "tab pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -291,53 +266,9 @@
                                 "type": "basic"
                             },
                             {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "h"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "left_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
-                                        "name": "simple_vi_mode",
+                                        "name": "tab pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -359,111 +290,36 @@
                             },
                             {
                                 "from": {
+                                    "key_code": "tab",
                                     "modifiers": {
                                         "optional": [
                                             "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "l"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
                                         ]
                                     }
                                 },
                                 "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
+                                    "basic.to_if_alone_timeout_milliseconds": 250,
+                                    "basic.to_if_held_down_threshold_milliseconds": 250
                                 },
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "simple_vi_mode",
+                                            "name": "tab pressed",
                                             "value": 1
                                         }
-                                    },
-                                    {
-                                        "key_code": "right_arrow"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "simple_vi_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "f",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "fn"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "f"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
+                                "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
+                                            "name": "tab pressed",
+                                            "value": 0
                                         }
-                                    },
+                                    }
+                                ],
+                                "to_if_alone": [
                                     {
-                                        "key_code": "fn"
+                                        "key_code": "tab"
                                     }
                                 ],
                                 "type": "basic"
@@ -1219,19 +1075,8 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": false,
-            "simple_modifications": [
-                {
-                    "from": {
-                        "key_code": "caps_lock"
-                    },
-                    "to": [
-                        {
-                            "key_code": "left_control"
-                        }
-                    ]
-                }
-            ],
+            "selected": true,
+            "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
                 "indicate_sticky_modifier_keys_state": true,
@@ -1248,6 +1093,65 @@
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
+                    {
+                        "description": "MacOS key swap",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_alt"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_command"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change right_shift + left_shift to caps_lock",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_shift",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "caps_lock"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "right_shift",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "caps_lock"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
                     {
                         "description": "Caps Lock to Left Control/Escape",
                         "manipulators": [
@@ -1275,103 +1179,50 @@
                         ]
                     },
                     {
-                        "description": "MacOS key swap",
+                        "description": "Tab + e to equal sign",
                         "manipulators": [
                             {
-                                "from": {
-                                    "key_code": "left_alt"
-                                },
-                                "to": [
+                                "conditions": [
                                     {
-                                        "key_code": "left_command"
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Tab layer quick arrow fn ( => )",
-                        "manipulators": [
-                            {
                                 "from": {
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "e"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
                                 "to": [
                                     {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "="
+                                        "key_code": "equal_sign"
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
+                                    "key_code": "e",
                                     "modifiers": {
                                         "optional": [
                                             "any"
                                         ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "r"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
                                     }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
                                 },
                                 "to": [
                                     {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": ">"
+                                        "key_code": "equal_sign"
                                     }
                                 ],
                                 "type": "basic"
@@ -1379,12 +1230,69 @@
                         ]
                     },
                     {
-                        "description": "Tab layer vim arrows (Tab + HJKL)",
+                        "description": "Tab + r to angle bracket",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "simple_vi_mode",
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "period",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "period",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Tab + hjkl to arrow keys",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1405,141 +1313,9 @@
                                 "type": "basic"
                             },
                             {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "e"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "="
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "r"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": ">"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "j"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "down_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
-                                        "name": "simple_vi_mode",
+                                        "name": "tab pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1560,53 +1336,9 @@
                                 "type": "basic"
                             },
                             {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "k"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "up_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
-                                        "name": "simple_vi_mode",
+                                        "name": "tab pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1627,53 +1359,9 @@
                                 "type": "basic"
                             },
                             {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "h"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "left_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
-                                        "name": "simple_vi_mode",
+                                        "name": "tab pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1695,111 +1383,36 @@
                             },
                             {
                                 "from": {
+                                    "key_code": "tab",
                                     "modifiers": {
                                         "optional": [
                                             "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "l"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
                                         ]
                                     }
                                 },
                                 "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
+                                    "basic.to_if_alone_timeout_milliseconds": 250,
+                                    "basic.to_if_held_down_threshold_milliseconds": 250
                                 },
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "simple_vi_mode",
+                                            "name": "tab pressed",
                                             "value": 1
                                         }
-                                    },
-                                    {
-                                        "key_code": "right_arrow"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "simple_vi_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "f",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "fn"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "f"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
+                                "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
+                                            "name": "tab pressed",
+                                            "value": 0
                                         }
-                                    },
+                                    }
+                                ],
+                                "to_if_alone": [
                                     {
-                                        "key_code": "fn"
+                                        "key_code": "tab"
                                     }
                                 ],
                                 "type": "basic"
@@ -2418,334 +2031,7 @@
                     "basic.to_if_held_down_threshold_milliseconds": 500,
                     "mouse_motion_to_scroll.speed": 100
                 },
-                "rules": [
-                    {
-                        "description": "MacOS key swap",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_alt"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_command"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change right_shift + left_shift to caps_lock",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_shift",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_shift"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "caps_lock"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_shift"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "caps_lock"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Caps Lock to Left Control/Escape",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_control"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "escape"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Tab + hjkl to arrow keys",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "tab pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "tab pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "tab pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "tab pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "tab",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.to_if_alone_timeout_milliseconds": 250,
-                                    "basic.to_if_held_down_threshold_milliseconds": 250
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "tab pressed",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "tab pressed",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "tab"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Tab + e to equal sign",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "tab pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "e",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "equal_sign"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "tab pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "e",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "equal_sign"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Tab + r to angle bracket",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "tab pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "r",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "period",
-                                        "modifiers": [
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "tab pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "r",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "period",
-                                        "modifiers": [
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    }
-                ]
+                "rules": []
             },
             "devices": [
                 {
@@ -3515,11 +2801,11 @@
                     ]
                 }
             ],
-            "name": "QMK",
+            "name": "QMK (no mods)",
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": true,
+            "selected": false,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
