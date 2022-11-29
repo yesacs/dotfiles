@@ -73,3 +73,8 @@ function popuptmux
         tmux popup -E "tmux attach -t popup || tmux new -s popup"
     end
 end
+
+# pyenv setup needed for quote-tool repo
+set -Ux PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
+fish_add_path $PYENV_ROOT/versions/2.7.18/bin/

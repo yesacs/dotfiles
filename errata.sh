@@ -34,4 +34,7 @@ printf "\nhttps://docs.brew.sh/Homebrew-on-Linux"
 printf "\n\nFunny chars using ssh in ktty?"
 printf "\ninfocmp -a xterm-kitty | ssh myserver tic -x -o \~/.terminfo/dev/stdin"
 
+printf "\n\nInstall TPM plugins?"
+printf "\n[TMUX PREFIX] + I"
+
 printf "\n\n"
