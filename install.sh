@@ -39,7 +39,10 @@ brew install gcc \
     luarocks \
     julia \
     wget \
-    pyenv
+    pyenv \ 
+    autossh \
+    gopass \
+    jq
 
 # install fonts (only works on macs)
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -59,12 +62,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 export NVM_DIR=$HOME/.nvm
 source $NVM_DIR/nvm.sh
-
-# work
-pyenv install 2.7.18
-nvm install 14
-nvm use 14
-# END -- work
 
 #https://jose-elias-alvarez.medium.com/configuring-neovims-lsp-client-for-typescript-development-5789d58ea9c
 npm install -g @fsouza/prettierd \
@@ -128,11 +125,8 @@ fi
 tic -x -o ~/.terminfo "$PWD"/xterm-24bit.terminfo
 # tmux setup -- END
 
-# work
 pyenv install 2.7.18
 nvm install 14
-nvm use 14
-# END -- work
 
 ./awscli.sh
 ./errata.sh

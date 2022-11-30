@@ -15,7 +15,6 @@ alias gd "git diff"
 alias httpdir "python -m SimpleHTTPServer 8000"
 
 alias cider "clj -Sdeps '{:deps {cider/cider-nrepl {:mvn/version \"0.21.1\"} }}' -m nrepl.cmdline --middleware \"[cider.nrepl/cider-middleware]\""
-alias redis "docker run --rm -p 6379:6379 redis:6.2"
 
 contains /usr/local/sbin $fish_user_paths; or set -g fish_user_paths /usr/local/sbin $fish_user_paths
 contains /home/linuxbrew/.linuxbrew/bin $fish_user_paths; or set -g fish_user_paths "/home/linuxbrew/.linuxbrew/bin" $fish_user_paths
@@ -78,3 +77,6 @@ end
 set -Ux PYENV_ROOT $HOME/.pyenv
 fish_add_path $PYENV_ROOT/bin
 fish_add_path $PYENV_ROOT/versions/2.7.18/bin/
+
+alias redis "docker run --rm -p 6379:6379 redis:6.2"
+alias iq-np-tunnel "AWS_PROFILE=iq-np ~/Sites/ft-api/infra/accounts/iq-np/bin/ft-api-db-dev-open-db-tunnel.sh"
