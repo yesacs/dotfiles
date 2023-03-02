@@ -37,4 +37,8 @@ printf "\ninfocmp -a xterm-kitty | ssh myserver tic -x -o \~/.terminfo/dev/stdin
 printf "\n\nInstall TPM plugins?"
 printf "\n[TMUX PREFIX] + I"
 
+printf "\n\nTree-sitter errors when editing inti.vim?"
+printf "\n:echo nvim_get_runtime_file('parser', v:true)"
+printf "\n[then move/delete the ones that aren't nvim-treesitter"
+
 printf "\n\n"

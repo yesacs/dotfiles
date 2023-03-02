@@ -59,7 +59,7 @@ call plug#begin('~/.vim/plugged')
 " Color
 Plug 'rakr/vim-one'
 Plug 'joshdick/onedark.vim'
-Plug 'kyazdani42/nvim-palenight.lua'
+"Plug 'kyazdani42/nvim-palenight.lua'
 Plug 'tomasr/molokai'
 Plug 'sickill/vim-monokai'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
@@ -70,7 +70,7 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'jacoborus/tender.vim'
 Plug 'liuchengxu/space-vim-theme'
-"Plug 'drewtempelmeyer/palenight.vim'
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'catppuccin/nvim'
 
 "vim compat
@@ -119,6 +119,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jpalardy/vim-slime'
 Plug 'liuchengxu/vim-which-key'
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'benwainwright/fzf-project'
 
 " Clojure
 Plug 'Olical/conjure'
@@ -152,8 +153,10 @@ Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 "Plug 'hrsh7th/nvim-cmp'
 "Plug 'onsails/lspkind-nvim'
 
-" ORG mode
+" Treesitter is auto installed with brew version of nvim
 Plug 'nvim-treesitter/nvim-treesitter'
+
+" ORG mode
 Plug 'nvim-orgmode/orgmode'
 
 " Coc
@@ -195,7 +198,6 @@ endif
 let g:nrrw_rgn_nomap_nr = 1
 let g:nrrw_rgn_nomap_Nr = 1
 
-
 let g:conjure#log#hud#enabled = 0
 
 lua << END
@@ -206,13 +208,6 @@ require('orgmode').setup_ts_grammar()
 require('evil_lualine')
 require('nvimtree')
 END
-
-" NVIM Telescope
-"nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-"nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-"nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-"nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-"nnoremap <leader>fr <cmd>lua require('telescope.builtin').lsp_references()<cr>
 
 "source ~/.config/nvim/coc.init.vim
 source ~/.config/nvim/limelight.init.vim

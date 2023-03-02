@@ -42,7 +42,9 @@ brew install gcc \
     pyenv \ 
     autossh \
     gopass \
-    jq
+    jq \
+    babashka \
+    direnv
 
 # install fonts (only works on macs)
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -84,6 +86,7 @@ brew install clojure-lsp/brew/clojure-lsp-native \
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     brew install adoptopenjdk zprint
+    brew install --cask amethyst
 fi
 # lsp setup -- END
 

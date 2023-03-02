@@ -52,6 +52,12 @@ let g:which_key_map.t = {
       \ 'r' : [ ':NvimTreeRefresh',  'NvimTreeRefresh' ],
       \}
       
+" o is for NvimTree 
+let g:which_key_map.o = {
+      \ 'name' : '+NvimTree',
+      \ 'p' : [ ':NvimTreeToggle',   'NvimTreeToggle' ],
+      \}
+
 " f is for fzf 
 let g:which_key_map.f = {
       \ 'name' : '+FZF',
@@ -82,6 +88,7 @@ let g:which_key_map.p = {
       \ 'F' : [':Telescope find_files', 'Find files in project'],
       \ 'f' : [':Files',    'Files'],
       \ 's' : [':Rg',       'Search in Project'],
+      \ 'p' : [':FzfSwitchProject',       'Switch Project'],
       \}
 
 " P is for vim-plug
