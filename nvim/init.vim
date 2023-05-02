@@ -140,8 +140,18 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
 " coq
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+"Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+"Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+
+" cmp
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'onsails/lspkind.nvim'
 
 " Treesitter is auto installed with brew version of nvim
 Plug 'nvim-treesitter/nvim-treesitter'
@@ -188,8 +198,8 @@ let g:nrrw_rgn_nomap_Nr = 1
 let g:conjure#log#hud#enabled = 0
 
 lua << END
--- require('lsp_conf_cmp')
-require('lsp_conf_coq')
+require('lsp_conf_cmp')
+-- require('lsp_conf_coq')
 -- require('prettier-nvim')
 require('null_ls')
 require('orgmode').setup_ts_grammar()

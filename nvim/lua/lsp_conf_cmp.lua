@@ -54,10 +54,29 @@ cmp.setup({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close()
         }),
-        ['<CR>'] = cmp.mapping.confirm({select = true})
-    },
+        ['<CR>'] = cmp.mapping.confirm({select = true}),
+        ["<Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_next_item()
+          elseif vim.fn["vsnip#available"](1) == 1 then
+            feedkey("<Plug>(vsnip-expand-or-jump)", "")
+          elseif has_words_before() then
+            cmp.complete()
+          else
+            fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+          end
+        end, { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(function()
+          if cmp.visible() then
+            cmp.select_prev_item()
+          elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+            feedkey("<Plug>(vsnip-jump-prev)", "")
+          end
+        end, { "i", "s" })
+        },
     sources = cmp.config.sources({
-        {name = 'nvim_lsp'}, {name = 'vsnip'} -- For vsnip users.
+        {name = 'nvim_lsp'}, 
+         {name = 'vsnip'} -- For vsnip users.
         -- { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
         -- { name = 'snippy' }, -- For snippy users.
@@ -144,12 +163,12 @@ local on_attach = function(client, bufnr)
 end
 
 -- cmp setup
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp
                                                                      .protocol
                                                                      .make_client_capabilities())
 
 -- local servers = {'tsserver', 'cssls', 'html', 'jsonls', 'clojure_lsp', 'vimls' }
-local servers = {'cssls', 'html', 'jsonls', 'clojure_lsp', 'vimls'}
+local servers = {'cssls', 'html', 'jsonls', 'clojure_lsp', 'vimls', 'tsserver'}
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         capabilities = capabilities,
