@@ -138,30 +138,16 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
-Plug 'MunifTanjim/prettier.nvim'
 
 " coq
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-
-" nvim-cmp
-"Plug 'hrsh7th/vim-vsnip'
-"Plug 'hrsh7th/cmp-nvim-lsp'
-"Plug 'hrsh7th/cmp-buffer'
-"Plug 'hrsh7th/cmp-path'
-"Plug 'hrsh7th/cmp-cmdline'
-"Plug 'hrsh7th/nvim-cmp'
-"Plug 'onsails/lspkind-nvim'
 
 " Treesitter is auto installed with brew version of nvim
 Plug 'nvim-treesitter/nvim-treesitter'
 
 " ORG mode
 Plug 'nvim-orgmode/orgmode'
-
-" Coc
-"Plug 'neoclide/coc.nvim', {'branch': 'release'} 
 
 " End Plugins
 call plug#end()

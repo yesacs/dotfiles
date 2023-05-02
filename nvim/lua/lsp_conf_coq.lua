@@ -54,7 +54,7 @@ end
 -- Enable some language servers with the additional completion capabilities offered by coq_nvim
 local servers = {'tsserver', 'cssls', 'html', 'jsonls', 'clojure_lsp', 'vimls'}
 
-for _, lsp in ipairs(servers) do
+for _, lsp in pairs(servers) do
     lspconfig[lsp].setup(require('coq').lsp_ensure_capabilities({
         on_attach = on_attach
     }))

@@ -2,6 +2,10 @@ body {
 }
 
 p {
+  &.hello {
+    display: block;
+    color: red;
+  }
 }
 
 h1 {
