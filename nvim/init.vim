@@ -138,6 +138,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+Plug 'MunifTanjim/prettier.nvim'
 
 " coq
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
@@ -203,6 +204,7 @@ let g:conjure#log#hud#enabled = 0
 lua << END
 -- require('lsp_conf_cmp')
 require('lsp_conf_coq')
+-- require('prettier-nvim')
 require('null_ls')
 require('orgmode').setup_ts_grammar()
 require('evil_lualine')
@@ -216,7 +218,7 @@ source ~/.config/nvim/slime.init.vim
 source ~/.config/nvim/fzf.init.vim
 source ~/.config/nvim/clojure.init.vim
 source ~/.config/nvim/keys/which-key.vim
-source ~/.config/nvim/coq.init.vim
+"source ~/.config/nvim/coq.init.vim
 
 " Local config overrides
 if !empty(glob('~/.config/init.local.vim'))
