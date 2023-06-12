@@ -1,5 +1,6 @@
 {
     "global": {
+        "ask_for_confirmation_before_quitting": true,
         "check_for_updates_on_startup": true,
         "show_in_menu_bar": true,
         "show_profile_name_in_menu_bar": false,
@@ -17,11 +18,54 @@
                 },
                 "rules": [
                     {
-                        "description": "Post escape if left_control is pressed alone.",
+                        "description": "Change right_shift + left_shift to caps_lock",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "left_control",
+                                    "key_code": "left_shift",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "caps_lock"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "right_shift",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "caps_lock"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Caps Lock to Left Control/Escape",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -43,12 +87,120 @@
                         ]
                     },
                     {
-                        "description": "Simple Vi Mode v3 (rev 2)",
+                        "description": "Tab + e to equal sign",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "simple_vi_mode",
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "equal_sign"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "equal_sign"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Tab + r to angle bracket",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "period",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "period",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Tab + hjkl to arrow keys",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -69,53 +221,9 @@
                                 "type": "basic"
                             },
                             {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "j"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "down_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
-                                        "name": "simple_vi_mode",
+                                        "name": "tab pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -136,53 +244,9 @@
                                 "type": "basic"
                             },
                             {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "k"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "up_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
-                                        "name": "simple_vi_mode",
+                                        "name": "tab pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -203,53 +267,9 @@
                                 "type": "basic"
                             },
                             {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "h"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "left_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
-                                        "name": "simple_vi_mode",
+                                        "name": "tab pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -271,111 +291,36 @@
                             },
                             {
                                 "from": {
+                                    "key_code": "tab",
                                     "modifiers": {
                                         "optional": [
                                             "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "l"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
                                         ]
                                     }
                                 },
                                 "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
+                                    "basic.to_if_alone_timeout_milliseconds": 250,
+                                    "basic.to_if_held_down_threshold_milliseconds": 250
                                 },
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "simple_vi_mode",
+                                            "name": "tab pressed",
                                             "value": 1
                                         }
-                                    },
-                                    {
-                                        "key_code": "right_arrow"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "simple_vi_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "f",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "fn"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "f"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
+                                "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
+                                            "name": "tab pressed",
+                                            "value": 0
                                         }
-                                    },
+                                    }
+                                ],
+                                "to_if_alone": [
                                     {
-                                        "key_code": "fn"
+                                        "key_code": "tab"
                                     }
                                 ],
                                 "type": "basic"
@@ -919,6 +864,244 @@
                     "manipulate_caps_lock_led": true,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 20043,
+                        "vendor_id": 35176
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 20043,
+                        "vendor_id": 35176
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 20811,
+                        "vendor_id": 20307
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 20811,
+                        "vendor_id": 20307
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 598,
+                        "vendor_id": 1452
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 598,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 832,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 832,
+                        "vendor_id": 1452
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 42233,
+                        "vendor_id": 936
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 42233,
+                        "vendor_id": 936
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 4641,
+                        "vendor_id": 17498
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 4641,
+                        "vendor_id": 17498
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 385,
+                        "vendor_id": 13364
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 385,
+                        "vendor_id": 13364
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 49278,
+                        "vendor_id": 1133
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 136,
+                        "vendor_id": 30202
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 136,
+                        "vendor_id": 30202
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
                 }
             ],
             "fn_function_keys": [
@@ -1048,18 +1231,7 @@
                 "delay_milliseconds_before_open_device": 1000
             },
             "selected": false,
-            "simple_modifications": [
-                {
-                    "from": {
-                        "key_code": "caps_lock"
-                    },
-                    "to": [
-                        {
-                            "key_code": "left_control"
-                        }
-                    ]
-                }
-            ],
+            "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
                 "indicate_sticky_modifier_keys_state": true,
@@ -1077,11 +1249,70 @@
                 },
                 "rules": [
                     {
-                        "description": "Post escape if left_control is pressed alone.",
+                        "description": "MacOS key swap",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "left_control",
+                                    "key_code": "left_alt"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_command"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change right_shift + left_shift to caps_lock",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_shift",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "caps_lock"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "right_shift",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "caps_lock"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Caps Lock to Left Control/Escape",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -1103,12 +1334,120 @@
                         ]
                     },
                     {
-                        "description": "Simple Vi Mode v3 (rev 2)",
+                        "description": "Tab + e to equal sign",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "simple_vi_mode",
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "equal_sign"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "equal_sign"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Tab + r to angle bracket",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "period",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "period",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Tab + hjkl to arrow keys",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1129,53 +1468,9 @@
                                 "type": "basic"
                             },
                             {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "j"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "down_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
-                                        "name": "simple_vi_mode",
+                                        "name": "tab pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1196,53 +1491,9 @@
                                 "type": "basic"
                             },
                             {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "k"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "up_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
-                                        "name": "simple_vi_mode",
+                                        "name": "tab pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1263,53 +1514,9 @@
                                 "type": "basic"
                             },
                             {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "h"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "left_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
                                 "conditions": [
                                     {
-                                        "name": "simple_vi_mode",
+                                        "name": "tab pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -1331,235 +1538,36 @@
                             },
                             {
                                 "from": {
+                                    "key_code": "tab",
                                     "modifiers": {
                                         "optional": [
                                             "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "l"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
                                         ]
                                     }
                                 },
                                 "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
+                                    "basic.to_if_alone_timeout_milliseconds": 250,
+                                    "basic.to_if_held_down_threshold_milliseconds": 250
                                 },
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "simple_vi_mode",
+                                            "name": "tab pressed",
                                             "value": 1
                                         }
-                                    },
-                                    {
-                                        "key_code": "right_arrow"
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "simple_vi_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "f",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "fn"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "tab"
-                                        },
-                                        {
-                                            "key_code": "f"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "simple_vi_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
-                                },
-                                "to": [
+                                "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "simple_vi_mode",
-                                            "value": 1
+                                            "name": "tab pressed",
+                                            "value": 0
                                         }
-                                    },
-                                    {
-                                        "key_code": "fn"
                                     }
                                 ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Pok3r Media Keys (fn + qwe to Previous Title/Play-Pause/Next)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
+                                "to_if_alone": [
                                     {
-                                        "key_code": "rewind"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "w",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "play_or_pause"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "e",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "fastforward"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Pok3r Volume Controls (fn + sdf to Volume down/up/mute)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "volume_decrement"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "d",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "volume_increment"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "mute"
+                                        "key_code": "tab"
                                     }
                                 ],
                                 "type": "basic"
@@ -1991,6 +1999,160 @@
                     "manipulate_caps_lock_led": true,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 0,
+                        "vendor_id": 65261
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 598,
+                        "vendor_id": 1452
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 598,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 832,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 832,
+                        "vendor_id": 1452
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 20044,
+                        "vendor_id": 35176
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 20044,
+                        "vendor_id": 35176
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 49278,
+                        "vendor_id": 1133
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 385,
+                        "vendor_id": 13364
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 385,
+                        "vendor_id": 13364
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 591,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
                 }
             ],
             "fn_function_keys": [
@@ -2119,39 +2281,8 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": false,
-            "simple_modifications": [
-                {
-                    "from": {
-                        "key_code": "caps_lock"
-                    },
-                    "to": [
-                        {
-                            "key_code": "left_control"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "left_command"
-                    },
-                    "to": [
-                        {
-                            "key_code": "left_option"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "left_option"
-                    },
-                    "to": [
-                        {
-                            "key_code": "left_command"
-                        }
-                    ]
-                }
-            ],
+            "selected": true,
+            "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
                 "indicate_sticky_modifier_keys_state": true,
@@ -2603,6 +2734,244 @@
                     "manipulate_caps_lock_led": true,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 0,
+                        "vendor_id": 65261
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 17,
+                        "vendor_id": 28779
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 17,
+                        "vendor_id": 28779
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 256,
+                        "vendor_id": 13364
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 20043,
+                        "vendor_id": 35176
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 20043,
+                        "vendor_id": 35176
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 17,
+                        "vendor_id": 19266
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 17,
+                        "vendor_id": 19266
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 43996,
+                        "vendor_id": 14862
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 43996,
+                        "vendor_id": 14862
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 5,
+                        "vendor_id": 32876
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 5,
+                        "vendor_id": 32876
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 598,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 598,
+                        "vendor_id": 1452
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 91,
+                        "vendor_id": 65261
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 832,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 832,
+                        "vendor_id": 1452
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
                 }
             ],
             "fn_function_keys": [
@@ -2727,11 +3096,11 @@
                     ]
                 }
             ],
-            "name": "QMK",
+            "name": "QMK (no mods)",
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": true,
+            "selected": false,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,

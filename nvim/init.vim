@@ -37,16 +37,6 @@ syntax enable
 let g:go_version_warning = 0
 let g:matchparen_timeout = 10
 
-if has("gui_running")
-  set guifont=Fira\ Code\ Retina:h10
-  set guioptions=
-  set linespace=1
-endif
-
-if &compatible
-  set nocompatible " Be iMproved
-endif
-
 " Begin Plugins
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -59,7 +49,6 @@ call plug#begin('~/.vim/plugged')
 " Color
 Plug 'rakr/vim-one'
 Plug 'joshdick/onedark.vim'
-"Plug 'kyazdani42/nvim-palenight.lua'
 Plug 'tomasr/molokai'
 Plug 'sickill/vim-monokai'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
@@ -95,8 +84,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 " Status lines
 Plug 'nvim-lualine/lualine.nvim'
-"Plug 'feline-nvim/feline.nvim'
-"Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 
 " Lang support
 Plug 'sheerun/vim-polyglot'
@@ -130,8 +117,6 @@ Plug 'radenling/vim-dispatch-neovim'
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
 Plug 'guns/vim-sexp'
-"Plug 'tpope/vim-fireplace'
-"Plug 'Olical/aniseed'
 
 " NVIM LSP
 Plug 'neovim/nvim-lspconfig'
@@ -139,10 +124,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
-
-" coq
-"Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-"Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 
 " cmp
 Plug 'neovim/nvim-lspconfig'
@@ -168,7 +149,7 @@ source ~/.config/nvim/colorscheme.init.vim
 "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
 "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
 " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-if (has("termguicolors"))
+if (has('termguicolors'))
   set termguicolors
 endif
 
@@ -187,7 +168,7 @@ let g:conoline_color_normal_dark = 'guibg=#222222'
 let g:conoline_color_insert_dark = 'guibg=#222222'
 
 " Jump to the last position when reopening a file
-if has("autocmd")
+if has('autocmd')
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
@@ -200,22 +181,18 @@ let g:conjure#log#hud#enabled = 0
 
 lua << END
 require('lsp_conf_cmp')
--- require('lsp_conf_coq')
--- require('prettier-nvim')
 require('null_ls')
 require('orgmode').setup_ts_grammar()
 require('evil_lualine')
 require('nvimtree')
 END
 
-"source ~/.config/nvim/coc.init.vim
 source ~/.config/nvim/limelight.init.vim
 source ~/.config/nvim/lightline.init.vim
 source ~/.config/nvim/slime.init.vim
 source ~/.config/nvim/fzf.init.vim
 source ~/.config/nvim/clojure.init.vim
 source ~/.config/nvim/keys/which-key.vim
-"source ~/.config/nvim/coq.init.vim
 
 " Local config overrides
 if !empty(glob('~/.config/init.local.vim'))

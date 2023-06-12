@@ -42,6 +42,8 @@ x = 12
 
 y = 13
 
+window.ad
+
 x = x + y + z
 
 t = 10
