@@ -37,9 +37,8 @@ brew install gcc \
     node \
     vint \
     luarocks \
-    julia \
     wget \
-    pyenv \ 
+    pyenv \
     autossh \
     gopass \
     jq \
@@ -128,7 +127,7 @@ fi
 tic -x -o ~/.terminfo "$PWD"/xterm-24bit.terminfo
 # tmux setup -- END
 
-pyenv install 2.7.18
+# pyenv install 2.7.18
 nvm install 14
 
 ./awscli.sh

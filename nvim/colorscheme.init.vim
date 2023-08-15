@@ -14,8 +14,8 @@ let g:material_terminal_italics = 1
 "colorscheme palenight
 "colorscheme one
 "colorscheme material
-colorscheme onedark
-"colorscheme dracula
+"colorscheme onedark
+colorscheme dracula
 "colorscheme tokyonight
 "colorscheme tender
 "colorscheme sonokai

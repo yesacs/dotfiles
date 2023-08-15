@@ -107,7 +107,7 @@ Plug 'jpalardy/vim-slime'
 Plug 'liuchengxu/vim-which-key'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'benwainwright/fzf-project'
-Plug 'MuniTanjim/prettier.nvim'
+"Plug 'MuniTanjim/prettier.nvim'
 
 " Clojure
 Plug 'Olical/conjure'
