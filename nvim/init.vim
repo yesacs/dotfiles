@@ -18,7 +18,7 @@ set noshowcmd
 set nohlsearch
 set ttyfast 
 set lazyredraw 
-set nocursorline
+set cursorline
 set number
 set numberwidth=5
 set textwidth=80
@@ -69,13 +69,14 @@ Plug 'roxma/vim-hug-neovim-rpc'
 " Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+"Plug 'nvim-lua/plenary.nvim'
+"Plug 'nvim-telescope/telescope.nvim'
 
 " Look'n'feel
+Plug 'tpope/vim-repeat'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'equalsraf/neovim-gui-shim'
-Plug 'miyakogi/conoline.vim'
+"Plug 'miyakogi/conoline.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -188,7 +189,7 @@ require('nvimtree')
 END
 
 source ~/.config/nvim/limelight.init.vim
-source ~/.config/nvim/lightline.init.vim
+"source ~/.config/nvim/lightline.init.vim
 source ~/.config/nvim/slime.init.vim
 source ~/.config/nvim/fzf.init.vim
 source ~/.config/nvim/clojure.init.vim

@@ -31,7 +31,7 @@ brew install gcc \
     yarn \
     grip \
     bat \
-    eth-p/software/bat-extras \
+n    eth-p/software/bat-extras \
     coreutils \
     neovim \
     node \
