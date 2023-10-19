@@ -74,7 +74,7 @@ Plug 'junegunn/fzf.vim'
 
 " Look'n'feel
 Plug 'tpope/vim-repeat'
-Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'equalsraf/neovim-gui-shim'
 "Plug 'miyakogi/conoline.vim'
 Plug 'christoomey/vim-tmux-navigator'

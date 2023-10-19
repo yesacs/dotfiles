@@ -31,7 +31,7 @@ brew install gcc \
     yarn \
     grip \
     bat \
-n    eth-p/software/bat-extras \
+    eth-p/software/bat-extras \
     coreutils \
     neovim \
     node \
@@ -42,15 +42,12 @@ n    eth-p/software/bat-extras \
     autossh \
     gopass \
     jq \
-    babashka \
     direnv
 
 # install fonts (only works on macs)
 if [[ "$OSTYPE" == "darwin"* ]]; then
     brew tap homebrew/cask-fonts
-    brew install --cask font-source-code-pro
-    brew install --cask font-fira-code
-    brew install --cask font-hack-nerd-font
+    brew install --cask font-fira-code-nerd-font font-fira-mono-nerd-font font-jet-brains-mono-nerd-font
 fi
 # brew setup -- END
 
@@ -84,7 +81,8 @@ brew install clojure-lsp/brew/clojure-lsp-native \
     borkdude/brew/clj-kondo
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    brew install adoptopenjdk zprint
+    brew install --cask adoptopenjdk 
+    brew install zprint
     brew install --cask amethyst
 fi
 # lsp setup -- END

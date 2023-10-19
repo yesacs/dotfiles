@@ -41,4 +41,7 @@ printf "\n\nTree-sitter errors when editing inti.vim?"
 printf "\n:echo nvim_get_runtime_file('parser', v:true)"
 printf "\n[then move/delete the ones that aren't nvim-treesitter"
 
+printf "\n\nWant a native alacrity icon?"
+printf "\nhttps://github.com/hmarr/dotfiles/blob/main/bin/update-alacritty-icon.sh"
+
 printf "\n\n"
