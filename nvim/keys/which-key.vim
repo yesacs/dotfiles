@@ -45,50 +45,45 @@ let g:which_key_map.a = {
       \}
 
 " n is for NvimTree  
-let g:which_key_map.t = {
-      \ 'name' : '+NvimTree',
-      \ 't' : [ ':NvimTreeToggle',   'NvimTreeToggle' ],
-      \ 'f' : [ ':NvimTreeFindFile', 'NvimTreeFindFile' ],
-      \ 'r' : [ ':NvimTreeRefresh',  'NvimTreeRefresh' ],
-      \}
+"let g:which_key_map.t = {
+      "\ 'name' : '+NvimTree',
+      "\ 't' : [ ':NvimTreeToggle',   'NvimTreeToggle' ],
+      "\ 'f' : [ ':NvimTreeFindFile', 'NvimTreeFindFile' ],
+      "\ 'r' : [ ':NvimTreeRefresh',  'NvimTreeRefresh' ],
+      "\}
       
 " o is for NvimTree 
 let g:which_key_map.o = {
-      \ 'name' : '+NvimTree',
-      \ 'p' : [ ':NvimTreeToggle',   'NvimTreeToggle' ],
+      \ 'name' : '+NeoTree',
+      \ 'p' : [ ':Neotree float toggle=true',   'Toggle' ],
+      \ 'P' : [ ':Neotree toggle=true',   'Toggle' ],
       \}
 
-" f is for fzf 
+" f is for find (FZF/Telescope)
 let g:which_key_map.f = {
-      \ 'name' : '+FZF',
-      \ 'p' : [':Files',    'Files'],
+      \ 'name' : '+Find',
+      \ 'p' : [':Telescope find_files', 'Find files in project'],
+      \ 'r' : [':Telescope lsp_references', 'Find lsp references'],
+      \ 's' : [':Telescope lsp_docuemnt_symbols', 'Find lsp document symbols'],
       \ 'g' : [':GFiles',   'Git ls-files'],
       \ 'G' : [':GFiles?',  'Git Files'],
       \ 'b' : [':Buffers',  'Buffers'],
-      \ 'f' : [':Rg',       'Rg'],
+      \ 'F' : [':Rg',       'Rg'],
+      \ 'f' : [':Telescope live_grep',       'Fuzzy find'],
       \ 'a' : [':Ag',       'Ag'],
       \ 'l' : [':Lines',    'Lines in open Buffers'],
       \ 'L' : [':BLines',   'Lines in current Buffer'],
-      \ 't' : [':Tags',     'Tags in open Buffers'],
-      \ 'T' : [':Tags',     'Tags in current Buffer'],
-      \ 'm' : [':Marks',    'Marks'],
-      \ 'w' : [':Windows',  'Windows'],
-      \ 'h' : [':History',  'History'],
-      \ 'H' : [':History:', 'Command History'],
-      \ 'S' : [':History/', 'Search History'],
-      \ 's' : [':Snippets', 'Snippets'],
-      \ 'c' : [':Commits',  'Commits'],
-      \ 'C' : [':BCommits', 'Commits for current Buffers'],
-      \ 'z' : [':Commands', 'Commands'],
       \}
 
 " p is for project
 let g:which_key_map.p = {
       \ 'name' : '+project',
-      \ 'F' : [':Telescope find_files', 'Find files in project'],
-      \ 'f' : [':Files',    'Files'],
+      \ 'f' : [':Telescope find_files', 'Find files in project'],
+      \ 'F' : [':Files',    'Files'],
       \ 's' : [':Rg',       'Search in Project'],
       \ 'p' : [':FzfSwitchProject',       'Switch Project'],
+      \ 'r' : [':Neotree float reveal', 'Reveal current file in tree'],
+      \ 'o' : [':Neotree float', 'Open in tree']
       \}
 
 " P is for vim-plug
@@ -108,13 +103,14 @@ let g:which_key_map.c = {
 " b is for buffer
 let g:which_key_map.b = {
       \ 'name' : '+buffers',
-      \ 'W' : [':wa',                                   'write all'],
-      \ 'w' : [':w',                                    'write buffer'],
-      \ 'b' : [':Buffers',                              ':Buffers'],
-      \ 'S' : [':w<CR>:source $MYVIMRC<CR>',            'write buffer and source init.vim'],
-      \ 'n' : [':vnew',                                 'new empty buffer split'],
-      \ 'd' : [ ':Blose',                               'Delete Buffer' ],
-      \ 'D' : [ ':Blose!',                              'Delete Buffer (Force)' ],
+      \ 'l' : ['<C-o>',                     'go to last'],
+      \ 'W' : [':wa',                        'write all'],
+      \ 'w' : [':w',                         'write buffer'],
+      \ 'b' : [':Telescope buffers',         'buffers'],
+      \ 'S' : [':w<CR>:source $MYVIMRC<CR>', 'write buffer and source init.vim'],
+      \ 'n' : [':vnew',                      'new empty buffer split'],
+      \ 'd' : [ ':Bclose',                   'Delete Buffer' ],
+      \ 'D' : [ ':Bclose!',                  'Delete Buffer (Force)' ],
       \}
 
 " q is for quit
@@ -262,6 +258,14 @@ let g:which_key_map.r = {
      \ 'p' : ['<Plug>SlimeParagraphSend', 'SlimeParagraphSend'],
      \ 'c' : ['<Plug>SlimeConfig',        'SlimeConfig'],
      \ }
+
+let g:which_key_map.t = {
+     \ 'name' : '+Tests',
+     \ 'r' : [':lua require"jester".run()', ':lua require"jester".run()'],
+     \ 'l' : [':lua require"jester".run_last()', ':lua require"jester".run_last()'],
+     \ 'f' : [':lua require"jester".run_file()', ':lua require"jester".run_file()'],
+     \ }
+
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")

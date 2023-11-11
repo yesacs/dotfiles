@@ -1,3 +1,7 @@
-const test: boolean hello => {
-    return "goodbye"
+export function printToConsole(s: string) {
+  console.log(s)
+}
+
+export function test(n: number) {
+  console.log(n)
 }

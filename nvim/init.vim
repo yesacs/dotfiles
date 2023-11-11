@@ -69,14 +69,13 @@ Plug 'roxma/vim-hug-neovim-rpc'
 " Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-"Plug 'nvim-lua/plenary.nvim'
-"Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " Look'n'feel
 Plug 'tpope/vim-repeat'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'equalsraf/neovim-gui-shim'
-"Plug 'miyakogi/conoline.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -106,9 +105,14 @@ Plug 'voldikss/vim-floaterm'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jpalardy/vim-slime'
 Plug 'liuchengxu/vim-which-key'
-Plug 'kyazdani42/nvim-tree.lua'
 Plug 'benwainwright/fzf-project'
-"Plug 'MuniTanjim/prettier.nvim'
+Plug 'David-Kunz/jester'
+Plug 'vim-test/vim-test'
+
+" Tree Stuff
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-neo-tree/neo-tree.nvim'
+Plug 's1n7ax/nvim-window-picker'
 
 " Clojure
 Plug 'Olical/conjure'
@@ -125,6 +129,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+"Plug 'prettier/vim-prettier'
 
 " cmp
 Plug 'neovim/nvim-lspconfig'
@@ -180,12 +185,15 @@ let g:nrrw_rgn_nomap_Nr = 1
 
 let g:conjure#log#hud#enabled = 0
 
+" gd open in split
+nnoremap gv :vertical dsplit <C-R><C-w><cr>
+
 lua << END
 require('lsp_conf_cmp')
 require('null_ls')
 require('orgmode').setup_ts_grammar()
 require('evil_lualine')
-require('nvimtree')
+
 END
 
 source ~/.config/nvim/limelight.init.vim
