@@ -23,7 +23,7 @@ const x = y => console.log('!!!', y)
 
 const k = asdfasdf => Math.min
 
-let { x, y, z } = hello,
+let { , y, z } = hello,
   {
     aaaaaaaaaaaaaaaaaaaaaaaaaaa,
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb,

@@ -31,7 +31,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 " Single mappings
 "let g:which_key_map['t'] = [ ':Files',                           ':Files' ]
-let g:which_key_map['T'] = [ ':FloatermToggle',                  'Floaterm' ]
+let g:which_key_map['T'] = [ ':TroubleToggle',                  'Trouble' ]
 let g:which_key_map['L'] = [ ':Limelight!!',                     'Limelight' ]
 let g:which_key_map['S'] = [ ':setlocal spell! spelllang=en_us', 'Spell check (en_us)' ]
 let g:which_key_map['M'] = [ ':MarkdownPreviewToggle',           'Markdown Preview' ]
@@ -94,6 +94,7 @@ let g:which_key_map.P = {
       \ 'u' : [':PlugUpdate',  'PlugUpdate'],
       \ 'U' : [':PlugUpgrade', 'PlugUpgrade'],
       \}
+
 
 " C is for NERDCommenter
 let g:which_key_map.c = {

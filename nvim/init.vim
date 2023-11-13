@@ -109,6 +109,9 @@ Plug 'benwainwright/fzf-project'
 Plug 'David-Kunz/jester'
 Plug 'vim-test/vim-test'
 
+Plug 'folke/lsp-colors.nvim'
+Plug 'folke/trouble.nvim'
+
 " Tree Stuff
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-neo-tree/neo-tree.nvim'
@@ -189,6 +192,7 @@ let g:conjure#log#hud#enabled = 0
 nnoremap gv :vertical dsplit <C-R><C-w><cr>
 
 lua << END
+--require('nvim-lsp')
 require('lsp_conf_cmp')
 require('null_ls')
 require('orgmode').setup_ts_grammar()

@@ -11,14 +11,14 @@ let g:tokyonight_enable_italic = 1
 let g:material_theme_style = 'ocean'
 let g:material_terminal_italics = 1
 
-"colorscheme palenight
+colorscheme palenight
 "colorscheme one
 "colorscheme material
 "colorscheme onedark
 "colorscheme dracula
 "colorscheme tokyonight
 "colorscheme tender
-colorscheme sonokai
+"colorscheme sonokai
 "colorscheme edge
 "colorscheme gruvbox-material
 "colorscheme space_vim_theme
