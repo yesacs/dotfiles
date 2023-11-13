@@ -137,3 +137,5 @@
     ("e b" #'nodejs-repl-send-buffer)))
 
 (setq doom-modeline-buffer-file-name-style 'truncate-with-project)
+
+(evilnc-default-hotkeys)

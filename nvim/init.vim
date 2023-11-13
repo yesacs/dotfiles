@@ -5,7 +5,7 @@
 " two lines that `set runtimepath=PATH` and `dein#begin(PATH)` and replace the
 " ones in this file, then install FZF
 
-let mapleader = " "
+let mapleader = "\<Space> "
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ","
 
@@ -31,6 +31,9 @@ set hidden
 set laststatus=2
 set clipboard=unnamed
 set list listchars=tab:»\ ,trail:·,nbsp:⎵,precedes:<,extends:>
+
+set wildmenu
+set wildmode=longest:list,full
 
 syntax enable
 
@@ -61,6 +64,7 @@ Plug 'jacoborus/tender.vim'
 Plug 'liuchengxu/space-vim-theme'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'catppuccin/nvim'
+Plug 'loctvl842/monokai-pro.nvim'
 
 "vim compat
 Plug 'roxma/nvim-yarp'
@@ -104,13 +108,15 @@ Plug 'junegunn/vim-easy-align'
 Plug 'voldikss/vim-floaterm'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jpalardy/vim-slime'
-Plug 'liuchengxu/vim-which-key'
+"Plug 'liuchengxu/vim-which-key'
+Plug 'folke/which-key.nvim'
 Plug 'benwainwright/fzf-project'
 Plug 'David-Kunz/jester'
 Plug 'vim-test/vim-test'
 
 Plug 'folke/lsp-colors.nvim'
 Plug 'folke/trouble.nvim'
+Plug 'gelguy/wilder.nvim'
 
 " Tree Stuff
 Plug 'MunifTanjim/nui.nvim'
@@ -191,13 +197,17 @@ let g:conjure#log#hud#enabled = 0
 " gd open in split
 nnoremap gv :vertical dsplit <C-R><C-w><cr>
 
+"call wilder#setup({'modes': [':', '/', '?']})
+
+source ~/.config/nvim/keys.vim
+
 lua << END
 --require('nvim-lsp')
 require('lsp_conf_cmp')
 require('null_ls')
 require('orgmode').setup_ts_grammar()
 require('evil_lualine')
-
+require("which-key").setup {}
 END
 
 source ~/.config/nvim/limelight.init.vim
@@ -205,10 +215,12 @@ source ~/.config/nvim/limelight.init.vim
 source ~/.config/nvim/slime.init.vim
 source ~/.config/nvim/fzf.init.vim
 source ~/.config/nvim/clojure.init.vim
-source ~/.config/nvim/keys/which-key.vim
+
+"source ~/.config/nvim/keys/which-key.vim
 
 " Local config overrides
 if !empty(glob('~/.config/init.local.vim'))
   source ~/.config/init.local.vim
+
 endif
 

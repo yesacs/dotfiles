@@ -54,7 +54,7 @@ let myGreatFunctionalityAlso
 
 myGreatFunctionalityAlso = (...argsv) => console.log('hello', ...argsv)
 
-myGreatFunctionalityAlsoAlso = c => console.log('hello', x)
+mGreatFunctionalityAlsoAlso = c => console.log('hello', x)
 
 document.addEventListener
 
