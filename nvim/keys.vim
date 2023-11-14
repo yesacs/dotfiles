@@ -2,7 +2,7 @@ map <leader>W :WhichKey<CR>
 
 " space-p
 map <leader>pf :Telescope find_files<CR>
-map <leader>pr :Neotree float reveal<CR>
+map <leader>pr :Neotree reveal<CR>
 
 " space-b
 map <leader>bb :Telescope buffers<CR>
@@ -21,9 +21,10 @@ map <leader>fa :Ag<CR>
 map <leader>fl :Lines<CR>
 map <leader>fL :BLines<CR>
 
-" space-o
-map <leader>op :Neotree float toggle=true<CR>
-map <leader>oP :Neotree toggle=true<CR>
+" space-t
+map <leader>to :Neotree toggle=true<CR>
+map <leader>tf :Neotree focus<CR>
+map <leader>tr :Neotree reveal<CR>
 
 " space-a
 map <leader>aa <Plug>(EasyAlign)><CR>
@@ -36,6 +37,7 @@ map <leader>wk <C-k>
 map <leader>wl <C-l>
 map <leader>wv :vsp<CR>
 map <leader>wd :q<CR>
+map <leader>wc <Plug>(choosewin)
 
 " space
 map <leader>T :TroubleToggle<CR>

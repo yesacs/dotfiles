@@ -78,13 +78,11 @@ Plug 'nvim-telescope/telescope.nvim'
 
 " Look'n'feel
 Plug 'tpope/vim-repeat'
-Plug 'nvim-tree/nvim-web-devicons'
 Plug 'equalsraf/neovim-gui-shim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'mhinz/vim-startify'
-Plug 'kyazdani42/nvim-web-devicons'
 
 " Status lines
 Plug 'nvim-lualine/lualine.nvim'
@@ -105,10 +103,8 @@ Plug 'chrisbra/NrrwRgn'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'tpope/vim-fugitive' 
 Plug 'junegunn/vim-easy-align'
-Plug 'voldikss/vim-floaterm'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jpalardy/vim-slime'
-"Plug 'liuchengxu/vim-which-key'
 Plug 'folke/which-key.nvim'
 Plug 'benwainwright/fzf-project'
 Plug 'David-Kunz/jester'
@@ -120,8 +116,9 @@ Plug 'gelguy/wilder.nvim'
 
 " Tree Stuff
 Plug 'MunifTanjim/nui.nvim'
+Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-neo-tree/neo-tree.nvim'
-Plug 's1n7ax/nvim-window-picker'
+Plug 't9md/vim-choosewin'
 
 " Clojure
 Plug 'Olical/conjure'
@@ -200,6 +197,8 @@ nnoremap gv :vertical dsplit <C-R><C-w><cr>
 "call wilder#setup({'modes': [':', '/', '?']})
 
 source ~/.config/nvim/keys.vim
+nmap  -  <Plug>(choosewin)
+let g:choosewin_overlay_enable = 1
 
 lua << END
 --require('nvim-lsp')
@@ -211,12 +210,9 @@ require("which-key").setup {}
 END
 
 source ~/.config/nvim/limelight.init.vim
-"source ~/.config/nvim/lightline.init.vim
 source ~/.config/nvim/slime.init.vim
 source ~/.config/nvim/fzf.init.vim
 source ~/.config/nvim/clojure.init.vim
-
-"source ~/.config/nvim/keys/which-key.vim
 
 " Local config overrides
 if !empty(glob('~/.config/init.local.vim'))
