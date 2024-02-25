@@ -9,3 +9,5 @@
               :environment "production"}
               (parse-args args)))))
 
+(hello there)
+

@@ -3,7 +3,7 @@ import React from 'react'
 import c from 'classnames'
 import isEmpty from 'lodash'
 
-import obj, { danger, safety } from './indexImports'
+import obj, { danger as dangerrrrr, safety } from './indexImports'
 
 import './index.css'
 import './index.scss'
@@ -17,11 +17,13 @@ hello = goodbye
 isEmpty([])
 
 safety()
-danger()
+dangerrrrr()
 
 const x = y => console.log('!!!', y)
 
 const k = asdfasdf => Math.min
+
+const x = 19
 
 let { , y, z } = hello,
   {
@@ -54,9 +56,9 @@ let myGreatFunctionalityAlso
 
 myGreatFunctionalityAlso = (...argsv) => console.log('hello', ...argsv)
 
-mGreatFunctionalityAlsoAlso = c => console.log('hello', x)
+mGreatFunctionalityAlsoAlso = c => console.log("hello", x)
 
-document.addEventListener
+document.removeEventListener
 
 myGreatFunctionalityAlso(1, 2, 3, 4)
 
@@ -72,3 +74,7 @@ p = 0
 p = 15
 
 g = 1234
+
+export const NewP = () => {
+  return <p>Hello there</p>
+}

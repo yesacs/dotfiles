@@ -1,3 +1,7 @@
+interface Post {
+  id: string
+}
+
 export function printToConsole(s: string) {
   console.log(s)
 }

@@ -5,7 +5,7 @@ PWD=$(pwd)
 printf "\nSetting up config symlinks..."
 
 ln -sf "$PWD"/karabiner ~/.config
-ln -sf "$PWD"/nvim ~/.config
+# ln -sf "$PWD"/nvim ~/.config
 ln -sf "$PWD"/fish ~/.config
 ln -sf "$PWD"/omf ~/.config
 ln -sf "$PWD"/alacritty ~/.config
@@ -26,5 +26,7 @@ ln -sf "$PWD"/.prettierrc.js ~/.prettierrc.js
 ln -sf "$PWD"/xprofile ~/.xprofile
 ln -sf "$PWD"/noderc.js ~/.noderc.js 
 ln -sf "$PWD"/zshrc ~/.zshrc
+ln -sf "$PWD"/yabairc ~/.yabairc
+ln -sf "$PWD"/skhdrc ~/.skhdrc
 
 printf " Done!\n\n"

@@ -25,7 +25,7 @@ export { danger, safety }
 
 danger.ael = window.document.addEventListener
 
-danger = () => {
+danger = x => {
   console.log('reassign')
 }
 
