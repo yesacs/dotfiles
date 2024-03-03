@@ -59,6 +59,7 @@ myGreatFunctionalityAlso = (...argsv) => console.log('hello', ...argsv)
 mGreatFunctionalityAlsoAlso = c => console.log("hello", x)
 
 document.removeEventListener
+document.add
 
 myGreatFunctionalityAlso(1, 2, 3, 4)
 
