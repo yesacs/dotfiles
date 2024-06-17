@@ -80,6 +80,7 @@ set -Ux PYENV_ROOT $HOME/.pyenv
 fish_add_path $PYENV_ROOT/bin
 fish_add_path $PYENV_ROOT/versions/2.7.18/bin/
 fish_add_path /opt/homebrew/bin
+fish_add_path ~/apache-maven-3.8.8/bin
 
 alias redis "docker run --rm -p 6379:6379 redis:6.2"
 alias iq-np-tunnel "AWS_PROFILE=iq-np ~/Sites/ft-api/infra/accounts/iq-np/bin/ft-api-db-dev-open-db-tunnel.sh"
