@@ -218,5 +218,5 @@ source ~/.config/nvim/clojure.init.vim
 if !empty(glob('~/.config/init.local.vim'))
   source ~/.config/init.local.vim
 
-endif
 
+endif
