@@ -5,7 +5,7 @@ PWD=$(pwd)
 printf "\nSetting up config symlinks..."
 
 ln -sf "$PWD"/karabiner ~/.config
-# ln -sf "$PWD"/nvim ~/.config
+ln -sf "$PWD"/nvim ~/.config
 # ln -sf "$PWD"/astronvim ~/.config
 ln -sf "$PWD"/astronvim/user.lua ~/.config/nvim/lua/plugins/user.lua
 ln -sf "$PWD"/fish ~/.config.
