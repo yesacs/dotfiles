@@ -85,14 +85,15 @@ return {
 	-- 		"nvim-tree/nvim-web-devicons",  -- optional
 	-- 	},
 	-- },
-	{
-		"kylechui/nvim-surround",
-		version = "*", -- Use for stability; omit to use `main` branch for the latest features
-		event = "VeryLazy",
-		config = function()
-			require("nvim-surround").setup()
-		end,
-	},
+	{ "tpope/vim-surround" },
+	-- {
+	-- 	"kylechui/nvim-surround",
+	-- 	version = "*", -- Use for stability; omit to use `main` branch for the latest features
+	-- 	event = "VeryLazy",
+	-- 	config = function()
+	-- 		require("nvim-surround").setup()
+	-- 	end,
+	-- },
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
