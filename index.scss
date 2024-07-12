@@ -11,8 +11,11 @@ h1 {
   font-size: 12px;
   display: flex;
   color: red;
+  color: opacify($color: red, $amount: 50);
 
   .test {
     color: red;
   }
 }
+
+p {}

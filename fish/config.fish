@@ -1,6 +1,7 @@
 set -x EDITOR nvim
 set -x VISUAL nvim
 
+
 alias evil "env TERM=xterm-24bit emacs -nw"
 alias nve "nvim -c 'CocCommand explorer'"
 alias fzf "fzf-tmux -p 80%,60%"
@@ -85,3 +86,9 @@ fish_add_path ~/apache-maven-3.8.8/bin
 alias redis "docker run --rm -p 6379:6379 redis:6.2"
 alias vi "NVIM_APPNAME=astronvim_v4 nvim"
 alias iq-np-tunnel "AWS_PROFILE=iq-np ~/Sites/ft-api/infra/accounts/iq-np/bin/ft-api-db-dev-open-db-tunnel.sh"
+
+
+alias java-11="set JAVA_HOME $(/usr/libexec/java_home -v 11); java -version"
+alias java-21="set JAVA_HOME $(/usr/libexec/java_home -v 21); java -version"
+
+alias refresh-keys="eval (aws configure export-credentials --format env)"

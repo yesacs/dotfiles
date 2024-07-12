@@ -22,13 +22,13 @@
 
 (with-eval-after-load "treemacs" (treemacs-follow-mode t))
 
-;(setq cider-clojure-cli-global-options "-A:test:local -m nrepl.cmdline --middleware '[\"refactor-nrepl.middleware/wrap-refactor\", \"cider.nrepl/cider-middleware\"]'")
-;(setq cider-clojure-cli-global-options nil)
+                                        ;(setq cider-clojure-cli-global-options "-A:test:local -m nrepl.cmdline --middleware '[\"refactor-nrepl.middleware/wrap-refactor\", \"cider.nrepl/cider-middleware\"]'")
+                                        ;(setq cider-clojure-cli-global-options nil)
 
-;(add-to-list 'warning-suppress-types '(undo discard-info))
+                                        ;(add-to-list 'warning-suppress-types '(undo discard-info))
 
 ;; make ligatures work
-;(mac-auto-operator-composition-mode)
+                                        ;(mac-auto-operator-composition-mode)
 
 (setq lsp-ui-sideline-show-code-actions nil)
 (setq lsp-ui-sideline-enable nil)
@@ -79,30 +79,30 @@
 ;;       "t t" #'+neotree/open)
 ;;
 ;; tide - config
- (defun setup-tide-mode ()
-   (interactive)
-   (tide-setup)
-   ;;(flycheck-mode +1)
-   ;;(flycheck-select-checker 'javascript-eslint)
-   ;;(setq flycheck-check-syntax-automatically '(save mode-enabled))
-   (eldoc-mode +1)
-   (tide-hl-identifier-mode +1)
-   (company-mode +1))
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  ;;(flycheck-mode +1)
+  ;;(flycheck-select-checker 'javascript-eslint)
+  ;;(setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  (company-mode +1))
 
- ;; aligns annotation to the right hand side
- (setq company-tooltip-align-annotations t)
+;; aligns annotation to the right hand side
+(setq company-tooltip-align-annotations t)
 
- (use-package tide
-   :ensure t
-   :after ((typescript-mode company flycheck)
-           (rjsx-mode company flycheck))
-   :hook ((typescript-mode . tide-setup)
-          (typescript-mode . tide-hl-identifier-mode)
-          (rjsx-mode . tide-setup)
-          (rjsx-mode . tide-hl-identifier-mode)))
+(use-package tide
+  :ensure t
+  :after ((typescript-mode company flycheck)
+          (rjsx-mode company flycheck))
+  :hook ((typescript-mode . tide-setup)
+         (typescript-mode . tide-hl-identifier-mode)
+         (rjsx-mode . tide-setup)
+         (rjsx-mode . tide-hl-identifier-mode)))
 
- (add-hook 'typescript-mode-hook #'setup-tide-mode)
- (add-hook 'rjsx-mode-hook #'setup-tide-mode)
+(add-hook 'typescript-mode-hook #'setup-tide-mode)
+;;(add-hook 'rjsx-mode-hook #'setup-tide-mode)
 
 ;; ;; tide - config end
 
@@ -128,13 +128,13 @@
 
 ;; node-repl setup
 (map! :map (rjsx-mode-map typescript-mode-map)
-  (:localleader
-    ("'"   #'nodejs-repl)
-    ("b"   #'nodejs-repl-switch-to-repl)
-    ("e e" #'nodejs-repl-send-line)
-    ("e r" #'nodejs-repl-send-region)
-    ("e f" #'nodejs-repl-send-buffer)
-    ("e b" #'nodejs-repl-send-buffer)))
+      (:localleader
+       ("'"   #'nodejs-repl)
+       ("b"   #'nodejs-repl-switch-to-repl)
+       ("e e" #'nodejs-repl-send-line)
+       ("e r" #'nodejs-repl-send-region)
+       ("e f" #'nodejs-repl-send-buffer)
+       ("e b" #'nodejs-repl-send-buffer)))
 
 (setq doom-modeline-buffer-file-name-style 'truncate-with-project)
 

@@ -60,7 +60,7 @@ return {
 					},
 				},
 			},
-			colorscheme = "sonokai",
+			colorscheme = "dracula",
 			-- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
 			-- Icons can be configured throughout the interface
 			icons = {
@@ -78,28 +78,26 @@ return {
 			},
 		},
 	},
+	{ "folke/tokyonight.nvim" },
+	{ "NTBBloodbath/doom-one.nvim" },
+	{ "maxmx03/dracula.nvim" },
+	{ "sainnhe/sonokai" },
+	{ "JoosepAlviste/palenightfall.nvim" },
 	{
-		"sainnhe/sonokai",
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		opts = {
+			flavour = "macchiato", -- latte, frappe, macchiato, mocha
+		},
 	},
-	-- {
-	-- 	"nvimdev/lspsaga.nvim",
-	-- 	config = function()
-	-- 		require("lspsaga").setup({})
-	-- 	end,
-	-- 	dependencies = {
-	-- 		"nvim-treesitter/nvim-treesitter", -- optional
-	-- 		"nvim-tree/nvim-web-devicons",  -- optional
-	-- 	},
-	-- },
+	{
+		"loctvl842/monokai-pro.nvim",
+		opts = {
+			filter = "octagon",
+		},
+	},
 	{ "tpope/vim-surround" },
-	-- {
-	-- 	"kylechui/nvim-surround",
-	-- 	version = "*", -- Use for stability; omit to use `main` branch for the latest features
-	-- 	event = "VeryLazy",
-	-- 	config = function()
-	-- 		require("nvim-surround").setup()
-	-- 	end,
-	-- },
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
@@ -138,41 +136,51 @@ return {
 			}
 		end,
 	},
-	-- {
-	-- 	"folke/trouble.nvim",
-	-- 	opts = {}, -- for default options, refer to the configuration section for custom setup.
-	-- 	cmd = "Trouble",
-	-- 	keys = {
-	-- 		{
-	-- 			"<leader>xx",
-	-- 			"<cmd>Trouble diagnostics toggle<cr>",
-	-- 			desc = "Diagnostics (Trouble)",
-	-- 		},
-	-- 		{
-	-- 			"<leader>xX",
-	-- 			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-	-- 			desc = "Buffer Diagnostics (Trouble)",
-	-- 		},
-	-- 		{
-	-- 			"<leader>cs",
-	-- 			"<cmd>Trouble symbols toggle focus=false<cr>",
-	-- 			desc = "Symbols (Trouble)",
-	-- 		},
-	-- 		{
-	-- 			"<leader>cl",
-	-- 			"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-	-- 			desc = "LSP Definitions / references / ... (Trouble)",
-	-- 		},
-	-- 		{
-	-- 			"<leader>xL",
-	-- 			"<cmd>Trouble loclist toggle<cr>",
-	-- 			desc = "Location List (Trouble)",
-	-- 		},
-	-- 		{
-	-- 			"<leader>xQ",
-	-- 			"<cmd>Trouble qflist toggle<cr>",
-	-- 			desc = "Quickfix List (Trouble)",
-	-- 		},
-	-- 	},
-	-- },
+	{
+		"folke/trouble.nvim",
+		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		cmd = "Trouble",
+		keys = {
+			{
+				"<leader>xx",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+			{
+				"<leader>xX",
+				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+				desc = "Buffer Diagnostics (Trouble)",
+			},
+			{
+				"<leader>cs",
+				"<cmd>Trouble symbols toggle focus=false<cr>",
+				desc = "Symbols (Trouble)",
+			},
+			{
+				"<leader>cl",
+				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+				desc = "LSP Definitions / references / ... (Trouble)",
+			},
+			{
+				"<leader>xL",
+				"<cmd>Trouble loclist toggle<cr>",
+				desc = "Location List (Trouble)",
+			},
+			{
+				"<leader>xQ",
+				"<cmd>Trouble qflist toggle<cr>",
+				desc = "Quickfix List (Trouble)",
+			},
+		},
+	},
+	{
+		"nvim-neotest/neotest",
+		dependencies = {
+			"nvim-neotest/nvim-nio",
+			"nvim-lua/plenary.nvim",
+			"antoinemadec/FixCursorHold.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-neotest/neotest-jest",
+		},
+	},
 }
