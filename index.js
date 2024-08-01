@@ -8,6 +8,8 @@ import obj, { danger as dangerrrrr, safety } from './indexImports'
 import './index.css'
 import './index.scss'
 
+j
+
 export const hello = {
   x: 1234,
 }
@@ -20,6 +22,7 @@ safety()
 dangerrrrr()
 
 const x = y => console.log('!!!', y)
+x = 10
 
 const k = asdfasdf => Math.min
 
@@ -62,6 +65,7 @@ document.removeEventListener
 document.add
 
 myGreatFunctionalityAlso(1, 2, 3, 4)
+
 
 document.addEventListener(asdf, oiuo)
 window.document.addEventListener()

@@ -14,6 +14,8 @@ return {
 		"AstroNvim/astrocommunity",
 		{ import = "astrocommunity.pack.lua" },
 		{ import = "astrocommunity.code-runner.sniprun" },
+		{ import = "astrocommunity.pack.typescript" },
+		{ import = "astrocommunity.pack.typescript-all-in-one" },
 	},
 	{
 		"AstroNvim/astroui",
@@ -98,6 +100,7 @@ return {
 		},
 	},
 	{ "tpope/vim-surround" },
+	{ "tpope/vim-fugitive" },
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
@@ -182,5 +185,80 @@ return {
 			"nvim-treesitter/nvim-treesitter",
 			"nvim-neotest/neotest-jest",
 		},
+	},
+	{
+		"jay-babu/mason-null-ls.nvim",
+		opts = {
+			handlers = {
+				-- for prettier
+				prettier = function()
+					require("null-ls").register(require("null-ls").builtins.formatting.prettier.with({
+						condition = function(utils)
+							return utils.root_has_file("package.json")
+									or utils.root_has_file(".prettierrc")
+									or utils.root_has_file(".prettierrc.json")
+									or utils.root_has_file(".prettierrc.js")
+						end,
+					}))
+				end,
+				-- for prettierd
+				prettierd = function()
+					require("null-ls").register(require("null-ls").builtins.formatting.prettierd.with({
+						condition = function(utils)
+							return utils.root_has_file("package.json")
+									or utils.root_has_file(".prettierrc")
+									or utils.root_has_file(".prettierrc.json")
+									or utils.root_has_file(".prettierrc.js")
+						end,
+					}))
+				end,
+				-- For eslint_d:
+				eslint = function()
+					require("null-ls").register(require("null-ls").builtins.diagnostics.eslint_d.with({
+						condition = function(utils)
+							return utils.root_has_file("package.json")
+									or utils.root_has_file(".eslintrc.json")
+									or utils.root_has_file(".eslintrc.js")
+									or utils.root_has_file("eslint.config.js")
+						end,
+					}))
+				end,
+			},
+		},
+	},
+	{
+		"christoomey/vim-tmux-navigator",
+		cmd = {
+			"TmuxNavigateLeft",
+			"TmuxNavigateDown",
+			"TmuxNavigateUp",
+			"TmuxNavigateRight",
+			"TmuxNavigatePrevious",
+		},
+		keys = {
+			{ "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
+			{ "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
+			{ "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
+			{ "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
+			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+		},
+		config = function() end,
+	},
+	{
+		"jpalardy/vim-slime",
+		init = function()
+			-- these two should be set before the plugin loads
+			vim.g.slime_target = "tmux"
+			vim.g.slime_no_mappings = true
+		end,
+		config = function()
+			vim.g.slime_input_pid = false
+			vim.g.slime_suggest_default = true
+			vim.g.slime_menu_config = false
+			vim.keymap.set("n", "<leader>r", "<Plug>Slime", { remap = true, silent = false })
+			vim.keymap.set("n", "<leader>rr", "<Plug>SlimeLineSend", { remap = true, silent = false })
+			vim.keymap.set("x", "<leader>r", "<Plug>SlimeRegionSend", { remap = true, silent = false })
+			vim.keymap.set("n", "<leader>rc", "<Plug>Config", { remap = true, silent = false })
+		end,
 	},
 }
