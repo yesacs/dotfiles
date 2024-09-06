@@ -93,3 +93,5 @@ alias java-21="set JAVA_HOME $(/usr/libexec/java_home -v 21); java -version"
 
 alias refresh-keys="eval (aws configure export-credentials --format env)"
 alias ssmin="aws ssm start-session --target $1"
+
+fish_ssh_agent
