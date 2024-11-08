@@ -62,7 +62,7 @@ return {
 					},
 				},
 			},
-			colorscheme = "dracula",
+			colorscheme = "sonokai",
 			-- colorscheme = "dracula",
 			-- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
 			-- Icons can be configured throughout the interface
@@ -179,17 +179,19 @@ return {
 	},
 	{
 		"nvim-neotest/neotest",
+		event = "LspAttach",
 		dependencies = {
-			"nvim-neotest/nvim-nio",
-			"nvim-lua/plenary.nvim",
-			"antoinemadec/FixCursorHold.nvim",
 			"nvim-treesitter/nvim-treesitter",
-			"nvim-neotest/neotest-jest",
+			"haydenmeade/neotest-jest",
 		},
 	},
 	{
 		"jay-babu/mason-null-ls.nvim",
 		opts = {
+			ensure_installed = {
+				"stylua",
+				"eslint-lsp",
+			},
 			handlers = {
 				-- for prettier
 				prettier = function()
@@ -218,9 +220,10 @@ return {
 					require("null-ls").register(require("null-ls").builtins.diagnostics.eslint_d.with({
 						condition = function(utils)
 							return utils.root_has_file("package.json")
+									or utils.root_has_file("eslint.config.mjs")
+									or utils.root_has_file("eslint.config.js")
 									or utils.root_has_file(".eslintrc.json")
 									or utils.root_has_file(".eslintrc.js")
-									or utils.root_has_file("eslint.config.js")
 						end,
 					}))
 				end,
@@ -261,5 +264,33 @@ return {
 			vim.keymap.set("x", "<leader>r", "<Plug>SlimeRegionSend", { remap = true, silent = false })
 			vim.keymap.set("n", "<leader>rc", "<Plug>Config", { remap = true, silent = false })
 		end,
+	},
+	{ "jose-elias-alvarez/typescript.nvim", lazy = true }, -- add lsp plugin
+	{
+		"AstroNvim/astrolsp",
+		---@type AstroLSPOpts
+		opts = {
+			setup_handlers = {
+				-- add custom handler
+				tsserver = function(_, opts)
+					require("typescript").setup({ server = opts })
+				end,
+			},
+		},
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		opts = {
+			ensure_installed = { "ts_ls" }, -- automatically install lsp
+		},
+	},
+	{
+		"nvimdev/lspsaga.nvim",
+		opts = {
+			after = "nvim-lspconfig",
+			config = function()
+				require("lspsaga").setup({})
+			end,
+		},
 	},
 }

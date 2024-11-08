@@ -82,6 +82,7 @@ fish_add_path $PYENV_ROOT/bin
 fish_add_path $PYENV_ROOT/versions/2.7.18/bin/
 fish_add_path /opt/homebrew/bin
 fish_add_path ~/apache-maven-3.8.8/bin
+fish_add_path /opt/homebrew/opt/mysql@8.4/bin
 
 alias redis "docker run --rm -p 6379:6379 redis:6.2"
 alias vi "NVIM_APPNAME=astronvim_v4 nvim"

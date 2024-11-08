@@ -284,6 +284,7 @@
                 }
             ],
             "name": "Apple",
+            "selected": true,
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         },
         {
@@ -614,7 +615,6 @@
                 }
             ],
             "name": "QMK (no mods)",
-            "selected": true,
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
     ]
