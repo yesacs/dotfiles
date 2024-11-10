@@ -88,9 +88,8 @@ alias redis "docker run --rm -p 6379:6379 redis:6.2"
 alias vi "NVIM_APPNAME=astronvim_v4 nvim"
 alias iq-np-tunnel "AWS_PROFILE=iq-np ~/Sites/ft-api/infra/accounts/iq-np/bin/ft-api-db-dev-open-db-tunnel.sh"
 
-
-alias java-11="set JAVA_HOME $(/usr/libexec/java_home -v 11); java -version"
-alias java-21="set JAVA_HOME $(/usr/libexec/java_home -v 21); java -version"
+# alias java-11="set JAVA_HOME $(/usr/libexec/java_home -v 11); java -version"
+# alias java-21="set JAVA_HOME $(/usr/libexec/java_home -v 21); java -version"
 
 alias refresh-keys="eval (aws configure export-credentials --format env)"
 alias ssmin="aws ssm start-session --target $1"
