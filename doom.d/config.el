@@ -116,7 +116,6 @@
 (add-hook 'rjsx-mode-hook 'lsp)
 (add-hook 'js2-mode-hook 'lsp)
 (add-hook 'typescript-mode-hook 'lsp)
-(add-hook 'typescript-mode-hook 'lsp)
 
 ;; prettier setup
 (add-hook 'js2-mode-hook 'prettier-js-mode)
@@ -125,6 +124,8 @@
 (add-hook 'web-mode-hook 'prettier-js-mode)
 (add-hook 'css-mode-hook 'prettier-js-mode)
 (add-hook 'scss-mode-hook 'prettier-js-mode)
+
+(use-package! typescript-mode)
 
 ;; node-repl setup
 (map! :map (rjsx-mode-map typescript-mode-map)

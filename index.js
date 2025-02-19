@@ -1,14 +1,12 @@
 // file to test eslint settings
 import React from 'react'
 import c from 'classnames'
-import isEmpty from 'lodash'
+import isEmpty from "lodash"
 
 import obj, { danger as dangerrrrr, safety } from './indexImports'
 
 import './index.css'
 import './index.scss'
-
-j
 
 export const hello = {
   x: 1234,

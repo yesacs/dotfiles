@@ -283,7 +283,8 @@
                     "to": [{ "consumer_key_code": "fastforward" }]
                 }
             ],
-            "name": "Apple"
+            "name": "Apple",
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         },
         {
             "complex_modifications": {
@@ -613,7 +614,8 @@
                 }
             ],
             "name": "QMK (no mods)",
-            "selected": true
+            "selected": true,
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
     ]
 }

@@ -62,8 +62,9 @@ return {
 					},
 				},
 			},
-			colorscheme = "sonokai",
+			-- colorscheme = "sonokai",
 			-- colorscheme = "dracula",
+			colorscheme = "monokai-pro-spectrum",
 			-- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
 			-- Icons can be configured throughout the interface
 			icons = {
@@ -179,28 +180,114 @@ return {
 	},
 	{
 		"nvim-neotest/neotest",
-		event = "LspAttach",
+		lazy = false,
 		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-neotest/nvim-nio",
 			"nvim-treesitter/nvim-treesitter",
-			"haydenmeade/neotest-jest",
+			"nvim-neotest/neotest-jest",
 		},
+		cmds = {
+			"Neotest run",
+		},
+		keys = {
+
+			{ "<leader>t", "", desc = "+test" },
+			{
+				"<leader>tt",
+				function()
+					require("neotest").run.run(vim.fn.expand("%"))
+				end,
+				desc = "Run File (Neotest)",
+			},
+			{
+				"<leader>tT",
+				function()
+					require("neotest").run.run(vim.uv.cwd())
+				end,
+				desc = "Run All Test Files (Neotest)",
+			},
+			{
+				"<leader>tr",
+				function()
+					require("neotest").run.run()
+				end,
+				desc = "Run Nearest (Neotest)",
+			},
+			{
+				"<leader>tl",
+				function()
+					require("neotest").run.run_last()
+				end,
+				desc = "Run Last (Neotest)",
+			},
+			{
+				"<leader>ts",
+				function()
+					require("neotest").summary.toggle()
+				end,
+				desc = "Toggle Summary (Neotest)",
+			},
+			{
+				"<leader>to",
+				function()
+					require("neotest").output.open({ enter = true, auto_close = true })
+				end,
+				desc = "Show Output (Neotest)",
+			},
+			{
+				"<leader>tO",
+				function()
+					require("neotest").output_panel.toggle()
+				end,
+				desc = "Toggle Output Panel (Neotest)",
+			},
+			{
+				"<leader>tS",
+				function()
+					require("neotest").run.stop()
+				end,
+				desc = "Stop (Neotest)",
+			},
+			{
+				"<leader>tw",
+				function()
+					require("neotest").watch.toggle(vim.fn.expand("%"))
+				end,
+				desc = "Toggle Watch (Neotest)",
+			},
+		},
+		config = function()
+			require("neotest").setup({
+				adapters = {
+					require("neotest-jest")({
+						jestCommand = "npm test ",
+						jestConfigFile = "jest.config.js",
+						env = { CI = true },
+						cwd = function()
+							return vim.fn.getcwd()
+						end,
+					}),
+				},
+				config = {
+					output_panel = { open_on_run = true },
+					diagnostic = true,
+				},
+			})
+		end,
 	},
 	{
 		"jay-babu/mason-null-ls.nvim",
 		opts = {
-			ensure_installed = {
-				"stylua",
-				"eslint-lsp",
-			},
 			handlers = {
 				-- for prettier
 				prettier = function()
 					require("null-ls").register(require("null-ls").builtins.formatting.prettier.with({
 						condition = function(utils)
 							return utils.root_has_file("package.json")
-									or utils.root_has_file(".prettierrc")
-									or utils.root_has_file(".prettierrc.json")
-									or utils.root_has_file(".prettierrc.js")
+								or utils.root_has_file(".prettierrc")
+								or utils.root_has_file(".prettierrc.json")
+								or utils.root_has_file(".prettierrc.js")
 						end,
 					}))
 				end,
@@ -209,21 +296,19 @@ return {
 					require("null-ls").register(require("null-ls").builtins.formatting.prettierd.with({
 						condition = function(utils)
 							return utils.root_has_file("package.json")
-									or utils.root_has_file(".prettierrc")
-									or utils.root_has_file(".prettierrc.json")
-									or utils.root_has_file(".prettierrc.js")
+								or utils.root_has_file(".prettierrc")
+								or utils.root_has_file(".prettierrc.json")
+								or utils.root_has_file(".prettierrc.js")
 						end,
 					}))
 				end,
 				-- For eslint_d:
-				eslint = function()
+				eslint_d = function()
 					require("null-ls").register(require("null-ls").builtins.diagnostics.eslint_d.with({
 						condition = function(utils)
 							return utils.root_has_file("package.json")
-									or utils.root_has_file("eslint.config.mjs")
-									or utils.root_has_file("eslint.config.js")
-									or utils.root_has_file(".eslintrc.json")
-									or utils.root_has_file(".eslintrc.js")
+								or utils.root_has_file(".eslintrc.json")
+								or utils.root_has_file(".eslintrc.js")
 						end,
 					}))
 				end,
@@ -240,10 +325,10 @@ return {
 			"TmuxNavigatePrevious",
 		},
 		keys = {
-			{ "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
-			{ "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
-			{ "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
-			{ "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
+			{ "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+			{ "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+			{ "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+			{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
 			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
 		},
 		config = function() end,
@@ -264,33 +349,5 @@ return {
 			vim.keymap.set("x", "<leader>r", "<Plug>SlimeRegionSend", { remap = true, silent = false })
 			vim.keymap.set("n", "<leader>rc", "<Plug>Config", { remap = true, silent = false })
 		end,
-	},
-	{ "jose-elias-alvarez/typescript.nvim", lazy = true }, -- add lsp plugin
-	{
-		"AstroNvim/astrolsp",
-		---@type AstroLSPOpts
-		opts = {
-			setup_handlers = {
-				-- add custom handler
-				tsserver = function(_, opts)
-					require("typescript").setup({ server = opts })
-				end,
-			},
-		},
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		opts = {
-			ensure_installed = { "ts_ls" }, -- automatically install lsp
-		},
-	},
-	{
-		"nvimdev/lspsaga.nvim",
-		opts = {
-			after = "nvim-lspconfig",
-			config = function()
-				require("lspsaga").setup({})
-			end,
-		},
 	},
 }
