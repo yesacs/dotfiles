@@ -62,9 +62,9 @@ return {
 					},
 				},
 			},
-			-- colorscheme = "sonokai",
+			colorscheme = "sonokai",
 			-- colorscheme = "dracula",
-			colorscheme = "monokai-pro-spectrum",
+			-- colorscheme = "monokai-pro-spectrum",
 			-- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
 			-- Icons can be configured throughout the interface
 			icons = {
