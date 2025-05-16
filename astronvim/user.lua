@@ -276,45 +276,24 @@ return {
 			})
 		end,
 	},
-	{
-		"jay-babu/mason-null-ls.nvim",
-		opts = {
-			handlers = {
-				-- for prettier
-				prettier = function()
-					require("null-ls").register(require("null-ls").builtins.formatting.prettier.with({
-						condition = function(utils)
-							return utils.root_has_file("package.json")
-								or utils.root_has_file(".prettierrc")
-								or utils.root_has_file(".prettierrc.json")
-								or utils.root_has_file(".prettierrc.js")
-						end,
-					}))
-				end,
-				-- for prettierd
-				prettierd = function()
-					require("null-ls").register(require("null-ls").builtins.formatting.prettierd.with({
-						condition = function(utils)
-							return utils.root_has_file("package.json")
-								or utils.root_has_file(".prettierrc")
-								or utils.root_has_file(".prettierrc.json")
-								or utils.root_has_file(".prettierrc.js")
-						end,
-					}))
-				end,
-				-- For eslint_d:
-				eslint_d = function()
-					require("null-ls").register(require("null-ls").builtins.diagnostics.eslint_d.with({
-						condition = function(utils)
-							return utils.root_has_file("package.json")
-								or utils.root_has_file(".eslintrc.json")
-								or utils.root_has_file(".eslintrc.js")
-						end,
-					}))
-				end,
-			},
-		},
-	},
+  {
+    "nvimtools/none-ls.nvim",
+    dependencies = {
+      "nvimtools/none-ls-extras.nvim",
+    },
+    config = function()
+      local null_ls = require("null-ls")
+      null_ls.setup({
+        sources = {
+          null_ls.builtins.formatting.stylua,
+          null_ls.builtins.formatting.prettier,
+          -- require("none-ls.diagnostics.eslint_d")
+        },
+      })
+  
+      vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+    end,
+  },
 	{
 		"christoomey/vim-tmux-navigator",
 		cmd = {
@@ -350,4 +329,37 @@ return {
 			vim.keymap.set("n", "<leader>rc", "<Plug>Config", { remap = true, silent = false })
 		end,
 	},
+	{
+		"github/copilot.vim",
+		config = function() 
+      vim.keymap.set('i', '<C-g>', 'copilot#Accept("\\<CR>")', {
+        expr = true,
+        replace_keycodes = false
+      })
+      vim.g.copilot_no_tab_map = true
+		end
+	},
+  {
+    "olimorris/codecompanion.nvim",
+    config = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("codecompanion").setup({
+        strategies = {
+          chat = {
+            adapter = "copilot",
+          },
+          inline = {
+            adapter = "copilot",
+          }
+        }
+      })
+
+      vim.keymap.set('n', '<leader>lcc', '<Plug>CodeCompanion', {remap = true, silent = false})
+      vim.keymap.set('n', '<leader>lca', '<Plug>CodeCompanionActions', {remap = true, silent = false})
+		end
+  }
 }
