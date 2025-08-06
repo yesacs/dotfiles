@@ -12,7 +12,7 @@ export const hello = {
   x: 1234,
 }
 
-hello = goodbye
+hello = 'goodbye'
 
 isEmpty([])
 

@@ -29,6 +29,8 @@ ln -sf "$PWD"/noderc.js ~/.noderc.js
 ln -sf "$PWD"/zshrc ~/.zshrc
 ln -sf "$PWD"/yabairc ~/.yabairc
 ln -sf "$PWD"/skhdrc ~/.skhdrc
+
 ln -sf "$PWD"/lazyvim/plugins ~/.config/nvim/lua/plugins
+ln -sf "$PWD"/lazyvim/config ~/.config/nvim/lua/config
 
 printf " Done!\n\n"
