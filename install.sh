@@ -19,7 +19,6 @@ fi
 brew install gcc \
     fish \
     tmux \
-    exa \
     vivid \
     fd \
     rg \
@@ -43,13 +42,6 @@ brew install gcc \
     gopass \
     jq \
     direnv
-
-# install fonts (only works on macs)
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    brew tap homebrew/cask-fonts
-    brew install --cask font-fira-code-nerd-font font-fira-mono-nerd-font font-jet-brains-mono-nerd-font
-fi
-# brew setup -- END
 
 # lsp setup
 printf "Setting up LSPs and REPLs...\n\n"

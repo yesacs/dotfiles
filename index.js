@@ -82,3 +82,5 @@ export const NewP = () => {
   return <p>Hello there</p>
 }
 
+
+window.AbstractRange

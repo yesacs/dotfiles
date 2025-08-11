@@ -6,7 +6,7 @@ printf "\nSetting up config symlinks..."
 
 ln -sf "$PWD"/karabiner ~/.config
 # ln -sf "$PWD"/nvim ~/.config
-# ln -sf "$PWD"/astronvim/user.lua ~/.config/nvim/lua/plugins/user.lua
+ln -sf "$PWD"/astronvim/user.lua ~/.config/nvim/lua/plugins/user.lua
 ln -sf "$PWD"/fish ~/.config.
 ln -sf "$PWD"/omf ~/.config
 ln -sf "$PWD"/alacritty ~/.config
@@ -30,7 +30,7 @@ ln -sf "$PWD"/zshrc ~/.zshrc
 ln -sf "$PWD"/yabairc ~/.yabairc
 ln -sf "$PWD"/skhdrc ~/.skhdrc
 
-ln -sf "$PWD"/lazyvim/plugins ~/.config/nvim/lua/plugins
-ln -sf "$PWD"/lazyvim/config ~/.config/nvim/lua/config
+#ln -sf "$PWD"/lazyvim/plugins ~/.config/nvim/lua
+#ln -sf "$PWD"/lazyvim/config ~/.config/nvim/lua
 
 printf " Done!\n\n"
