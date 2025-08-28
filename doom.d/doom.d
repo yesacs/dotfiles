@@ -1,1 +1,1 @@
-/Users/casey/Sites/dotfiles/doom.d
+/home/casey/Sites/dotfiles/doom.d
