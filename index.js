@@ -1,7 +1,7 @@
 // file to test eslint settings
 import React from 'react'
 import c from 'classnames'
-import isEmpty from "lodash"
+import isEmpty from 'lodash'
 
 import obj, { danger as dangerrrrr, safety } from './indexImports'
 
@@ -26,7 +26,7 @@ const k = asdfasdf => Math.min
 
 const x = 19
 
-let { , y, z } = hello,
+let { y, z } = hello,
   {
     aaaaaaaaaaaaaaaaaaaaaaaaaaa,
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb,
@@ -57,30 +57,27 @@ let myGreatFunctionalityAlso
 
 myGreatFunctionalityAlso = (...argsv) => console.log('hello', ...argsv)
 
-mGreatFunctionalityAlsoAlso = c => console.log("hello", x)
+mGreatFunctionalityAlsoAlso = c => console.log('hello', x)
 
 document.removeEventListener
-document.add
+document.document.addEventListener()
+document.addEventListener
 
 myGreatFunctionalityAlso(1, 2, 3, 4)
 
+window.document.addEventListener('event', handler)
 
 document.addEventListener(asdf, oiuo)
 window.document.addEventListener()
 
 obj.console.clear()
 
-const p = 9
+let p = 9
 
 p = 0
 
 p = 15
 
-g = 1234
-
 export const NewP = () => {
   return <p>Hello there</p>
 }
-
-
-window.AbstractRange

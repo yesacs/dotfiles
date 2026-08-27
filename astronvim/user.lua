@@ -62,8 +62,9 @@ return {
 					},
 				},
 			},
-			colorscheme = "sonokai",
-			-- colorscheme = "dracula",
+			-- colorscheme = "material",
+			-- colorscheme = "sonokai",
+			colorscheme = "dracula",
 			-- colorscheme = "monokai-pro-spectrum",
 			-- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
 			-- Icons can be configured throughout the interface
@@ -87,6 +88,13 @@ return {
 	{ "maxmx03/dracula.nvim" },
 	{ "sainnhe/sonokai" },
 	{ "JoosepAlviste/palenightfall.nvim" },
+	{ "marko-cerovac/material.nvim" },
+  {
+    "darianmorat/gruvdark.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
@@ -104,7 +112,12 @@ return {
 	{ "tpope/vim-surround" },
 	{ "tpope/vim-fugitive" },
 	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		branch = 'main',
+	},
+	{
 		"nvim-treesitter/nvim-treesitter",
+		branch = 'main',
 		opts = {
 			ensure_installed = {
 				"lua",
@@ -141,141 +154,6 @@ return {
 			}
 		end,
 	},
-	{
-		"folke/trouble.nvim",
-		opts = {}, -- for default options, refer to the configuration section for custom setup.
-		cmd = "Trouble",
-		keys = {
-			{
-				"<leader>xx",
-				"<cmd>Trouble diagnostics toggle<cr>",
-				desc = "Diagnostics (Trouble)",
-			},
-			{
-				"<leader>xX",
-				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-				desc = "Buffer Diagnostics (Trouble)",
-			},
-			{
-				"<leader>cs",
-				"<cmd>Trouble symbols toggle focus=false<cr>",
-				desc = "Symbols (Trouble)",
-			},
-			{
-				"<leader>cl",
-				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-				desc = "LSP Definitions / references / ... (Trouble)",
-			},
-			{
-				"<leader>xL",
-				"<cmd>Trouble loclist toggle<cr>",
-				desc = "Location List (Trouble)",
-			},
-			{
-				"<leader>xQ",
-				"<cmd>Trouble qflist toggle<cr>",
-				desc = "Quickfix List (Trouble)",
-			},
-		},
-	},
-	{
-		"nvim-neotest/neotest",
-		lazy = false,
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-neotest/nvim-nio",
-			"nvim-treesitter/nvim-treesitter",
-			"nvim-neotest/neotest-jest",
-		},
-		cmds = {
-			"Neotest run",
-		},
-		keys = {
-
-			{ "<leader>t", "", desc = "+test" },
-			{
-				"<leader>tt",
-				function()
-					require("neotest").run.run(vim.fn.expand("%"))
-				end,
-				desc = "Run File (Neotest)",
-			},
-			{
-				"<leader>tT",
-				function()
-					require("neotest").run.run(vim.uv.cwd())
-				end,
-				desc = "Run All Test Files (Neotest)",
-			},
-			{
-				"<leader>tr",
-				function()
-					require("neotest").run.run()
-				end,
-				desc = "Run Nearest (Neotest)",
-			},
-			{
-				"<leader>tl",
-				function()
-					require("neotest").run.run_last()
-				end,
-				desc = "Run Last (Neotest)",
-			},
-			{
-				"<leader>ts",
-				function()
-					require("neotest").summary.toggle()
-				end,
-				desc = "Toggle Summary (Neotest)",
-			},
-			{
-				"<leader>to",
-				function()
-					require("neotest").output.open({ enter = true, auto_close = true })
-				end,
-				desc = "Show Output (Neotest)",
-			},
-			{
-				"<leader>tO",
-				function()
-					require("neotest").output_panel.toggle()
-				end,
-				desc = "Toggle Output Panel (Neotest)",
-			},
-			{
-				"<leader>tS",
-				function()
-					require("neotest").run.stop()
-				end,
-				desc = "Stop (Neotest)",
-			},
-			{
-				"<leader>tw",
-				function()
-					require("neotest").watch.toggle(vim.fn.expand("%"))
-				end,
-				desc = "Toggle Watch (Neotest)",
-			},
-		},
-		config = function()
-			require("neotest").setup({
-				adapters = {
-					require("neotest-jest")({
-						jestCommand = "npm test ",
-						jestConfigFile = "jest.config.js",
-						env = { CI = true },
-						cwd = function()
-							return vim.fn.getcwd()
-						end,
-					}),
-				},
-				config = {
-					output_panel = { open_on_run = true },
-					diagnostic = true,
-				},
-			})
-		end,
-	},
   {
     "nvimtools/none-ls.nvim",
     dependencies = {
@@ -286,7 +164,8 @@ return {
       null_ls.setup({
         sources = {
           null_ls.builtins.formatting.stylua,
-          null_ls.builtins.formatting.prettier,
+          -- null_ls.builtins.formatting.prettier,
+          -- require("none-ls.formatting.eslint_d"),
           -- require("none-ls.diagnostics.eslint_d")
         },
       })
@@ -339,27 +218,12 @@ return {
       vim.g.copilot_no_tab_map = true
 		end
 	},
-  {
-    "olimorris/codecompanion.nvim",
-    config = true,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
+	{
+  'esmuellert/nvim-eslint',
     config = function()
-      require("codecompanion").setup({
-        strategies = {
-          chat = {
-            adapter = "copilot",
-          },
-          inline = {
-            adapter = "copilot",
-          }
-        }
+      require('nvim-eslint').setup({
+        format = true,
       })
-
-      vim.keymap.set('n', '<leader>lcc', '<Plug>CodeCompanion', {remap = true, silent = false})
-      vim.keymap.set('n', '<leader>lca', '<Plug>CodeCompanionActions', {remap = true, silent = false})
-		end
+    end,
   }
 }
